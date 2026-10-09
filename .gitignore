@@ -1,0 +1,8 @@
+# Generated dependencies and local artifacts
+node_modules/
+compiled/
+output-v03/
+output-v04/
+.cache/
+.DS_Store
+*.tmp
