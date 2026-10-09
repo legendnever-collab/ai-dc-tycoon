@@ -7,7 +7,7 @@ fs.mkdirSync('../output-v03',{recursive:true});for(const path of ['../output-v03
 
 /* v0.4 additive distribution: never overwrite the v0.3 baseline executable. */
 const v04=esbuild.buildSync({entryPoints:['src/chapter2-app.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles;
-const js04=v04.find(f=>f.path.endsWith('.js'));if(!js04)throw Error('v0.4 JavaScript was not emitted');
+const js04=v04[0];if(!js04||!js04.text)throw Error('v0.4 JavaScript was not emitted');
 const html04=fs.readFileSync('src/game-shell-v04.html','utf8')
  .replace('/* STYLES */',fs.readFileSync('src/game-style.css','utf8')+'\n'+fs.readFileSync('src/chapter2-style.css','utf8'))
  .replace('/* SCRIPT */',()=>js04.text.replace(new RegExp('</script','gi'),'<\\/script'));
