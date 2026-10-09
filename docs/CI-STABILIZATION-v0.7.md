@@ -43,6 +43,14 @@ checks actionability and re-resolves detached nodes within that single action.
 No forced click, extra retry, changed assertion or longer test budget is added.
 This Browser helper adjustment also leaves the executable unchanged.
 
+Run `37999805665` then passed all Desktop, Mobile and Storage scenarios but
+exposed an immediate-count race in the M09 legacy Package assertion. Package
+navigation schedules `refreshPackage` with `setTimeout(...,0)`; the original
+test counted `data-learn-oes` before the queued UI update inserted the button.
+The legacy test now waits for that actual button to become visible before
+running the unchanged exact-one-button assertion. The existing timeout,
+mission-clear checks, receipt counts and numerical fixtures are preserved.
+
 ## Issue B: cold-runner dependency download
 
 Run `37954188052`, job `113900371718`, expired during Ubuntu APT dependency
