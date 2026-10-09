@@ -1,0 +1,9 @@
+{
+  "initialFailures": [
+    {"group":"legacy-browser-new-test","status":"FAIL","cause":"Test guessed a nonexistent optical model name instead of consuming authoritative v0.2 Graph fixture","resolution":"Compare fixture.modelVersion and all fixture.expected numerical metrics; original Physics/fixtures unchanged","final":"PASS"},
+    {"group":"storage-browser-future-original-copy","status":"FAIL","cause":"Assertion read textarea before asynchronous IndexedDB original-copy operation completed","resolution":"Wait for exact original text to be displayed, retaining expected bytes","final":"PASS"},
+    {"group":"final-old-browser-launch","status":"NOT TESTED","cause":"Missing explicit persistent Chromium path in group environment","resolution":"Apply known runtime path; no source changes","final":"See final non-regression evidence"}
+  ],
+  "policy":"Separate bounded groups; no expected-value changes to original tests; no unresolved three-retry debugging loop",
+  "notTested":["Physical Android","Human beginner usability/play-time study","Real CPO hardware optical/power/yield/reliability"]
+}
