@@ -17,7 +17,7 @@ export function buildSubstrateGraph(d:SubstrateDesign,c:SubstrateContext,mission
  const add=(type:string,id:string,flow:'Tx'|'Rx'|'Mechanical'='Tx')=>{const n=createNode(type,id,flow);g.graph.components.push(n);return n;};
  const fixed=(n:Node,key:string,value:number|null,label:string)=>{n.parameters[key]={...n.parameters[key],value,evidence:'Assumption',source:label};delete n.parameters[key].ref;};
  const link=(a:string,b:string,ap='out',bp='in')=>g.graph.connections.push(edge(a,b,ap,bp));
- add('PhotonicSubstrate','substrate-region','Mechanical').label='20 × 10 mm educational envelope';
+ const region=add('PhotonicSubstrate','substrate-region','Mechanical');region.label='20 × 10 mm educational envelope';region.dimensions={x:20,y:1,z:10,unit:'mm'};
  for(let i=0;i<d.channels;i++){
   const id='ch'+String(i+1).padStart(2,'0');add('ELS','els-'+id).label='Shared ELS allocation · '+id;
   const mod=add(p.modulator||'MZM','mod-'+id);mod.label=(p.modulator||'Unknown Modulator')+' inherited per-lane model';add('ElectricalConnector','asic-'+id);add('Driver','driver-'+id);link('asic-'+id,'driver-'+id);if(w.driverConnected&&c.package.asic)link('driver-'+id,'mod-'+id,'out','drive');if(w.cwConnected&&c.package.els)link('els-'+id,'mod-'+id);

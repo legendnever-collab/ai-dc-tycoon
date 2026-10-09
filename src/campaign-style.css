@@ -13,3 +13,5 @@ dialog{border-radius:var(--radius-lg);background:linear-gradient(140deg,#132637,
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}button{transition:none}.s-lane.on,.s-result.clear,.w-reward,.result-card,.s-reward{animation:none}}
 
 .has-c5-rewards #wallet,.has-c5-rewards #campaign-wallet{display:none!important}
+
+html{scroll-padding-top:200px}.s-result,.s-alignment,.s-inspector{scroll-margin-top:200px}@media(max-width:600px){html{scroll-padding-top:180px}.s-result,.s-alignment,.s-inspector{scroll-margin-top:180px}}
