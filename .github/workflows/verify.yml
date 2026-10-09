@@ -50,6 +50,9 @@ jobs:
       - name: Experimental Typed Network Graph Golden
         run: node tests/network-golden.cjs
 
+      - name: Chapter 2 Game-to-Graph Parity Golden
+        run: node tests/chapter2-graph-golden.cjs
+
       - name: Release integrity
         run: node tests/release-integrity.cjs
 
