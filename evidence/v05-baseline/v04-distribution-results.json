@@ -1,0 +1,17 @@
+{
+  "release": "0.4.0",
+  "cases": [
+    {
+      "name": "Source ZIP clean rebuild reproduces exact v0.4 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Three release ZIP archives pass CRC with executable, six guides and screenshot inventory",
+      "status": "PASS"
+    },
+    {
+      "name": "Release manifest pins GitHub commit and exact source / executable hashes",
+      "status": "PASS"
+    }
+  ]
+}

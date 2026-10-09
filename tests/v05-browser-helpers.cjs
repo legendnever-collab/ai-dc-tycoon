@@ -1,0 +1,14 @@
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fixtures=require('./v05-fixtures.cjs'),storage=require('../compiled/campaign-storage'),c3=require('../compiled/chapter3');
+const options={executablePath:process.env.CHROMIUM_EXECUTABLE,headless:true,env:{...process.env,LD_LIBRARY_PATH:path.dirname(process.env.CHROMIUM_EXECUTABLE||'/tmp/chromium')},args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']};
+const ready=p=>p.waitForFunction(()=>window.AIDCT_V05?.isReady()&&window.AIDCT_V04?.isReady());
+const click=async(p,selector)=>{const l=p.locator(selector).first();await l.scrollIntoViewIfNeeded();await l.click();};
+const action=(p,type,extra='')=>click(p,'[data-c3="'+type+'"]'+extra);
+const state=p=>p.evaluate(()=>window.AIDCT_V05.state());const simulate=p=>p.evaluate(()=>window.AIDCT_V05.simulate());
+const saved=p=>p.evaluate(()=>window.AIDCT_V05.whenSaved());
+const bundle=()=>{const game=fixtures.legacy(),chapter2=fixtures.chapter2(game);return {game,chapter2,chapter3:c3.newChapter3(game.id)};};
+const restore=async(p,c)=>{await click(p,'#backup-tab');await p.fill('#campaign-text',storage.campaignBackup(c));await Promise.all([p.waitForEvent('load'),click(p,'#campaign-restore')]);await ready(p);};
+const dbRead=(p,db,key)=>p.evaluate(async([name,key])=>{const db=await new Promise((res,rej)=>{const r=indexedDB.open(name);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});const value=await new Promise((res,rej)=>{const r=db.transaction('snapshots').objectStore('snapshots').get(key);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});db.close();return value;},[db,key]);
+const dbPut=(p,db,key,value)=>p.evaluate(async([name,key,value])=>{const db=await new Promise((res,rej)=>{const r=indexedDB.open(name);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});await new Promise((res,rej)=>{const t=db.transaction('snapshots','readwrite');t.objectStore('snapshots').put(value,key);t.oncomplete=res;t.onabort=()=>rej(t.error);});db.close();},[db,key,value]);
+const launch=async(viewport={width:1440,height:1000},mobile=false)=>{const browser=await chromium.launch(options);const context=await browser.newContext({viewport,isMobile:mobile,hasTouch:mobile});context.setDefaultTimeout(10000);await context.setOffline(true);const page=await context.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});await page.goto('file://'+path.resolve('ai-dc-tycoon-v0.5.html'));await ready(page);return {browser,context,page,errors,requests};};
+module.exports={fs,path,assert,options,ready,click,action,state,simulate,saved,bundle,restore,dbRead,dbPut,launch,fixtures,storage,c3};

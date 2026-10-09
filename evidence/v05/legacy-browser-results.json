@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "name": "Existing M01 UI in v05 retains original 30s and 100XP/120Credit reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M02 rack purchase/place and original 60s numerical fixture preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M03 network failure, retry and original 120s clear still work",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M04 actual rack connections clear with preserved reward receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M05 leaf-spine path bottleneck and clear remain playable in v05",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M06 optical modules/fiber clear unlocks actual Mission07",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved Engineering Lab executes same optical solver default numerical result",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy-to-CPO browser has no external runtime requests or JS errors",
+      "status": "PASS"
+    }
+  ]
+}

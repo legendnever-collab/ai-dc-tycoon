@@ -1,0 +1,137 @@
+{
+  "model": "cpo-educational-1.0.0",
+  "cases": [
+    {
+      "name": "v0.4 economy fixture is derived: Credits490 XP1240, six receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 lock prevents M07 transition",
+      "status": "PASS"
+    },
+    {
+      "name": "M08 and M09 cannot start before prior clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission07 needs two actual successful orders, one click is not clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 power wall refuses 120W pluggable expansion",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 CPO fails service-first hard gate",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 solves service/density orders with genuine tradeoff, unlocks M08",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 optimized pluggable gives two stars but still unlocks",
+      "status": "PASS"
+    },
+    {
+      "name": "Reward cannot duplicate on M07 replay",
+      "status": "PASS"
+    },
+    {
+      "name": "M08 guided order starts ASIC then OE, no laser before electrical",
+      "status": "PASS"
+    },
+    {
+      "name": "Assembly presence alone cannot pass M08",
+      "status": "PASS"
+    },
+    {
+      "name": "M08 two OEs/ELS/typed paths produce 1280G/76W, optical loss Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown optics without explicit fixture cannot activate",
+      "status": "PASS"
+    },
+    {
+      "name": "Physical far placement increases electrical power and fails package constraint",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 uses same switch/package IDs and expands M08 prototype",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 cannot install missing paths or clear before installation",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 assembly, installation, run leads to actual 2560G/96W/40s",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission09 installed wide/far package fails Power and Package Space",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter3 wallet uses actual purchased components, final Credits830 XP2520",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay freely retains installed equipment and cannot duplicate reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Reset refunds current package without deleting past clear receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "Insufficient funds refuses physical purchase without mutating previous state",
+      "status": "PASS"
+    },
+    {
+      "name": "Navigation round-trip changes only scale/selection, same physical graph/time",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop is locked before09 and preview unlock is a real receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Duplicate receipt rejected rather than paid again",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged receipt result hash rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged order pass rejected via recomputation",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged cached completion rejected on restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Duplicate stable OE slot rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Typed backup rejects invalid optical/electrical connections",
+      "status": "PASS"
+    },
+    {
+      "name": "Lab reference has stable IDs/snapshot hash and no performance multiplier",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid Lab reference cannot enter physical state",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO reward XP never changes actual simulation",
+      "status": "PASS"
+    }
+  ]
+}

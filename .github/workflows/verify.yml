@@ -8,7 +8,7 @@ on:
     paths-ignore:
       - '*.zip'
   pull_request:
-    branches: [main]
+    branches: [main, feature/v0.4-network-optics]
   workflow_dispatch:
 
 permissions:
@@ -59,6 +59,27 @@ jobs:
       - name: v0.4 release integrity
         run: node tests/v04-integrity.cjs
 
+      - name: CPO architecture and mission Golden
+        run: |
+          node tests/cpo-model-golden.cjs
+          node tests/chapter3-golden.cjs
+          node tests/campaign-golden.cjs
+      - name: v0.5 source and executable integrity
+        run: node tests/v05-integrity.cjs
+      - name: Package v0.5 source and handoff
+        run: node scripts/package-v05.cjs
+      - name: Upload v0.5 executable and source archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v05-executable-source-handoff
+          path: |
+            ai-dc-tycoon-v0.5.html
+            ai-dc-tycoon-v0.5-source.zip
+            ai-dc-tycoon-v0.5-HANDOFF.zip
+            RELEASE-MANIFEST-v0.5.json
+            evidence/v05/
+          if-no-files-found: error
+          retention-days: 14
       - name: Package source and handoff
         run: node scripts/package-v04.cjs
 
@@ -133,5 +154,48 @@ jobs:
             screenshots-v04/
             ai-dc-tycoon-v0.4-screenshots.zip
             evidence/v04/
+          retention-days: 14
+          if-no-files-found: ignore
+
+  browser-v05:
+    name: CPO Gameplay and Protected Campaign Storage
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+        timeout-minutes: 5
+      - run: npm run build
+      - name: Clear prior local browser result snapshots
+        run: node -e "const fs=require('fs'); for(const n of fs.readdirSync('evidence/v05')) if(n.endsWith('browser-results.json')) fs.unlinkSync('evidence/v05/'+n)"
+      - name: Desktop guided Mission07–09
+        run: node tests/v05-browser.cjs
+        timeout-minutes: 4
+      - name: Mobile touch and Lab reference-only
+        run: node tests/v05-mobile-browser.cjs
+        timeout-minutes: 4
+      - name: Bounded integrated Backup and Journal group
+        run: node tests/v05-storage-browser.cjs
+        timeout-minutes: 4
+      - name: Original Mission01–06 in new v0.5 executable
+        run: node tests/v05-legacy-browser.cjs
+        timeout-minutes: 4
+      - name: Archive genuine CPO scenes
+        if: always()
+        run: if test -d screenshots-v05; then zip -q -r ai-dc-tycoon-v0.5-screenshots.zip screenshots-v05; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-dc-tycoon-v05-browser-scenes-evidence
+          path: |
+            screenshots-v05/
+            ai-dc-tycoon-v0.5-screenshots.zip
+            evidence/v05/
           retention-days: 14
           if-no-files-found: ignore

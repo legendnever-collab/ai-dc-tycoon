@@ -1,0 +1,56 @@
+{
+  "release": "0.5.0",
+  "baselineActualFinalPASS": 367,
+  "newPASS": 151,
+  "totalLocalPASS": 518,
+  "ciConfiguredChecks": 509,
+  "groups": [
+    {
+      "file": "chapter3-golden-results.json",
+      "pass": 33,
+      "fail": 0
+    },
+    {
+      "file": "storage-browser-results.json",
+      "pass": 14,
+      "fail": 0
+    },
+    {
+      "file": "cpo-model-golden-results.json",
+      "pass": 27,
+      "fail": 0
+    },
+    {
+      "file": "browser-results.json",
+      "pass": 26,
+      "fail": 0
+    },
+    {
+      "file": "distribution-results.json",
+      "pass": 3,
+      "fail": 0
+    },
+    {
+      "file": "legacy-browser-results.json",
+      "pass": 8,
+      "fail": 0
+    },
+    {
+      "file": "campaign-golden-results.json",
+      "pass": 26,
+      "fail": 0
+    },
+    {
+      "file": "integrity-results.json",
+      "pass": 5,
+      "fail": 0
+    },
+    {
+      "file": "mobile-browser-results.json",
+      "pass": 9,
+      "fail": 0
+    }
+  ],
+  "physicalAndroid": "NOT TESTED",
+  "humanUsability": "NOT TESTED"
+}

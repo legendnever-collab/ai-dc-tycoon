@@ -1,0 +1,53 @@
+{
+  "initialFailures": [
+    {
+      "group": "legacy-browser-new-test",
+      "status": "FAIL",
+      "cause": "Test guessed a nonexistent optical model name instead of consuming authoritative v0.2 Graph fixture",
+      "resolution": "Compare fixture.modelVersion and all fixture.expected numerical metrics; original Physics/fixtures unchanged",
+      "final": "PASS"
+    },
+    {
+      "group": "storage-browser-future-original-copy",
+      "status": "FAIL",
+      "cause": "Assertion read textarea before asynchronous IndexedDB original-copy operation completed",
+      "resolution": "Wait for exact original text to be displayed, retaining expected bytes",
+      "final": "PASS"
+    },
+    {
+      "group": "final-old-browser-launch",
+      "status": "NOT TESTED",
+      "cause": "Missing explicit persistent Chromium path in group environment",
+      "resolution": "Apply known runtime path; no source changes",
+      "final": "PASS"
+    },
+    {
+      "group": "mobile-viewport-resize",
+      "status": "FAIL",
+      "cause": "Unnecessary DOM replacement during responsive viewport transition detached click target",
+      "resolution": "Use responsive SVG/CSS without replacing Package DOM on resize",
+      "final": "PASS"
+    },
+    {
+      "group": "existing-distribution-launch",
+      "status": "NOT TESTED",
+      "cause": "Incorrect Clean Build path",
+      "resolution": "Use existing authoritative rebuilt source HTML; full 3-case group PASS",
+      "final": "PASS"
+    },
+    {
+      "group": "github-run-37930374324-new-browser",
+      "status": "FAIL",
+      "cause": "Screenshot compositor exceeded 10s on CI after 18 desktop cases; remaining browser groups not run",
+      "resolution": "Screenshot-only finite 30s limit; action 10s and group 4min unchanged; clear stale local browser results in CI",
+      "final": "See final commit Actions run"
+    }
+  ],
+  "policy": "Separate bounded groups; no expected-value changes to original tests; no unresolved three-retry debugging loop",
+  "notTested": [
+    "Physical Android",
+    "Human beginner usability/play-time study",
+    "Real CPO hardware optical/power/yield/reliability"
+  ],
+  "eventIsolation": "CPO slot event was found to reach legacy Rack selection; capture propagation is stopped and byte-equivalent legacy Game assertion added."
+}

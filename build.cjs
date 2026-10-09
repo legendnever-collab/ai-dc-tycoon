@@ -14,3 +14,7 @@ const html04=fs.readFileSync('src/game-shell-v04.html','utf8')
 fs.mkdirSync('../output-v04',{recursive:true});
 for(const path of ['../output-v04/ai-dc-tycoon-v0.4.html','ai-dc-tycoon-v0.4.html'])fs.writeFileSync(path,html04);
 console.log('Built v0.4.0 Chapter 2 offline: '+Buffer.byteLength(html04)+' bytes; v0.3 executable retained');
+/* v0.5 wrapper preserves both earlier executable distributions and the Lab. */
+const js05=esbuild.buildSync({entryPoints:['src/campaign-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
+const html05=fs.readFileSync('src/game-shell-v05.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js05.replace(/<\/script/gi,'<\\/script'));
+fs.mkdirSync('../output-v05',{recursive:true});for(const path of ['../output-v05/ai-dc-tycoon-v0.5.html','ai-dc-tycoon-v0.5.html'])fs.writeFileSync(path,html05);console.log('Built v0.5.0 CPO offline: '+Buffer.byteLength(html05)+' bytes; legacy executable bytes retained');

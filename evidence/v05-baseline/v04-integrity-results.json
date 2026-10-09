@@ -1,0 +1,21 @@
+{
+  "release": "0.4.0",
+  "cases": [
+    {
+      "name": "Engineering source and native/embedded Lab retain immutable baseline",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter 1 rebuilt executable remains byte-identical to audited v0.3 release",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.4 single HTML version, CSP and inline assets are complete",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission runtime uses typed traffic graph; experimental engine stays independent",
+      "status": "PASS"
+    }
+  ]
+}

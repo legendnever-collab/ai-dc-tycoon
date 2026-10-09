@@ -1,0 +1,266 @@
+{
+  "version": "0.3.0",
+  "modelVersion": "ai-dc-educational-1.0.0",
+  "cases": [
+    {
+      "name": "New Game resources / stable hardware / states",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M01 / 1 racks / 16 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M02 / 1 racks / 16 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M02 / 2 racks / 16 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M03 / 2 racks / 16 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M03 / 3 racks / 16 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M03 / 2 racks / 64 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M03 / 3 racks / 64 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Fixture M03 / 4 racks / 64 Gb/s",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked Mission cannot start",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked Rack cannot purchase",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked Switch cannot upgrade",
+      "status": "PASS"
+    },
+    {
+      "name": "Run requires ACTIVE",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 01 clear rewards / next unlock / level",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission01 missing Compute fails / repair / no duplicate reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Prediction does not clear mission or award",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 02 fail then retry state",
+      "status": "PASS"
+    },
+    {
+      "name": "Purchase creates Inventory and charges Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "Unplaced inventory survives backup",
+      "status": "PASS"
+    },
+    {
+      "name": "Placement activates capacity / halves independent completion",
+      "status": "PASS"
+    },
+    {
+      "name": "Occupied Slot rejects without mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Slot out of range rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown Inventory rejects",
+      "status": "PASS"
+    },
+    {
+      "name": "Only one pending placement allowed",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 02 rewards / switch unlock exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Compute only cannot cure network bottleneck",
+      "status": "PASS"
+    },
+    {
+      "name": "Network Upgrade improves 300→120 seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "Network goal cannot pass with high score",
+      "status": "PASS"
+    },
+    {
+      "name": "Insufficient credits purchase refusal",
+      "status": "PASS"
+    },
+    {
+      "name": "Insufficient Switch budget refusal",
+      "status": "PASS"
+    },
+    {
+      "name": "Refund restores budget without duplicate cash",
+      "status": "PASS"
+    },
+    {
+      "name": "Starter Rack cannot refund",
+      "status": "PASS"
+    },
+    {
+      "name": "Hardware IDs are never reused after refund",
+      "status": "PASS"
+    },
+    {
+      "name": "Move conserves economy / selected slot capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "Floor location does not affect numerical result",
+      "status": "PASS"
+    },
+    {
+      "name": "Pending run freezes hardware and mission",
+      "status": "PASS"
+    },
+    {
+      "name": "Same input / seed yields identical result and hash",
+      "status": "PASS"
+    },
+    {
+      "name": "Pure command leaves original state intact",
+      "status": "PASS"
+    },
+    {
+      "name": "Completion grants all rewards once / level4 / Analyzer",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay never duplicates Credits / XP / receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "Duplicate finish cannot award twice",
+      "status": "PASS"
+    },
+    {
+      "name": "Overspending trades Stars for time",
+      "status": "PASS"
+    },
+    {
+      "name": "Hints reveal progressively and cap at3",
+      "status": "PASS"
+    },
+    {
+      "name": "Full profile backup exact round trip",
+      "status": "PASS"
+    },
+    {
+      "name": "Pending simulation backup can finish deterministically",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown Compute input is Unknown and never passes",
+      "status": "PASS"
+    },
+    {
+      "name": "No placed racks produces Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero Network does not divide by zero",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent jobs ignore Network capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "Scale-up unsupported returns Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Storage I/O unsupported returns Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Wrong workload fabric refuses numerical result",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid fixture ranges / NaN / negative rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown Network input stays Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Wrong simulator Model Version rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Backup integrity corruption rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Game Schema rejected preserving input text",
+      "status": "PASS"
+    },
+    {
+      "name": "Engineering Backup never coerced into Game Schema",
+      "status": "PASS"
+    },
+    {
+      "name": "Duplicate reward receipt rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged credits / XP / tech unlock rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged numerical result rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged hardware provenance cannot reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Inventory duplicate / collision rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Award presentation must match actual reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Engineering bridge is reference-only and not simulator input",
+      "status": "PASS"
+    }
+  ]
+}

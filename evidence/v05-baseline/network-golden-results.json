@@ -1,0 +1,133 @@
+{
+  "model": "chapter2-path-1.0.0",
+  "cases": [
+    {
+      "name": "M04 starts with two occupied ports and one disconnected Rack",
+      "status": "PASS"
+    },
+    {
+      "name": "Port count prevents nonexistent third port",
+      "status": "PASS"
+    },
+    {
+      "name": "Occupied Port rejects fanout",
+      "status": "PASS"
+    },
+    {
+      "name": "Switch installation does not silently connect Rack",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 actual link gives 3 connected racks / path / 13.333 seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "Physical ports and Fabric are distinct",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported endpoint rate refused",
+      "status": "PASS"
+    },
+    {
+      "name": "Leaf groups without Spine are disconnected",
+      "status": "PASS"
+    },
+    {
+      "name": "Spine placement alone does not create paths",
+      "status": "PASS"
+    },
+    {
+      "name": "Single Uplink is insufficient",
+      "status": "PASS"
+    },
+    {
+      "name": "100G uplinks share actual traffic: 48000/90 seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "400G uplinks reduce used bottleneck: 48000/360 seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "Idle link capacity is not summed into throughput",
+      "status": "PASS"
+    },
+    {
+      "name": "Bottleneck link only: one 100G uplink dominates a 400G fabric",
+      "status": "PASS"
+    },
+    {
+      "name": "Disconnection changes path immediately",
+      "status": "PASS"
+    },
+    {
+      "name": "Stable paths and deterministic results / no input mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Cost is actual purchased switch + cables",
+      "status": "PASS"
+    },
+    {
+      "name": "Power includes installed switches even unused",
+      "status": "PASS"
+    },
+    {
+      "name": "Reset refunds all purchased components and never fabricates performance",
+      "status": "PASS"
+    },
+    {
+      "name": "Fiber requires both pluggables",
+      "status": "PASS"
+    },
+    {
+      "name": "Copper must disconnect before optical insertion",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown module and nonexistent port rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Optical module not available in earlier missions",
+      "status": "PASS"
+    },
+    {
+      "name": "800G optics actual 4 modules / 2 fibers / 258 W / 160 Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "400G optics trade-off 242 W / 100 Credits / 266.667 s",
+      "status": "PASS"
+    },
+    {
+      "name": "Mismatched endpoint modules refuse link",
+      "status": "PASS"
+    },
+    {
+      "name": "Module removal deactivates existing fiber without deleting cost",
+      "status": "PASS"
+    },
+    {
+      "name": "Unused modules consume power and cost, never bandwidth",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged provided component cost exemption rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged port capabilities and duplicate ports rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Traffic fixture cannot be edited to shortcut a mission",
+      "status": "PASS"
+    },
+    {
+      "name": "No optical physics or vendor claim in model assumptions",
+      "status": "PASS"
+    }
+  ]
+}

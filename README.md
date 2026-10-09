@@ -1,3 +1,13 @@
+# AI Data Center Tycoon
+
+현재 개발 Release는 **v0.5.0 · Chapter 3 — The CPO Revolution**입니다. 실행 안내: [START-HERE-v0.5](docs/START-HERE-v0.5.md), 검증: [REGRESSION-v0.5](docs/REGRESSION-v0.5.md), 모델: [CPO Architecture Model](docs/CPO-ARCHITECTURE-MODEL-v0.5.md).
+
+`npm ci` → `npm run build`로 Offline v0.3/v0.4/v0.5 HTML을 생성합니다. Mission01–06과 Advanced Photonics Engineering Lab을 보존하고, Mission07–09의 Architecture 비교 / Guided Package 조립 / 실제 Network 설치를 추가했습니다. 상세 Optical Loss는 Unknown입니다.
+
+개발 Branch: `feature/v0.5-cpo`. v0.4 PR #2가 아직 열려 있어 `feature/v0.4-network-optics`를 Base로 하는 Stacked PR로 관리합니다. main과 기존 PR을 자동 Merge하지 않습니다. Package Version0.3.0은 Frozen Legacy Core이고 실행 파일 Release는0.5.0입니다.
+
+## 기존 v0.3/v0.4 안내
+
 # AI Data Center Tycoon v0.3.0 Source
 
 단일 Offline HTML의 실행 안내는 docs/START-HERE-v0.3.md, 구조는 docs/ARCHITECTURE-v0.3.md를 보세요. Source/Release 0.3.0, Game Schema 1/DC Model 1.0.0, 보존된 Engineering Core 0.2.0/Schema 2를 구분합니다.

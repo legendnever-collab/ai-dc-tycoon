@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Schema2 registry binds typed ports, units, models and geometry",
+    "status": "PASS"
+  },
+  {
+    "name": "Common golden: native Graph equals migrated Legacy metrics",
+    "status": "PASS"
+  },
+  {
+    "name": "Migration preserves all 27 inputs and original graph; source unchanged",
+    "status": "PASS"
+  },
+  {
+    "name": "Legacy parity: split, unused branches, overrides, Unknown, power failure",
+    "status": "PASS"
+  },
+  {
+    "name": "Schema1 backup and archives migrate with original provenance",
+    "status": "PASS"
+  },
+  {
+    "name": "Unsupported legacy split stays Legacy; approximate graph cannot PASS",
+    "status": "PASS"
+  },
+  {
+    "name": "Common graph multi-branch split parity including incomplete final group",
+    "status": "PASS"
+  },
+  {
+    "name": "Actual FAU allocation drives bandwidth independently of global display",
+    "status": "PASS"
+  },
+  {
+    "name": "Graph WDM allocation and coding efficiency preserve units",
+    "status": "PASS"
+  },
+  {
+    "name": "Tx/Rx allocation is separate; unknown incoming Rx never fabricated",
+    "status": "PASS"
+  },
+  {
+    "name": "Loss custom edit affects only declared stage",
+    "status": "PASS"
+  },
+  {
+    "name": "Reference plane ledger identifies actual splitter output and node stage",
+    "status": "PASS"
+  },
+  {
+    "name": "Missing optical connection fails compilation and mission",
+    "status": "PASS"
+  },
+  {
+    "name": "Missing drive path fails despite complete optical path",
+    "status": "PASS"
+  },
+  {
+    "name": "Rx TIA/interface missing fails topology",
+    "status": "PASS"
+  },
+  {
+    "name": "Wrong kind, signal, flow and reversed port rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Duplicate source fanout and occupied target rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Cycle detected both during connect and compilation",
+    "status": "PASS"
+  },
+  {
+    "name": "Unreachable engineering component blocks PASS; mechanical allowed",
+    "status": "PASS"
+  },
+  {
+    "name": "Duplicate fiber/wavelength allocation rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Splitter conservation and unique source-group electrical power",
+    "status": "PASS"
+  },
+  {
+    "name": "Passive negative IL, negative splitter excess, WPE zero rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Cosmetic placement, dimensions and rotation leave all metrics unchanged",
+    "status": "PASS"
+  },
+  {
+    "name": "Physical routing mm to cm and alpha maps only waveguide loss",
+    "status": "PASS"
+  },
+  {
+    "name": "Declared polyline waypoint and physical-routing disabled fallback",
+    "status": "PASS"
+  },
+  {
+    "name": "Missing physical anchor fails; cosmetic manual length stays usable",
+    "status": "PASS"
+  },
+  {
+    "name": "Coupler proximity never calibrates coupling efficiency",
+    "status": "PASS"
+  },
+  {
+    "name": "Unknown Tx allocation keeps topology valid but all aggregate Tx metrics Unknown",
+    "status": "PASS"
+  },
+  {
+    "name": "Unknown branch allocation never reports partial known bandwidth",
+    "status": "PASS"
+  },
+  {
+    "name": "Unknown Rx allocation makes total power unknown independently of Tx",
+    "status": "PASS"
+  },
+  {
+    "name": "Unknown loss and efficiency never inferred from visual path",
+    "status": "PASS"
+  },
+  {
+    "name": "Dependency list maps actual global/custom changes to channels",
+    "status": "PASS"
+  },
+  {
+    "name": "Deterministic result, compiler hash, unchanged input and fixed seed",
+    "status": "PASS"
+  },
+  {
+    "name": "SHA-256 exact UTF8 vectors including Korean and long strings",
+    "status": "PASS"
+  },
+  {
+    "name": "Schema2 backup preserves graph, geometry, version, archive and undo",
+    "status": "PASS"
+  },
+  {
+    "name": "Undo/Redo snapshot restores physical mode, topology and numerical inputs",
+    "status": "PASS"
+  },
+  {
+    "name": "Malformed units, duplicate IDs, typed-port tampering and undo rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Native corrupted/future-schema backup rejected without input mutation",
+    "status": "PASS"
+  },
+  {
+    "name": "Multipart backup roundtrip accepts reordered complete parts",
+    "status": "PASS"
+  },
+  {
+    "name": "Multipart missing/duplicate/tampered parts rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Evidence on global parameters cannot certify custom unreviewed models",
+    "status": "PASS"
+  },
+  {
+    "name": "Invalid Graph cannot pass even Sandbox or high global scalar metrics",
+    "status": "PASS"
+  }
+]

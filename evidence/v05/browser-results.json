@@ -1,0 +1,108 @@
+{
+  "cases": [
+    {
+      "name": "v05 defaults to existing novice World and Mission06 gate",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign UI restores genuine v04 progress, economy and module graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked M08 is inaccessible in real UI",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 CPO cannot pass the field-service order",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing Pluggable wins service order but cannot clear both orders",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanding Pluggable fails real 120W power wall",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO solves density order with same capacity and job time, rewards once",
+      "status": "PASS"
+    },
+    {
+      "name": "Cost Density Serviceability are initially behind extra analysis",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 Autosave resumes actual order receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "M08 begins with one new ASIC component and Package boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "ASIC and two real slot clicks place OEs in shared hierarchical graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Early assembly cannot clear without ELS and typed optical path",
+      "status": "PASS"
+    },
+    {
+      "name": "Guided Electrical / ELS / Laser / FAU connections are real typed edges",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit educational Fiber fixture activates only two matched paths",
+      "status": "PASS"
+    },
+    {
+      "name": "M08 bench simulation clears and reveals usable OE/ELS/reach rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Multi-scale roundtrip shares exact object configuration and Stable ID",
+      "status": "PASS"
+    },
+    {
+      "name": "Far placement changes physical reach/power, not optical loss",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 expands the same prototype, with no reward or auto installation",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 actual four-path assembly remains inactive before DC installation",
+      "status": "PASS"
+    },
+    {
+      "name": "Installing CPO Switch appears in AI Factory and feeds existing Traffic Solver",
+      "status": "PASS"
+    },
+    {
+      "name": "M09 Simulation wins genuine objectives, final economy and Workshop unlock",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission replay is free and cannot duplicate first-clear rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop is an honest Chapter4 preview, preserved Lab remains optional",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO slot/assembly events cannot mutate legacy Rack placement or primary Game state",
+      "status": "PASS"
+    },
+    {
+      "name": "Same Campaign progress resumes after full offline reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Offline Chapter3 has no runtime requests or JavaScript errors",
+      "status": "PASS"
+    }
+  ]
+}

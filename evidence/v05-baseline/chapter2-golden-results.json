@@ -1,0 +1,141 @@
+{
+  "model": "chapter2-network-educational-1.0.0",
+  "cases": [
+    {
+      "name": "C2 new profile validated",
+      "status": "PASS"
+    },
+    {
+      "name": "C2 cannot open mission05 before04",
+      "status": "PASS"
+    },
+    {
+      "name": "C2 cannot open mission06 before05",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 starts with two occupied physical ports",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 cannot attach rack without port",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 high-density increases ports but no reward until Run",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 correct physical links and workload clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 cannot connect twice",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 scenario reset refunds but preserves receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 rerun cannot duplicate rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 budget refuses upgrade if Chapter1 has insufficient credits",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 without spine cannot have active path",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 only left uplink is disconnected",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 asymmetric rates bottleneck equals min used path",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 full 200G path achieves 40 seconds compute envelope",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 extra link bandwidth beyond compute does not further accelerate",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 path clear unlocks Mission06",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 links require installed spine",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 reset preserves first clear and removes path",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 cannot install on port that was not selected",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 supported module rates only",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 unpopulated port rejects fiber",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 400G both sides active but misses throughput objective",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 unsupported rate mismatch cannot activate fiber",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 800G both sides activates and clears within power cost limits",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 first clear receipt and Chapter2 XP total",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 previous 800G fiber invalidated when changing endpoint module",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter2 wallet rewards minus installed hardware, not simulation bonus",
+      "status": "PASS"
+    },
+    {
+      "name": "Backup roundtrip valid",
+      "status": "PASS"
+    },
+    {
+      "name": "Backup rejects tampering",
+      "status": "PASS"
+    },
+    {
+      "name": "Backup rejects profile swap",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy v0.3 Backup not misparsed as Chapter2",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged receipt duplication rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Educational assumptions explicit",
+      "status": "PASS"
+    }
+  ]
+}

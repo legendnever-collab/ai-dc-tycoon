@@ -1,0 +1,98 @@
+{
+  "baselineCommit": "c12149e985b207c5df50357ff7eb62a299fb813d",
+  "actualFinalReexecution": true,
+  "groups": [
+    {
+      "file": "v04-distribution-results.json",
+      "pass": 3,
+      "fail": 0,
+      "total": 3
+    },
+    {
+      "file": "chapter2-browser-results.json",
+      "pass": 10,
+      "fail": 0,
+      "total": 10
+    },
+    {
+      "file": "chapter2-graph-golden-results.json",
+      "pass": 23,
+      "fail": 0,
+      "total": 23
+    },
+    {
+      "file": "game-golden-results.json",
+      "pass": 65,
+      "fail": 0,
+      "total": 65
+    },
+    {
+      "file": "browser-results.json",
+      "pass": 24,
+      "fail": 0,
+      "total": 24
+    },
+    {
+      "file": "release-integrity-results.json",
+      "pass": 5,
+      "fail": 0,
+      "total": 5
+    },
+    {
+      "file": "distribution-results.json",
+      "pass": 3,
+      "fail": 0,
+      "total": 3
+    },
+    {
+      "file": "p2-browser-results.json",
+      "pass": 26,
+      "fail": 0,
+      "total": 26
+    },
+    {
+      "file": "chapter2-golden-results.json",
+      "pass": 34,
+      "fail": 0,
+      "total": 34
+    },
+    {
+      "file": "network-golden-results.json",
+      "pass": 32,
+      "fail": 0,
+      "total": 32
+    },
+    {
+      "file": "game-browser-results.json",
+      "pass": 45,
+      "fail": 0,
+      "total": 45
+    },
+    {
+      "file": "v04-integrity-results.json",
+      "pass": 4,
+      "fail": 0,
+      "total": 4
+    },
+    {
+      "file": "p2-golden-results.json",
+      "pass": 42,
+      "fail": 0,
+      "total": 42
+    },
+    {
+      "file": "legacy-golden-results.json",
+      "pass": 30,
+      "fail": 0,
+      "total": 30
+    },
+    {
+      "file": "v04-browser-results.json",
+      "pass": 21,
+      "fail": 0,
+      "total": 21
+    }
+  ],
+  "pass": 367,
+  "fail": 0
+}
