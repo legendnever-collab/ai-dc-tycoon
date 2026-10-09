@@ -1,0 +1,122 @@
+{
+  "version": "0.2.0",
+  "schemaVersion": 2,
+  "modelVersion": "graph-compact-1.0.0",
+  "browserVersion": "153.0.8010.0",
+  "platform": "Linux headless Chromium / software WebGL2",
+  "urlScheme": "file:",
+  "offline": true,
+  "cases": [
+    {
+      "name": "Real WebGL2 Three.js draws bundled offline scene",
+      "status": "PASS"
+    },
+    {
+      "name": "2D selection synchronizes Inspector and 3D selection",
+      "status": "PASS"
+    },
+    {
+      "name": "Component edit drives physics, delta and Undo/Redo",
+      "status": "PASS"
+    },
+    {
+      "name": "Library orphan blocks mission; delete, undo and redo work",
+      "status": "PASS"
+    },
+    {
+      "name": "Delete and click-to-connect bypass changes actual path loss",
+      "status": "PASS"
+    },
+    {
+      "name": "Wrong signal port reports endpoints and preserves graph",
+      "status": "PASS"
+    },
+    {
+      "name": "2D zoom, pan, fit and node drag preserve physics",
+      "status": "PASS"
+    },
+    {
+      "name": "Tx/Rx trace follows separate channels and loss annotations",
+      "status": "PASS"
+    },
+    {
+      "name": "Build a complete Tx/Rx engine from empty Graph using Library and ports",
+      "status": "PASS"
+    },
+    {
+      "name": "2D drag-to-connect reconnects actual typed port",
+      "status": "PASS"
+    },
+    {
+      "name": "3D raycast selection synchronizes 2D and Inspector",
+      "status": "PASS"
+    },
+    {
+      "name": "3D rotate, zoom and right-drag pan modify camera only",
+      "status": "PASS"
+    },
+    {
+      "name": "3D Move tool updates mm geometry with Cosmetic metrics unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Mechanical Library placement is visible in 3D and preserves physics",
+      "status": "PASS"
+    },
+    {
+      "name": "Physical Routing maps declared anchors and flags missing anchor",
+      "status": "PASS"
+    },
+    {
+      "name": "Graph, geometry, undo and selection persist after reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Multipart backup UI roundtrip retains complete graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Report includes mode, compiler hash, reference planes and model versions",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing native Head restores Last-Known-Good instead of fresh design",
+      "status": "PASS"
+    },
+    {
+      "name": "390px mobile click-to-connect compiles actual Optical Path",
+      "status": "PASS"
+    },
+    {
+      "name": "390/320px mobile placement, undo/redo, split and Inspector accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "WebGL disabled retains working 2D, solver and persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "Automatic Schema1 DB migration preserves metrics, archives and original DB",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Graph activation parity and original Rollback work",
+      "status": "PASS"
+    },
+    {
+      "name": "Future-schema native head remains unchanged after rejected save",
+      "status": "PASS"
+    },
+    {
+      "name": "All native flows execute offline with zero runtime error or HTTP request",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "notTested": [
+    "Corporate PC",
+    "Physical Android device",
+    "Hardware GPU"
+  ]
+}

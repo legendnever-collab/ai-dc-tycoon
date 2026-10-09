@@ -93,6 +93,10 @@
       "status": "PASS"
     },
     {
+      "name": "CPO slot/assembly events cannot mutate legacy Rack placement or primary Game state",
+      "status": "PASS"
+    },
+    {
       "name": "Same Campaign progress resumes after full offline reload",
       "status": "PASS"
     },

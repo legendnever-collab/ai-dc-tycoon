@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "name": "v05 Source ZIP clean rebuild reproduces all three exact campaign executables",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 Source/Handoff/Screenshot ZIPs pass CRC and contain required guides and genuine scenes",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 Manifest links actual source commit, version and every source/build SHA256",
+      "status": "PASS"
+    }
+  ],
+  "rebuildDependencies": "Locked installed node_modules reused; npm ci required in a fresh machine"
+}

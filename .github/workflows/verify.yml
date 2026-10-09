@@ -172,6 +172,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
         timeout-minutes: 5
       - run: npm run build
+      - name: Clear prior local browser result snapshots
+        run: node -e "const fs=require('fs'); for(const n of fs.readdirSync('evidence/v05')) if(n.endsWith('browser-results.json')) fs.unlinkSync('evidence/v05/'+n)"
       - name: Desktop guided Mission07–09
         run: node tests/v05-browser.cjs
         timeout-minutes: 4

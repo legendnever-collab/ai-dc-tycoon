@@ -1,0 +1,192 @@
+{
+  "version": "0.3.0",
+  "browserVersion": "153.0.8010.0",
+  "urlScheme": "file:",
+  "offline": true,
+  "renderer": "SwiftShader / software",
+  "cases": [
+    {
+      "name": "Offline file startup / Game World default / novice framing",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked Missions inaccessible before progression",
+      "status": "PASS"
+    },
+    {
+      "name": "First Mission enters ACTIVE in one major click",
+      "status": "PASS"
+    },
+    {
+      "name": "Second click runs deterministic Job with visible progress",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission01 clear first reward / next action visible",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission01 replay can fail missing Compute / repair without reward duplication",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission02 independent 120s baseline / next unlock",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual Mission02 failure / no reward / retry explanation",
+      "status": "PASS"
+    },
+    {
+      "name": "Purchase is inventory until floor placement",
+      "status": "PASS"
+    },
+    {
+      "name": "Click-to-place changes capacity / immediate time delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Select and relocate Rack through interactive Floor",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission02 clear unlocks Switch with exact economy",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission03 enters distributed Network bottleneck",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual GPU Waiting animation / Network failure retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Adding Compute alone leaves 300s / waiting increases",
+      "status": "PASS"
+    },
+    {
+      "name": "Refund is real economy / permits cost optimization",
+      "status": "PASS"
+    },
+    {
+      "name": "Switch Upgrade 16→64 reduces 300→120s / cost180",
+      "status": "PASS"
+    },
+    {
+      "name": "All Missions clear sequentially / Analyzer unlock /3 Stars",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay reward duplicate prevention through real controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Tech Tree persistent unlock / planned scope / learning preview",
+      "status": "PASS"
+    },
+    {
+      "name": "Game Text Backup captures World / reward ledger / model version",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid Backup rejected without state modification",
+      "status": "PASS"
+    },
+    {
+      "name": "Backup restore recovers inventory / Stars / tech / Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "Save and reload auto resumes game progress",
+      "status": "PASS"
+    },
+    {
+      "name": "Insufficient Credits disables purchase / upgrade access",
+      "status": "PASS"
+    },
+    {
+      "name": "Advanced Lab uses original graph and solver in embedded UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded graph edit still drives margin and Undo",
+      "status": "PASS"
+    },
+    {
+      "name": "Game changes never overwrite Engineering DB bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Lab preserves state across tab switch and actual reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupted Game Head restores LKG and preserves raw original",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit LKG rollback retains prior snapshot",
+      "status": "PASS"
+    },
+    {
+      "name": "Stale tab cannot overwrite new head",
+      "status": "PASS"
+    },
+    {
+      "name": "Future schema head is preserved / no automatic overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown App / Model versions remain read-only including semver0.10",
+      "status": "PASS"
+    },
+    {
+      "name": "Pending Simulation resumes after reload / no double reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Engineering backup handled separately with explicit instruction",
+      "status": "PASS"
+    },
+    {
+      "name": "Pre-existing native v0.2 Design / Graph / DB preserved when entering new Game",
+      "status": "PASS"
+    },
+    {
+      "name": "IndexedDB denied shows save failure and still permits text backup",
+      "status": "PASS"
+    },
+    {
+      "name": "WebGL unavailable: World / physics / Advanced2D remain functional",
+      "status": "PASS"
+    },
+    {
+      "name": "390px mobile first World / no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile full Mission01–03 / tap placement / retry / rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "320px all progression / backup / Tech buttons reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile lab switch / return and own scrolling accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero runtime network / page errors / unexpected console errors",
+      "status": "PASS"
+    },
+    {
+      "name": "Real Chromium process restart preserves game progress",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "networkRequests": []
+}

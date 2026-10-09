@@ -1,0 +1,94 @@
+{
+  "version": "0.4.0",
+  "script": "tests/v04-browser.cjs",
+  "cases": [
+    {
+      "name": "v04 defaults to novice Game World; Chapter2 and Lab remain gated/lazy",
+      "status": "PASS"
+    },
+    {
+      "name": "Original M01 runs in v04 at 30s, exact reward 100XP/120Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "Original M02 rack purchase/place gives 60s; original reward preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Original M03 fails network before upgrade, clears at 120s and unlocks M04",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 wrong build fails with Korean diagnosis and no reward",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 actual map clicks connect racks; switch click exposes physical ports/fabric",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 topology asymmetric uplink identifies actual 100G path bottleneck",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 retry and actual second uplink solve bottleneck without Compute bonus",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 missing endpoint disables fiber; 400G active link fails throughput objective",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 800G two-end installation activates fiber, actual power64W/cost150",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter2 rewards update visible wallet and real Technology Tree unlocks",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO ending describes rack space, panel density and serviceability honestly",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter2 gameplay leaves v03 primary save bytes unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Text Backup UI round-trip and checksum rejection preserve progress",
+      "status": "PASS"
+    },
+    {
+      "name": "Reload automatically resumes typed graph / receipts / no duplicate rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupted C2 Head recovers LKG; corrupt original is archived before next save",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Typed Graph Model blocks auto overwrite; explicit restore preserves original",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded Engineering Lab retains 3200Gb/s, 5.8dB, separate storage",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch 390px plays M04–06 using map port targets and guided buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch 320px plays M04–06 using map port targets and guided buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "Entire desktop/touch file:// flow performs no runtime HTTP and no page errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "aborted": false,
+  "remaining": null
+}
