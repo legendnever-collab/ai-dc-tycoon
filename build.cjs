@@ -4,3 +4,13 @@ cp.execFileSync(process.execPath,['node_modules/typescript/bin/tsc','-p','tsconf
 const js=esbuild.buildSync({entryPoints:['src/game-app.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
 const html=fs.readFileSync('src/game-shell.html','utf8').replace('/* STYLES */',fs.readFileSync('src/game-style.css','utf8')).replace('/* SCRIPT */',()=>js.replace(/<\/script/gi,'<\\/script'));
 fs.mkdirSync('../output-v03',{recursive:true});for(const path of ['../output-v03/ai-dc-tycoon-v0.3.html','ai-dc-tycoon-v0.3.html'])fs.writeFileSync(path,html);console.log('Built v0.3.0 offline: '+Buffer.byteLength(html)+' bytes; exact v0.2 Lab preserved');
+
+/* v0.4 additive distribution: never overwrite the v0.3 baseline executable. */
+const v04=esbuild.buildSync({entryPoints:['src/chapter2-app.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles;
+const js04=v04.find(f=>f.path.endsWith('.js'));if(!js04)throw Error('v0.4 JavaScript was not emitted');
+const html04=fs.readFileSync('src/game-shell-v04.html','utf8')
+ .replace('/* STYLES */',fs.readFileSync('src/game-style.css','utf8')+'\n'+fs.readFileSync('src/chapter2-style.css','utf8'))
+ .replace('/* SCRIPT */',()=>js04.text.replace(/<\\/script/gi,'<\\/script'));
+fs.mkdirSync('../output-v04',{recursive:true});
+for(const path of ['../output-v04/ai-dc-tycoon-v0.4.html','ai-dc-tycoon-v0.4.html'])fs.writeFileSync(path,html04);
+console.log('Built v0.4.0 Chapter 2 offline: '+Buffer.byteLength(html04)+' bytes; v0.3 executable retained');
