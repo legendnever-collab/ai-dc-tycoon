@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Gross: 16 × 2 × 100 = 3200 Gb/s",
+    "status": "PASS"
+  },
+  {
+    "name": "Net: Undefined efficiency stays Unknown",
+    "status": "PASS"
+  },
+  {
+    "name": "Net: 0.94 defined efficiency = 3008 Gb/s",
+    "status": "PASS"
+  },
+  {
+    "name": "Optical: 7.2 dB total, -4.2 dBm received, 5.8 dB margin",
+    "status": "PASS"
+  },
+  {
+    "name": "Mission: baseline simulated pass, never measurement verified",
+    "status": "PASS"
+  },
+  {
+    "name": "Mission: high score does not override power constraint",
+    "status": "PASS"
+  },
+  {
+    "name": "Mission: Unknown required loss produces incomplete, no pass",
+    "status": "PASS"
+  },
+  {
+    "name": "Passive gain rejected by design validation",
+    "status": "PASS"
+  },
+  {
+    "name": "Unit mismatch rejected before solver",
+    "status": "PASS"
+  },
+  {
+    "name": "Nonfinite / fractional fiber / zero efficiency rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Ideal splitter reduces branch power by 10log10(N)",
+    "status": "PASS"
+  },
+  {
+    "name": "Splitter source counting: 16 fibers / 4 fanout × 2λ",
+    "status": "PASS"
+  },
+  {
+    "name": "Unused splitter branches: ceil(17 / 4) × 2λ",
+    "status": "PASS"
+  },
+  {
+    "name": "Driver and TIA counts use separate Tx / Rx lanes",
+    "status": "PASS"
+  },
+  {
+    "name": "Power unit: W / Gb/s × 1000 = pJ/bit",
+    "status": "PASS"
+  },
+  {
+    "name": "Per-channel override changes worst margin only where specified",
+    "status": "PASS"
+  },
+  {
+    "name": "Per-channel negative passive loss rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Typed Port: compatible CW path accepted",
+    "status": "PASS"
+  },
+  {
+    "name": "Typed Port: optical/electrical mismatch rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Typed Port: CW/modulated mismatch rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Typed Port: duplicate input and reversed direction rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Typed Port: cycle rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Determinism: same input / seed gives identical JSON; input not mutated",
+    "status": "PASS"
+  },
+  {
+    "name": "Backup roundtrip includes archived design",
+    "status": "PASS"
+  },
+  {
+    "name": "Backup corruption rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Backup future schema and incompatible unit rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Migration schema 0 fixture accepted; invalid migration rejected",
+    "status": "PASS"
+  },
+  {
+    "name": "Evidence reviewed note is not numerical measurement verification",
+    "status": "PASS"
+  },
+  {
+    "name": "No calibration from geometric proximity",
+    "status": "PASS"
+  },
+  {
+    "name": "Unknown score dimensions do not get reweighted",
+    "status": "PASS"
+  }
+]

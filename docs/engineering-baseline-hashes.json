@@ -1,0 +1,22 @@
+{
+  "baseline": "Optical Engine Tycoon 0.2.0",
+  "baselineHTML_SHA256": "cf7cf6df5d83cc3927d3fb5cef2a320aa507c5c58a6e5d264cedc5c9d5c7947a",
+  "unchangedFiles": {
+    "src/core.ts": "d5b8ac312577f7cd6d38c0d5df224ca61a21f03b720b6d61c8431e273f040be7",
+    "src/graph.ts": "24202c196c224cb1a8e5f9b45e1526ea813a626ac6020f4cee17a78838087c94",
+    "src/schema.ts": "d25df9b9654ca97f8eb49c0d2c35e33b9653c0c162ce06f72319dae764b38146",
+    "src/app.ts": "9e894cb76e4acda10534863a15a2e43deded6d470575f1d08f0d894de3075d4b",
+    "src/builder.ts": "4471dcdf4c3e1498b1abf65292f003ffc8005d481e06e3d49cef71520312b073",
+    "src/scene.ts": "d65a3e2079a772017cae1c854f6d0acc71cae246e6f3289b961e43142fd071d2",
+    "src/storage.ts": "35d93dbfaf0ed3c8bea4e7987b0b7cc26bd483d4ad28e37233e7507ddfd4e3fa",
+    "src/legacy-core.ts": "3d7dc7bae1b78d5ac0d1a47028ef7d29e2cd9e20fbee3c6f96f5b8803a5f3993",
+    "src/legacy-storage.ts": "9455078eed808723708d566c664a6c9991f26637cfdc4cd5dbe2e75168472e8f",
+    "src/hash.ts": "dfcd3209cfd50a65af93f4f57ce11492fbe86f3b0bee94f885c7a13ec64ddfb7",
+    "src/shell.html": "3477978586a8e0c08dc660dd6f137326dbb5b69fafd47b87d49f89cc92529f8d",
+    "src/style.css": "043b90f47280771bc68506c384f7d3ab8801f5f03aed1e34d754e058facdb5e8",
+    "tests/golden.cjs": "943686605a2321e9dd5ff2268bd776b34bdb86dd4a71077e8450c637f1f576fe",
+    "tests/p2-golden.cjs": "8c805bc52eac36e7722f788991dceb804c740ef45881f4883c795b2994f1f310",
+    "tests/browser.cjs": "cd0cdb99966a380c0617953a608e49070e554079165da406ec791e5797e56b25",
+    "tests/p2-browser.cjs": "b0cd50cd6cd785bde7ec4650b4aa90c9f186999528210541c6e1b27a6d9c6955"
+  }
+}

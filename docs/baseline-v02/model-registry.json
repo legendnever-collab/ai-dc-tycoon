@@ -1,0 +1,22 @@
+{
+  "releaseVersion": "0.2.0",
+  "models": [
+    {
+      "id": "analytical-link-1.0.0",
+      "fidelity": "Analytical / Simplified",
+      "version": "1.0.0",
+      "status": "Uncalibrated",
+      "validity": "Constant dB losses; equal wavelength/channel input. No BER/OMA/TDECQ model. Rate 1–400G is arithmetic scope, not physical feasibility.",
+      "assumptions": "Launch is per wavelength per ELS output, before ideal fanout + excess loss. Same-wavelength Tx fibers are grouped by splitter fanout; ELS outputs = ceil(Tx fibers / fanout) × wavelengths. Unused branches in the last group consume optical allocation. Receiver sensitivity is average-power threshold at detector-side reference plane for the selected lane/rate; user must supply a compatible value."
+    },
+    {
+      "id": "graph-compact-1.0.0",
+      "version": "1.0.0",
+      "fidelity": "Analytical / Simplified",
+      "status": "Uncalibrated",
+      "validity": "Typed compact bundle graph; explicit single-stage splitter fanout, constant dB losses. Virtual channels are not physical device-level simulation.",
+      "assumptions": "Graph paths, FAU channel allocations, electrical connectivity and per-component loss determine results. Rx incoming power defaults to Unknown. No BER/EO/CMT/thermal-temperature model."
+    }
+  ],
+  "compiler": "graph-compiler-1.0.0"
+}

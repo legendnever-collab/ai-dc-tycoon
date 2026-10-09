@@ -1,0 +1,5 @@
+PASS 16 original Engineering source / test files retain exact baseline bytes
+PASS Embedded and native Lab executable retain authoritative SHA-256
+PASS Release / package / game / DC Model versions agree with separate Engineering version
+PASS Single HTML includes all code / CSS and blocks remote runtime resources
+PASS Game module import direction does not couple Solver to rendering or Lab graph

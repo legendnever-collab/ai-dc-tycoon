@@ -1,0 +1,33 @@
+{
+  "releaseVersion": "0.3.0",
+  "gameSchemaVersion": 1,
+  "dcModel": {
+    "id": "ai-dc-educational-1.0.0",
+    "version": "1.0.0",
+    "fidelity": "Analytical / Simplified",
+    "evidence": "Educational Assumption",
+    "deterministic": true,
+    "seedRole": "trace metadata; no stochastic process",
+    "formulas": [
+      "Independent: T=W/(N*c)",
+      "Distributed scale-out: T=max(W/(N*c), W*rho/B)",
+      "throughput=W/T",
+      "waiting=max(0,1-throughput/(N*c))"
+    ],
+    "unsupported": [
+      "scale-up-fabric",
+      "storage-io",
+      "collective-algorithm",
+      "vendor-gpu-benchmark",
+      "DC-power-cooling",
+      "DC-CPO-physics-bridge"
+    ]
+  },
+  "engineeringComponent": {
+    "version": "0.2.0",
+    "schemaVersion": 2,
+    "model": "graph-compact-1.0.0",
+    "compiler": "graph-compiler-1.0.0",
+    "baselinePreserved": true
+  }
+}

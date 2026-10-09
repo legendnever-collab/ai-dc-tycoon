@@ -1,4 +1,4 @@
-# Generated dependencies and local artifacts
+# Generated dependencies/build output — reproducible from package-lock.json
 node_modules/
 compiled/
 output-v03/

@@ -1,0 +1,27 @@
+{
+  "releaseVersion": "0.3.0",
+  "gameSchemaVersion": 1,
+  "dcModelVersion": "ai-dc-educational-1.0.0",
+  "engineeringVersion": "0.2.0",
+  "engineeringSchemaVersion": 2,
+  "htmlSHA256": "a209d8e2052550a1fa7d04d3846580d75e63796a765a00a770564694529104fd",
+  "engineeringHTML_SHA256": "cf7cf6df5d83cc3927d3fb5cef2a320aa507c5c58a6e5d264cedc5c9d5c7947a",
+  "regressionGroups": {
+    "Engineering / Legacy Golden": 30,
+    "Engineering / Graph Golden": 42,
+    "Engineering / Browser": 24,
+    "Engineering / P2 Browser": 26,
+    "Game / Golden": 65,
+    "Game / Browser": 45,
+    "Release / Integrity": 5,
+    "Release / Distribution": 3
+  },
+  "notTested": [
+    "real novice humans",
+    "corporate PC",
+    "Android hardware",
+    "hardware GPU",
+    "Safari",
+    "Firefox"
+  ]
+}

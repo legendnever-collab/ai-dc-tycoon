@@ -1,0 +1,65 @@
+PASS New Game resources / stable hardware / states
+PASS Fixture M01 / 1 racks / 16 Gb/s
+PASS Fixture M02 / 1 racks / 16 Gb/s
+PASS Fixture M02 / 2 racks / 16 Gb/s
+PASS Fixture M03 / 2 racks / 16 Gb/s
+PASS Fixture M03 / 3 racks / 16 Gb/s
+PASS Fixture M03 / 2 racks / 64 Gb/s
+PASS Fixture M03 / 3 racks / 64 Gb/s
+PASS Fixture M03 / 4 racks / 64 Gb/s
+PASS Locked Mission cannot start
+PASS Locked Rack cannot purchase
+PASS Locked Switch cannot upgrade
+PASS Run requires ACTIVE
+PASS Mission 01 clear rewards / next unlock / level
+PASS Mission01 missing Compute fails / repair / no duplicate reward
+PASS Prediction does not clear mission or award
+PASS Mission 02 fail then retry state
+PASS Purchase creates Inventory and charges Credits
+PASS Unplaced inventory survives backup
+PASS Placement activates capacity / halves independent completion
+PASS Occupied Slot rejects without mutation
+PASS Slot out of range rejected
+PASS Unknown Inventory rejects
+PASS Only one pending placement allowed
+PASS Mission 02 rewards / switch unlock exact
+PASS Compute only cannot cure network bottleneck
+PASS Network Upgrade improves 300→120 seconds
+PASS Network goal cannot pass with high score
+PASS Insufficient credits purchase refusal
+PASS Insufficient Switch budget refusal
+PASS Refund restores budget without duplicate cash
+PASS Starter Rack cannot refund
+PASS Hardware IDs are never reused after refund
+PASS Move conserves economy / selected slot capacity
+PASS Floor location does not affect numerical result
+PASS Pending run freezes hardware and mission
+PASS Same input / seed yields identical result and hash
+PASS Pure command leaves original state intact
+PASS Completion grants all rewards once / level4 / Analyzer
+PASS Replay never duplicates Credits / XP / receipts
+PASS Duplicate finish cannot award twice
+PASS Overspending trades Stars for time
+PASS Hints reveal progressively and cap at3
+PASS Full profile backup exact round trip
+PASS Pending simulation backup can finish deterministically
+PASS Unknown Compute input is Unknown and never passes
+PASS No placed racks produces Unknown
+PASS Zero Network does not divide by zero
+PASS Independent jobs ignore Network capacity
+PASS Scale-up unsupported returns Unknown
+PASS Storage I/O unsupported returns Unknown
+PASS Wrong workload fabric refuses numerical result
+PASS Invalid fixture ranges / NaN / negative rejected
+PASS Unknown Network input stays Unknown
+PASS Wrong simulator Model Version rejected
+PASS Backup integrity corruption rejected
+PASS Future Game Schema rejected preserving input text
+PASS Engineering Backup never coerced into Game Schema
+PASS Duplicate reward receipt rejected
+PASS Forged credits / XP / tech unlock rejected
+PASS Forged numerical result rejected
+PASS Forged hardware provenance cannot reward
+PASS Inventory duplicate / collision rejected
+PASS Award presentation must match actual reward
+PASS Engineering bridge is reference-only and not simulator input

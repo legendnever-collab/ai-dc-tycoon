@@ -1,0 +1,206 @@
+{
+  "releaseVersion": "0.2.0",
+  "schemaVersion": 2,
+  "parameters": {
+    "tx": {
+      "label": "Tx Fiber Count",
+      "unit": "fiber",
+      "min": 1,
+      "max": 64,
+      "step": 1,
+      "group": "architecture"
+    },
+    "rx": {
+      "label": "Rx Fiber Count",
+      "unit": "fiber",
+      "min": 1,
+      "max": 64,
+      "step": 1,
+      "group": "architecture"
+    },
+    "wavelengths": {
+      "label": "Wavelengths / Fiber",
+      "unit": "λ",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "group": "architecture"
+    },
+    "lane": {
+      "label": "Optical Lane Rate",
+      "unit": "Gb/s",
+      "min": 1,
+      "max": 400,
+      "step": 1,
+      "group": "architecture"
+    },
+    "efficiency": {
+      "label": "Coding / Protocol Efficiency",
+      "unit": "fraction",
+      "min": 0.01,
+      "max": 1,
+      "step": 0.001,
+      "group": "architecture"
+    },
+    "launch": {
+      "label": "Launch Power / Channel",
+      "unit": "dBm",
+      "min": -30,
+      "max": 25,
+      "step": 0.1,
+      "group": "link"
+    },
+    "modLoss": {
+      "label": "Modulator Insertion Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "link"
+    },
+    "split": {
+      "label": "Splitter Fanout / λ",
+      "unit": "branches",
+      "min": 1,
+      "max": 64,
+      "step": 1,
+      "group": "link"
+    },
+    "splitExcess": {
+      "label": "Splitter Excess Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "group": "link"
+    },
+    "mux": {
+      "label": "MUX Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "group": "link"
+    },
+    "alpha": {
+      "label": "Waveguide Propagation Loss",
+      "unit": "dB/cm",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "group": "link"
+    },
+    "length": {
+      "label": "Waveguide Optical Length",
+      "unit": "cm",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "group": "link"
+    },
+    "bendCount": {
+      "label": "Bend Count",
+      "unit": "count",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "link"
+    },
+    "bendLoss": {
+      "label": "Loss / Bend",
+      "unit": "dB",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "group": "link"
+    },
+    "crossingCount": {
+      "label": "Crossing Count",
+      "unit": "count",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "link"
+    },
+    "crossingLoss": {
+      "label": "Loss / Crossing",
+      "unit": "dB",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "group": "link"
+    },
+    "coupling": {
+      "label": "Tx Coupling Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "link"
+    },
+    "fiber": {
+      "label": "Fiber / Connector Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "link"
+    },
+    "receiver": {
+      "label": "Rx DEMUX / Interface Loss",
+      "unit": "dB",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "link"
+    },
+    "sensitivity": {
+      "label": "Receiver Sensitivity",
+      "unit": "dBm",
+      "min": -40,
+      "max": 10,
+      "step": 0.1,
+      "group": "link"
+    },
+    "wall": {
+      "label": "Laser Wall-plug Efficiency",
+      "unit": "fraction",
+      "min": 0.01,
+      "max": 1,
+      "step": 0.01,
+      "group": "power"
+    },
+    "driver": {
+      "label": "Driver Power / Tx Lane",
+      "unit": "W",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "group": "power"
+    },
+    "tia": {
+      "label": "TIA Power / Rx Lane",
+      "unit": "W",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "group": "power"
+    },
+    "control": {
+      "label": "Control Circuit Power",
+      "unit": "W",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "group": "power"
+    },
+    "thermal": {
+      "label": "Thermal Control Power",
+      "unit": "W",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "group": "power"
+    }
+  }
+}

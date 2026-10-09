@@ -1,0 +1,21 @@
+{
+  "rack": {
+    "type": "ComputeRack-T1",
+    "cost": 100,
+    "rate": 40,
+    "unit": "WU/s/rack",
+    "min": 1,
+    "max": 1000
+  },
+  "switch1": {
+    "type": "ScaleOutSwitch-T1",
+    "rate": 16,
+    "unit": "Gb/s aggregate"
+  },
+  "switch2": {
+    "type": "ScaleOutSwitch-T2",
+    "cost": 180,
+    "rate": 64,
+    "unit": "Gb/s aggregate"
+  }
+}

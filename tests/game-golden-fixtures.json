@@ -1,0 +1,91 @@
+{
+  "version": "0.3.0",
+  "modelVersion": "ai-dc-educational-1.0.0",
+  "fidelity": "Analytical / Simplified",
+  "evidence": "Educational Assumption",
+  "units": {
+    "work": "WU (synthetic Work Unit)",
+    "compute": "WU/s/rack",
+    "traffic": "Gbit/WU",
+    "network": "Gb/s aggregate",
+    "time": "s",
+    "cost": "Credits (game currency)"
+  },
+  "validRanges": {
+    "amountWU": [
+      1,
+      1000000000
+    ],
+    "rackCount": [
+      0,
+      8
+    ],
+    "computeWU_s": [
+      1,
+      1000
+    ],
+    "trafficGbWU": [
+      0,
+      100
+    ],
+    "networkGb_s": [
+      0,
+      10000
+    ]
+  },
+  "cases": [
+    {
+      "mission": "01",
+      "racks": 1,
+      "switchGb_s": 16,
+      "expectedSeconds": 30
+    },
+    {
+      "mission": "02",
+      "racks": 1,
+      "switchGb_s": 16,
+      "expectedSeconds": 120
+    },
+    {
+      "mission": "02",
+      "racks": 2,
+      "switchGb_s": 16,
+      "expectedSeconds": 60
+    },
+    {
+      "mission": "03",
+      "racks": 2,
+      "switchGb_s": 16,
+      "expectedSeconds": 300,
+      "waitingFraction": 0.6
+    },
+    {
+      "mission": "03",
+      "racks": 3,
+      "switchGb_s": 16,
+      "expectedSeconds": 300,
+      "waitingFraction": 0.7333333333333334
+    },
+    {
+      "mission": "03",
+      "racks": 2,
+      "switchGb_s": 64,
+      "expectedSeconds": 120,
+      "waitingFraction": 0
+    },
+    {
+      "mission": "03",
+      "racks": 3,
+      "switchGb_s": 64,
+      "expectedSeconds": 80,
+      "waitingFraction": 0
+    },
+    {
+      "mission": "03",
+      "racks": 4,
+      "switchGb_s": 64,
+      "expectedSeconds": 75,
+      "waitingFraction": 0.2
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+PASS Schema2 registry binds typed ports, units, models and geometry
+PASS Common golden: native Graph equals migrated Legacy metrics
+PASS Migration preserves all 27 inputs and original graph; source unchanged
+PASS Legacy parity: split, unused branches, overrides, Unknown, power failure
+PASS Schema1 backup and archives migrate with original provenance
+PASS Unsupported legacy split stays Legacy; approximate graph cannot PASS
+PASS Common graph multi-branch split parity including incomplete final group
+PASS Actual FAU allocation drives bandwidth independently of global display
+PASS Graph WDM allocation and coding efficiency preserve units
+PASS Tx/Rx allocation is separate; unknown incoming Rx never fabricated
+PASS Loss custom edit affects only declared stage
+PASS Reference plane ledger identifies actual splitter output and node stage
+PASS Missing optical connection fails compilation and mission
+PASS Missing drive path fails despite complete optical path
+PASS Rx TIA/interface missing fails topology
+PASS Wrong kind, signal, flow and reversed port rejected
+PASS Duplicate source fanout and occupied target rejected
+PASS Cycle detected both during connect and compilation
+PASS Unreachable engineering component blocks PASS; mechanical allowed
+PASS Duplicate fiber/wavelength allocation rejected
+PASS Splitter conservation and unique source-group electrical power
+PASS Passive negative IL, negative splitter excess, WPE zero rejected
+PASS Cosmetic placement, dimensions and rotation leave all metrics unchanged
+PASS Physical routing mm to cm and alpha maps only waveguide loss
+PASS Declared polyline waypoint and physical-routing disabled fallback
+PASS Missing physical anchor fails; cosmetic manual length stays usable
+PASS Coupler proximity never calibrates coupling efficiency
+PASS Unknown Tx allocation keeps topology valid but all aggregate Tx metrics Unknown
+PASS Unknown branch allocation never reports partial known bandwidth
+PASS Unknown Rx allocation makes total power unknown independently of Tx
+PASS Unknown loss and efficiency never inferred from visual path
+PASS Dependency list maps actual global/custom changes to channels
+PASS Deterministic result, compiler hash, unchanged input and fixed seed
+PASS SHA-256 exact UTF8 vectors including Korean and long strings
+PASS Schema2 backup preserves graph, geometry, version, archive and undo
+PASS Undo/Redo snapshot restores physical mode, topology and numerical inputs
+PASS Malformed units, duplicate IDs, typed-port tampering and undo rejected
+PASS Native corrupted/future-schema backup rejected without input mutation
+PASS Multipart backup roundtrip accepts reordered complete parts
+PASS Multipart missing/duplicate/tampered parts rejected
+PASS Evidence on global parameters cannot certify custom unreviewed models
+PASS Invalid Graph cannot pass even Sandbox or high global scalar metrics

@@ -1,0 +1,71 @@
+{
+  "01": {
+    "id": "01",
+    "title": "First AI Workload",
+    "chapter": "연산의 시작",
+    "event": "첫 AI Job이 도착했습니다. Compute Rack은 작업을 처리하는 서버 묶음입니다. 준비된 Rack으로 첫 결과를 만들어 보세요.",
+    "objective": "AI Job을 35초 안에 완료하세요",
+    "kind": "independent",
+    "workWU": 1200,
+    "trafficGbWU": 0,
+    "targetSeconds": 35,
+    "minRacks": 1,
+    "reward": {
+      "xp": 100,
+      "credits": 120
+    },
+    "efficientInvestment": 0,
+    "hints": [
+      "준비된 Rack 한 대가 첫 Job을 처리할 수 있습니다.",
+      "Run Simulation을 누르면 Job 진행과 완료 시간을 확인합니다.",
+      "연산량 1,200 WU ÷ Rack 처리량 40 WU/s = 30초입니다."
+    ],
+    "lesson": "Compute Capacity는 단위 시간에 처리할 수 있는 작업량입니다. 첫 AI Job을 완료했습니다."
+  },
+  "02": {
+    "id": "02",
+    "title": "Expand Your Compute Racks",
+    "chapter": "작업을 나눠 처리하기",
+    "event": "독립적인 AI 작업 네 개가 밀려왔습니다. Rack 한 대는 120초가 걸립니다. Compute Rack을 구매해 빈 Floor에 배치하고 작업을 나눠 주세요.",
+    "objective": "Rack을 2대 이상 배치하고 65초 안에 완료하세요",
+    "kind": "independent",
+    "workWU": 4800,
+    "trafficGbWU": 0,
+    "targetSeconds": 65,
+    "minRacks": 2,
+    "reward": {
+      "xp": 150,
+      "credits": 140
+    },
+    "efficientInvestment": 100,
+    "hints": [
+      "지금의 병목은 Compute입니다. 작업을 나눌 연산 자원을 살펴보세요.",
+      "Rack을 구매한 뒤 Floor의 빈 자리에 놓으면 Capacity가 늘어납니다.",
+      "2대 × 40 WU/s로 4,800 WU를 나누면 60초입니다. 더 많은 Rack은 빠르지만 Credits를 더 씁니다."
+    ],
+    "lesson": "독립 작업은 균등 분배할 수 있을 때 Compute 증설로 완료 시간이 줄어듭니다."
+  },
+  "03": {
+    "id": "03",
+    "title": "Network Bottleneck",
+    "chapter": "GPU가 데이터를 기다리는 이유",
+    "event": "이번 Job은 여러 Rack이 데이터를 교환하는 Distributed Training입니다. Rack은 충분해 보이는데 GPU가 기다립니다. 장비를 늘리기 전에 병목을 진단하세요.",
+    "objective": "Rack 2대 이상으로 Training Job을 125초 안에 완료하세요",
+    "kind": "distributed-training",
+    "workWU": 9600,
+    "trafficGbWU": 0.5,
+    "targetSeconds": 125,
+    "minRacks": 2,
+    "reward": {
+      "xp": 250,
+      "credits": 200
+    },
+    "efficientInvestment": 280,
+    "hints": [
+      "GPU Waiting이 높습니다. 대기 중인 Rack과 Network 표시를 비교하세요.",
+      "Compute Rack을 더 사도 Network가 처리할 수 있는 데이터량은 그대로입니다.",
+      "Switch를 16→64 Gb/s로 Upgrade해 보세요. 예산이 부족하면 추가 Rack을 반환할 수 있습니다."
+    ],
+    "lesson": "Scale-out은 더 큰 Cluster로 작업을 확장하는 Network 연결입니다. Compute와 Network를 함께 맞춰야 증설 효과가 납니다."
+  }
+}

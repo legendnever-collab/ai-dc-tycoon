@@ -1,0 +1,63 @@
+{
+  "appVersion": "0.3.0",
+  "gameSchemaVersion": 1,
+  "id": "release-fixture",
+  "revision": 0,
+  "seed": 20261009,
+  "credits": 160,
+  "xp": 0,
+  "currentMission": "01",
+  "world": {
+    "racks": [
+      {
+        "id": "rack-001",
+        "type": "ComputeRack-T1",
+        "slot": 0,
+        "purchased": false
+      }
+    ],
+    "switch": {
+      "id": "switch-001",
+      "type": "ScaleOutSwitch-T1"
+    }
+  },
+  "nextRackId": 2,
+  "missions": {
+    "01": {
+      "phase": "AVAILABLE",
+      "cleared": false,
+      "attempts": 0,
+      "bestStars": 0,
+      "hintStage": 0,
+      "pending": null,
+      "last": null,
+      "award": null
+    },
+    "02": {
+      "phase": "LOCKED",
+      "cleared": false,
+      "attempts": 0,
+      "bestStars": 0,
+      "hintStage": 0,
+      "pending": null,
+      "last": null,
+      "award": null
+    },
+    "03": {
+      "phase": "LOCKED",
+      "cleared": false,
+      "attempts": 0,
+      "bestStars": 0,
+      "hintStage": 0,
+      "pending": null,
+      "last": null,
+      "award": null
+    }
+  },
+  "rewards": [],
+  "unlocked": [
+    "starter"
+  ],
+  "selectedHardwareId": null,
+  "history": []
+}

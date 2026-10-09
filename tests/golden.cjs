@@ -1,0 +1,38 @@
+const {newDesign,solve,validateDesign,connectionError,defaultGraph,MODEL}=require('../compiled/legacy-core');
+const {backupText,parseBackup,digest}=require('../compiled/legacy-storage');
+const fs=require('fs'),assert=require('node:assert/strict');
+const cases=[];function test(name,fn){try{fn();cases.push({name,status:'PASS'});}catch(e){cases.push({name,status:'FAIL',error:String(e)});}}
+function eq(a,b){assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);}
+const base=newDesign();base.id='golden-v0.1';
+test('Gross: 16 × 2 × 100 = 3200 Gb/s',()=>eq(solve(base).gross,3200));
+test('Net: Undefined efficiency stays Unknown',()=>assert.equal(solve(base).net,null));
+test('Net: 0.94 defined efficiency = 3008 Gb/s',()=>{const d=structuredClone(base);d.parameters.efficiency.value=.94;eq(solve(d).net,3008);});
+test('Optical: 7.2 dB total, -4.2 dBm received, 5.8 dB margin',()=>{const r=solve(base);eq(r.losses.reduce((s,l)=>s+l.value,0),7.2);eq(r.received,-4.2);eq(r.margin,5.8);});
+test('Mission: baseline simulated pass, never measurement verified',()=>{assert.equal(solve(base).status,'SIMULATED PASS');assert.equal(solve(base).evidenceCoverage,0);assert.ok(!JSON.stringify(solve(base)).includes('MEASUREMENT VERIFIED'));});
+test('Mission: high score does not override power constraint',()=>{const d=structuredClone(base);d.parameters.control.value=30;assert.equal(solve(d).status,'FAIL');assert.ok(solve(d).score>50);});
+test('Mission: Unknown required loss produces incomplete, no pass',()=>{const d=structuredClone(base);d.parameters.coupling.value=null;assert.equal(solve(d).status,'INCOMPLETE');assert.equal(solve(d).margin,null);});
+test('Passive gain rejected by design validation',()=>{const d=structuredClone(base);d.parameters.modLoss.value=-1;assert.throws(()=>solve(d));});
+test('Unit mismatch rejected before solver',()=>{const d=structuredClone(base);d.parameters.length.unit='mm';assert.throws(()=>solve(d));});
+test('Nonfinite / fractional fiber / zero efficiency rejected',()=>{for(const [k,v] of [['launch',Infinity],['tx',1.5],['efficiency',0]]){const d=structuredClone(base);d.parameters[k].value=v;assert.throws(()=>solve(d));}});
+test('Ideal splitter reduces branch power by 10log10(N)',()=>{const d=structuredClone(base);d.parameters.split.value=4;eq(solve(d).received,solve(base).received-10*Math.log10(4));});
+test('Splitter source counting: 16 fibers / 4 fanout × 2λ',()=>{const d=structuredClone(base);d.parameters.split.value=4;eq(solve(d).powerBreakdown[0].value,8*Math.pow(10,.3)/1000/.2);});
+test('Unused splitter branches: ceil(17 / 4) × 2λ',()=>{const d=structuredClone(base);d.parameters.tx.value=17;d.parameters.split.value=4;eq(solve(d).powerBreakdown[0].value,10*Math.pow(10,.3)/1000/.2);});
+test('Driver and TIA counts use separate Tx / Rx lanes',()=>{const d=structuredClone(base);d.parameters.rx.value=8;const r=solve(d);eq(r.powerBreakdown[1].value,9.6);eq(r.powerBreakdown[2].value,3.2);eq(r.rxGross,1600);eq(r.gross,3200);});
+test('Power unit: W / Gb/s × 1000 = pJ/bit',()=>{const r=solve(base);eq(r.power,17.81924197039502);eq(r.epb,r.power/3200*1000);});
+test('Per-channel override changes worst margin only where specified',()=>{const d=structuredClone(base);d.channelOverrides['F3-L2']={coupling:5.5};const r=solve(d);eq(r.channels.find(c=>c.id==='F3-L2').margin,1.8);eq(r.channels.find(c=>c.id==='F3-L1').margin,5.8);eq(r.margin,1.8);assert.equal(r.status,'FAIL');});
+test('Per-channel negative passive loss rejected',()=>{const d=structuredClone(base);d.channelOverrides['F1-L1']={coupling:-.1};assert.throws(()=>solve(d));});
+test('Typed Port: compatible CW path accepted',()=>{const g=defaultGraph();g.connections=[];assert.equal(connectionError(g,{from:{component:'els',port:'out'},to:{component:'mod',port:'in'}}),null);});
+test('Typed Port: optical/electrical mismatch rejected',()=>{const g=defaultGraph();g.connections=[];assert.ok(connectionError(g,{from:{component:'pd',port:'out'},to:{component:'mod',port:'in'}}));});
+test('Typed Port: CW/modulated mismatch rejected',()=>{const g=defaultGraph();g.connections=[];assert.ok(connectionError(g,{from:{component:'els',port:'out'},to:{component:'fau',port:'in'}}));});
+test('Typed Port: duplicate input and reversed direction rejected',()=>{const g=defaultGraph();assert.ok(connectionError(g,g.connections[0]));assert.ok(connectionError(g,{from:{component:'mod',port:'in'},to:{component:'els',port:'out'}}));});
+test('Typed Port: cycle rejected',()=>{const g=defaultGraph();g.connections=[];g.components=g.components.filter(c=>['wg','fau'].includes(c.id));g.connections.push({from:{component:'wg',port:'out'},to:{component:'fau',port:'in'}});assert.ok(connectionError(g,{from:{component:'fau',port:'out'},to:{component:'wg',port:'in'}}));});
+test('Determinism: same input / seed gives identical JSON; input not mutated',()=>{const before=JSON.stringify(base);assert.deepEqual(solve(base),solve(base));assert.equal(JSON.stringify(base),before);});
+test('Backup roundtrip includes archived design',()=>{const archive=structuredClone(base);archive.revision=1;const r=parseBackup(backupText(base,[archive]));assert.deepEqual(r.design,base);assert.deepEqual(r.archive,[archive]);});
+test('Backup corruption rejected',()=>{const text=backupText(base).replace('golden-v0.1','golden-v0.X');assert.throws(()=>parseBackup(text));});
+test('Backup future schema and incompatible unit rejected',()=>{const e=JSON.parse(backupText(base));e.schemaVersion=2;assert.throws(()=>parseBackup(JSON.stringify(e)));const d=structuredClone(base);d.parameters.driver.unit='mW';assert.throws(()=>parseBackup(backupText(d)));});
+test('Migration schema 0 fixture accepted; invalid migration rejected',()=>{const r=parseBackup(JSON.stringify({format:'OpticalEngineTycoon',schemaVersion:0,name:'legacy',parameters:{tx:8,wavelengths:4,lane:100}}));assert.equal(r.migrated,true);eq(solve(r.design).gross,3200);assert.throws(()=>parseBackup(JSON.stringify({format:'OpticalEngineTycoon',schemaVersion:0,parameters:{tx:-1}})));});
+test('Evidence reviewed note is not numerical measurement verification',()=>{const d=structuredClone(base);for(const p of Object.values(d.parameters)){p.evidence='Accepted';p.source='measurement supplied by user';}assert.equal(solve(d).status,'SIMULATED PASS');eq(solve(d).evidenceCoverage,1);});
+test('No calibration from geometric proximity',()=>{const d=structuredClone(base);d.graph.components[0].geometry.x=99;const a=solve(base),b=solve(d);eq(a.margin,b.margin);eq(a.power,b.power);});
+test('Unknown score dimensions do not get reweighted',()=>{const r=solve(base);assert.equal(r.scoreParts.find(x=>x.name==='Yield').known,false);assert.equal(r.scoreParts.find(x=>x.name==='Area').points,0);assert.ok(r.score<85);});
+fs.mkdirSync('evidence',{recursive:true});fs.writeFileSync('tests/legacy-golden-fixtures.json',JSON.stringify({version:'0.1.0',modelVersion:MODEL,base,expected:{gross:3200,net:null,received:-4.2,margin:5.8,power:17.81924197039502,status:'SIMULATED PASS'},schema0:{format:'OpticalEngineTycoon',schemaVersion:0,name:'legacy',parameters:{tx:8,wavelengths:4,lane:100}}},null,2));
+fs.writeFileSync('evidence/legacy-golden-results.json',JSON.stringify(cases,null,2));console.log(cases.map(c=>`${c.status} ${c.name}${c.error?' '+c.error:''}`).join('\n'));if(cases.some(c=>c.status==='FAIL'))process.exit(1);

@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@types/three": "0.180.0",
+    "esbuild": "0.25.10",
+    "three": "0.180.0",
+    "typescript": "5.9.3"
+  },
+  "name": "ai-data-center-tycoon",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Offline educational AI DC game + preserved Advanced Photonics Engineering Lab",
+  "scripts": {
+    "build": "node build.cjs",
+    "test:golden": "node tests/golden.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:p2": "node tests/p2-golden.cjs",
+    "test:p2-browser": "node tests/p2-browser.cjs",
+    "test:game": "node tests/game-golden.cjs",
+    "test:game-browser": "node tests/game-browser.cjs"
+  }
+}

@@ -1,0 +1,30 @@
+PASS Gross: 16 × 2 × 100 = 3200 Gb/s
+PASS Net: Undefined efficiency stays Unknown
+PASS Net: 0.94 defined efficiency = 3008 Gb/s
+PASS Optical: 7.2 dB total, -4.2 dBm received, 5.8 dB margin
+PASS Mission: baseline simulated pass, never measurement verified
+PASS Mission: high score does not override power constraint
+PASS Mission: Unknown required loss produces incomplete, no pass
+PASS Passive gain rejected by design validation
+PASS Unit mismatch rejected before solver
+PASS Nonfinite / fractional fiber / zero efficiency rejected
+PASS Ideal splitter reduces branch power by 10log10(N)
+PASS Splitter source counting: 16 fibers / 4 fanout × 2λ
+PASS Unused splitter branches: ceil(17 / 4) × 2λ
+PASS Driver and TIA counts use separate Tx / Rx lanes
+PASS Power unit: W / Gb/s × 1000 = pJ/bit
+PASS Per-channel override changes worst margin only where specified
+PASS Per-channel negative passive loss rejected
+PASS Typed Port: compatible CW path accepted
+PASS Typed Port: optical/electrical mismatch rejected
+PASS Typed Port: CW/modulated mismatch rejected
+PASS Typed Port: duplicate input and reversed direction rejected
+PASS Typed Port: cycle rejected
+PASS Determinism: same input / seed gives identical JSON; input not mutated
+PASS Backup roundtrip includes archived design
+PASS Backup corruption rejected
+PASS Backup future schema and incompatible unit rejected
+PASS Migration schema 0 fixture accepted; invalid migration rejected
+PASS Evidence reviewed note is not numerical measurement verification
+PASS No calibration from geometric proximity
+PASS Unknown score dimensions do not get reweighted

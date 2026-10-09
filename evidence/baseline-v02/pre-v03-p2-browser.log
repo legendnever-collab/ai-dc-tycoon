@@ -1,0 +1,52 @@
+RUN Real WebGL2 Three.js draws bundled offline scene
+PASS Real WebGL2 Three.js draws bundled offline scene
+RUN 2D selection synchronizes Inspector and 3D selection
+PASS 2D selection synchronizes Inspector and 3D selection
+RUN Component edit drives physics, delta and Undo/Redo
+PASS Component edit drives physics, delta and Undo/Redo
+RUN Library orphan blocks mission; delete, undo and redo work
+PASS Library orphan blocks mission; delete, undo and redo work
+RUN Delete and click-to-connect bypass changes actual path loss
+PASS Delete and click-to-connect bypass changes actual path loss
+RUN Wrong signal port reports endpoints and preserves graph
+PASS Wrong signal port reports endpoints and preserves graph
+RUN 2D zoom, pan, fit and node drag preserve physics
+PASS 2D zoom, pan, fit and node drag preserve physics
+RUN Tx/Rx trace follows separate channels and loss annotations
+PASS Tx/Rx trace follows separate channels and loss annotations
+RUN Build a complete Tx/Rx engine from empty Graph using Library and ports
+PASS Build a complete Tx/Rx engine from empty Graph using Library and ports
+RUN 2D drag-to-connect reconnects actual typed port
+PASS 2D drag-to-connect reconnects actual typed port
+RUN 3D raycast selection synchronizes 2D and Inspector
+PASS 3D raycast selection synchronizes 2D and Inspector
+RUN 3D rotate, zoom and right-drag pan modify camera only
+PASS 3D rotate, zoom and right-drag pan modify camera only
+RUN 3D Move tool updates mm geometry with Cosmetic metrics unchanged
+PASS 3D Move tool updates mm geometry with Cosmetic metrics unchanged
+RUN Mechanical Library placement is visible in 3D and preserves physics
+PASS Mechanical Library placement is visible in 3D and preserves physics
+RUN Physical Routing maps declared anchors and flags missing anchor
+PASS Physical Routing maps declared anchors and flags missing anchor
+RUN Graph, geometry, undo and selection persist after reload
+PASS Graph, geometry, undo and selection persist after reload
+RUN Multipart backup UI roundtrip retains complete graph
+PASS Multipart backup UI roundtrip retains complete graph
+RUN Report includes mode, compiler hash, reference planes and model versions
+PASS Report includes mode, compiler hash, reference planes and model versions
+RUN Missing native Head restores Last-Known-Good instead of fresh design
+PASS Missing native Head restores Last-Known-Good instead of fresh design
+RUN 390px mobile click-to-connect compiles actual Optical Path
+PASS 390px mobile click-to-connect compiles actual Optical Path
+RUN 390/320px mobile placement, undo/redo, split and Inspector accessible
+PASS 390/320px mobile placement, undo/redo, split and Inspector accessible
+RUN WebGL disabled retains working 2D, solver and persistence
+PASS WebGL disabled retains working 2D, solver and persistence
+RUN Automatic Schema1 DB migration preserves metrics, archives and original DB
+PASS Automatic Schema1 DB migration preserves metrics, archives and original DB
+RUN Legacy Graph activation parity and original Rollback work
+PASS Legacy Graph activation parity and original Rollback work
+RUN Future-schema native head remains unchanged after rejected save
+PASS Future-schema native head remains unchanged after rejected save
+RUN All native flows execute offline with zero runtime error or HTTP request
+PASS All native flows execute offline with zero runtime error or HTTP request

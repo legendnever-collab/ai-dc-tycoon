@@ -1,0 +1,91 @@
+RUN Offline file startup / Game World default / novice framing
+PASS Offline file startup / Game World default / novice framing
+RUN Locked Missions inaccessible before progression
+PASS Locked Missions inaccessible before progression
+RUN First Mission enters ACTIVE in one major click
+PASS First Mission enters ACTIVE in one major click
+RUN Second click runs deterministic Job with visible progress
+PASS Second click runs deterministic Job with visible progress
+RUN Mission01 clear first reward / next action visible
+PASS Mission01 clear first reward / next action visible
+RUN Mission01 replay can fail missing Compute / repair without reward duplication
+PASS Mission01 replay can fail missing Compute / repair without reward duplication
+RUN Mission02 independent 120s baseline / next unlock
+PASS Mission02 independent 120s baseline / next unlock
+RUN Actual Mission02 failure / no reward / retry explanation
+PASS Actual Mission02 failure / no reward / retry explanation
+RUN Purchase is inventory until floor placement
+PASS Purchase is inventory until floor placement
+RUN Click-to-place changes capacity / immediate time delta
+PASS Click-to-place changes capacity / immediate time delta
+RUN Select and relocate Rack through interactive Floor
+PASS Select and relocate Rack through interactive Floor
+RUN Mission02 clear unlocks Switch with exact economy
+PASS Mission02 clear unlocks Switch with exact economy
+RUN Mission03 enters distributed Network bottleneck
+PASS Mission03 enters distributed Network bottleneck
+RUN Actual GPU Waiting animation / Network failure retry
+PASS Actual GPU Waiting animation / Network failure retry
+RUN Adding Compute alone leaves 300s / waiting increases
+PASS Adding Compute alone leaves 300s / waiting increases
+RUN Refund is real economy / permits cost optimization
+PASS Refund is real economy / permits cost optimization
+RUN Switch Upgrade 16→64 reduces 300→120s / cost180
+PASS Switch Upgrade 16→64 reduces 300→120s / cost180
+RUN All Missions clear sequentially / Analyzer unlock /3 Stars
+PASS All Missions clear sequentially / Analyzer unlock /3 Stars
+RUN Replay reward duplicate prevention through real controls
+PASS Replay reward duplicate prevention through real controls
+RUN Tech Tree persistent unlock / planned scope / learning preview
+PASS Tech Tree persistent unlock / planned scope / learning preview
+RUN Game Text Backup captures World / reward ledger / model version
+PASS Game Text Backup captures World / reward ledger / model version
+RUN Invalid Backup rejected without state modification
+PASS Invalid Backup rejected without state modification
+RUN Backup restore recovers inventory / Stars / tech / Credits
+PASS Backup restore recovers inventory / Stars / tech / Credits
+RUN Save and reload auto resumes game progress
+PASS Save and reload auto resumes game progress
+RUN Insufficient Credits disables purchase / upgrade access
+PASS Insufficient Credits disables purchase / upgrade access
+RUN Advanced Lab uses original graph and solver in embedded UI
+PASS Advanced Lab uses original graph and solver in embedded UI
+RUN Embedded graph edit still drives margin and Undo
+PASS Embedded graph edit still drives margin and Undo
+RUN Game changes never overwrite Engineering DB bytes
+PASS Game changes never overwrite Engineering DB bytes
+RUN Lab preserves state across tab switch and actual reload
+PASS Lab preserves state across tab switch and actual reload
+RUN Corrupted Game Head restores LKG and preserves raw original
+PASS Corrupted Game Head restores LKG and preserves raw original
+RUN Explicit LKG rollback retains prior snapshot
+PASS Explicit LKG rollback retains prior snapshot
+RUN Stale tab cannot overwrite new head
+PASS Stale tab cannot overwrite new head
+RUN Future schema head is preserved / no automatic overwrite
+PASS Future schema head is preserved / no automatic overwrite
+RUN Unknown App / Model versions remain read-only including semver0.10
+PASS Unknown App / Model versions remain read-only including semver0.10
+RUN Pending Simulation resumes after reload / no double reward
+PASS Pending Simulation resumes after reload / no double reward
+RUN Engineering backup handled separately with explicit instruction
+PASS Engineering backup handled separately with explicit instruction
+RUN Pre-existing native v0.2 Design / Graph / DB preserved when entering new Game
+PASS Pre-existing native v0.2 Design / Graph / DB preserved when entering new Game
+RUN IndexedDB denied shows save failure and still permits text backup
+PASS IndexedDB denied shows save failure and still permits text backup
+RUN WebGL unavailable: World / physics / Advanced2D remain functional
+PASS WebGL unavailable: World / physics / Advanced2D remain functional
+RUN 390px mobile first World / no horizontal overflow
+PASS 390px mobile first World / no horizontal overflow
+RUN Mobile full Mission01–03 / tap placement / retry / rewards
+PASS Mobile full Mission01–03 / tap placement / retry / rewards
+RUN 320px all progression / backup / Tech buttons reachable
+PASS 320px all progression / backup / Tech buttons reachable
+RUN Mobile lab switch / return and own scrolling accessible
+PASS Mobile lab switch / return and own scrolling accessible
+RUN Zero runtime network / page errors / unexpected console errors
+PASS Zero runtime network / page errors / unexpected console errors
+RUN Real Chromium process restart preserves game progress
+PASS Real Chromium process restart preserves game progress
+GAME BROWSER: 45 PASS

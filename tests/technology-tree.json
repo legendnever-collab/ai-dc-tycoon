@@ -1,0 +1,66 @@
+[
+  {
+    "id": "starter",
+    "name": "Compute Rack T1",
+    "needXP": 0,
+    "requires": null,
+    "kind": "starter",
+    "description": "첫 Job을 위한 기본 Rack 1대"
+  },
+  {
+    "id": "rack-purchase",
+    "name": "Compute 확장",
+    "needXP": 100,
+    "requires": "01",
+    "kind": "build",
+    "description": "Rack 구매·배치·재배치·반환"
+  },
+  {
+    "id": "switch-upgrade",
+    "name": "Scale-out Switch",
+    "needXP": 250,
+    "requires": "02",
+    "kind": "upgrade",
+    "description": "16→64 Gb/s Switch Upgrade"
+  },
+  {
+    "id": "network-analyzer",
+    "name": "Network Analyzer",
+    "needXP": 500,
+    "requires": "03",
+    "kind": "analysis",
+    "description": "Compute/Network 시간·GPU Waiting 분석"
+  },
+  {
+    "id": "pluggable-preview",
+    "name": "Pluggable Optics",
+    "needXP": 500,
+    "requires": "03",
+    "kind": "learning",
+    "description": "다음 Chapter의 광연결 학습 Preview"
+  },
+  {
+    "id": "cpo",
+    "name": "CPO",
+    "needXP": null,
+    "requires": null,
+    "kind": "planned",
+    "description": "Switch와 Optical Engine의 가까운 결합 · 후속 Chapter"
+  },
+  {
+    "id": "optical-engine",
+    "name": "Optical Engine",
+    "needXP": null,
+    "requires": null,
+    "kind": "planned",
+    "description": "광원·Modulator·Receiver · 후속 Chapter"
+  },
+  {
+    "id": "photonic-substrate",
+    "name": "Photonic Substrate",
+    "needXP": null,
+    "requires": null,
+    "kind": "planned",
+    "description": "기판 위 광경로·정렬·검증 · 후속 Chapter"
+  }
+]

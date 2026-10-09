@@ -1,0 +1,72 @@
+RUN file:// offline startup: JS solver and IndexedDB available
+PASS file:// offline startup: JS solver and IndexedDB available
+RUN Parameter editing and mission fail visibly update
+PASS Parameter editing and mission fail visibly update
+RUN Save / reload / auto resume preserves design and revision
+PASS Save / reload / auto resume preserves design and revision
+RUN Template challenge: arithmetic 3.2T + assumptions warning
+PASS Template challenge: arithmetic 3.2T + assumptions warning
+RUN Text backup contains current and archived revisions
+PASS Text backup contains current and archived revisions
+RUN Paste restore success applies complete saved inputs
+PASS Paste restore success applies complete saved inputs
+RUN Restore corruption rollback preserves current state
+PASS Restore corruption rollback preserves current state
+RUN Unknown coding efficiency and loss are never PASS values
+PASS Unknown coding efficiency and loss are never PASS values
+RUN Invalid passive loss kept out of active physics state
+PASS Invalid passive loss kept out of active physics state
+RUN Channel override controls worst-link fail
+PASS Channel override controls worst-link fail
+RUN Before / after comparison captures independent result
+PASS Before / after comparison captures independent result
+RUN Evidence never grants Measurement Verified label
+PASS Evidence never grants Measurement Verified label
+RUN Report contains version/model/input/seed/channel trace
+PASS Report contains version/model/input/seed/channel trace
+RUN Corrupt head automatically recovers LKG on reload
+PASS Corrupt head automatically recovers LKG on reload
+RUN Schema 0 paste migration succeeds
+PASS Schema 0 paste migration succeeds
+RUN Sandbox remains separate from campaign pass
+PASS Sandbox remains separate from campaign pass
+RUN Same file path in a second browser page auto resumes
+PASS Same file path in a second browser page auto resumes
+RUN Concurrent stale tab cannot overwrite newer head
+PASS Concurrent stale tab cannot overwrite newer head
+RUN Restoring and editing older branch preserves all prior snapshots
+PASS Restoring and editing older branch preserves all prior snapshots
+RUN Browser runtime errors / network request count = zero
+PASS Browser runtime errors / network request count = zero
+RUN 390px mobile: no viewport overflow and all controls reachable
+PASS 390px mobile: no viewport overflow and all controls reachable
+RUN 320px compact viewport keeps actions and inspector accessible
+PASS 320px compact viewport keeps actions and inspector accessible
+RUN IndexedDB failure is visible and text backup still works
+PASS IndexedDB failure is visible and text backup still works
+RUN Same profile survives actual Chromium process restart
+PASS Same profile survives actual Chromium process restart
+PASS file:// offline startup: JS solver and IndexedDB available
+PASS Parameter editing and mission fail visibly update
+PASS Save / reload / auto resume preserves design and revision
+PASS Template challenge: arithmetic 3.2T + assumptions warning
+PASS Text backup contains current and archived revisions
+PASS Paste restore success applies complete saved inputs
+PASS Restore corruption rollback preserves current state
+PASS Unknown coding efficiency and loss are never PASS values
+PASS Invalid passive loss kept out of active physics state
+PASS Channel override controls worst-link fail
+PASS Before / after comparison captures independent result
+PASS Evidence never grants Measurement Verified label
+PASS Report contains version/model/input/seed/channel trace
+PASS Corrupt head automatically recovers LKG on reload
+PASS Schema 0 paste migration succeeds
+PASS Sandbox remains separate from campaign pass
+PASS Same file path in a second browser page auto resumes
+PASS Concurrent stale tab cannot overwrite newer head
+PASS Restoring and editing older branch preserves all prior snapshots
+PASS Browser runtime errors / network request count = zero
+PASS 390px mobile: no viewport overflow and all controls reachable
+PASS 320px compact viewport keeps actions and inspector accessible
+PASS IndexedDB failure is visible and text backup still works
+PASS Same profile survives actual Chromium process restart

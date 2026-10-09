@@ -1,0 +1,572 @@
+{
+  "releaseVersion": "0.2.0",
+  "schemaVersion": 2,
+  "modelVersions": {
+    "graph": "graph-compact-1.0.0",
+    "legacy": "analytical-link-1.0.0",
+    "compiler": "graph-compiler-1.0.0"
+  },
+  "htmlSHA256": "cf7cf6df5d83cc3927d3fb5cef2a320aa507c5c58a6e5d264cedc5c9d5c7947a",
+  "environment": {
+    "node": "24.19.0",
+    "chromium": "153.0.8010.0",
+    "platform": "Linux headless / software WebGL2",
+    "origin": "file://",
+    "offline": true
+  },
+  "baselineBeforeChange": {
+    "golden": 30,
+    "browser": 24,
+    "PASS": 54,
+    "evidence": "evidence/baseline-v01/"
+  },
+  "groups": [
+    {
+      "name": "Retained Legacy Golden",
+      "evidence": "evidence/legacy-golden-results.json",
+      "cases": [
+        {
+          "name": "Gross: 16 × 2 × 100 = 3200 Gb/s",
+          "status": "PASS"
+        },
+        {
+          "name": "Net: Undefined efficiency stays Unknown",
+          "status": "PASS"
+        },
+        {
+          "name": "Net: 0.94 defined efficiency = 3008 Gb/s",
+          "status": "PASS"
+        },
+        {
+          "name": "Optical: 7.2 dB total, -4.2 dBm received, 5.8 dB margin",
+          "status": "PASS"
+        },
+        {
+          "name": "Mission: baseline simulated pass, never measurement verified",
+          "status": "PASS"
+        },
+        {
+          "name": "Mission: high score does not override power constraint",
+          "status": "PASS"
+        },
+        {
+          "name": "Mission: Unknown required loss produces incomplete, no pass",
+          "status": "PASS"
+        },
+        {
+          "name": "Passive gain rejected by design validation",
+          "status": "PASS"
+        },
+        {
+          "name": "Unit mismatch rejected before solver",
+          "status": "PASS"
+        },
+        {
+          "name": "Nonfinite / fractional fiber / zero efficiency rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Ideal splitter reduces branch power by 10log10(N)",
+          "status": "PASS"
+        },
+        {
+          "name": "Splitter source counting: 16 fibers / 4 fanout × 2λ",
+          "status": "PASS"
+        },
+        {
+          "name": "Unused splitter branches: ceil(17 / 4) × 2λ",
+          "status": "PASS"
+        },
+        {
+          "name": "Driver and TIA counts use separate Tx / Rx lanes",
+          "status": "PASS"
+        },
+        {
+          "name": "Power unit: W / Gb/s × 1000 = pJ/bit",
+          "status": "PASS"
+        },
+        {
+          "name": "Per-channel override changes worst margin only where specified",
+          "status": "PASS"
+        },
+        {
+          "name": "Per-channel negative passive loss rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Typed Port: compatible CW path accepted",
+          "status": "PASS"
+        },
+        {
+          "name": "Typed Port: optical/electrical mismatch rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Typed Port: CW/modulated mismatch rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Typed Port: duplicate input and reversed direction rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Typed Port: cycle rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Determinism: same input / seed gives identical JSON; input not mutated",
+          "status": "PASS"
+        },
+        {
+          "name": "Backup roundtrip includes archived design",
+          "status": "PASS"
+        },
+        {
+          "name": "Backup corruption rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Backup future schema and incompatible unit rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Migration schema 0 fixture accepted; invalid migration rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Evidence reviewed note is not numerical measurement verification",
+          "status": "PASS"
+        },
+        {
+          "name": "No calibration from geometric proximity",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown score dimensions do not get reweighted",
+          "status": "PASS"
+        }
+      ],
+      "total": 30,
+      "pass": 30,
+      "fail": 0
+    },
+    {
+      "name": "P2 Golden",
+      "evidence": "evidence/p2-golden-results.json",
+      "cases": [
+        {
+          "name": "Schema2 registry binds typed ports, units, models and geometry",
+          "status": "PASS"
+        },
+        {
+          "name": "Common golden: native Graph equals migrated Legacy metrics",
+          "status": "PASS"
+        },
+        {
+          "name": "Migration preserves all 27 inputs and original graph; source unchanged",
+          "status": "PASS"
+        },
+        {
+          "name": "Legacy parity: split, unused branches, overrides, Unknown, power failure",
+          "status": "PASS"
+        },
+        {
+          "name": "Schema1 backup and archives migrate with original provenance",
+          "status": "PASS"
+        },
+        {
+          "name": "Unsupported legacy split stays Legacy; approximate graph cannot PASS",
+          "status": "PASS"
+        },
+        {
+          "name": "Common graph multi-branch split parity including incomplete final group",
+          "status": "PASS"
+        },
+        {
+          "name": "Actual FAU allocation drives bandwidth independently of global display",
+          "status": "PASS"
+        },
+        {
+          "name": "Graph WDM allocation and coding efficiency preserve units",
+          "status": "PASS"
+        },
+        {
+          "name": "Tx/Rx allocation is separate; unknown incoming Rx never fabricated",
+          "status": "PASS"
+        },
+        {
+          "name": "Loss custom edit affects only declared stage",
+          "status": "PASS"
+        },
+        {
+          "name": "Reference plane ledger identifies actual splitter output and node stage",
+          "status": "PASS"
+        },
+        {
+          "name": "Missing optical connection fails compilation and mission",
+          "status": "PASS"
+        },
+        {
+          "name": "Missing drive path fails despite complete optical path",
+          "status": "PASS"
+        },
+        {
+          "name": "Rx TIA/interface missing fails topology",
+          "status": "PASS"
+        },
+        {
+          "name": "Wrong kind, signal, flow and reversed port rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Duplicate source fanout and occupied target rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Cycle detected both during connect and compilation",
+          "status": "PASS"
+        },
+        {
+          "name": "Unreachable engineering component blocks PASS; mechanical allowed",
+          "status": "PASS"
+        },
+        {
+          "name": "Duplicate fiber/wavelength allocation rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Splitter conservation and unique source-group electrical power",
+          "status": "PASS"
+        },
+        {
+          "name": "Passive negative IL, negative splitter excess, WPE zero rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Cosmetic placement, dimensions and rotation leave all metrics unchanged",
+          "status": "PASS"
+        },
+        {
+          "name": "Physical routing mm to cm and alpha maps only waveguide loss",
+          "status": "PASS"
+        },
+        {
+          "name": "Declared polyline waypoint and physical-routing disabled fallback",
+          "status": "PASS"
+        },
+        {
+          "name": "Missing physical anchor fails; cosmetic manual length stays usable",
+          "status": "PASS"
+        },
+        {
+          "name": "Coupler proximity never calibrates coupling efficiency",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown Tx allocation keeps topology valid but all aggregate Tx metrics Unknown",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown branch allocation never reports partial known bandwidth",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown Rx allocation makes total power unknown independently of Tx",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown loss and efficiency never inferred from visual path",
+          "status": "PASS"
+        },
+        {
+          "name": "Dependency list maps actual global/custom changes to channels",
+          "status": "PASS"
+        },
+        {
+          "name": "Deterministic result, compiler hash, unchanged input and fixed seed",
+          "status": "PASS"
+        },
+        {
+          "name": "SHA-256 exact UTF8 vectors including Korean and long strings",
+          "status": "PASS"
+        },
+        {
+          "name": "Schema2 backup preserves graph, geometry, version, archive and undo",
+          "status": "PASS"
+        },
+        {
+          "name": "Undo/Redo snapshot restores physical mode, topology and numerical inputs",
+          "status": "PASS"
+        },
+        {
+          "name": "Malformed units, duplicate IDs, typed-port tampering and undo rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Native corrupted/future-schema backup rejected without input mutation",
+          "status": "PASS"
+        },
+        {
+          "name": "Multipart backup roundtrip accepts reordered complete parts",
+          "status": "PASS"
+        },
+        {
+          "name": "Multipart missing/duplicate/tampered parts rejected",
+          "status": "PASS"
+        },
+        {
+          "name": "Evidence on global parameters cannot certify custom unreviewed models",
+          "status": "PASS"
+        },
+        {
+          "name": "Invalid Graph cannot pass even Sandbox or high global scalar metrics",
+          "status": "PASS"
+        }
+      ],
+      "total": 42,
+      "pass": 42,
+      "fail": 0
+    },
+    {
+      "name": "P0/P1 Browser Regression",
+      "evidence": "evidence/browser-results.json",
+      "cases": [
+        {
+          "name": "file:// offline startup: JS solver and IndexedDB available",
+          "status": "PASS"
+        },
+        {
+          "name": "Parameter editing and mission fail visibly update",
+          "status": "PASS"
+        },
+        {
+          "name": "Save / reload / auto resume preserves design and revision",
+          "status": "PASS"
+        },
+        {
+          "name": "Template challenge: arithmetic 3.2T + assumptions warning",
+          "status": "PASS"
+        },
+        {
+          "name": "Text backup contains current and archived revisions",
+          "status": "PASS"
+        },
+        {
+          "name": "Paste restore success applies complete saved inputs",
+          "status": "PASS"
+        },
+        {
+          "name": "Restore corruption rollback preserves current state",
+          "status": "PASS"
+        },
+        {
+          "name": "Unknown coding efficiency and loss are never PASS values",
+          "status": "PASS"
+        },
+        {
+          "name": "Invalid passive loss kept out of active physics state",
+          "status": "PASS"
+        },
+        {
+          "name": "Channel override controls worst-link fail",
+          "status": "PASS"
+        },
+        {
+          "name": "Before / after comparison captures independent result",
+          "status": "PASS"
+        },
+        {
+          "name": "Evidence never grants Measurement Verified label",
+          "status": "PASS"
+        },
+        {
+          "name": "Report contains version/model/input/seed/channel trace",
+          "status": "PASS"
+        },
+        {
+          "name": "Corrupt head automatically recovers LKG on reload",
+          "status": "PASS"
+        },
+        {
+          "name": "Schema 0 paste migration succeeds",
+          "status": "PASS"
+        },
+        {
+          "name": "Sandbox remains separate from campaign pass",
+          "status": "PASS"
+        },
+        {
+          "name": "Same file path in a second browser page auto resumes",
+          "status": "PASS"
+        },
+        {
+          "name": "Concurrent stale tab cannot overwrite newer head",
+          "status": "PASS"
+        },
+        {
+          "name": "Restoring and editing older branch preserves all prior snapshots",
+          "status": "PASS"
+        },
+        {
+          "name": "Browser runtime errors / network request count = zero",
+          "status": "PASS"
+        },
+        {
+          "name": "390px mobile: no viewport overflow and all controls reachable",
+          "status": "PASS"
+        },
+        {
+          "name": "320px compact viewport keeps actions and inspector accessible",
+          "status": "PASS"
+        },
+        {
+          "name": "IndexedDB failure is visible and text backup still works",
+          "status": "PASS"
+        },
+        {
+          "name": "Same profile survives actual Chromium process restart",
+          "status": "PASS"
+        }
+      ],
+      "total": 24,
+      "pass": 24,
+      "fail": 0
+    },
+    {
+      "name": "P2 Browser Acceptance",
+      "evidence": "evidence/p2-browser-results.json",
+      "cases": [
+        {
+          "name": "Real WebGL2 Three.js draws bundled offline scene",
+          "status": "PASS"
+        },
+        {
+          "name": "2D selection synchronizes Inspector and 3D selection",
+          "status": "PASS"
+        },
+        {
+          "name": "Component edit drives physics, delta and Undo/Redo",
+          "status": "PASS"
+        },
+        {
+          "name": "Library orphan blocks mission; delete, undo and redo work",
+          "status": "PASS"
+        },
+        {
+          "name": "Delete and click-to-connect bypass changes actual path loss",
+          "status": "PASS"
+        },
+        {
+          "name": "Wrong signal port reports endpoints and preserves graph",
+          "status": "PASS"
+        },
+        {
+          "name": "2D zoom, pan, fit and node drag preserve physics",
+          "status": "PASS"
+        },
+        {
+          "name": "Tx/Rx trace follows separate channels and loss annotations",
+          "status": "PASS"
+        },
+        {
+          "name": "Build a complete Tx/Rx engine from empty Graph using Library and ports",
+          "status": "PASS"
+        },
+        {
+          "name": "2D drag-to-connect reconnects actual typed port",
+          "status": "PASS"
+        },
+        {
+          "name": "3D raycast selection synchronizes 2D and Inspector",
+          "status": "PASS"
+        },
+        {
+          "name": "3D rotate, zoom and right-drag pan modify camera only",
+          "status": "PASS"
+        },
+        {
+          "name": "3D Move tool updates mm geometry with Cosmetic metrics unchanged",
+          "status": "PASS"
+        },
+        {
+          "name": "Mechanical Library placement is visible in 3D and preserves physics",
+          "status": "PASS"
+        },
+        {
+          "name": "Physical Routing maps declared anchors and flags missing anchor",
+          "status": "PASS"
+        },
+        {
+          "name": "Graph, geometry, undo and selection persist after reload",
+          "status": "PASS"
+        },
+        {
+          "name": "Multipart backup UI roundtrip retains complete graph",
+          "status": "PASS"
+        },
+        {
+          "name": "Report includes mode, compiler hash, reference planes and model versions",
+          "status": "PASS"
+        },
+        {
+          "name": "Missing native Head restores Last-Known-Good instead of fresh design",
+          "status": "PASS"
+        },
+        {
+          "name": "390px mobile click-to-connect compiles actual Optical Path",
+          "status": "PASS"
+        },
+        {
+          "name": "390/320px mobile placement, undo/redo, split and Inspector accessible",
+          "status": "PASS"
+        },
+        {
+          "name": "WebGL disabled retains working 2D, solver and persistence",
+          "status": "PASS"
+        },
+        {
+          "name": "Automatic Schema1 DB migration preserves metrics, archives and original DB",
+          "status": "PASS"
+        },
+        {
+          "name": "Legacy Graph activation parity and original Rollback work",
+          "status": "PASS"
+        },
+        {
+          "name": "Future-schema native head remains unchanged after rejected save",
+          "status": "PASS"
+        },
+        {
+          "name": "All native flows execute offline with zero runtime error or HTTP request",
+          "status": "PASS"
+        }
+      ],
+      "total": 26,
+      "pass": 26,
+      "fail": 0
+    }
+  ],
+  "total": 122,
+  "notTested": [
+    {
+      "name": "회사 Windows PC / corporate security policy",
+      "status": "NOT TESTED"
+    },
+    {
+      "name": "Android 실기기 / touch GPU performance",
+      "status": "NOT TESTED"
+    },
+    {
+      "name": "Hardware GPU / Chromium 이외 Browser",
+      "status": "NOT TESTED"
+    },
+    {
+      "name": "최대1000 Node/50MB Backup/장기 quota exhaustion",
+      "status": "NOT TESTED"
+    },
+    {
+      "name": "P3 Device/Thermal / P4 CMT·correlated variation·Monte Carlo / P5 Campaign·Pareto — 미구현",
+      "status": "NOT TESTED"
+    }
+  ]
+}
