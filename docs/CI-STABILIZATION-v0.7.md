@@ -35,6 +35,14 @@ The complete deterministic/browser suites must also pass on the final HEAD.
 
 Issue A commit: `57ee26e0627ba465619803559799b3b18ba427cf`.
 
+After installation succeeded, run `37999272046` exposed the same DOM-lifetime
+class of failure in the v07 Navigator: `scrollIntoViewIfNeeded` retained a node
+that was replaced after an OE simulation updated campaign progress. The v07
+click helper now uses normal `Locator.click` directly. Playwright scrolls,
+checks actionability and re-resolves detached nodes within that single action.
+No forced click, extra retry, changed assertion or longer test budget is added.
+This Browser helper adjustment also leaves the executable unchanged.
+
 ## Issue B: cold-runner dependency download
 
 Run `37954188052`, job `113900371718`, expired during Ubuntu APT dependency

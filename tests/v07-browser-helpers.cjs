@@ -1,6 +1,7 @@
 const h=require('./v06-browser-helpers.cjs'),path=require('path'),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const ready=p=>p.waitForFunction(()=>window.AIDCT_V07?.isReady()&&window.AIDCT_V06?.isReady()&&window.AIDCT_V05?.isReady()&&window.AIDCT_V04?.isReady()&&document.querySelector('#campaign-navigator button'),undefined,{timeout:60000});
-const click=async(p,s)=>{const l=p.locator(s).filter({visible:true}).first();await l.scrollIntoViewIfNeeded();await l.click();};
+// Locator.click scrolls and re-resolves replaced nodes within one actionability loop.
+const click=async(p,s)=>{await p.locator(s).filter({visible:true}).first().click();};
 const action=(p,t,e='')=>click(p,'[data-c5="'+t+'"]'+e),jump=(p,n)=>click(p,'#campaign-navigator [data-jump="'+n+'"]');
 const state=p=>p.evaluate(()=>window.AIDCT_V07.state()),saved=p=>p.evaluate(()=>window.AIDCT_V07.whenSaved());
 const restore=async(p,raw)=>{await saved(p);await click(p,'#backup-tab');await p.fill('#campaign-text',typeof raw==='string'?raw:require('../compiled/substrate-storage').campaignBackup07(raw));await Promise.all([p.waitForEvent('load',{timeout:60000}),click(p,'#campaign-restore')]);await ready(p);};
