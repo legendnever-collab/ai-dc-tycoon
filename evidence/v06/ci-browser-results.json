@@ -1,0 +1,173 @@
+{
+  "sourceCommit": "4bd849464b0615c74bf7739e96d67f7816a98160",
+  "runId": 37940618307,
+  "runURL": "https://github.com/legendnever-collab/ai-dc-tycoon/actions/runs/37940618307",
+  "jobId": 113853744337,
+  "cases": [
+    {
+      "name": "Fresh offline v06 loads original World; Workshop locked and lazy Lab",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 Campaign Backup UI restore preserves exact Chapter1–3 and initializes unplayed Chapter4",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing CPO Package OE status links open same oe-001 interior",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 Run without CW fails with visible diagnosis and no reward",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 high Laser power fails explicit power/window then Balanced clears only CW",
+      "status": "PASS"
+    },
+    {
+      "name": "M11 missing Driver fails actual optical graph then guided connection carries data",
+      "status": "PASS"
+    },
+    {
+      "name": "M12 long optical route fails despite all parts placed; loss hotspot and hints shown",
+      "status": "PASS"
+    },
+    {
+      "name": "M12 short route clear/3Stars uses exact solver output and truthful educational boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO Package return qualifies only OE1 and keeps original2560G 96W 40s",
+      "status": "PASS"
+    },
+    {
+      "name": "OE2 interior remains independent; replay on OE1 never duplicates rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop autosave reload retains all receipts, graph parameters and prototype ID",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign Backup includes whole Workshop and paste restore keeps same solver hash",
+      "status": "PASS"
+    },
+    {
+      "name": "Original Advanced Lab graph model and WebGL remain available independently",
+      "status": "PASS"
+    },
+    {
+      "name": "Runtime gameplay makes zero HTTP requests and no JavaScript errors",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch Mission10 guided connection/preset/run produces actual CW reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch EAM choice/Driver/output actually clears M11 with 4dB insertion loss",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch completes same OE path without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch controls meet44px height and Challenge fields remain reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "Package roundtrip keeps selected OE status, independence and campaign wallet",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch Campaign copy/paste Backup roundtrip resumes same prototype after reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile offline gameplay has zero HTTP requests and JS errors",
+      "status": "PASS"
+    },
+    {
+      "name": "Real IndexedDB autosave stores complete Workshop with same solver identity",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid Campaign checksum rejects before any of4 primary heads change",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop actions leave legacy Chapter1–3 raw primary bytes unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt real Workshop head recovers LKG and archives exact corrupted bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Workshop schema blocks autosave and displays exact original text Backup",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit supported Campaign restore preserves future original in immutable archive",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent Workshop tab blocks save and never overwrites newer primary",
+      "status": "PASS"
+    },
+    {
+      "name": "Four-head interrupted restore rolls forward before any game runtime boots",
+      "status": "PASS"
+    },
+    {
+      "name": "Future v06 journal blocks all boot/autosave and preserves raw heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Older v05 pending restore conflict still blocks v06 boot and preserves all heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Future v06 checkpoint blocks snapshot overwrite while supported Workshop stays usable",
+      "status": "PASS"
+    },
+    {
+      "name": "No network/JavaScript error during protected real storage workflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M01 UI in v06 retains original 30s and 100XP/120Credit reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M02 rack purchase/place and original 60s numerical fixture preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M03 network failure, retry and original 120s clear still work",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M04 actual rack connections clear with preserved reward receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M05 leaf-spine path bottleneck and clear remain playable in v06",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing M06 optical modules/fiber clear unlocks actual Mission07",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved Engineering Lab executes same optical solver default numerical result",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy-to-CPO browser has no external runtime requests or JS errors",
+      "status": "PASS"
+    }
+  ],
+  "executionEnvironment": "GitHub Actions Chromium; distinct from retained local timing failures"
+}

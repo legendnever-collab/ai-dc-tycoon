@@ -66,6 +66,26 @@ jobs:
           node tests/campaign-golden.cjs
       - name: v0.5 source and executable integrity
         run: node tests/v05-integrity.cjs
+      - name: Optical Workshop Golden and integrity
+        run: |
+          node tests/workshop-adapter-golden.cjs
+          node tests/chapter4-golden.cjs
+          node tests/workshop-storage-golden.cjs
+          node tests/v06-integrity.cjs
+      - name: Package v0.6 executable and rebuildable source
+        run: node scripts/package-v06.cjs
+      - name: Upload v0.6 executable source and handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v06-executable-source-handoff
+          path: |
+            ai-dc-tycoon-v0.6.html
+            ai-dc-tycoon-v0.6-source.zip
+            ai-dc-tycoon-v0.6-HANDOFF.zip
+            RELEASE-MANIFEST-v0.6.json
+            evidence/v06/
+          retention-days: 14
+          if-no-files-found: error
       - name: Package v0.5 source and handoff
         run: node scripts/package-v05.cjs
       - name: Upload v0.5 executable and source archives
@@ -197,5 +217,48 @@ jobs:
             screenshots-v05/
             ai-dc-tycoon-v0.5-screenshots.zip
             evidence/v05/
+          retention-days: 14
+          if-no-files-found: ignore
+
+  browser-v06:
+    name: Optical Engine Workshop Gameplay and Protected Storage
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+        timeout-minutes: 5
+      - run: npm run build
+      - name: Remove previous browser evidence
+        run: node -e "const fs=require('fs');fs.mkdirSync('evidence/v06',{recursive:true});for(const n of fs.readdirSync('evidence/v06'))if(n.endsWith('browser-results.json'))fs.unlinkSync('evidence/v06/'+n)"
+      - name: Desktop Mission10–12 real controls and solver parity
+        run: node tests/v06-browser.cjs
+        timeout-minutes: 5
+      - name: Touch390/320px gameplay and challenge
+        run: node tests/v06-mobile-browser.cjs
+        timeout-minutes: 4
+      - name: Four-head protected campaign real IndexedDB
+        run: node tests/v06-storage-browser.cjs
+        timeout-minutes: 5
+      - name: Frozen engineering and legacy campaign in v06
+        run: node tests/v06-legacy-browser.cjs
+        timeout-minutes: 5
+      - name: Package genuine Workshop scenes
+        if: always()
+        run: if test -d screenshots-v06; then zip -q -r ai-dc-tycoon-v0.6-screenshots.zip screenshots-v06; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-dc-tycoon-v06-browser-scenes-evidence
+          path: |
+            screenshots-v06/
+            ai-dc-tycoon-v0.6-screenshots.zip
+            evidence/v06/
           retention-days: 14
           if-no-files-found: ignore

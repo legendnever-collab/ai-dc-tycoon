@@ -1,0 +1,384 @@
+2026-10-09T13:57:52.0212862Z PASS Gross: 16 × 2 × 100 = 3200 Gb/s
+2026-10-09T13:57:52.0232313Z PASS Net: Undefined efficiency stays Unknown
+2026-10-09T13:57:52.0268537Z PASS Net: 0.94 defined efficiency = 3008 Gb/s
+2026-10-09T13:57:52.0312412Z PASS Optical: 7.2 dB total, -4.2 dBm received, 5.8 dB margin
+2026-10-09T13:57:52.0332168Z PASS Mission: baseline simulated pass, never measurement verified
+2026-10-09T13:57:52.0334119Z PASS Mission: high score does not override power constraint
+2026-10-09T13:57:52.0372227Z PASS Mission: Unknown required loss produces incomplete, no pass
+2026-10-09T13:57:52.0402262Z PASS Passive gain rejected by design validation
+2026-10-09T13:57:52.0403280Z PASS Unit mismatch rejected before solver
+2026-10-09T13:57:52.0406410Z PASS Nonfinite / fractional fiber / zero efficiency rejected
+2026-10-09T13:57:52.0438826Z PASS Ideal splitter reduces branch power by 10log10(N)
+2026-10-09T13:57:52.0442611Z PASS Splitter source counting: 16 fibers / 4 fanout × 2λ
+2026-10-09T13:57:52.0462324Z PASS Unused splitter branches: ceil(17 / 4) × 2λ
+2026-10-09T13:57:52.0463126Z PASS Driver and TIA counts use separate Tx / Rx lanes
+2026-10-09T13:57:52.0463987Z PASS Power unit: W / Gb/s × 1000 = pJ/bit
+2026-10-09T13:57:52.0464990Z PASS Per-channel override changes worst margin only where specified
+2026-10-09T13:57:52.0465853Z PASS Per-channel negative passive loss rejected
+2026-10-09T13:57:52.0466544Z PASS Typed Port: compatible CW path accepted
+2026-10-09T13:57:52.0467280Z PASS Typed Port: optical/electrical mismatch rejected
+2026-10-09T13:57:52.0468021Z PASS Typed Port: CW/modulated mismatch rejected
+2026-10-09T13:57:52.0468863Z PASS Typed Port: duplicate input and reversed direction rejected
+2026-10-09T13:57:52.0469608Z PASS Typed Port: cycle rejected
+2026-10-09T13:57:52.0470434Z PASS Determinism: same input / seed gives identical JSON; input not mutated
+2026-10-09T13:57:52.0471566Z PASS Backup roundtrip includes archived design
+2026-10-09T13:57:52.0472223Z PASS Backup corruption rejected
+2026-10-09T13:57:52.0472898Z PASS Backup future schema and incompatible unit rejected
+2026-10-09T13:57:52.0473816Z PASS Migration schema 0 fixture accepted; invalid migration rejected
+2026-10-09T13:57:52.0474819Z PASS Evidence reviewed note is not numerical measurement verification
+2026-10-09T13:57:52.0475655Z PASS No calibration from geometric proximity
+2026-10-09T13:57:52.0476365Z PASS Unknown score dimensions do not get reweighted
+2026-10-09T13:57:53.1672883Z PASS Schema2 registry binds typed ports, units, models and geometry
+2026-10-09T13:57:53.1741640Z PASS Common golden: native Graph equals migrated Legacy metrics
+2026-10-09T13:57:53.1792223Z PASS Migration preserves all 27 inputs and original graph; source unchanged
+2026-10-09T13:57:53.1824900Z PASS Legacy parity: split, unused branches, overrides, Unknown, power failure
+2026-10-09T13:57:53.1842176Z PASS Schema1 backup and archives migrate with original provenance
+2026-10-09T13:57:53.1884863Z PASS Unsupported legacy split stays Legacy; approximate graph cannot PASS
+2026-10-09T13:57:53.1902118Z PASS Common graph multi-branch split parity including incomplete final group
+2026-10-09T13:57:53.1942126Z PASS Actual FAU allocation drives bandwidth independently of global display
+2026-10-09T13:57:53.1961990Z PASS Graph WDM allocation and coding efficiency preserve units
+2026-10-09T13:57:53.1992175Z PASS Tx/Rx allocation is separate; unknown incoming Rx never fabricated
+2026-10-09T13:57:53.2021813Z PASS Loss custom edit affects only declared stage
+2026-10-09T13:57:53.2032194Z PASS Reference plane ledger identifies actual splitter output and node stage
+2026-10-09T13:57:53.2052303Z PASS Missing optical connection fails compilation and mission
+2026-10-09T13:57:53.2072123Z PASS Missing drive path fails despite complete optical path
+2026-10-09T13:57:53.2091734Z PASS Rx TIA/interface missing fails topology
+2026-10-09T13:57:53.2112003Z PASS Wrong kind, signal, flow and reversed port rejected
+2026-10-09T13:57:53.2113031Z PASS Duplicate source fanout and occupied target rejected
+2026-10-09T13:57:53.2131942Z PASS Cycle detected both during connect and compilation
+2026-10-09T13:57:53.2152032Z PASS Unreachable engineering component blocks PASS; mechanical allowed
+2026-10-09T13:57:53.2171813Z PASS Duplicate fiber/wavelength allocation rejected
+2026-10-09T13:57:53.2172947Z PASS Splitter conservation and unique source-group electrical power
+2026-10-09T13:57:53.2191967Z PASS Passive negative IL, negative splitter excess, WPE zero rejected
+2026-10-09T13:57:53.2212149Z PASS Cosmetic placement, dimensions and rotation leave all metrics unchanged
+2026-10-09T13:57:53.2232008Z PASS Physical routing mm to cm and alpha maps only waveguide loss
+2026-10-09T13:57:53.2233216Z PASS Declared polyline waypoint and physical-routing disabled fallback
+2026-10-09T13:57:53.2252214Z PASS Missing physical anchor fails; cosmetic manual length stays usable
+2026-10-09T13:57:53.2271962Z PASS Coupler proximity never calibrates coupling efficiency
+2026-10-09T13:57:53.2282344Z PASS Unknown Tx allocation keeps topology valid but all aggregate Tx metrics Unknown
+2026-10-09T13:57:53.2312075Z PASS Unknown branch allocation never reports partial known bandwidth
+2026-10-09T13:57:53.2313482Z PASS Unknown Rx allocation makes total power unknown independently of Tx
+2026-10-09T13:57:53.2332060Z PASS Unknown loss and efficiency never inferred from visual path
+2026-10-09T13:57:53.2352093Z PASS Dependency list maps actual global/custom changes to channels
+2026-10-09T13:57:53.2372010Z PASS Deterministic result, compiler hash, unchanged input and fixed seed
+2026-10-09T13:57:53.2373182Z PASS SHA-256 exact UTF8 vectors including Korean and long strings
+2026-10-09T13:57:53.2391986Z PASS Schema2 backup preserves graph, geometry, version, archive and undo
+2026-10-09T13:57:53.2412239Z PASS Undo/Redo snapshot restores physical mode, topology and numerical inputs
+2026-10-09T13:57:53.2432024Z PASS Malformed units, duplicate IDs, typed-port tampering and undo rejected
+2026-10-09T13:57:53.2433388Z PASS Native corrupted/future-schema backup rejected without input mutation
+2026-10-09T13:57:53.2452476Z PASS Multipart backup roundtrip accepts reordered complete parts
+2026-10-09T13:57:53.2472087Z PASS Multipart missing/duplicate/tampered parts rejected
+2026-10-09T13:57:53.2491968Z PASS Evidence on global parameters cannot certify custom unreviewed models
+2026-10-09T13:57:53.2493210Z PASS Invalid Graph cannot pass even Sandbox or high global scalar metrics
+2026-10-09T13:57:53.8749315Z PASS New Game resources / stable hardware / states
+2026-10-09T13:57:53.8772035Z PASS Fixture M01 / 1 racks / 16 Gb/s
+2026-10-09T13:57:53.8801724Z PASS Fixture M02 / 1 racks / 16 Gb/s
+2026-10-09T13:57:53.8812400Z PASS Fixture M02 / 2 racks / 16 Gb/s
+2026-10-09T13:57:53.8827315Z PASS Fixture M03 / 2 racks / 16 Gb/s
+2026-10-09T13:57:53.8828434Z PASS Fixture M03 / 3 racks / 16 Gb/s
+2026-10-09T13:57:53.8829194Z PASS Fixture M03 / 2 racks / 64 Gb/s
+2026-10-09T13:57:53.8829934Z PASS Fixture M03 / 3 racks / 64 Gb/s
+2026-10-09T13:57:53.8830677Z PASS Fixture M03 / 4 racks / 64 Gb/s
+2026-10-09T13:57:53.8832611Z PASS Locked Mission cannot start
+2026-10-09T13:57:53.8833536Z PASS Locked Rack cannot purchase
+2026-10-09T13:57:53.8837042Z PASS Locked Switch cannot upgrade
+2026-10-09T13:57:53.8837850Z PASS Run requires ACTIVE
+2026-10-09T13:57:53.8838746Z PASS Mission 01 clear rewards / next unlock / level
+2026-10-09T13:57:53.8840008Z PASS Mission01 missing Compute fails / repair / no duplicate reward
+2026-10-09T13:57:53.8841571Z PASS Prediction does not clear mission or award
+2026-10-09T13:57:53.8842599Z PASS Mission 02 fail then retry state
+2026-10-09T13:57:53.8843567Z PASS Purchase creates Inventory and charges Credits
+2026-10-09T13:57:53.8844548Z PASS Unplaced inventory survives backup
+2026-10-09T13:57:53.8845666Z PASS Placement activates capacity / halves independent completion
+2026-10-09T13:57:53.8846758Z PASS Occupied Slot rejects without mutation
+2026-10-09T13:57:53.8847620Z PASS Slot out of range rejected
+2026-10-09T13:57:53.8848348Z PASS Unknown Inventory rejects
+2026-10-09T13:57:53.8849194Z PASS Only one pending placement allowed
+2026-10-09T13:57:53.8850138Z PASS Mission 02 rewards / switch unlock exact
+2026-10-09T13:57:53.8851480Z PASS Compute only cannot cure network bottleneck
+2026-10-09T13:57:53.8852715Z PASS Network Upgrade improves 300→120 seconds
+2026-10-09T13:57:53.8853555Z PASS Network goal cannot pass with high score
+2026-10-09T13:57:53.8854371Z PASS Insufficient credits purchase refusal
+2026-10-09T13:57:53.8855168Z PASS Insufficient Switch budget refusal
+2026-10-09T13:57:53.8856008Z PASS Refund restores budget without duplicate cash
+2026-10-09T13:57:53.8856789Z PASS Starter Rack cannot refund
+2026-10-09T13:57:53.8857559Z PASS Hardware IDs are never reused after refund
+2026-10-09T13:57:53.8858433Z PASS Move conserves economy / selected slot capacity
+2026-10-09T13:57:53.8859331Z PASS Floor location does not affect numerical result
+2026-10-09T13:57:53.8860169Z PASS Pending run freezes hardware and mission
+2026-10-09T13:57:53.8861040Z PASS Same input / seed yields identical result and hash
+2026-10-09T13:57:53.8862264Z PASS Pure command leaves original state intact
+2026-10-09T13:57:53.8863184Z PASS Completion grants all rewards once / level4 / Analyzer
+2026-10-09T13:57:53.8864115Z PASS Replay never duplicates Credits / XP / receipts
+2026-10-09T13:57:53.8864947Z PASS Duplicate finish cannot award twice
+2026-10-09T13:57:53.8865713Z PASS Overspending trades Stars for time
+2026-10-09T13:57:53.8866482Z PASS Hints reveal progressively and cap at3
+2026-10-09T13:57:53.8867260Z PASS Full profile backup exact round trip
+2026-10-09T13:57:53.8868160Z PASS Pending simulation backup can finish deterministically
+2026-10-09T13:57:53.8872388Z PASS Unknown Compute input is Unknown and never passes
+2026-10-09T13:57:53.8877667Z PASS No placed racks produces Unknown
+2026-10-09T13:57:53.8880689Z PASS Zero Network does not divide by zero
+2026-10-09T13:57:53.8881989Z PASS Independent jobs ignore Network capacity
+2026-10-09T13:57:53.8883009Z PASS Scale-up unsupported returns Unknown
+2026-10-09T13:57:53.8884160Z PASS Storage I/O unsupported returns Unknown
+2026-10-09T13:57:53.8885092Z PASS Wrong workload fabric refuses numerical result
+2026-10-09T13:57:53.8886036Z PASS Invalid fixture ranges / NaN / negative rejected
+2026-10-09T13:57:53.8886900Z PASS Unknown Network input stays Unknown
+2026-10-09T13:57:53.8887715Z PASS Wrong simulator Model Version rejected
+2026-10-09T13:57:53.8888518Z PASS Backup integrity corruption rejected
+2026-10-09T13:57:53.8889403Z PASS Future Game Schema rejected preserving input text
+2026-10-09T13:57:53.8890601Z PASS Engineering Backup never coerced into Game Schema
+2026-10-09T13:57:53.8891805Z PASS Duplicate reward receipt rejected
+2026-10-09T13:57:53.8892709Z PASS Forged credits / XP / tech unlock rejected
+2026-10-09T13:57:53.8893595Z PASS Forged numerical result rejected
+2026-10-09T13:57:53.8895640Z PASS Forged hardware provenance cannot reward
+2026-10-09T13:57:53.8896755Z PASS Inventory duplicate / collision rejected
+2026-10-09T13:57:53.8897958Z PASS Award presentation must match actual reward
+2026-10-09T13:57:53.8898989Z PASS Engineering bridge is reference-only and not simulator input
+2026-10-09T13:57:53.9872478Z PASS C2 new profile validated
+2026-10-09T13:57:53.9892415Z PASS C2 cannot open mission05 before04
+2026-10-09T13:57:53.9911894Z PASS C2 cannot open mission06 before05
+2026-10-09T13:57:54.0102237Z PASS M04 starts with two occupied physical ports
+2026-10-09T13:57:54.0131886Z PASS M04 cannot attach rack without port
+2026-10-09T13:57:54.0162290Z PASS M04 high-density increases ports but no reward until Run
+2026-10-09T13:57:54.0402447Z PASS M04 correct physical links and workload clear
+2026-10-09T13:57:54.0432317Z PASS M04 cannot connect twice
+2026-10-09T13:57:54.0666107Z PASS M04 scenario reset refunds but preserves receipt
+2026-10-09T13:57:54.0728257Z PASS M04 rerun cannot duplicate rewards
+2026-10-09T13:57:54.0762514Z PASS M04 budget refuses upgrade if Chapter1 has insufficient credits
+2026-10-09T13:57:54.0802036Z PASS M05 without spine cannot have active path
+2026-10-09T13:57:54.0902102Z PASS M05 only left uplink is disconnected
+2026-10-09T13:57:54.1092561Z PASS M05 asymmetric rates bottleneck equals min used path
+2026-10-09T13:57:54.1241796Z PASS M05 full 200G path achieves 40 seconds compute envelope
+2026-10-09T13:57:54.1402532Z PASS M05 extra link bandwidth beyond compute does not further accelerate
+2026-10-09T13:57:54.1602437Z PASS M05 path clear unlocks Mission06
+2026-10-09T13:57:54.1682338Z PASS M05 links require installed spine
+2026-10-09T13:57:54.1950967Z PASS M05 reset preserves first clear and removes path
+2026-10-09T13:57:54.2202632Z PASS M06 cannot install on port that was not selected
+2026-10-09T13:57:54.2392089Z PASS M06 supported module rates only
+2026-10-09T13:57:54.2501502Z PASS M06 unpopulated port rejects fiber
+2026-10-09T13:57:54.2722326Z PASS M06 400G both sides active but misses throughput objective
+2026-10-09T13:57:54.2933676Z PASS M06 unsupported rate mismatch cannot activate fiber
+2026-10-09T13:57:54.3212918Z PASS M06 800G both sides activates and clears within power cost limits
+2026-10-09T13:57:54.3442211Z PASS M06 first clear receipt and Chapter2 XP total
+2026-10-09T13:57:54.3683965Z PASS M06 previous 800G fiber invalidated when changing endpoint module
+2026-10-09T13:57:54.3972578Z PASS Chapter2 wallet rewards minus installed hardware, not simulation bonus
+2026-10-09T13:57:54.4272227Z PASS Backup roundtrip valid
+2026-10-09T13:57:54.4372146Z PASS Backup rejects tampering
+2026-10-09T13:57:54.4492007Z PASS Backup rejects profile swap
+2026-10-09T13:57:54.4503396Z PASS Legacy v0.3 Backup not misparsed as Chapter2
+2026-10-09T13:57:54.4562482Z PASS Forged receipt duplication rejected
+2026-10-09T13:57:54.4570671Z PASS Educational assumptions explicit
+2026-10-09T13:57:54.6767732Z PASS M04 starts with two occupied ports and one disconnected Rack
+2026-10-09T13:57:54.6790285Z PASS Port count prevents nonexistent third port
+2026-10-09T13:57:54.6791536Z PASS Occupied Port rejects fanout
+2026-10-09T13:57:54.6813040Z PASS Switch installation does not silently connect Rack
+2026-10-09T13:57:54.6834916Z PASS M04 actual link gives 3 connected racks / path / 13.333 seconds
+2026-10-09T13:57:54.6838658Z PASS Physical ports and Fabric are distinct
+2026-10-09T13:57:54.6839535Z PASS Unsupported endpoint rate refused
+2026-10-09T13:57:54.6840397Z PASS Leaf groups without Spine are disconnected
+2026-10-09T13:57:54.6841500Z PASS Spine placement alone does not create paths
+2026-10-09T13:57:54.6842384Z PASS Single Uplink is insufficient
+2026-10-09T13:57:54.6843136Z PASS 100G uplinks share actual traffic: 48000/90 seconds
+2026-10-09T13:57:54.6843964Z PASS 400G uplinks reduce used bottleneck: 48000/360 seconds
+2026-10-09T13:57:54.6844751Z PASS Idle link capacity is not summed into throughput
+2026-10-09T13:57:54.6845647Z PASS Bottleneck link only: one 100G uplink dominates a 400G fabric
+2026-10-09T13:57:54.6846433Z PASS Disconnection changes path immediately
+2026-10-09T13:57:54.6847485Z PASS Stable paths and deterministic results / no input mutation
+2026-10-09T13:57:54.6848410Z PASS Cost is actual purchased switch + cables
+2026-10-09T13:57:54.6849256Z PASS Power includes installed switches even unused
+2026-10-09T13:57:54.6850507Z PASS Reset refunds all purchased components and never fabricates performance
+2026-10-09T13:57:54.6851445Z PASS Fiber requires both pluggables
+2026-10-09T13:57:54.6853151Z PASS Copper must disconnect before optical insertion
+2026-10-09T13:57:54.6854022Z PASS Unknown module and nonexistent port rejected
+2026-10-09T13:57:54.6855069Z PASS Optical module not available in earlier missions
+2026-10-09T13:57:54.6856032Z PASS 800G optics actual 4 modules / 2 fibers / 258 W / 160 Credits
+2026-10-09T13:57:54.6857028Z PASS 400G optics trade-off 242 W / 100 Credits / 266.667 s
+2026-10-09T13:57:54.6857934Z PASS Mismatched endpoint modules refuse link
+2026-10-09T13:57:54.6858921Z PASS Module removal deactivates existing fiber without deleting cost
+2026-10-09T13:57:54.6860052Z PASS Unused modules consume power and cost, never bandwidth
+2026-10-09T13:57:54.6861024Z PASS Forged provided component cost exemption rejected
+2026-10-09T13:57:54.6862753Z PASS Forged port capabilities and duplicate ports rejected
+2026-10-09T13:57:54.6863720Z PASS Traffic fixture cannot be edited to shortcut a mission
+2026-10-09T13:57:54.6864817Z PASS No optical physics or vendor claim in model assumptions
+2026-10-09T13:57:55.0822630Z PASS Shared Fabric resource aggregates traversing demands, not ports
+2026-10-09T13:57:55.0842241Z PASS Fabric and Port capacities are independent bottlenecks
+2026-10-09T13:57:55.0856476Z PASS Upgrading an unused link has no effect
+2026-10-09T13:57:55.0883753Z PASS Reverse directions have independent Full Duplex capacity
+2026-10-09T13:57:55.0899459Z PASS Traffic cannot transit through a Compute Rack
+2026-10-09T13:57:55.0912172Z PASS Missing path never reports partially known effective bandwidth
+2026-10-09T13:57:55.0913111Z PASS Zero, Infinity or invalid traffic capacities refused
+2026-10-09T13:57:55.0913899Z PASS Duplicate Stable IDs rejected before routing
+2026-10-09T13:57:55.0914832Z PASS Playable M04 commands persist typed Rack/Port/Link relationships
+2026-10-09T13:57:55.0915957Z PASS M04 disconnect lowers Connected Compute, retains purchased switch cost
+2026-10-09T13:57:55.0916880Z PASS M04 reconnected Rack can reuse freed physical Port
+2026-10-09T13:57:55.0917707Z PASS M05 actual end-to-end path passes both leaves and Spine
+2026-10-09T13:57:55.0918638Z PASS M05 asymmetric path loses speed despite summed capacity increase
+2026-10-09T13:57:55.0919533Z PASS M05 disconnection removes traffic path, never clears
+2026-10-09T13:57:55.0920382Z PASS M06 two physical modules and fiber represented separately
+2026-10-09T13:57:55.0921453Z PASS Module mismatch deactivates fiber in actual graph
+2026-10-09T13:57:55.0922298Z PASS Serialized physical graph drift is rejected on restore
+2026-10-09T13:57:55.0923317Z PASS Forged port capability in graph rejected
+2026-10-09T13:57:55.0924193Z PASS Reward Receipt stores clear graph and recomputed result provenance
+2026-10-09T13:57:55.0931862Z PASS Forged result hash cannot reward
+2026-10-09T13:57:55.0932741Z PASS Mission Replay does not duplicate rewards or physical performance
+2026-10-09T13:57:55.0952019Z PASS Legacy Chapter2 profile without graph is still readable
+2026-10-09T13:57:55.0953421Z PASS Forged cached result cannot misrepresent clear or numerical output
+2026-10-09T13:57:55.2152158Z PASS 16 original Engineering source / test files retain exact baseline bytes
+2026-10-09T13:57:55.2153423Z PASS Embedded and native Lab executable retain authoritative SHA-256
+2026-10-09T13:57:55.2154698Z PASS Release / package / game / DC Model versions agree with separate Engineering version
+2026-10-09T13:57:55.2155944Z PASS Single HTML includes all code / CSS and blocks remote runtime resources
+2026-10-09T13:57:55.2157108Z PASS Game module import direction does not couple Solver to rendering or Lab graph
+2026-10-09T13:57:55.3138254Z PASS Engineering source and native/embedded Lab retain immutable baseline
+2026-10-09T13:57:55.3152791Z PASS Chapter 1 rebuilt executable remains byte-identical to audited v0.3 release
+2026-10-09T13:57:55.3169647Z PASS v0.4 single HTML version, CSP and inline assets are complete
+2026-10-09T13:57:55.3202289Z PASS Mission runtime uses typed traffic graph; experimental engine stays independent
+2026-10-09T13:57:55.4089751Z PASS CPO same capacity and demand yields same Job time as Pluggable
+2026-10-09T13:57:55.4132707Z PASS Existing, optimized and CPO powers reflect explicit component boundaries
+2026-10-09T13:57:55.4152513Z PASS Service-first order permits Pluggable and optimized, refuses CPO cost/service
+2026-10-09T13:57:55.4162456Z PASS Density order fails Pluggable Power/Space; CPO is conditional viable choice
+2026-10-09T13:57:55.4172352Z PASS Small order optimized Pluggable can use less power than CPO
+2026-10-09T13:57:55.4202164Z PASS Empty package cannot make optical data or clear any feasibility
+2026-10-09T13:57:55.4210063Z PASS Complete four-OE installed Package has four actual 640G links and 96W
+2026-10-09T13:57:55.4211795Z PASS Laser DC input counted once, conversion/electrical/core have separate ledger
+2026-10-09T13:57:55.4213165Z PASS Removing ELS disables every optical path without fabricating light
+2026-10-09T13:57:55.4214372Z PASS Electrical path absence disables only physically affected link
+2026-10-09T13:57:55.4230156Z PASS CW supply is distinct from modulated data port
+2026-10-09T13:57:55.4242071Z PASS Electrical cannot connect to optical input
+2026-10-09T13:57:55.4261060Z PASS Reversed typed direction is rejected
+2026-10-09T13:57:55.4282048Z PASS Occupied output/input cannot fan out
+2026-10-09T13:57:55.4283126Z PASS Incompatible rate/lane interface is rejected
+2026-10-09T13:57:55.4304623Z PASS Fiber needs matching remote endpoint rate
+2026-10-09T13:57:55.4310944Z PASS Missing Rx Fiber endpoint cannot activate a Tx-only link
+2026-10-09T13:57:55.4312482Z PASS Unused OE costs and consumes power but cannot increase active throughput
+2026-10-09T13:57:55.4314207Z PASS Unconnected extra optics do not sum into workload capacity
+2026-10-09T13:57:55.4315296Z PASS Physical near/far mm affects reach only via explicit model
+2026-10-09T13:57:55.4336003Z PASS Moving optics does not fabricate optical loss or measured margin
+2026-10-09T13:57:55.4358072Z PASS OE outside compact package boundary is invalid and not active
+2026-10-09T13:57:55.4359464Z PASS Undeclared optical fixture is Unknown, cannot convey traffic
+2026-10-09T13:57:55.4372909Z PASS Assembly without Data Center installation cannot supply workload links
+2026-10-09T13:57:55.4393551Z PASS Hierarchy uses shared world/switch/package/region/OE IDs
+2026-10-09T13:57:55.4408998Z PASS Simulation deterministic and does not mutate physical configuration
+2026-10-09T13:57:55.4410337Z PASS Non-runtime experimental network engine is not imported
+2026-10-09T13:57:55.6382351Z PASS v0.4 economy fixture is derived: Credits490 XP1240, six receipts
+2026-10-09T13:57:55.6465240Z PASS M06 lock prevents M07 transition
+2026-10-09T13:57:55.6466391Z PASS M08 and M09 cannot start before prior clear
+2026-10-09T13:57:55.6482732Z PASS Mission07 needs two actual successful orders, one click is not clear
+2026-10-09T13:57:55.6502210Z PASS M07 power wall refuses 120W pluggable expansion
+2026-10-09T13:57:55.6522188Z PASS M07 CPO fails service-first hard gate
+2026-10-09T13:57:55.6842883Z PASS M07 solves service/density orders with genuine tradeoff, unlocks M08
+2026-10-09T13:57:55.7255789Z PASS M07 optimized pluggable gives two stars but still unlocks
+2026-10-09T13:57:55.7862605Z PASS Reward cannot duplicate on M07 replay
+2026-10-09T13:57:55.8301093Z PASS M08 guided order starts ASIC then OE, no laser before electrical
+2026-10-09T13:57:55.9340574Z PASS Assembly presence alone cannot pass M08
+2026-10-09T13:57:56.1642528Z PASS M08 two OEs/ELS/typed paths produce 1280G/76W, optical loss Unknown
+2026-10-09T13:57:56.2623031Z PASS Unknown optics without explicit fixture cannot activate
+2026-10-09T13:57:56.3763324Z PASS Physical far placement increases electrical power and fails package constraint
+2026-10-09T13:57:56.4887096Z PASS M09 uses same switch/package IDs and expands M08 prototype
+2026-10-09T13:57:56.6922959Z PASS M09 cannot install missing paths or clear before installation
+2026-10-09T13:57:56.8572014Z PASS M09 assembly, installation, run leads to actual 2560G/96W/40s
+2026-10-09T13:57:57.1075349Z PASS Mission09 installed wide/far package fails Power and Package Space
+2026-10-09T13:57:57.2782724Z PASS Chapter3 wallet uses actual purchased components, final Credits830 XP2520
+2026-10-09T13:57:57.4649042Z PASS Replay freely retains installed equipment and cannot duplicate reward
+2026-10-09T13:57:57.6265951Z PASS Reset refunds current package without deleting past clear receipts
+2026-10-09T13:57:57.6403361Z PASS Insufficient funds refuses physical purchase without mutating previous state
+2026-10-09T13:57:57.8195123Z PASS Navigation round-trip changes only scale/selection, same physical graph/time
+2026-10-09T13:57:57.9905287Z PASS Workshop is locked before09 and preview unlock is a real receipt
+2026-10-09T13:57:58.1314383Z PASS Duplicate receipt rejected rather than paid again
+2026-10-09T13:57:58.3122061Z PASS Forged receipt result hash rejected
+2026-10-09T13:57:58.3193273Z PASS Forged order pass rejected via recomputation
+2026-10-09T13:57:58.4688787Z PASS Forged cached completion rejected on restore
+2026-10-09T13:57:58.6150282Z PASS Duplicate stable OE slot rejected
+2026-10-09T13:57:58.7615192Z PASS Typed backup rejects invalid optical/electrical connections
+2026-10-09T13:57:58.9192879Z PASS Lab reference has stable IDs/snapshot hash and no performance multiplier
+2026-10-09T13:57:59.0632862Z PASS Invalid Lab reference cannot enter physical state
+2026-10-09T13:57:59.2025627Z PASS CPO reward XP never changes actual simulation
+2026-10-09T13:57:59.6071637Z PASS Integrated Campaign backup preserves all nine receipts, world, graph, module assignments
+2026-10-09T13:57:59.6154405Z PASS v0.3 backup migration leaves original Game bytes and creates empty additional chapters
+2026-10-09T13:57:59.8372765Z PASS v0.3 same-profile import retains v0.4/v0.5 progress
+2026-10-09T13:58:00.0513649Z PASS v0.4 Chapter2 import preserves existing Chapter3 and Engineering references
+2026-10-09T13:58:00.4312548Z PASS v0.4 backup from another profile is refused
+2026-10-09T13:58:00.6759525Z PASS Campaign checksum tampering rejected before any writes
+2026-10-09T13:58:00.8687190Z PASS Future Campaign schema/version rejected with original text untouched
+2026-10-09T13:58:01.2374798Z PASS Nested profile mismatch rejected even with recalculated checksum
+2026-10-09T13:58:01.4620192Z PASS Forged reward rejected after all outer checksums are regenerated
+2026-10-09T13:58:01.4642629Z PASS Chapter3 save is profile-linked and legacy databases remain untouched
+2026-10-09T13:58:01.6542425Z PASS Stale Chapter3 tab cannot overwrite a newer head
+2026-10-09T13:58:01.8012392Z PASS Future Chapter3 model blocks automatic writes and remains byte-exact
+2026-10-09T13:58:01.9611773Z PASS Corrupt head recovers LKG and archives original on next save
+2026-10-09T13:58:01.9613288Z PASS Both invalid Head/LKG fail closed without silent reset/save
+2026-10-09T13:58:02.1584174Z PASS Integrated restore validates and writes three stores through durable journal
+2026-10-09T13:58:02.3820258Z PASS Interrupted restore after first-store write rolls forward from journal on next boot
+2026-10-09T13:58:02.6197917Z PASS Journal recovery is idempotent; committed restore does not repeat rewards/writes
+2026-10-09T13:58:02.8333912Z PASS Crash before final journal commit still recovers without rewriting target heads
+2026-10-09T13:58:03.0798883Z PASS Concurrent modification during recovery is preserved and blocks automatic overwrite
+2026-10-09T13:58:03.2962173Z PASS Explicit valid restore archives unsupported prior bytes instead of destroying them
+2026-10-09T13:58:03.2965088Z PASS Future restore journal refuses automatic migration or clobber
+2026-10-09T13:58:03.5336238Z PASS Unknown optical status and Lab reference-only metadata survive campaign roundtrip
+2026-10-09T13:58:03.7034235Z PASS Campaign validation rejects later progress if M06 prerequisite missing
+2026-10-09T13:58:03.8737432Z PASS No money debt can permanently block Navigation/Reset recovery
+2026-10-09T13:58:04.1830387Z PASS Campaign checkpoint rejects foreign profile Head and LKG without writes
+2026-10-09T13:58:04.4242881Z PASS Stale checkpoint writer cannot clobber another Campaign snapshot
+2026-10-09T13:58:04.5002699Z PASS All 16 Engineering baseline source/test hashes remain exact
+2026-10-09T13:58:04.5039141Z PASS Legacy v02/v03/v04 executable hashes remain byte-for-byte unchanged
+2026-10-09T13:58:04.5044502Z PASS v05 model reuses production traffic solver and has no experimental model import
+2026-10-09T13:58:04.5080944Z PASS Single v05 HTML carries correct release version, inline assets and request-denying CSP
+2026-10-09T13:58:04.5082871Z PASS Independent legacy engineering storage is not written by Campaign code
+2026-10-09T13:58:04.8330073Z PASS dBm/mW exact roundtrip and positive unit validation
+2026-10-09T13:58:04.8426930Z PASS Guided 800G compiler uses 8 fibers x1 lambda x100G separate from 3.2T objective
+2026-10-09T13:58:04.8458117Z PASS Guided Golden: 7.4dB loss -4.4dBm receive 5.6dB margin
+2026-10-09T13:58:04.8536667Z PASS Guided results exactly match original core solve and compiler hash
+2026-10-09T13:58:04.8609006Z PASS Waveguide cm loss follows route length, independent of diagram pixels
+2026-10-09T13:58:04.8661482Z PASS Coupler type and IL change compiler graph and received power
+2026-10-09T13:58:04.8741040Z PASS EAM/MZM use registry dimensions and distinct educational loss/driver presets
+2026-10-09T13:58:04.8779033Z PASS Missing external ELS never creates internal duplicate or CW PASS
+2026-10-09T13:58:04.8825228Z PASS No Driver / wrong typed input fail optical data qualification
+2026-10-09T13:58:04.9086975Z PASS Unknown launch / loss / sensitivity remain Unknown and never clear M12
+2026-10-09T13:58:04.9113923Z PASS Disconnected components do not add loss or yield valid graph
+2026-10-09T13:58:04.9139388Z PASS Laser DC is per-channel power x8 / WPE and matches core once
+2026-10-09T13:58:04.9170841Z PASS Loss ledger counts active stages once and Rx incoming stays Unknown
+2026-10-09T13:58:04.9230075Z PASS Full golden preserves original 3.2T fixture
+2026-10-09T13:58:04.9308090Z PASS M11 output fixture is explicit zero-loss temporary boundary; M12 uses actual path
+2026-10-09T13:58:04.9326107Z PASS Unsupported physics never becomes modeled / measured / verified
+2026-10-09T13:58:05.2832254Z PASS Mission09 clear and Workshop unlock are both mandatory
+2026-10-09T13:58:05.3089498Z PASS M11/M12 sequential lock cannot be bypassed
+2026-10-09T13:58:05.3129180Z PASS M10 missing CW connection cannot clear or reward
+2026-10-09T13:58:05.3207816Z PASS M10 low/high power fail window and do not yield infinite reward
+2026-10-09T13:58:05.3289647Z PASS M10 balanced activates only CW and first reward, unlocks modulator
+2026-10-09T13:58:05.3636958Z PASS M10 replay never duplicates reward and keeps same original OE
+2026-10-09T13:58:05.4725833Z PASS M11 no modulator / driver / optical output cannot clear
+2026-10-09T13:58:05.5707573Z PASS M11 MZM vs EAM changes actual solver insertion loss and power
+2026-10-09T13:58:06.0238458Z PASS M12 all components and model-derived margin required
+2026-10-09T13:58:06.2929446Z PASS M12 long route fails; short route really improves loss/margin and earns3 Stars
+2026-10-09T13:58:06.4107319Z PASS Package stable IDs remain exact; one OE never qualifies other OEs
+2026-10-09T13:58:06.7083504Z PASS Second OE independent replay, reset and receipts preserve first OE
+2026-10-09T13:58:06.8332905Z PASS Workshop diagnostic never modifies traffic solver rate/power/job time
+2026-10-09T13:58:07.0686707Z PASS Refund only current OE equipment, keeps all original rewards and Chapter3
+2026-10-09T13:58:07.2312583Z PASS Economy cannot permanently block default campaign and prevents unfunded purchase
+2026-10-09T13:58:07.4318718Z PASS Challenge parameters require M12 clear; Unknown never becomes zero
+2026-10-09T13:58:07.6391570Z PASS Parameter unit/range and forbidden fields fail before mutation
+2026-10-09T13:58:08.0312943Z PASS Receipt, result and unlock tampering are rejected by fresh solver parity
+2026-10-09T13:58:08.2080205Z PASS Package edits invalidate educational status without silently qualifying changed model
+2026-10-09T13:58:08.3386052Z PASS All first-clear rewards and Chapter5 preview unlock are receipt-derived
+2026-10-09T13:58:09.1518745Z PASS v06 Campaign SHA256 roundtrip preserves all chapters/designs/receipts
+2026-10-09T13:58:09.2864423Z PASS v05 restore keeps exact original Chapter1–3 and starts unplayed Chapter4
+2026-10-09T13:58:09.3777285Z PASS Corrupt checksum / future schema / profile mismatch fail before any restore write
+2026-10-09T13:58:09.4085474Z PASS Workshop inner checksum and solver result tampering fail deep validation
+2026-10-09T13:58:09.4462054Z PASS New store loads empty and autosave resumes same profile/state
+2026-10-09T13:58:09.4465330Z PASS Other profile primary is never reused or overwritten
+2026-10-09T13:58:09.4467753Z PASS Future Workshop schema blocks load and later save, preserves raw bytes
+2026-10-09T13:58:09.4822026Z PASS Corrupt Workshop head recovers valid same-profile LKG only
+2026-10-09T13:58:09.8503746Z PASS Corrupt head and wrong-profile LKG block overwrite
+2026-10-09T13:58:10.0615028Z PASS Revision CAS detects another tab without overwriting newer progress
+2026-10-09T13:58:10.1843508Z PASS One Journal restores4 heads and never touches Engineering Lab keys
+2026-10-09T13:58:11.2230576Z PASS Interrupted restore rolls forward after every write boundary
+2026-10-09T13:58:11.5259316Z PASS Concurrent journal recovery blocks all remaining writes and explicit cancel keeps heads
+2026-10-09T13:58:11.5282586Z PASS Future journal cannot be cancelled/recovered into silent unsupported reset
+2026-10-09T13:58:11.7207778Z PASS Cross-chapter future unlock and reward fabrication are rejected
+2026-10-09T13:58:11.9681740Z PASS Legacy single-profile Chapter1 import preserves valid linked Workshop, different profile starts empty
+2026-10-09T13:58:12.0323480Z PASS All16 original Engineering source/test hashes remain exact
+2026-10-09T13:58:12.0362055Z PASS All3 legacy executable hashes remain byte exact
+2026-10-09T13:58:12.0402114Z PASS v06 HTML has correct title, inline code/assets and request-denying CSP
+2026-10-09T13:58:12.0403809Z PASS Adapter imports preserved core solve; no new network solver or BER calculation
+2026-10-09T13:58:12.0405629Z PASS Storage uses same Campaign DB and separate Workshop keys; preserves Lab isolation
+2026-10-09T13:58:12.0408181Z PASS Boot protects old3-head and new4-head journals before dynamic game imports

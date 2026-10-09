@@ -1,0 +1,5 @@
+import {recoverCampaignRestore,cancelCampaignRestore} from './campaign-storage';
+import {recoverCampaign06,cancelCampaign06} from './workshop-storage';
+// Registered before legacy capture handlers, so v06 Backup and Workshop actions cannot leak into older UIs.
+document.addEventListener('click',e=>{const api=(window as any).AIDCT_V06;if(api?.handleClick(e))return;},true);
+(async()=>{try{const legacyRecovery=await recoverCampaignRestore();if(legacyRecovery.blocked)throw Error(legacyRecovery.message);await recoverCampaign06();}catch(error){if(globalThis.indexedDB){const s=document.createElement('section');s.className='c3-boot';const h=document.createElement('h1');h.textContent='Campaign 복원 보호';const p=document.createElement('p');p.textContent=(error as Error).message;const b=document.createElement('button');b.textContent='복원 Journal 취소 · 현재 저장본 유지';b.onclick=async()=>{try{await cancelCampaignRestore();await cancelCampaign06();location.reload();}catch(e){p.textContent=(e as Error).message;}};s.append(h,p,b);document.body.prepend(s);return;}}await import('./chapter3-app');await import('./chapter4-app');})();
