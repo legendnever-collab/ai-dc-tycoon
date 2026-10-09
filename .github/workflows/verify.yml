@@ -50,6 +50,20 @@ jobs:
       - name: Release integrity
         run: node tests/release-integrity.cjs
 
+      - name: Package source and handoff
+        run: node scripts/package-v04.cjs
+
+      - name: Upload Release archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v04-source-and-handoff
+          path: |
+            ai-dc-tycoon-v0.4-source.zip
+            ai-dc-tycoon-v0.4-HANDOFF.zip
+            START-HERE-v0.4.md
+          retention-days: 14
+          if-no-files-found: error
+
       - name: Keep built HTML for review
         if: success()
         uses: actions/upload-artifact@v4
@@ -87,11 +101,16 @@ jobs:
       - name: Execute gameplay on offline HTML
         run: node tests/chapter2-browser.cjs
         timeout-minutes: 4
+      - name: Package browser screenshots
+        if: always()
+        run: if test -d screenshots-v04; then zip -q -r ai-dc-tycoon-v0.4-screenshots.zip screenshots-v04; fi
       - name: Archive browser screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ai-dc-tycoon-v04-browser-screenshots
-          path: screenshots-v04/
+          path: |
+            screenshots-v04/
+            ai-dc-tycoon-v0.4-screenshots.zip
           retention-days: 14
           if-no-files-found: ignore
