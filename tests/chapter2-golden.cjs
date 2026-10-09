@@ -1,8 +1,8 @@
-const assert=require('node:assert/strict');
+const assert=require('node:assert/strict'),fs=require('node:fs');
 const {newChapter2,simulateChapter2,transitionChapter2:c,validateChapter2,c2Wallet,c2XP,C2_ASSUMPTIONS}=require('../compiled/chapter2');
 const {chapter2Backup,parseChapter2Backup}=require('../compiled/chapter2-storage');
-let count=0;
-const test=(name,fn)=>{try{fn();count++;console.log('PASS '+name);}catch(e){console.error('FAIL '+name,e);process.exitCode=1;}};
+let count=0,cases=[];
+const test=(name,fn)=>{try{fn();count++;cases.push({name,status:'PASS'});console.log('PASS '+name);}catch(e){cases.push({name,status:'FAIL',error:String(e)});console.error('FAIL '+name,e);process.exitCode=1;}};
 const start=(s,m)=>c(s,{type:'start',mission:m},340);
 const apply=(s,a)=>c(s,a,340);
 const run=s=>apply(s,{type:'run'});
@@ -72,4 +72,5 @@ test('Backup rejects profile swap',()=>assert.throws(()=>parseChapter2Backup(cha
 test('Legacy v0.3 Backup not misparsed as Chapter2',()=>assert.throws(()=>parseChapter2Backup(JSON.stringify({format:'AIDataCenterTycoon'}),'player-1')));
 test('Forged receipt duplication rejected',()=>{const s=pass05();s.receipts.push(s.receipts[0]);assert.throws(()=>validateChapter2(s));});
 test('Educational assumptions explicit',()=>{assert.equal(C2_ASSUMPTIONS.evidence,'Educational Assumption');assert.ok(C2_ASSUMPTIONS.topology.includes('bottleneck'));});
+fs.mkdirSync('evidence/v04',{recursive:true});fs.writeFileSync('evidence/v04/chapter2-golden-results.json',JSON.stringify({model:'chapter2-network-educational-1.0.0',cases},null,2));
 console.log('Chapter2 Golden tests PASSED: '+count);
