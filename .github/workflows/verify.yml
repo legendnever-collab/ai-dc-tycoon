@@ -44,6 +44,9 @@ jobs:
       - name: AI DC Game Golden
         run: npm run test:game
 
+      - name: Chapter 2 Network Golden
+        run: node tests/chapter2-golden.cjs
+
       - name: Release integrity
         run: node tests/release-integrity.cjs
 
@@ -51,8 +54,10 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: ai-dc-tycoon-v0.3-verified-html
-          path: ai-dc-tycoon-v0.3.html
+          name: ai-dc-tycoon-v0.4-candidate-html
+          path: |
+            ai-dc-tycoon-v0.3.html
+            ai-dc-tycoon-v0.4.html
           retention-days: 14
           if-no-files-found: error
 
