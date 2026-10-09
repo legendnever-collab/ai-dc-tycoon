@@ -113,8 +113,8 @@ jobs:
       - name: Original P2 Engineering Browser regression
         run: node tests/p2-browser.cjs
         timeout-minutes: 4
-      - name: Original v0.3 Game Browser regression
-        run: node tests/game-browser.cjs
+      - name: v0.3 Game Browser baseline assertions (stable locator)
+        run: node tests/game-browser-stable-v04.cjs
         timeout-minutes: 5
       - name: Package browser screenshots
         if: always()
