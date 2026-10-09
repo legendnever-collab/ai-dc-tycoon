@@ -1,0 +1,79 @@
+name: Import authoritative v0.3 source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ai-dc-tycoon-v0.3-github-ready.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for upload
+        id: archive
+        shell: bash
+        run: |
+          if [ -f ai-dc-tycoon-v0.3-github-ready.zip ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "No import ZIP present. This is normal after a successful import."
+          fi
+
+      - name: Safely import source
+        if: steps.archive.outputs.present == 'true'
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import pathlib, zipfile
+          root = pathlib.Path.cwd().resolve()
+          archive = root / 'ai-dc-tycoon-v0.3-github-ready.zip'
+          with zipfile.ZipFile(archive) as src:
+              paths = set(src.namelist())
+              required = {'package.json','build.cjs','ai-dc-tycoon-v0.3.html','src/game-state.ts','tests/game-golden.cjs'}
+              missing = required - paths
+              if missing:
+                  raise SystemExit('Import ZIP is missing expected source files: ' + ', '.join(sorted(missing)))
+              for item in src.infolist():
+                  p = pathlib.PurePosixPath(item.filename)
+                  if item.filename.startswith('/') or '..' in p.parts or not p.parts:
+                      raise SystemExit('Unsafe archive path: ' + item.filename)
+                  dest = (root / item.filename).resolve()
+                  if not dest.is_relative_to(root):
+                      raise SystemExit('Archive path leaves repository: ' + item.filename)
+                  if item.file_size > 20_000_000:
+                      raise SystemExit('Oversized archive member: ' + item.filename)
+                  if item.is_dir():
+                      dest.mkdir(parents=True, exist_ok=True)
+                  else:
+                      dest.parent.mkdir(parents=True, exist_ok=True)
+                      with src.open(item) as inp, dest.open('wb') as out:
+                          import shutil
+                          shutil.copyfileobj(inp, out)
+          archive.unlink()
+          print('Imported authoritative v0.3 source; removed ZIP from working tree.')
+          PY
+
+      - name: Commit v0.3 source to main
+        if: steps.archive.outputs.present == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "No changes to commit"; exit 0; }
+          git commit -m "chore: import authoritative v0.3 game and engineering source"
+          git push origin HEAD:main
+          # Fast-forward feature branch only if it has not diverged; never force-push.
+          if ! git push origin HEAD:feature/v0.4-network-optics; then
+            echo "::warning::Feature branch has diverged; manually merge main into it before v0.4 development."
+          fi
