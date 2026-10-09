@@ -64,3 +64,34 @@ jobs:
 # This workflow intentionally covers build + golden tests only.
 # Browser/Playwright and physical Android/corporate-PC tests remain NOT TESTED in CI.
 # Do not treat this CI result as full 240-case regression without separate evidence.
+
+  browser-v04:
+    name: Offline Chapter 2 Browser Smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Install isolated browser test tools
+        run: npm install --no-save --no-package-lock playwright@1.56.1
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+        timeout-minutes: 5
+      - name: Build both offline releases
+        run: npm run build
+      - name: Execute gameplay on offline HTML
+        run: node tests/chapter2-browser.cjs
+        timeout-minutes: 4
+      - name: Archive browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v04-browser-screenshots
+          path: screenshots-v04/
+          retention-days: 14
+          if-no-files-found: ignore
