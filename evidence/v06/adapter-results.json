@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "name": "dBm/mW exact roundtrip and positive unit validation",
+      "status": "PASS"
+    },
+    {
+      "name": "Guided 800G compiler uses 8 fibers x1 lambda x100G separate from 3.2T objective",
+      "status": "PASS"
+    },
+    {
+      "name": "Guided Golden: 7.4dB loss -4.4dBm receive 5.6dB margin",
+      "status": "PASS"
+    },
+    {
+      "name": "Guided results exactly match original core solve and compiler hash",
+      "status": "PASS"
+    },
+    {
+      "name": "Waveguide cm loss follows route length, independent of diagram pixels",
+      "status": "PASS"
+    },
+    {
+      "name": "Coupler type and IL change compiler graph and received power",
+      "status": "PASS"
+    },
+    {
+      "name": "EAM/MZM use registry dimensions and distinct educational loss/driver presets",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing external ELS never creates internal duplicate or CW PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "No Driver / wrong typed input fail optical data qualification",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown launch / loss / sensitivity remain Unknown and never clear M12",
+      "status": "PASS"
+    },
+    {
+      "name": "Disconnected components do not add loss or yield valid graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Laser DC is per-channel power x8 / WPE and matches core once",
+      "status": "PASS"
+    },
+    {
+      "name": "Loss ledger counts active stages once and Rx incoming stays Unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "Full golden preserves original 3.2T fixture",
+      "status": "PASS"
+    },
+    {
+      "name": "M11 output fixture is explicit zero-loss temporary boundary; M12 uses actual path",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported physics never becomes modeled / measured / verified",
+      "status": "PASS"
+    }
+  ]
+}
