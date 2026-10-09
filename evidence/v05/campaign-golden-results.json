@@ -96,6 +96,14 @@
     {
       "name": "No money debt can permanently block Navigation/Reset recovery",
       "status": "PASS"
+    },
+    {
+      "name": "Campaign checkpoint rejects foreign profile Head and LKG without writes",
+      "status": "PASS"
+    },
+    {
+      "name": "Stale checkpoint writer cannot clobber another Campaign snapshot",
+      "status": "PASS"
     }
   ]
 }

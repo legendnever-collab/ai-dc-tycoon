@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "name": "All 16 Engineering baseline source/test hashes remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy v02/v03/v04 executable hashes remain byte-for-byte unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 model reuses production traffic solver and has no experimental model import",
+      "status": "PASS"
+    },
+    {
+      "name": "Single v05 HTML carries correct release version, inline assets and request-denying CSP",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent legacy engineering storage is not written by Campaign code",
+      "status": "PASS"
+    }
+  ]
+}

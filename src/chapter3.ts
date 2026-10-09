@@ -3,7 +3,7 @@ import type {C3State,C3Id,C3Action,C3Outcome,PackageConfig} from './cpo-schema';
 import {emptyPackage,packageCost,packageGraph,simulatePackage,evaluateOrder,compareArchitecture,addConnections,validateConnection} from './cpo-model';
 import {sha256} from './hash';
 export const C3_IDS:C3Id[]=['07','08','09'];
-export const C3_REWARDS={'07':{xp:360,credits:180,unlocks:['cpo-research-lab','architecture-comparison','cpo-blueprint']},'08':{xp:420,credits:200,unlocks:['oe-blueprint','els-component','package-view','reach-analyzer']},'09':{xp:500,credits:260,unlocks:['first-cpo-switch','photonics-workshop','laser-blueprint','modulator-blueprint']}};
+export const C3_REWARDS={'07':{xp:360,credits:180,unlocks:['cpo-research-lab','architecture-comparison','cpo-blueprint']},'08':{xp:420,credits:200,unlocks:['oe-blueprint','els-component','package-view','reach-analyzer']},'09':{xp:500,credits:260,unlocks:['first-cpo-switch','cpo-package-blueprint','photonics-workshop','laser-blueprint','modulator-blueprint']}};
 function check(yes:unknown,message:string):asserts yes{if(!yes)throw Error(message);}
 export function newChapter3(profileId:string):C3State{return {schema:CPO_SCHEMA,model:CPO_MODEL,profileId,revision:0,current:'07',phase:'EVENT',scale:'dc',selectedObjectId:'cpo-switch-001',selectedSlot:0,order:'service',architecture:'pluggable',orderReceipts:[],config:emptyPackage(),cleared:{'07':false,'08':false,'09':false},attempts:{'07':0,'08':0,'09':0},bestStars:{'07':0,'08':0,'09':0},receipts:[],unlocked:[],last:null,history:[]};}
 export function c3Wallet(s:C3State,previousChaptersCredits:number){return previousChaptersCredits+s.receipts.reduce((v,r)=>v+r.credits,0)-packageCost(s.config);}

@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "name": "Real IndexedDB integrated backup includes all nine receipts and exact module assignments",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid pasted checksum fails before writing any of the three primary heads",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO autosave changes only sidecar database, not legacy primary heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Real corrupt C3 head recovers LKG and archives the original bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Future C3 schema is preserved without autosave overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit Campaign restore archives future original and restores supported full progress",
+      "status": "PASS"
+    },
+    {
+      "name": "Integrated Campaign checkpoint LKG restores all chapters through UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Stale C3 tab preserves newer head and reports conflict without silent overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted multi-store restore journal rolls forward before legacy app boots",
+      "status": "PASS"
+    },
+    {
+      "name": "Future restore journal blocks all app autosave before boot and preserves raw bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent restore conflict blocks boot; explicit cancel keeps every current primary head",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy v03 paste migration keeps exact XP Credits Inventory and creates empty later chapters",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing v04 Chapter2 paste then unlocks Mission07 on matching migrated profile",
+      "status": "PASS"
+    },
+    {
+      "name": "Storage browser group finishes offline with no JS errors or runtime requests",
+      "status": "PASS"
+    }
+  ],
+  "timeoutPolicy": "separate group; 180s shell limit; 10s per action"
+}
