@@ -39,7 +39,7 @@ jobs:
           archive = root / 'ai-dc-tycoon-v0.3-github-ready.zip'
           with zipfile.ZipFile(archive) as src:
               paths = set(src.namelist())
-              required = {'package.json','build.cjs','ai-dc-tycoon-v0.3.html','src/game-state.ts','tests/game-golden.cjs'}
+              required = {'package.json','build.cjs','ai-dc-tycoon-v0.3.html','src/game-core.ts','tests/game-golden.cjs'}
               missing = required - paths
               if missing:
                   raise SystemExit('Import ZIP is missing expected source files: ' + ', '.join(sorted(missing)))
