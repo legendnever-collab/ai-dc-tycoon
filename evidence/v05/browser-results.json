@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "name": "v05 defaults to existing novice World and Mission06 gate",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign UI restores genuine v04 progress, economy and module graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked M08 is inaccessible in real UI",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 CPO cannot pass the field-service order",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing Pluggable wins service order but cannot clear both orders",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanding Pluggable fails real 120W power wall",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO solves density order with same capacity and job time, rewards once",
+      "status": "PASS"
+    },
+    {
+      "name": "Cost Density Serviceability are initially behind extra analysis",
+      "status": "PASS"
+    },
+    {
+      "name": "M07 Autosave resumes actual order receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "Offline Mission07 has no runtime requests or JavaScript errors",
+      "status": "PASS"
+    }
+  ]
+}
