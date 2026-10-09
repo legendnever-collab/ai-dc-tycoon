@@ -9,3 +9,4 @@ ELS bug: chapter4 scene uses last simulation output as component presence; start
 Technology Tree currently mixes static legacy research cards and appended unlock strings. v0.7 will project all five chapter states from validated clear/reward progress.
 
 Source data: standalone typed graph core v0.2, CPO model v0.5, workshop model v0.6, IndexedDB snapshot/CAS/journal storage. Extended model must count every interface once and exclude external diagnostic DC from preserved package power.
+

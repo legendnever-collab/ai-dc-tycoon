@@ -16,6 +16,10 @@
     "test:p2": "node tests/p2-golden.cjs",
     "test:p2-browser": "node tests/p2-browser.cjs",
     "test:game": "node tests/game-golden.cjs",
-    "test:game-browser": "node tests/game-browser.cjs"
-  }
+    "test:game-browser": "node tests/game-browser.cjs",
+    "test:v07": "node tests/chapter5-golden.cjs && node tests/substrate-storage-golden.cjs && node tests/campaign-progress-golden.cjs && node tests/v07-integrity.cjs",
+    "test:v07-browser": "node tests/v07-browser.cjs && node tests/v07-mobile-browser.cjs && node tests/v07-storage-browser.cjs && node tests/v07-legacy-browser.cjs",
+    "package:v07": "node scripts/package-v07.cjs"
+  },
+  "offlineReleaseVersion": "0.7.0"
 }

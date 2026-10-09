@@ -1,0 +1,60 @@
+name: v0.7 Photonic Substrate Release
+on:
+  push:
+    branches: [feature/v0.7-photonic-substrate]
+    paths-ignore: ['*.zip']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v07:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Frozen legacy and new model/storage checks
+        run: |
+          node tests/golden.cjs
+          node tests/p2-golden.cjs
+          node tests/game-golden.cjs
+          node tests/chapter2-golden.cjs
+          node tests/network-golden.cjs
+          node tests/chapter2-graph-golden.cjs
+          node tests/cpo-model-golden.cjs
+          node tests/chapter3-golden.cjs
+          node tests/campaign-golden.cjs
+          node tests/workshop-adapter-golden.cjs
+          node tests/chapter4-golden.cjs
+          node tests/workshop-storage-golden.cjs
+          node tests/v06-integrity.cjs
+          npm run test:v07
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+        timeout-minutes: 5
+      - name: Offline desktop, mobile, protected storage and legacy gameplay
+        run: npm run test:v07-browser
+        timeout-minutes: 18
+      - name: Package executable, source, handoff and screenshots
+        run: npm run package:v07
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-dc-tycoon-v07-release-evidence
+          path: |
+            ai-dc-tycoon-v0.7.html
+            ai-dc-tycoon-v0.7-source.zip
+            ai-dc-tycoon-v0.7-HANDOFF.zip
+            ai-dc-tycoon-v0.7-screenshots.zip
+            RELEASE-MANIFEST-v0.7.json
+            evidence/v07/
+            screenshots-v07/
+          retention-days: 14
+          if-no-files-found: error
