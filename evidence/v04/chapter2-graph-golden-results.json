@@ -1,0 +1,93 @@
+{
+  "model": "chapter2-typed-path-2.0.0",
+  "cases": [
+    {
+      "name": "Shared Fabric resource aggregates traversing demands, not ports",
+      "status": "PASS"
+    },
+    {
+      "name": "Fabric and Port capacities are independent bottlenecks",
+      "status": "PASS"
+    },
+    {
+      "name": "Upgrading an unused link has no effect",
+      "status": "PASS"
+    },
+    {
+      "name": "Reverse directions have independent Full Duplex capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "Traffic cannot transit through a Compute Rack",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing path never reports partially known effective bandwidth",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero, Infinity or invalid traffic capacities refused",
+      "status": "PASS"
+    },
+    {
+      "name": "Duplicate Stable IDs rejected before routing",
+      "status": "PASS"
+    },
+    {
+      "name": "Playable M04 commands persist typed Rack/Port/Link relationships",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 disconnect lowers Connected Compute, retains purchased switch cost",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 reconnected Rack can reuse freed physical Port",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 actual end-to-end path passes both leaves and Spine",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 asymmetric path loses speed despite summed capacity increase",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 disconnection removes traffic path, never clears",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 two physical modules and fiber represented separately",
+      "status": "PASS"
+    },
+    {
+      "name": "Module mismatch deactivates fiber in actual graph",
+      "status": "PASS"
+    },
+    {
+      "name": "Serialized physical graph drift is rejected on restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged port capability in graph rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Reward Receipt stores clear graph and recomputed result provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged result hash cannot reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission Replay does not duplicate rewards or physical performance",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Chapter2 profile without graph is still readable",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,3 +1,6 @@
+import {chapterGraph,simulateChapterGraph,C2_GRAPH_MODEL} from './chapter2-graph';
+import type {C2Graph} from './chapter2-graph';
+import {sha256} from './hash';
 /* Chapter 2 is isolated from the v0.3 educational/engineering numerical cores.
    All rates, costs and powers below are GAME ASSUMPTIONS, not vendor specifications. */
 export type C2Id='04'|'05'|'06';
@@ -15,17 +18,17 @@ export type C2Outcome={
   computeSeconds:number|null; networkSeconds:number|null; completionSeconds:number|null;
   bottleneck:'Compute'|'Network'|'Disconnected';
   watts:number; costCredits:number; targetSeconds:number;
-  pass:boolean; stars:number; objectives:{label:string;pass:boolean;actual:string}[]; hint:string;
+  pass:boolean; stars:number; objectives:{label:string;pass:boolean;actual:string}[]; hint:string; graph?:C2Graph; traffic?:ReturnType<typeof simulateChapterGraph>;
 };
-export type C2Receipt={mission:C2Id;xp:number;credits:number;stars:number;revision:number};
+export type C2Receipt={mission:C2Id;xp:number;credits:number;stars:number;revision:number;clearConfig?:C2Config;clearGraph?:C2Graph;resultHash?:string};
 export type C2State={
   schema:1;profileId:string;revision:number;current:C2Id;active:boolean;
   cleared:Record<C2Id,boolean>; attempts:Record<C2Id,number>;bestStars:Record<C2Id,number>;
-  receipts:C2Receipt[]; config:C2Config; last:C2Outcome|null;
+  receipts:C2Receipt[]; config:C2Config; last:C2Outcome|null;network?:C2Graph;
 };
 export type C2Action=
  {type:'start';mission:C2Id}|{type:'install-hd'}|{type:'connect-rack';rack:string}|
- {type:'install-spine'}|{type:'uplink';end:End;rate:0|100|200}|
+ {type:'disconnect-rack';rack:string}|{type:'install-spine'}|{type:'uplink';end:End;rate:0|100|200}|
  {type:'select-port';end:End}|{type:'module';end:End;rate:0|400|800}|
  {type:'fiber'}|{type:'run'}|{type:'reset'};
 export const C2_IDS:C2Id[]=['04','05','06'];
@@ -67,7 +70,7 @@ function result(mission:C2Id,base:Omit<C2Outcome,'mission'|'pass'|'stars'|'objec
  const stars=!pass?0:mission==='04'?(score<=150?3:2):mission==='05'?(score<=190?3:2):base.watts<=65?3:2;
  return {...base,mission,pass,stars,objectives,hint};
 }
-export function simulateChapter2(s:C2State,mission:C2Id=s.current):C2Outcome{
+function legacyOutcomeTemplate(s:C2State,mission:C2Id=s.current):C2Outcome{
  const c=s.config;
  if(mission==='04'){
   const ports=c.highDensity?4:2,fabric=c.highDensity?96:64,connected=c.connected.length;
@@ -117,12 +120,24 @@ export function simulateChapter2(s:C2State,mission:C2Id=s.current):C2Outcome{
     {label:'Module cost ≤ 175 Credits',pass:cost<=175,actual:String(cost)+' Credits'}
    ],!compatible?'양쪽 Switch Port에 동일한 속도의 Module을 설치하고 Fiber를 연결하세요.':path===400?'400G는 연결되었지만 유효 대역폭이 부족합니다. 800G 업그레이드를 검토하세요.':'800G의 Net Rate는 protocol 효율 가정으로 640 Gb/s입니다.');
 }
+export function simulateChapter2(s:C2State,mission:C2Id=s.current):C2Outcome {
+ const template=legacyOutcomeTemplate(s,mission),graph=chapterGraph(s.config,mission),traffic=simulateChapterGraph(graph);
+ const work=mission==='04'?7200:6400,compute=traffic.connected.length?work/(traffic.connected.length*40):null;
+ const network=traffic.networkSeconds,known=network!==null&&compute!==null;
+ const completion=compute===null?null:network===null?(mission==='04'?compute:null):Math.max(compute,network);
+ const objectives=template.objectives.map(o=>o.label.startsWith('Workload')?{...o,pass:known&&completion!==null&&completion<=template.targetSeconds,actual:known?completion!.toFixed(1)+' s':'Disconnected'}:o);
+ const pass=known&&objectives.every(o=>o.pass);
+ return {...template,graph,traffic,known,computeSeconds:compute,networkSeconds:network,completionSeconds:completion,
+  effectiveGbps:traffic.effectiveGb_s,pathGbps:mission==='06'?traffic.effectiveGb_s/.8:traffic.effectiveGb_s,
+  watts:traffic.powerW,costCredits:traffic.costCredits,bottleneck:!known?'Disconnected':network!>compute!?'Network':'Compute',
+  pass,stars:pass?template.stars:0,objectives};
+}
 export function validateChapter2(s:C2State):void{
  assert(!!s&&s.schema===1&&typeof s.profileId==='string'&&!!s.profileId,'Chapter 2 저장 형식 오류');
  assert(Number.isInteger(s.revision)&&s.revision>=0&&enumVal(s.current,C2_IDS)&&typeof s.active==='boolean','Chapter 2 revision 오류');
  assert(!!s.config&&typeof s.config.highDensity==='boolean'&&typeof s.config.spine==='boolean'&&typeof s.config.fiber==='boolean','Chapter 2 구성 오류');
  assert(Array.isArray(s.config.connected)&&new Set(s.config.connected).size===s.config.connected.length&&
- s.config.connected.every(x=>racks.includes(x))&&s.config.connected.includes('rack-001')&&s.config.connected.includes('rack-002'),
+ s.config.connected.every(x=>racks.includes(x))&&s.config.connected.length>=0,
  'Rack 연결 정보 오류');
  assert(s.config.connected.length<= (s.config.highDensity?4:2),'물리 Port 수 초과');
  for(const end of ['A','B'] as End[]){
@@ -134,6 +149,7 @@ export function validateChapter2(s:C2State):void{
  const seen=new Set<string>();
  for(const rec of s.receipts){
   assert(enumVal(rec.mission,C2_IDS)&&!seen.has(rec.mission),'Reward 중복 오류');
+  if(rec.clearConfig){const out=simulateChapter2({...s,config:rec.clearConfig},rec.mission);assert(out.pass&&JSON.stringify(out.graph)===JSON.stringify(rec.clearGraph)&&sha256(JSON.stringify(out))===rec.resultHash,'Reward Simulation provenance 오류');}
   seen.add(rec.mission);const reward=C2_REWARDS[rec.mission];
   assert(rec.xp===reward.xp&&rec.credits===reward.credits&&rec.stars>=1&&rec.stars<=3&&Number.isInteger(rec.revision)&&rec.revision<=s.revision,'Reward 위조 오류');
  }
@@ -143,6 +159,9 @@ export function validateChapter2(s:C2State):void{
   assert(s.cleared[id]=== (s.bestStars[id]>0),'Star/Receipt 오류');
   assert(!s.cleared[id]||s.attempts[id]>0,'실행 없이 Mission Clear');
  }
+ if(s.network)assert(JSON.stringify(s.network)===JSON.stringify(chapterGraph(s.config,s.current)),'Persisted Network Graph 구성 불일치');
+ if(s.last){const original=s.last;const snapshot=s.receipts.find(r=>r.mission===original.mission&&r.clearConfig)?.clearConfig;
+  if(original.graph&&original.traffic)assert(original.graph.modelVersion===C2_GRAPH_MODEL,'Stored Graph Model 오류');}
  assert(!s.cleared['05']||s.cleared['04'],'Mission 05 Lock 오류');
  assert(!s.cleared['06']||s.cleared['05'],'Mission 06 Lock 오류');
  if(s.current!=='04')assert(s.cleared[s.current==='05'?'04':'05'],'잠긴 Mission 진입 오류');
@@ -164,6 +183,7 @@ export function transitionChapter2(s:C2State,action:C2Action,legacyCredits:numbe
    assert(!c.connected.includes(action.rack),'이미 연결된 Rack입니다.');
    assert(c.connected.length<(c.highDensity?4:2),'Switch Port가 부족합니다. High-Density Switch가 필요합니다.');
    c.connected.push(action.rack);break;
+ case 'disconnect-rack':ensureActive();assert(mission==='04'&&c.connected.includes(action.rack),'연결된 Rack을 선택하세요.');c.connected=c.connected.filter(x=>x!==action.rack);break;
  case 'install-spine':ensureActive();assert(mission==='05','Mission 05에서 사용합니다.');
    c.spine=true;affordable();break;
  case 'uplink':ensureActive();assert(mission==='05'&&enumVal(action.end,['A','B'])&&enumVal(action.rate,[0,100,200]),'Uplink Rate 오류');
@@ -188,13 +208,15 @@ export function transitionChapter2(s:C2State,action:C2Action,legacyCredits:numbe
   g.last=r;g.attempts[mission]++;
   if(r.pass){
    g.bestStars[mission]=Math.max(g.bestStars[mission],r.stars);
-   if(!g.cleared[mission]){g.cleared[mission]=true;const award=C2_REWARDS[mission];g.receipts.push({mission,...award,stars:r.stars,revision:g.revision+1});}
+   if(!g.cleared[mission]){g.cleared[mission]=true;const award=C2_REWARDS[mission];g.receipts.push({mission,...award,stars:r.stars,revision:g.revision+1,clearConfig:structuredClone(c),clearGraph:structuredClone(r.graph!),resultHash:sha256(JSON.stringify(r))});}
   }
   g.active=false;break;
  }
  default:throw Error('지원하지 않는 명령입니다.');
  }
+ g.network=chapterGraph(c,g.current);
  g.revision++;
  validateChapter2(g);
  return g;
 }
+
