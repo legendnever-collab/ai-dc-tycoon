@@ -1,0 +1,5 @@
+PASS All 16 Engineering baseline source/test hashes remain exact
+PASS Legacy v02/v03/v04 executable hashes remain byte-for-byte unchanged
+PASS v05 model reuses production traffic solver and has no experimental model import
+PASS Single v05 HTML carries correct release version, inline assets and request-denying CSP
+PASS Independent legacy engineering storage is not written by Campaign code

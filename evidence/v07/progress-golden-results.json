@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "name": "v06 complete projects Chapters1–4 Cleared and Chapter5 Available",
+      "status": "PASS"
+    },
+    {
+      "name": "Pluggable/CPO/OE cards are Completed/Learned, not previews or planned",
+      "status": "PASS"
+    },
+    {
+      "name": "Active Substrate mission shows In Progress and current location",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing prerequisite locks matching chapter and jump",
+      "status": "PASS"
+    },
+    {
+      "name": "All5 Learn chapters have concepts, map, glossary and next bridge",
+      "status": "PASS"
+    }
+  ]
+}

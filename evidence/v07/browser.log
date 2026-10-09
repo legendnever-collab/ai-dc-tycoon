@@ -1,0 +1,16 @@
+PASS Fresh v07 offline has five visible campaign steps, locked later chapters and lazy Lab
+PASS Locked chapter opens real Learn overview without bypassing mission gate
+PASS v06 full Campaign paste migration preserves exact Chapter1–4 and initializes Chapter5
+PASS Shared navigator jumps through Chapters1–5 and shows same current step
+PASS Every chapter Learn button shows structured concepts, map, glossary and bridge
+PASS Technology Tree shows Pluggable/CPO/OE Completed and active Substrate Current
+PASS ELS remains Installed/CW Connected after next mission starts and after Save/Load
+PASS CPO Package explains four independent OEs and baseline capacity
+PASS M13 missing path fails, then selected coupling and substrate connection clear
+PASS M14 unaligned FAU fails with per-channel feedback, then guided x/y and pitch clear
+PASS M15 wrong channel count and pitch fail before16-channel prototype clear
+PASS Prototype clears reflect in global progress/Tech and replay rewards remain unique
+PASS Whole campaign autosave reload and Text Backup restore preserve exact prototype state
+PASS OE source edit marks prior substrate result stale without rewriting rewards
+PASS Preserved Lab remains independently executable with original numerical solver
+PASS Offline gameplay and Learn windows make zero HTTP requests or JS errors

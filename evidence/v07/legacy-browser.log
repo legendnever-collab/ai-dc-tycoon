@@ -1,0 +1,14 @@
+PASS Existing M01 UI in v07 retains original 30s and 100XP/120Credit reward
+PASS Existing M02 rack purchase/place and original 60s numerical fixture preserved
+PASS Existing M03 network failure, retry and original 120s clear still work
+PASS Existing M04 actual rack connections clear with preserved reward receipt
+PASS Existing M05 leaf-spine path bottleneck and clear remain playable in v07
+PASS Existing M06 optical modules/fiber clear unlocks actual Mission07
+PASS Existing M07 service vs density orders preserve40s,2560G and96W CPO boundary
+PASS Existing M08 real ASIC,OE,ELS,FAU and fiber assembly clears in shared Package
+PASS Existing M09 four independent OEs install and clear; Why4OEs available in Package
+PASS Existing M10 guided ELS/CW and Laser balanced clear retains one reward
+PASS Existing M11 Driver/MZM connection clears with original3dB,800G graph
+PASS Existing M12 guided Tx path clears with7.4dB margin and opens Chapter5
+PASS Preserved Engineering Lab executes same optical solver default numerical result
+PASS Legacy-to-CPO browser has no external runtime requests or JS errors

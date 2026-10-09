@@ -1,0 +1,22 @@
+[
+  {
+    "file": "evidence/v07/chapter5-golden-results.json",
+    "passed": 22,
+    "status": "PASS"
+  },
+  {
+    "file": "evidence/v07/storage-golden-results.json",
+    "passed": 16,
+    "status": "PASS"
+  },
+  {
+    "file": "evidence/v07/progress-golden-results.json",
+    "passed": 5,
+    "status": "PASS"
+  },
+  {
+    "file": "evidence/v07/integrity-results.json",
+    "passed": 3,
+    "status": "PASS"
+  }
+]

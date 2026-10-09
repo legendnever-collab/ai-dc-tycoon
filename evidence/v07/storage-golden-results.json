@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "name": "v07 whole Campaign preserves all5 chapters and graph-qualified receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "v06 full restore preserves exact Chapter1–4 and starts unplayed Substrate",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 full restore remains supported with empty Workshop and Substrate",
+      "status": "PASS"
+    },
+    {
+      "name": "Single Chapter1 same-profile import retains linked valid Substrate",
+      "status": "PASS"
+    },
+    {
+      "name": "Checksum, future schema, wrong profile reject before writes",
+      "status": "PASS"
+    },
+    {
+      "name": "Inner cached solver tamper rejected even with recomputed envelope checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "New store save/load matches exact state without file selection",
+      "status": "PASS"
+    },
+    {
+      "name": "Other profile is never silently reused or saved under current key",
+      "status": "PASS"
+    },
+    {
+      "name": "Future primary blocks load/save and preserves original bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt primary recovers same-profile LKG; corrupt/wrong-profile LKG blocks",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent writer conflicts retain newer head",
+      "status": "PASS"
+    },
+    {
+      "name": "v07 restore Journal writes exactly5 heads and preserves independent Lab",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted Journal recovers after each of5 heads and commit boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent restore recovery blocks remaining writes; cancel preserves head",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Journal cannot silently cancel/recover into reset",
+      "status": "PASS"
+    },
+    {
+      "name": "Cross-chapter progression fabrication is rejected",
+      "status": "PASS"
+    }
+  ]
+}

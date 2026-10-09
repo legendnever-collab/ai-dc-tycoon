@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "name": "Original v06 Workshop source/tests and executable are byte exact",
+      "status": "PASS"
+    },
+    {
+      "name": "v07 release is standalone with request-denying CSP and correct model/title",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded Engineering Lab remains byte exact to authoritative baseline",
+      "status": "PASS"
+    }
+  ]
+}

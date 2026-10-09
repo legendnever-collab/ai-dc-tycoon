@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "name": "All16 original Engineering source/test hashes remain exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Every original Chapter1–3 source and regression file remains exact",
+      "status": "PASS"
+    },
+    {
+      "name": "All3 legacy executable hashes remain byte exact",
+      "status": "PASS"
+    },
+    {
+      "name": "v06 HTML has correct title, inline code/assets and request-denying CSP",
+      "status": "PASS"
+    },
+    {
+      "name": "Adapter imports preserved core solve; no new network solver or BER calculation",
+      "status": "PASS"
+    },
+    {
+      "name": "Storage uses same Campaign DB and separate Workshop keys; preserves Lab isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "Boot protects old3-head and new4-head journals before dynamic game imports",
+      "status": "PASS"
+    }
+  ]
+}

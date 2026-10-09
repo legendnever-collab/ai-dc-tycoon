@@ -1,0 +1,22 @@
+PASS Chapter5 is unplayed by default and cannot bypass Mission12
+PASS M13 incomplete path fails and awards nothing
+PASS M13 known interface uses inherited modulation + coupling once at PS input
+PASS Direct vs edge vs preview loss changes exact core results; preview is fixed-only
+PASS Mission13 does not silently include FAU alignment / propagation / fiber losses
+PASS M14 unaligned FAU fails without resetting M13 clear
+PASS Gaussian offset penalty is zero-centered, symmetric and quadratic
+PASS Pitch mismatch hurts edge channels more; more channels increase worst offset
+PASS Tight tolerance reduces window and increases Gaussian penalty
+PASS M14 aligned route clears exact analytical end-to-end budget
+PASS M15 requires16 ×50G and rejects4/8 channel starters
+PASS M15 16×50G uses16 unique typed optical paths and diagnostic source allocations
+PASS All loss ledger stages sum to core Loss / Rx Power / worst Margin
+PASS Long route increases loss, fails feasibility and changes graph hash
+PASS Excessive channel offset remains a valid lossy graph without clamp or passive gain
+PASS Same aggregate 800G does not imply same diagnostic power or density
+PASS Source mutation invalidates current qualification without rewriting historical receipts
+PASS Missing sensitivity is Unknown and cannot clear by UI substitutes
+PASS Reward replay never duplicates XP or Credits
+PASS Result, reward and unsupported parameter tampering fail deep validation
+PASS Package ledger and original Workshop values stay byte exact through substrate gameplay
+PASS Mission15 includes all numerical, multi-channel and packaging checks

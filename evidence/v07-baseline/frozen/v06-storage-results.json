@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "name": "v06 Campaign SHA256 roundtrip preserves all chapters/designs/receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "v05 restore keeps exact original Chapter1–3 and starts unplayed Chapter4",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt checksum / future schema / profile mismatch fail before any restore write",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop inner checksum and solver result tampering fail deep validation",
+      "status": "PASS"
+    },
+    {
+      "name": "New store loads empty and autosave resumes same profile/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Other profile primary is never reused or overwritten",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Workshop schema blocks load and later save, preserves raw bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt Workshop head recovers valid same-profile LKG only",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt head and wrong-profile LKG block overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "Revision CAS detects another tab without overwriting newer progress",
+      "status": "PASS"
+    },
+    {
+      "name": "One Journal restores4 heads and never touches Engineering Lab keys",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted restore rolls forward after every write boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent journal recovery blocks all remaining writes and explicit cancel keeps heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Future journal cannot be cancelled/recovered into silent unsupported reset",
+      "status": "PASS"
+    },
+    {
+      "name": "Cross-chapter future unlock and reward fabrication are rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy single-profile Chapter1 import preserves valid linked Workshop, different profile starts empty",
+      "status": "PASS"
+    }
+  ]
+}
