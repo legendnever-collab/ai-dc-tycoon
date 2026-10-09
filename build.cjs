@@ -10,7 +10,7 @@ const v04=esbuild.buildSync({entryPoints:['src/chapter2-app.ts'],bundle:true,wri
 const js04=v04.find(f=>f.path.endsWith('.js'));if(!js04)throw Error('v0.4 JavaScript was not emitted');
 const html04=fs.readFileSync('src/game-shell-v04.html','utf8')
  .replace('/* STYLES */',fs.readFileSync('src/game-style.css','utf8')+'\n'+fs.readFileSync('src/chapter2-style.css','utf8'))
- .replace('/* SCRIPT */',()=>js04.text.replace(/<\\/script/gi,'<\\/script'));
+ .replace('/* SCRIPT */',()=>js04.text.replace(new RegExp('</script','gi'),'<\\/script'));
 fs.mkdirSync('../output-v04',{recursive:true});
 for(const path of ['../output-v04/ai-dc-tycoon-v0.4.html','ai-dc-tycoon-v0.4.html'])fs.writeFileSync(path,html04);
 console.log('Built v0.4.0 Chapter 2 offline: '+Buffer.byteLength(html04)+' bytes; v0.3 executable retained');
