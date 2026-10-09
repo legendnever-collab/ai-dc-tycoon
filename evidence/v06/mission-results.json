@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "name": "Mission09 clear and Workshop unlock are both mandatory",
+      "status": "PASS"
+    },
+    {
+      "name": "M11/M12 sequential lock cannot be bypassed",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 missing CW connection cannot clear or reward",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 low/high power fail window and do not yield infinite reward",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 balanced activates only CW and first reward, unlocks modulator",
+      "status": "PASS"
+    },
+    {
+      "name": "M10 replay never duplicates reward and keeps same original OE",
+      "status": "PASS"
+    },
+    {
+      "name": "M11 no modulator / driver / optical output cannot clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M11 MZM vs EAM changes actual solver insertion loss and power",
+      "status": "PASS"
+    },
+    {
+      "name": "M12 all components and model-derived margin required",
+      "status": "PASS"
+    },
+    {
+      "name": "M12 long route fails; short route really improves loss/margin and earns3 Stars",
+      "status": "PASS"
+    },
+    {
+      "name": "Package stable IDs remain exact; one OE never qualifies other OEs",
+      "status": "PASS"
+    },
+    {
+      "name": "Second OE independent replay, reset and receipts preserve first OE",
+      "status": "PASS"
+    },
+    {
+      "name": "Workshop diagnostic never modifies traffic solver rate/power/job time",
+      "status": "PASS"
+    },
+    {
+      "name": "Refund only current OE equipment, keeps all original rewards and Chapter3",
+      "status": "PASS"
+    },
+    {
+      "name": "Economy cannot permanently block default campaign and prevents unfunded purchase",
+      "status": "PASS"
+    },
+    {
+      "name": "Challenge parameters require M12 clear; Unknown never becomes zero",
+      "status": "PASS"
+    },
+    {
+      "name": "Parameter unit/range and forbidden fields fail before mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Receipt, result and unlock tampering are rejected by fresh solver parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Package edits invalidate educational status without silently qualifying changed model",
+      "status": "PASS"
+    },
+    {
+      "name": "All first-clear rewards and Chapter5 preview unlock are receipt-derived",
+      "status": "PASS"
+    }
+  ]
+}
