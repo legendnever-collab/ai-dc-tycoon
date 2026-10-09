@@ -46,6 +46,11 @@ jobs:
                   raise SystemExit('Import ZIP is missing expected source files: ' + ', '.join(sorted(missing)))
               for item in src.infolist():
                   p = pathlib.PurePosixPath(item.filename)
+                  # Workflow file updates by the workflow token may be restricted.
+                  # Register verify.yml separately after the source import succeeds.
+                  if p.parts[:2] == ('.github', 'workflows'):
+                      print('Deferred workflow file (not committed by importer):', item.filename)
+                      continue
                   if item.filename.startswith('/') or '..' in p.parts or not p.parts:
                       raise SystemExit('Unsafe archive path: ' + item.filename)
                   dest = (root / item.filename).resolve()
@@ -70,6 +75,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git status --short
+          echo "GitHub Actions identity: $(git config user.name)"
           git add -A
           git diff --cached --quiet && { echo "No changes to commit"; exit 0; }
           git commit -m "chore: import authoritative v0.3 game and engineering source"
