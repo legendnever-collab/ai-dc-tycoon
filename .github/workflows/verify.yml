@@ -47,6 +47,9 @@ jobs:
       - name: Chapter 2 Network Golden
         run: node tests/chapter2-golden.cjs
 
+      - name: Experimental Typed Network Graph Golden
+        run: node tests/network-golden.cjs
+
       - name: Release integrity
         run: node tests/release-integrity.cjs
 
