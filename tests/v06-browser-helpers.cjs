@@ -1,0 +1,11 @@
+const h=require('./v05-browser-helpers.cjs'),path=require('path'),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const ready=p=>p.waitForFunction(()=>window.AIDCT_V06?.isReady()&&window.AIDCT_V05?.isReady()&&window.AIDCT_V04?.isReady());
+const click=async(p,s)=>{const l=p.locator(s).filter({visible:true}).first();await l.scrollIntoViewIfNeeded();await l.click();};const action=(p,t,e='')=>click(p,'[data-c4="'+t+'"]'+e);
+const state=p=>p.evaluate(()=>window.AIDCT_V06.state()),saved=p=>p.evaluate(()=>window.AIDCT_V06.whenSaved());
+const bundle=(id='v06-browser')=>{const game=h.fixtures.legacy(id),chapter2=h.fixtures.chapter2(game),chapter3=h.fixtures.complete(id);return {game,chapter2,chapter3,chapter4:require('../compiled/chapter4').newChapter4(id)};};
+const restore=async(p,raw)=>{await saved(p);await click(p,'#backup-tab');await p.fill('#campaign-text',typeof raw==='string'?raw:require('../compiled/workshop-storage').campaignBackup06(raw));await Promise.all([p.waitForEvent('load'),click(p,'#campaign-restore')]);await ready(p);};
+const launch=async(viewport={width:1440,height:1100},touch=false)=>{const browser=await chromium.launch(h.options),context=await browser.newContext({viewport,isMobile:touch,hasTouch:touch});context.setDefaultTimeout(10000);await context.setOffline(true);const page=await context.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});await page.goto('file://'+path.resolve('ai-dc-tycoon-v0.6.html'));await ready(page);return {browser,context,page,errors,requests};};
+const light=async p=>{await action(p,'start','[data-mission="10"]');await action(p,'cw');await action(p,'run');};
+const mod=async(p,kind='MZM')=>{await action(p,'start','[data-mission="11"]');await action(p,'modulator','[data-kind="'+kind+'"]');await action(p,'driver');await action(p,'output');await action(p,'run');};
+const completePath=async p=>{await action(p,'start','[data-mission="12"]');await action(p,'waveguide');await action(p,'coupler','[data-kind="EdgeCoupler"]');await action(p,'fau');await action(p,'receiver');await action(p,'run');};
+module.exports={...h,ready,click,action,state,saved,bundle,restore,launch,light,mod,path:completePath};
