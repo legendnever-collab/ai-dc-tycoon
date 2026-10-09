@@ -1,0 +1,106 @@
+{
+  "engine": "Chromium via Playwright",
+  "browserVersion": "153.0.8010.0",
+  "urlScheme": "file:",
+  "offline": true,
+  "cases": [
+    {
+      "name": "file:// offline startup: JS solver and IndexedDB available",
+      "status": "PASS"
+    },
+    {
+      "name": "Parameter editing and mission fail visibly update",
+      "status": "PASS"
+    },
+    {
+      "name": "Save / reload / auto resume preserves design and revision",
+      "status": "PASS"
+    },
+    {
+      "name": "Template challenge: arithmetic 3.2T + assumptions warning",
+      "status": "PASS"
+    },
+    {
+      "name": "Text backup contains current and archived revisions",
+      "status": "PASS"
+    },
+    {
+      "name": "Paste restore success applies complete saved inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "Restore corruption rollback preserves current state",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown coding efficiency and loss are never PASS values",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid passive loss kept out of active physics state",
+      "status": "PASS"
+    },
+    {
+      "name": "Channel override controls worst-link fail",
+      "status": "PASS"
+    },
+    {
+      "name": "Before / after comparison captures independent result",
+      "status": "PASS"
+    },
+    {
+      "name": "Evidence never grants Measurement Verified label",
+      "status": "PASS"
+    },
+    {
+      "name": "Report contains version/model/input/seed/channel trace",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt head automatically recovers LKG on reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Schema 0 paste migration succeeds",
+      "status": "PASS"
+    },
+    {
+      "name": "Sandbox remains separate from campaign pass",
+      "status": "PASS"
+    },
+    {
+      "name": "Same file path in a second browser page auto resumes",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent stale tab cannot overwrite newer head",
+      "status": "PASS"
+    },
+    {
+      "name": "Restoring and editing older branch preserves all prior snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser runtime errors / network request count = zero",
+      "status": "PASS"
+    },
+    {
+      "name": "390px mobile: no viewport overflow and all controls reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "320px compact viewport keeps actions and inspector accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "IndexedDB failure is visible and text backup still works",
+      "status": "PASS"
+    },
+    {
+      "name": "Same profile survives actual Chromium process restart",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "networkRequests": []
+}

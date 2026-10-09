@@ -1,0 +1,45 @@
+{
+  "version": "0.4.0",
+  "cases": [
+    {
+      "name": "v0.4 offline launch + Chapter 2 locked",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.3 save restore with three cleared missions and preserved XP/Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "M04 port upgrade, four physical connections, hard simulation clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M05 actual Leaf/Spine path and bottleneck clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M06 800G two-end module compatibility, Fiber, CPO power wall",
+      "status": "PASS"
+    },
+    {
+      "name": "IndexedDB auto resume and first-clear receipt deduplication",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission replay no duplicate reward",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter 2 backup envelope",
+      "status": "PASS"
+    },
+    {
+      "name": "390px / 320px responsive horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "no page errors or runtime network requests",
+      "status": "PASS"
+    }
+  ]
+}

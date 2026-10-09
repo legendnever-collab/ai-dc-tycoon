@@ -1,0 +1,102 @@
+{
+  "sourceCommit": "c12149e985b207c5df50357ff7eb62a299fb813d",
+  "executed": 367,
+  "pass": 367,
+  "groups": [
+    {
+      "file": "browser-results.json",
+      "pass": 24,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "chapter2-browser-results.json",
+      "pass": 10,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "chapter2-golden-results.json",
+      "pass": 34,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "chapter2-graph-golden-results.json",
+      "pass": 23,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "distribution-results.json",
+      "pass": 3,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "game-browser-results.json",
+      "pass": 45,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "game-golden-results.json",
+      "pass": 65,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "legacy-golden-results.json",
+      "pass": 30,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "network-golden-results.json",
+      "pass": 32,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "p2-browser-results.json",
+      "pass": 26,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "p2-golden-results.json",
+      "pass": 42,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "release-integrity-results.json",
+      "pass": 5,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "v04-browser-results.json",
+      "pass": 21,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "v04-distribution-results.json",
+      "pass": 3,
+      "fail": 0,
+      "aborted": false
+    },
+    {
+      "file": "v04-integrity-results.json",
+      "pass": 4,
+      "fail": 0,
+      "aborted": false
+    }
+  ],
+  "initialFailures": [
+    "missing transient Chromium: launch not tested",
+    "missing font configuration: environment crash",
+    "one SHA256-notice timing assertion failed during initial runtime recovery; original script unchanged; recovered execution passed"
+  ]
+}

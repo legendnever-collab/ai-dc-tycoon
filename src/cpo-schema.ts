@@ -1,0 +1,25 @@
+// Chapter3 owns no legacy state. All IDs and paths describe the same switch in every scale view.
+export const CPO_MODEL='cpo-educational-1.0.0',CPO_SCHEMA=1,RELEASE_V05='0.5.0';
+export type EvidenceClass='Educational Assumption'|'Engineering Estimate'|'Publicly Documented Reference'|'Measured Evidence';
+export type Architecture='pluggable'|'optimized-pluggable'|'cpo';
+export type OrderId='service'|'density';
+export type C3Id='07'|'08'|'09';
+export type Scale='dc'|'rack'|'package'|'workshop';
+export type Serviceability='field-module'|'package-service-field-ELS';
+export type PortKind='electrical-data'|'optical-data'|'optical-cw';
+export type OpticalStatus='Unknown'|'Assumed-compatible'|'Invalid';
+export type LabReference={hardwareId:string;oeId:string;designId:string;designSchema:2;designVersion:'0.2.0';snapshotSHA256:string;status:'reference-only'};
+export type OE={id:string;type:'oe800'|'oe400';slot:0|1|2|3;position:'near'|'far';enabled:boolean};
+export type PackageConfig={id:'package-001';switchId:'cpo-switch-001';region:'compact'|'wide';asic:boolean;oes:OE[];els:boolean;fau:boolean;connections:Connection[];fiberFixture:boolean;installed:boolean;references:LabReference[]};
+export type Component={id:string;parentId:string|null;type:'DataCenter'|'SwitchRack'|'CPOSwitch'|'Package'|'PackageRegion'|'SwitchASIC'|'OpticalEngine'|'LaserSource'|'FiberInterface'|'RemoteEndpoint';xMM:number|null;yMM:number|null;widthMM:number|null;heightMM:number|null;powerW:number;costCredits:number;evidence:EvidenceClass};
+export type Port={id:string;ownerId:string;kind:PortKind;direction:'in'|'out';lanes:number;laneRateGb_s:number|null;nominalGb_s:number|null;interfaceId:string};
+export type Connection={id:string;from:string;to:string};
+export type PackageGraph={model:string;packageId:string;components:Component[];ports:Port[];connections:Connection[]};
+export type Constraint={label:string;pass:boolean;actual:string};
+export type CPOResult={model:string;architecture:Architecture;paths:number;nominalPerPathGb_s:number;aggregateEffectiveGb_s:number;switchPowerW:number;electricalPowerW:number;conversionPowerW:number;laserPowerW:number;powerW:number;costCredits:number;frontPanelUnits:number;packageAreaMM2:number;serviceability:Serviceability;electricalReachMM:number[];opticalLossDb:null;opticalStatus:OpticalStatus;computeSeconds:number;networkSeconds:number|null;completionSeconds:number|null;issues:{code:string;componentId:string;message:string}[];powerLedger:{id:string;watts:number}[];traffic:ReturnType<typeof import('./traffic-solver').allocateTraffic>;graph:PackageGraph|null;assumptions:string[]};
+export type C3Outcome={mission:C3Id;pass:boolean;stars:number;objectives:Constraint[];result:CPOResult;hint:string};
+export type OrderReceipt={order:OrderId;architecture:Architecture;resultHash:string};
+export type C3Receipt={mission:C3Id;xp:number;credits:number;revision:number;stars:number;clearConfig:PackageConfig;orderReceipts:OrderReceipt[];architecture:Architecture;order:OrderId;resultHash:string};
+export type C3State={schema:1;model:typeof CPO_MODEL;profileId:string;revision:number;current:C3Id;phase:'EVENT'|'BUILD'|'RESULT'|'CLEARED';scale:Scale;selectedObjectId:string;selectedSlot:0|1|2|3;order:OrderId;architecture:Architecture;orderReceipts:OrderReceipt[];config:PackageConfig;cleared:Record<C3Id,boolean>;attempts:Record<C3Id,number>;bestStars:Record<C3Id,number>;receipts:C3Receipt[];unlocked:string[];last:C3Outcome|null;history:{revision:number;action:string}[]};
+export type C3Action={type:'start';mission:C3Id}|{type:'order';order:OrderId}|{type:'architecture';architecture:Architecture}|{type:'navigate';scale:Scale;objectId?:string}|{type:'select-slot';slot:0|1|2|3}|{type:'asic'}|{type:'oe';slot:0|1|2|3;model:'oe800'|'oe400'}|{type:'move-oe';slot:0|1|2|3;position:'near'|'far'}|{type:'region';region:'compact'|'wide'}|{type:'electrical'}|{type:'els'}|{type:'laser'}|{type:'fau'}|{type:'optical'}|{type:'fiber';assume:boolean}|{type:'install'}|{type:'reset'}|{type:'run'}|{type:'reference';reference:LabReference};
+export type OpticalSolverContract={modelVersion:string;packageHash:string;evidence:EvidenceClass;status:'Unknown'|'Assumed-compatible'|'Verified'|'Invalid';lossDb:number|null;marginDb:number|null;activePathIds:string[];includedPowerBoundary:string;reference:LabReference|null};
