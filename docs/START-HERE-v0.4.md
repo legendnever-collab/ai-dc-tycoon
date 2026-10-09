@@ -27,7 +27,7 @@
 - Company policies may block `file://` IndexedDB: keep both Game Backup texts independently.
 
 ## Truthful fidelity
-All 400G/800G, power, Credits, topology, routing, traffic and workload numbers in Chapter 02 are **educational assumptions**, not specifications of any commercial vendor. Chapter 02 uses a fixed-path game model; the separate `network-model.ts` module is an engineering experimentation model, not the Mission evaluation source in this release.
+All 400G/800G, power, Credits, topology, routing, traffic and workload numbers in Chapter 02 are **educational assumptions**, not specifications of any commercial vendor. Chapter 02 uses a fixed-path game model; the Chapter 02 Mission evaluation now uses a typed graph adapter via `chapter2-graph.ts` and `traffic-solver.ts`. The independent `network-model.ts` is an additional experimental graph engine with different educational assumptions, not the Mission evaluation source.
 
 ## Known limitations
 Real Android, corporate browser, human novice usability, vendor optics behavior, BER, optical loss, thermal, real-world Network TCO and CPO physics require independent validation. Browser/CI test status and exact counts belong in `REGRESSION-v0.4.md`; do not infer the old 240-case release was executed anew unless listed explicitly.
