@@ -1,0 +1,75 @@
+const assert=require('node:assert/strict');
+const {newChapter2,simulateChapter2,transitionChapter2:c,validateChapter2,c2Wallet,c2XP,C2_ASSUMPTIONS}=require('../compiled/chapter2');
+const {chapter2Backup,parseChapter2Backup}=require('../compiled/chapter2-storage');
+let count=0;
+const test=(name,fn)=>{try{fn();count++;console.log('PASS '+name);}catch(e){console.error('FAIL '+name,e);process.exitCode=1;}};
+const start=(s,m)=>c(s,{type:'start',mission:m},340);
+const apply=(s,a)=>c(s,a,340);
+const run=s=>apply(s,{type:'run'});
+const prepared04=()=>{
+ let s=start(newChapter2('player-1'),'04');
+ s=apply(s,{type:'install-hd'});
+ s=apply(s,{type:'connect-rack',rack:'rack-003'});
+ s=apply(s,{type:'connect-rack',rack:'rack-004'});
+ return s;
+};
+const pass04=()=>run(prepared04());
+const prepared05=()=>{
+ let s=start(pass04(),'05');
+ s=apply(s,{type:'install-spine'});
+ s=apply(s,{type:'uplink',end:'A',rate:200});
+ s=apply(s,{type:'uplink',end:'B',rate:200});
+ return s;
+};
+const pass05=()=>run(prepared05());
+const prepared06=()=>{
+ let s=start(pass05(),'06');
+ s=apply(s,{type:'select-port',end:'A'});
+ s=apply(s,{type:'module',end:'A',rate:800});
+ s=apply(s,{type:'select-port',end:'B'});
+ s=apply(s,{type:'module',end:'B',rate:800});
+ s=apply(s,{type:'fiber'});
+ return s;
+};
+test('C2 new profile validated',()=>validateChapter2(newChapter2('player-1')));
+test('C2 cannot open mission05 before04',()=>assert.throws(()=>start(newChapter2('player-1'),'05')));
+test('C2 cannot open mission06 before05',()=>assert.throws(()=>start(newChapter2('player-1'),'06')));
+test('M04 starts with two occupied physical ports',()=>{const r=simulateChapter2(newChapter2('player-1'));assert.equal(r.occupiedPorts,2);assert.equal(r.availablePorts,0);assert.equal(r.completionSeconds,90);});
+test('M04 cannot attach rack without port',()=>assert.throws(()=>apply(start(newChapter2('player-1'),'04'),{type:'connect-rack',rack:'rack-003'})));
+test('M04 high-density increases ports but no reward until Run',()=>{const s=prepared04();assert.equal(s.receipts.length,0);assert.equal(simulateChapter2(s).availablePorts,0);assert.equal(simulateChapter2(s).completionSeconds,45);});
+test('M04 correct physical links and workload clear',()=>{const s=pass04();assert.equal(s.cleared['04'],true);assert.equal(s.receipts.length,1);assert.equal(s.bestStars['04'],3);});
+test('M04 cannot connect twice',()=>assert.throws(()=>apply(prepared04(),{type:'connect-rack',rack:'rack-003'})));
+test('M04 scenario reset refunds but preserves receipt',()=>{let s=start(pass04(),'04');s=apply(s,{type:'reset'});assert.equal(s.cleared['04'],true);assert.equal(s.config.highDensity,false);});
+test('M04 rerun cannot duplicate rewards',()=>{const s=run(start(pass04(),'04'));assert.equal(s.receipts.length,1);assert.equal(c2XP(s),180);});
+test('M04 budget refuses upgrade if Chapter1 has insufficient credits',()=>assert.throws(()=>c(start(newChapter2('player-1'),'04'),{type:'install-hd'},100)));
+test('M05 without spine cannot have active path',()=>assert.equal(simulateChapter2(start(pass04(),'05')).completionSeconds,null));
+test('M05 only left uplink is disconnected',()=>{let s=start(pass04(),'05');s=apply(s,{type:'install-spine'});s=apply(s,{type:'uplink',end:'A',rate:200});assert.equal(simulateChapter2(s).pathGbps,0);});
+test('M05 asymmetric rates bottleneck equals min used path',()=>{let s=prepared05();s=apply(s,{type:'uplink',end:'B',rate:100});assert.equal(simulateChapter2(s).pathGbps,100);assert.equal(simulateChapter2(s).completionSeconds,80);});
+test('M05 full 200G path achieves 40 seconds compute envelope',()=>{const s=prepared05(),r=simulateChapter2(s);assert.equal(r.pathGbps,200);assert.equal(r.computeSeconds,40);assert.equal(r.completionSeconds,40);assert.equal(r.bottleneck,'Compute');});
+test('M05 extra link bandwidth beyond compute does not further accelerate',()=>{let s=prepared05();const fast=simulateChapter2(s);assert.equal(fast.completionSeconds,40);});
+test('M05 path clear unlocks Mission06',()=>{const s=pass05();assert.equal(s.cleared['05'],true);assert.equal(s.receipts.length,2);});
+test('M05 links require installed spine',()=>assert.throws(()=>apply(start(pass04(),'05'),{type:'uplink',end:'A',rate:200})));
+test('M05 reset preserves first clear and removes path',()=>{let s=apply(start(pass05(),'05'),{type:'reset'});assert.equal(s.cleared['05'],true);assert.equal(simulateChapter2(s).pathGbps,0);});
+test('M06 cannot install on port that was not selected',()=>assert.throws(()=>apply(start(pass05(),'06'),{type:'module',end:'A',rate:800})));
+test('M06 supported module rates only',()=>{const s=apply(start(pass05(),'06'),{type:'select-port',end:'A'});assert.throws(()=>apply(s,{type:'module',end:'A',rate:1600}));});
+test('M06 unpopulated port rejects fiber',()=>assert.throws(()=>apply(start(pass05(),'06'),{type:'fiber'})));
+test('M06 400G both sides active but misses throughput objective',()=>{
+ let s=start(pass05(),'06');for(const end of ['A','B']){s=apply(s,{type:'select-port',end});s=apply(s,{type:'module',end,rate:400});}
+ s=apply(s,{type:'fiber'});const r=simulateChapter2(s);assert.equal(r.effectiveGbps,320);assert.equal(r.pass,false);assert.equal(r.completionSeconds,68.75);
+});
+test('M06 unsupported rate mismatch cannot activate fiber',()=>{
+ let s=start(pass05(),'06');s=apply(s,{type:'select-port',end:'A'});s=apply(s,{type:'module',end:'A',rate:400});
+ s=apply(s,{type:'select-port',end:'B'});s=apply(s,{type:'module',end:'B',rate:800});
+ assert.throws(()=>apply(s,{type:'fiber'}));
+});
+test('M06 800G both sides activates and clears within power cost limits',()=>{const s=run(prepared06()),r=s.last;assert.equal(s.cleared['06'],true);assert.equal(r.effectiveGbps,640);assert.equal(r.watts,64);assert.equal(r.costCredits,150);assert.equal(r.completionSeconds,40);});
+test('M06 first clear receipt and Chapter2 XP total',()=>{const s=run(prepared06());assert.equal(s.receipts.length,3);assert.equal(c2XP(s),740);});
+test('M06 previous 800G fiber invalidated when changing endpoint module',()=>{let s=prepared06();s=apply(s,{type:'module',end:'B',rate:400});assert.equal(s.config.fiber,false);assert.equal(simulateChapter2(s).known,false);});
+test('Chapter2 wallet rewards minus installed hardware, not simulation bonus',()=>{const s=run(prepared06());assert.equal(c2Wallet(s,340),340+170+210+260-150-190-150);});
+test('Backup roundtrip valid',()=>{const s=run(prepared06());assert.deepEqual(parseChapter2Backup(chapter2Backup(s),'player-1'),s);});
+test('Backup rejects tampering',()=>{const e=JSON.parse(chapter2Backup(pass05()));e.payload.receipts[0].credits=999;assert.throws(()=>parseChapter2Backup(JSON.stringify(e),'player-1'));});
+test('Backup rejects profile swap',()=>assert.throws(()=>parseChapter2Backup(chapter2Backup(pass05()),'other-player')));
+test('Legacy v0.3 Backup not misparsed as Chapter2',()=>assert.throws(()=>parseChapter2Backup(JSON.stringify({format:'AIDataCenterTycoon'}),'player-1')));
+test('Forged receipt duplication rejected',()=>{const s=pass05();s.receipts.push(s.receipts[0]);assert.throws(()=>validateChapter2(s));});
+test('Educational assumptions explicit',()=>{assert.equal(C2_ASSUMPTIONS.evidence,'Educational Assumption');assert.ok(C2_ASSUMPTIONS.topology.includes('bottleneck'));});
+console.log('Chapter2 Golden tests PASSED: '+count);
