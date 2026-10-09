@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "sourceGitCommit": "0a83ab3ac1c46ceccda15a1db4fc09e259dce1cd",
+  "rebuiltExecutableSHA256": "2b648ab3b32ef05ab0beed7b5e9c2dcdb518c4321ad65fdf7b389f24fdd5d7a8",
+  "legacyRebuildByteExact": true,
+  "archivesCRC": "PASS"
+}

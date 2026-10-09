@@ -25,3 +25,9 @@ Golden Test: `node tests/golden.cjs`, `node tests/p2-golden.cjs`, `node tests/ga
 - `.github/workflows/verify.yml`: Node24 deterministic/integrity tests and separate legacy, CPO, Workshop Browser jobs; executable/source/handoff and actual Browser scene artifacts.
 - See [Issue #1](https://github.com/legendnever-collab/ai-dc-tycoon/issues/1) for the v0.4 roadmap.
 - Keep legacy v0.2 engineering core and its database independent from game progression. Do not mark educational forecasts as measured data.
+
+## v0.7.0 — Photonic Substrate Challenge
+
+Open `ai-dc-tycoon-v0.7.html` offline. Chapters 1–5 share a campaign navigator, data-driven Technology Tree, and structured Learn rooms. Mission13–15 add OE coupling, FAU alignment, and a guided 16 × 50G slow-and-wide prototype. Numerical substrate values are educational assumptions, not measured product specifications. See [START-HERE](docs/START-HERE-v0.7.md), [model](docs/PHOTONIC-SUBSTRATE-MODEL-v0.7.md), and [regression](docs/REGRESSION-v0.7.md).
+
+Build: `npm ci && npm run build`. Deterministic v07 checks: `npm run test:v07`. Browser checks require Playwright/Chromium: `npm run test:v07-browser`. Package: `GITHUB_SHA=<published-source-commit> npm run package:v07`.

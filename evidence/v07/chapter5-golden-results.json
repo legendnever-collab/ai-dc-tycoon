@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "name": "Chapter5 is unplayed by default and cannot bypass Mission12",
+      "status": "PASS"
+    },
+    {
+      "name": "M13 incomplete path fails and awards nothing",
+      "status": "PASS"
+    },
+    {
+      "name": "M13 known interface uses inherited modulation + coupling once at PS input",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct vs edge vs preview loss changes exact core results; preview is fixed-only",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission13 does not silently include FAU alignment / propagation / fiber losses",
+      "status": "PASS"
+    },
+    {
+      "name": "M14 unaligned FAU fails without resetting M13 clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Gaussian offset penalty is zero-centered, symmetric and quadratic",
+      "status": "PASS"
+    },
+    {
+      "name": "Pitch mismatch hurts edge channels more; more channels increase worst offset",
+      "status": "PASS"
+    },
+    {
+      "name": "Tight tolerance reduces window and increases Gaussian penalty",
+      "status": "PASS"
+    },
+    {
+      "name": "M14 aligned route clears exact analytical end-to-end budget",
+      "status": "PASS"
+    },
+    {
+      "name": "M15 requires16 ×50G and rejects4/8 channel starters",
+      "status": "PASS"
+    },
+    {
+      "name": "M15 16×50G uses16 unique typed optical paths and diagnostic source allocations",
+      "status": "PASS"
+    },
+    {
+      "name": "All loss ledger stages sum to core Loss / Rx Power / worst Margin",
+      "status": "PASS"
+    },
+    {
+      "name": "Long route increases loss, fails feasibility and changes graph hash",
+      "status": "PASS"
+    },
+    {
+      "name": "Excessive channel offset remains a valid lossy graph without clamp or passive gain",
+      "status": "PASS"
+    },
+    {
+      "name": "Same aggregate 800G does not imply same diagnostic power or density",
+      "status": "PASS"
+    },
+    {
+      "name": "Source mutation invalidates current qualification without rewriting historical receipts",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing sensitivity is Unknown and cannot clear by UI substitutes",
+      "status": "PASS"
+    },
+    {
+      "name": "Reward replay never duplicates XP or Credits",
+      "status": "PASS"
+    },
+    {
+      "name": "Result, reward and unsupported parameter tampering fail deep validation",
+      "status": "PASS"
+    },
+    {
+      "name": "Package ledger and original Workshop values stay byte exact through substrate gameplay",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission15 includes all numerical, multi-channel and packaging checks",
+      "status": "PASS"
+    }
+  ]
+}

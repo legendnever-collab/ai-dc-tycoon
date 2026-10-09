@@ -1,0 +1,6 @@
+PASS Real IndexedDB keeps Substrate primary, five-head committed Journal and whole Campaign snapshot
+PASS Corrupt same-profile head recovers from real LKG and retains original recovery bytes
+PASS Future primary blocks automatic overwrite and remains exportable as original text
+PASS Valid paste restore recovers protected future head and preserves archived original
+PASS Two real browser tabs detect stale Substrate write instead of clobbering newer progress
+PASS Protected storage flow has zero external requests and no JavaScript exception

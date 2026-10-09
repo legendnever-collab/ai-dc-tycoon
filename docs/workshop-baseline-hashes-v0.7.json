@@ -1,0 +1,17 @@
+{
+  "auditedBaselineCommit": "02fd07ddf5ccb1c76d66f157abb4094aa893da7a",
+  "unchangedSHA256": {
+    "src/chapter4-app.ts": "e9bfe62609a0d8cc19ab58e80fe972edd6a3ef100f8be07cfe3a7b23473af9fd",
+    "src/chapter4-entry.ts": "ff0639d5c7fdac3418f35d1f1884ba99b763fdbee64f8a288be925903ae3f413",
+    "src/chapter4.ts": "aa933d26a1a40916ab174e8c3669fc1a5d4c79b86d24c5efa7c277790168b9b7",
+    "src/workshop-adapter.ts": "e3b747c7bcebd8d00c23de7bdeae35afa647e66b3aed7b3932110825e3b2041e",
+    "src/workshop-schema.ts": "9dbbbaaf7ad0b840448f45f2ca0210ebccf6e5291410f70ad3e99e03e7306894",
+    "src/workshop-storage.ts": "4f53bf69920746fd04b0898fbeb51f76eca5a03ed357d1a3f4b3ecb490a09f21",
+    "src/workshop-style.css": "8bc2023ec5fcfa15999ef8f42b1e389ef2fe8995d99569ec713281f582126a6b",
+    "src/game-shell-v06.html": "86df09d41859729a2846ac8b1b43bf44e1b612b0040415d371202c40f8afdf29",
+    "tests/chapter4-golden.cjs": "4fd9ad39e96034d1d41b3835ed9df592584d4e90efceb0998c6d6d429cf50be0",
+    "tests/workshop-adapter-golden.cjs": "e7838777d08138657680ca3f0a5d12c97f1b4dd167345eac702bcfff7083f5de",
+    "tests/workshop-storage-golden.cjs": "b763017d9eaf9db70f685105d53d1fbfe3c421c6af13d5fa656c4d22a5030642",
+    "ai-dc-tycoon-v0.6.html": "69cd47b8df6e7ff848c58636dd86e3f4e0a2dcaaed18e439319e8408c100fda5"
+  }
+}

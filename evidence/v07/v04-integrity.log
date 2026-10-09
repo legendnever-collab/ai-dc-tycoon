@@ -1,0 +1,4 @@
+PASS Engineering source and native/embedded Lab retain immutable baseline
+PASS Chapter 1 rebuilt executable remains byte-identical to audited v0.3 release
+PASS v0.4 single HTML version, CSP and inline assets are complete
+PASS Mission runtime uses typed traffic graph; experimental engine stays independent

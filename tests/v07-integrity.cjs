@@ -1,0 +1,6 @@
+const assert=require('node:assert/strict'),fs=require('fs'),crypto=require('crypto'),cases=[];
+const hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),test=(name,fn)=>{try{fn();cases.push({name,status:'PASS'});console.log('PASS '+name);}catch(e){cases.push({name,status:'FAIL',error:String(e)});console.error(e);}};
+test('Original v06 Workshop source/tests and executable are byte exact',()=>{for(const [f,v]of Object.entries(JSON.parse(fs.readFileSync('docs/workshop-baseline-hashes-v0.7.json')).unchangedSHA256))assert.equal(hash(f),v,f);});
+test('v07 release is standalone with request-denying CSP and correct model/title',()=>{const s=fs.readFileSync('ai-dc-tycoon-v0.7.html','utf8');assert.match(s,/<title>AI Data Center Tycoon v0.7.0<\/title>/);assert.match(s,/connect-src 'none'/);assert.doesNotMatch(s,/<script[^>]*\bsrc=|<link[^>]*\bhref=|@import\s/i);assert.ok(s.includes('photonic-substrate-educational-1.0.0'));});
+test('Embedded Engineering Lab remains byte exact to authoritative baseline',()=>{assert.equal(hash('src/lab-baseline.html'),JSON.parse(fs.readFileSync('docs/engineering-baseline-hashes.json')).baselineHTML_SHA256);});
+fs.mkdirSync('evidence/v07',{recursive:true});fs.writeFileSync('evidence/v07/integrity-results.json',JSON.stringify({cases},null,2));if(cases.some(c=>c.status==='FAIL'))process.exitCode=1;

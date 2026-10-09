@@ -1,0 +1,9 @@
+const h=require('./v06-browser-helpers.cjs'),path=require('path'),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const ready=p=>p.waitForFunction(()=>window.AIDCT_V07?.isReady()&&window.AIDCT_V06?.isReady()&&window.AIDCT_V05?.isReady()&&window.AIDCT_V04?.isReady()&&document.querySelector('#campaign-navigator button'),undefined,{timeout:60000});
+// Locator.click scrolls and re-resolves replaced nodes within one actionability loop.
+const click=async(p,s)=>{await p.locator(s).filter({visible:true}).first().click();};
+const action=(p,t,e='')=>click(p,'[data-c5="'+t+'"]'+e),jump=(p,n)=>click(p,'#campaign-navigator [data-jump="'+n+'"]');
+const state=p=>p.evaluate(()=>window.AIDCT_V07.state()),saved=p=>p.evaluate(()=>window.AIDCT_V07.whenSaved());
+const restore=async(p,raw)=>{await saved(p);await click(p,'#backup-tab');await p.fill('#campaign-text',typeof raw==='string'?raw:require('../compiled/substrate-storage').campaignBackup07(raw));await Promise.all([p.waitForEvent('load',{timeout:60000}),click(p,'#campaign-restore')]);await ready(p);};
+const launch=async(viewport={width:1440,height:1100},touch=false)=>{const browser=await chromium.launch({...h.options,args:[...h.options.args,...(process.env.CHROMIUM_EXECUTABLE?["--in-process-gpu","--no-zygote","--disable-gpu"]:[])]}),context=await browser.newContext({viewport,isMobile:touch,hasTouch:touch});context.setDefaultTimeout(15000);context.setDefaultNavigationTimeout(60000);await context.setOffline(true);const page=await context.newPage();await page.emulateMedia({reducedMotion:"reduce"});const errors=[],requests=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});await page.goto('file://'+path.resolve('ai-dc-tycoon-v0.7.html'));await ready(page);return {browser,context,page,errors,requests};};
+module.exports={...h,ready,click,action,jump,state,saved,restore,launch,fixtures07:require('./v07-fixtures.cjs')};

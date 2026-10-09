@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "name": "Fresh v07 offline has five visible campaign steps, locked later chapters and lazy Lab",
+      "status": "PASS"
+    },
+    {
+      "name": "Locked chapter opens real Learn overview without bypassing mission gate",
+      "status": "PASS"
+    },
+    {
+      "name": "v06 full Campaign paste migration preserves exact Chapter1–4 and initializes Chapter5",
+      "status": "PASS"
+    },
+    {
+      "name": "Shared navigator jumps through Chapters1–5 and shows same current step",
+      "status": "PASS"
+    },
+    {
+      "name": "Every chapter Learn button shows structured concepts, map, glossary and bridge",
+      "status": "PASS"
+    },
+    {
+      "name": "Technology Tree shows Pluggable/CPO/OE Completed and active Substrate Current",
+      "status": "PASS"
+    },
+    {
+      "name": "ELS remains Installed/CW Connected after next mission starts and after Save/Load",
+      "status": "PASS"
+    },
+    {
+      "name": "CPO Package explains four independent OEs and baseline capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "M13 missing path fails, then selected coupling and substrate connection clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M14 unaligned FAU fails with per-channel feedback, then guided x/y and pitch clear",
+      "status": "PASS"
+    },
+    {
+      "name": "M15 wrong channel count and pitch fail before16-channel prototype clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Prototype clears reflect in global progress/Tech and replay rewards remain unique",
+      "status": "PASS"
+    },
+    {
+      "name": "Whole campaign autosave reload and Text Backup restore preserve exact prototype state",
+      "status": "PASS"
+    },
+    {
+      "name": "OE source edit marks prior substrate result stale without rewriting rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved Lab remains independently executable with original numerical solver",
+      "status": "PASS"
+    },
+    {
+      "name": "Offline gameplay and Learn windows make zero HTTP requests or JS errors",
+      "status": "PASS"
+    }
+  ]
+}

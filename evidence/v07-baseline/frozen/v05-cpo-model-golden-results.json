@@ -1,0 +1,113 @@
+{
+  "model": "cpo-educational-1.0.0",
+  "cases": [
+    {
+      "name": "CPO same capacity and demand yields same Job time as Pluggable",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing, optimized and CPO powers reflect explicit component boundaries",
+      "status": "PASS"
+    },
+    {
+      "name": "Service-first order permits Pluggable and optimized, refuses CPO cost/service",
+      "status": "PASS"
+    },
+    {
+      "name": "Density order fails Pluggable Power/Space; CPO is conditional viable choice",
+      "status": "PASS"
+    },
+    {
+      "name": "Small order optimized Pluggable can use less power than CPO",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty package cannot make optical data or clear any feasibility",
+      "status": "PASS"
+    },
+    {
+      "name": "Complete four-OE installed Package has four actual 640G links and 96W",
+      "status": "PASS"
+    },
+    {
+      "name": "Laser DC input counted once, conversion/electrical/core have separate ledger",
+      "status": "PASS"
+    },
+    {
+      "name": "Removing ELS disables every optical path without fabricating light",
+      "status": "PASS"
+    },
+    {
+      "name": "Electrical path absence disables only physically affected link",
+      "status": "PASS"
+    },
+    {
+      "name": "CW supply is distinct from modulated data port",
+      "status": "PASS"
+    },
+    {
+      "name": "Electrical cannot connect to optical input",
+      "status": "PASS"
+    },
+    {
+      "name": "Reversed typed direction is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Occupied output/input cannot fan out",
+      "status": "PASS"
+    },
+    {
+      "name": "Incompatible rate/lane interface is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Fiber needs matching remote endpoint rate",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing Rx Fiber endpoint cannot activate a Tx-only link",
+      "status": "PASS"
+    },
+    {
+      "name": "Unused OE costs and consumes power but cannot increase active throughput",
+      "status": "PASS"
+    },
+    {
+      "name": "Unconnected extra optics do not sum into workload capacity",
+      "status": "PASS"
+    },
+    {
+      "name": "Physical near/far mm affects reach only via explicit model",
+      "status": "PASS"
+    },
+    {
+      "name": "Moving optics does not fabricate optical loss or measured margin",
+      "status": "PASS"
+    },
+    {
+      "name": "OE outside compact package boundary is invalid and not active",
+      "status": "PASS"
+    },
+    {
+      "name": "Undeclared optical fixture is Unknown, cannot convey traffic",
+      "status": "PASS"
+    },
+    {
+      "name": "Assembly without Data Center installation cannot supply workload links",
+      "status": "PASS"
+    },
+    {
+      "name": "Hierarchy uses shared world/switch/package/region/OE IDs",
+      "status": "PASS"
+    },
+    {
+      "name": "Simulation deterministic and does not mutate physical configuration",
+      "status": "PASS"
+    },
+    {
+      "name": "Non-runtime experimental network engine is not imported",
+      "status": "PASS"
+    }
+  ]
+}

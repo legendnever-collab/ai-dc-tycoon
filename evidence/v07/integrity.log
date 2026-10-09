@@ -1,0 +1,3 @@
+PASS Original v06 Workshop source/tests and executable are byte exact
+PASS v07 release is standalone with request-denying CSP and correct model/title
+PASS Embedded Engineering Lab remains byte exact to authoritative baseline

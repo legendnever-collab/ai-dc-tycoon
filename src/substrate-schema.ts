@@ -1,0 +1,13 @@
+import type {Design,Result} from './schema';
+import type {PackageConfig} from './cpo-schema';
+import type {WorkshopDesign} from './workshop-schema';
+export const SUBSTRATE_MODEL='photonic-substrate-educational-1.0.0';
+export type Mission5='13'|'14'|'15';
+export type Coupling5='edge'|'direct'|'evanescent-preview';
+export type SubstrateDesign={id:'substrate-001';oeId:string;revision:number;coupling:Coupling5|null;substrateConnected:boolean;fauConnected:boolean;channels:4|8|16;laneGbps:50|100;route:'compact'|'serpentine';lateralUm:number;verticalUm:number;pitchMismatchUm:number;tolerance:'standard'|'tight'};
+export type SubstrateContext={workshop:WorkshopDesign;package:PackageConfig};
+export type SubstrateResult={model:string;evidence:'Educational Assumption';calibration:'Uncalibrated';mission:Mission5;designRevision:number;contextHash:string;graphHash:string;bindingContext:SubstrateContext;graph:Design;core:Result;valid:boolean;sourceValid:boolean;activeChannels:number;grossGbps:number|null;lossDb:number|null;receivedDbm:number|null;marginDb:number|null;diagnosticW:number|null;spanMM:number;feasible:boolean;worstChannel:string|null;channels:{id:string;xUm:number;yUm:number;alignmentDb:number;lossDb:number|null;receivedDbm:number|null;marginDb:number|null}[];losses:{name:string;value:number|null}[];referencePlanes:{source:string;receive:string};diagnostics:string[];notModeled:string[];fixture:string;powerBoundary:string};
+export type SubstrateOutcome={mission:Mission5;pass:boolean;stars:number;result:SubstrateResult;objectives:{label:string;pass:boolean;actual:string}[];hint:string};
+export type SubstrateReceipt={mission:Mission5;xp:number;credits:number;revision:number;stars:number;design:SubstrateDesign;context:SubstrateContext;resultHash:string};
+export type SubstrateState={schema:1;model:string;profileId:string;revision:number;current:Mission5;phase:'EVENT'|'BUILD'|'RESULT'|'CLEARED';design:SubstrateDesign;cleared:Record<Mission5,boolean>;attempts:Record<Mission5,number>;bestStars:Record<Mission5,number>;receipts:SubstrateReceipt[];unlocked:string[];last:SubstrateOutcome|null};
+export type SubstrateAction={type:'start';mission:Mission5}|{type:'select-oe';oeId:string}|{type:'coupling';kind:Coupling5}|{type:'substrate'}|{type:'fau'}|{type:'alignment';lateralUm?:number;verticalUm?:number;pitchMismatchUm?:number}|{type:'tolerance';preset:'standard'|'tight'}|{type:'fixture';channels:4|8|16}|{type:'route';preset:'compact'|'serpentine'}|{type:'run'}|{type:'reset'};

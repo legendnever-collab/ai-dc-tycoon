@@ -1,0 +1,16 @@
+PASS v07 whole Campaign preserves all5 chapters and graph-qualified receipts
+PASS v06 full restore preserves exact Chapter1–4 and starts unplayed Substrate
+PASS v05 full restore remains supported with empty Workshop and Substrate
+PASS Single Chapter1 same-profile import retains linked valid Substrate
+PASS Checksum, future schema, wrong profile reject before writes
+PASS Inner cached solver tamper rejected even with recomputed envelope checksum
+PASS New store save/load matches exact state without file selection
+PASS Other profile is never silently reused or saved under current key
+PASS Future primary blocks load/save and preserves original bytes
+PASS Corrupt primary recovers same-profile LKG; corrupt/wrong-profile LKG blocks
+PASS Concurrent writer conflicts retain newer head
+PASS v07 restore Journal writes exactly5 heads and preserves independent Lab
+PASS Interrupted Journal recovers after each of5 heads and commit boundary
+PASS Concurrent restore recovery blocks remaining writes; cancel preserves head
+PASS Future Journal cannot silently cancel/recover into reset
+PASS Cross-chapter progression fabrication is rejected

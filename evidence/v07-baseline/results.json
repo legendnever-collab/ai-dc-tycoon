@@ -1,0 +1,67 @@
+[
+  {
+    "suite": "golden",
+    "status": "PASS",
+    "passed": 30
+  },
+  {
+    "suite": "p2-golden",
+    "status": "PASS",
+    "passed": 42
+  },
+  {
+    "suite": "game-golden",
+    "status": "PASS",
+    "passed": 65
+  },
+  {
+    "suite": "chapter2-golden",
+    "status": "PASS",
+    "passed": 34
+  },
+  {
+    "suite": "network-golden",
+    "status": "PASS",
+    "passed": 32
+  },
+  {
+    "suite": "chapter2-graph-golden",
+    "status": "PASS",
+    "passed": 23
+  },
+  {
+    "suite": "cpo-model-golden",
+    "status": "PASS",
+    "passed": 27
+  },
+  {
+    "suite": "chapter3-golden",
+    "status": "PASS",
+    "passed": 33
+  },
+  {
+    "suite": "campaign-golden",
+    "status": "PASS",
+    "passed": 26
+  },
+  {
+    "suite": "workshop-adapter-golden",
+    "status": "PASS",
+    "passed": 16
+  },
+  {
+    "suite": "chapter4-golden",
+    "status": "PASS",
+    "passed": 20
+  },
+  {
+    "suite": "workshop-storage-golden",
+    "status": "PASS",
+    "passed": 16
+  },
+  {
+    "suite": "v06-integrity",
+    "status": "PASS",
+    "passed": 7
+  }
+]

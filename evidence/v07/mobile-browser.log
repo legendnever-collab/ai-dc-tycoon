@@ -1,0 +1,7 @@
+PASS 390px navigator preserves five steps on all gameplay screens
+PASS 390px Learn study room is readable, dismissible and has no horizontal overflow
+PASS 390px touch prototype controls change fixture and replay preserves unique rewards
+PASS 320px navigator preserves five steps on all gameplay screens
+PASS 320px Learn study room is readable, dismissible and has no horizontal overflow
+PASS 320px touch prototype controls change fixture and replay preserves unique rewards
+PASS Touch390/320 gameplay makes no HTTP request and no JS error
