@@ -131,7 +131,7 @@ jobs:
   browser-v04:
     name: Offline Chapter 2 Browser Smoke
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -144,7 +144,7 @@ jobs:
         run: npm install --no-save --no-package-lock playwright@1.56.1
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-        timeout-minutes: 5
+        timeout-minutes: 15
       - name: Build both offline releases
         run: npm run build
       - name: Execute gameplay on offline HTML
@@ -180,7 +180,7 @@ jobs:
   browser-v05:
     name: CPO Gameplay and Protected Campaign Storage
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -190,7 +190,7 @@ jobs:
       - run: npm ci
       - run: npm install --no-save --no-package-lock playwright@1.56.1
       - run: npx playwright install --with-deps chromium
-        timeout-minutes: 5
+        timeout-minutes: 15
       - run: npm run build
       - name: Clear prior local browser result snapshots
         run: node -e "const fs=require('fs'); for(const n of fs.readdirSync('evidence/v05')) if(n.endsWith('browser-results.json')) fs.unlinkSync('evidence/v05/'+n)"
@@ -223,7 +223,7 @@ jobs:
   browser-v06:
     name: Optical Engine Workshop Gameplay and Protected Storage
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -233,7 +233,7 @@ jobs:
       - run: npm ci
       - run: npm install --no-save --no-package-lock playwright@1.56.1
       - run: npx playwright install --with-deps chromium
-        timeout-minutes: 5
+        timeout-minutes: 15
       - run: npm run build
       - name: Remove previous browser evidence
         run: node -e "const fs=require('fs');fs.mkdirSync('evidence/v06',{recursive:true});for(const n of fs.readdirSync('evidence/v06'))if(n.endsWith('browser-results.json'))fs.unlinkSync('evidence/v06/'+n)"

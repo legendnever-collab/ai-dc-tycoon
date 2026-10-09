@@ -11,7 +11,7 @@ permissions:
 jobs:
   v07:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,8 +37,11 @@ jobs:
           node tests/v06-integrity.cjs
           npm run test:v07
       - run: npm install --no-save --no-package-lock playwright@1.56.1
-      - run: npx playwright install --with-deps chromium
-        timeout-minutes: 5
+      # Cold Ubuntu runners also download system libraries/fonts before Chromium.
+      # Keep the validated Playwright pin and a bounded installation budget.
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+        timeout-minutes: 15
       - name: Offline desktop, mobile, protected storage and legacy gameplay
         run: npm run test:v07-browser
         timeout-minutes: 18
@@ -47,7 +50,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ai-dc-tycoon-v07-release-evidence
+          name: ai-dc-tycoon-v07-ci-${{ github.sha }}
           path: |
             ai-dc-tycoon-v0.7.html
             ai-dc-tycoon-v0.7-source.zip
