@@ -85,7 +85,7 @@ jobs:
   browser-v04:
     name: Offline Chapter 2 Browser Smoke
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -104,6 +104,15 @@ jobs:
       - name: Execute gameplay on offline HTML
         run: node tests/chapter2-browser.cjs
         timeout-minutes: 4
+      - name: Original Engineering Browser regression
+        run: node tests/browser.cjs
+        timeout-minutes: 3
+      - name: Original P2 Engineering Browser regression
+        run: node tests/p2-browser.cjs
+        timeout-minutes: 4
+      - name: Original v0.3 Game Browser regression
+        run: node tests/game-browser.cjs
+        timeout-minutes: 5
       - name: Package browser screenshots
         if: always()
         run: if test -d screenshots-v04; then zip -q -r ai-dc-tycoon-v0.4-screenshots.zip screenshots-v04; fi
