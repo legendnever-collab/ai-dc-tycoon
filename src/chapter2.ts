@@ -160,8 +160,10 @@ export function validateChapter2(s:C2State):void{
   assert(!s.cleared[id]||s.attempts[id]>0,'실행 없이 Mission Clear');
  }
  if(s.network)assert(JSON.stringify(s.network)===JSON.stringify(chapterGraph(s.config,s.current)),'Persisted Network Graph 구성 불일치');
- if(s.last){const original=s.last;const snapshot=s.receipts.find(r=>r.mission===original.mission&&r.clearConfig)?.clearConfig;
-  if(original.graph&&original.traffic)assert(original.graph.modelVersion===C2_GRAPH_MODEL,'Stored Graph Model 오류');}
+ if(s.last){assert(s.last.mission===s.current&&!s.active,'Stored Result phase 오류');
+  const expected=s.last.graph?simulateChapter2(s):legacyOutcomeTemplate(s);
+  assert(JSON.stringify(s.last)===JSON.stringify(expected),'Stored Result numerical / graph parity 오류');
+  assert(!s.last.pass||s.cleared[s.current],'Result clear without Receipt');}
  assert(!s.cleared['05']||s.cleared['04'],'Mission 05 Lock 오류');
  assert(!s.cleared['06']||s.cleared['05'],'Mission 06 Lock 오류');
  if(s.current!=='04')assert(s.cleared[s.current==='05'?'04':'05'],'잠긴 Mission 진입 오류');

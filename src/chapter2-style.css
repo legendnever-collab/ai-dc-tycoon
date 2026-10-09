@@ -52,3 +52,16 @@
 @media(max-width:900px){.c2-layout{grid-template-columns:1fr}.c2-map{min-height:240px}}
 @media(max-width:520px){.c2-header h2{font-size:21px}.c2-missions{grid-template-columns:1fr}.c2-missions button{min-height:51px;padding:10px}.c2-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.c2-metrics b{font-size:16px}.c2-map-panel,.c2-control-panel,.c2-kpi-panel{padding:12px}.c2-actions{grid-template-columns:1fr 1fr}.c2-map{padding:3px}.c2-story h3{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.c2-path.active{animation:none}}
+
+.c2-map [role=button]{cursor:pointer;outline:none}.c2-map [role=button]:focus rect{stroke:#fff;stroke-width:4}
+.c2-simulating .c2-path.active{stroke:#fff;animation:c2flow .35s linear infinite;filter:drop-shadow(0 0 5px #78e8d5)}
+.c2-result:not(.failed){animation:c2clear .5s ease-out}.c2-reward-reveal{animation:c2clear .7s ease-out}
+@keyframes c2clear{from{transform:translateY(8px);opacity:.2}to{transform:translateY(0);opacity:1}}
+.c2-compare{display:flex;flex-wrap:wrap;gap:12px;padding:12px;background:#1b3948;border-radius:8px;font-size:12px}
+.c2-kpi-panel details{margin-top:12px;font-size:12px}.c2-kpi-panel summary{cursor:pointer;min-height:40px;padding:10px 0}
+.c2-port-grid{overflow-wrap:anywhere;line-height:2}.c2-error{color:#ffc788!important}
+.c2-optical-comparison{margin-top:14px}.c2-kpi-panel table,.c2-powerwall table{border-collapse:collapse;width:100%;font-size:12px;margin-top:10px;table-layout:fixed}
+.c2-kpi-panel th,.c2-kpi-panel td,.c2-powerwall th,.c2-powerwall td{border-bottom:1px solid #456274;padding:10px 5px;text-align:left;overflow-wrap:anywhere}
+.c2-kpi-panel details button{min-height:44px;margin:5px;padding:8px;border-radius:7px;background:#213f51;border:1px solid #557389;color:#d9eaf5}
+@media(prefers-reduced-motion:reduce){.c2-result:not(.failed),.c2-reward-reveal,.c2-simulating .c2-path.active{animation:none}}
+

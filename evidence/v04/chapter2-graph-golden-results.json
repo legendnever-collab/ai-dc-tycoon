@@ -88,6 +88,10 @@
     {
       "name": "Legacy Chapter2 profile without graph is still readable",
       "status": "PASS"
+    },
+    {
+      "name": "Forged cached result cannot misrepresent clear or numerical output",
+      "status": "PASS"
     }
   ]
 }

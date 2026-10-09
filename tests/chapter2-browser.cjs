@@ -1,10 +1,10 @@
 /* Browser smoke: actual offline UI actions, v0.3 migration and Chapter 2 progression. */
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
-const {chromium}=require('playwright');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const {newGame,transition:t}=require('../compiled/game-core');
 const {backupText}=require('../compiled/game-storage');
 const screenshotFolder='screenshots-v04';
-let browser;
+let browser;const cases=[];const record=name=>{cases.push({name,status:'PASS'});console.log('PASS '+name);};
 const step=(g,cmd)=>t(g,cmd),clear=g=>step(step(g,{type:'run'}),{type:'finish'});
 function chapter1Clear(id){
  let g=step(newGame(id),{type:'start',mission:'01'});g=clear(g);
@@ -17,7 +17,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().click();
 (async()=>{
  fs.mkdirSync(screenshotFolder,{recursive:true});
- browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+ browser=await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE,headless:true,env:{...process.env,LD_LIBRARY_PATH:process.env.CHROMIUM_EXECUTABLE?path.dirname(process.env.CHROMIUM_EXECUTABLE):(process.env.LD_LIBRARY_PATH||'')},args:['--no-sandbox','--disable-dev-shm-usage']});
  const context=await browser.newContext({viewport:{width:1440,height:900}});
  await context.setOffline(true);
  const p=await context.newPage();const pageErrors=[],requests=[];
@@ -30,7 +30,7 @@ const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().c
  assert.equal(await p.title(),'AI Data Center Tycoon v0.4.0');
  assert.equal(await p.locator('#chapter2-enter').isDisabled(),true);
  assert.equal(await p.locator('iframe').count(),0);
- console.log('PASS v0.4 offline launch + Chapter 2 locked');
+ record('v0.4 offline launch + Chapter 2 locked');
  const old=await p.evaluate(()=>window.AIDCT.getGame()),trained=chapter1Clear(old.id);
  await p.click('#backup-tab');
  await p.locator('#backup-text').fill(backupText(trained));
@@ -39,7 +39,7 @@ const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().c
  await p.click('[data-close="backup-dialog"]');
  await p.waitForFunction(()=>!document.getElementById('chapter2-enter').disabled);
  assert.equal(await p.evaluate(()=>window.AIDCT.getGame().rewards.length),3);
- console.log('PASS v0.3 save restore with three cleared missions and preserved XP/Credits');
+ record('v0.3 save restore with three cleared missions and preserved XP/Credits');
  await p.click('#chapter2-enter');
  await click(p,'start','[data-mission="04"]');
  assert.equal((await p.evaluate(()=>window.AIDCT_V04.simulate())).availablePorts,0);
@@ -49,7 +49,7 @@ const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().c
  assert.equal((await p.evaluate(()=>window.AIDCT_V04.simulate())).occupiedPorts,4);
  await click(p,'run');let s=await p.evaluate(()=>window.AIDCT_V04.chapter());
  assert.equal(s.cleared['04'],true);assert.equal(s.receipts.length,1);
- console.log('PASS M04 port upgrade, four physical connections, hard simulation clear');
+ record('M04 port upgrade, four physical connections, hard simulation clear');
  await click(p,'start','[data-mission="05"]');
  await click(p,'spine');await click(p,'uplink','[data-end="A"][data-rate="200"]');
  await click(p,'uplink','[data-end="B"][data-rate="200"]');
@@ -57,7 +57,7 @@ const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().c
  await p.screenshot({path:screenshotFolder+'/02-leaf-spine.png',fullPage:true,animations:'disabled'});
  await click(p,'run');s=await p.evaluate(()=>window.AIDCT_V04.chapter());
  assert.equal(s.cleared['05'],true);
- console.log('PASS M05 actual Leaf/Spine path and bottleneck clear');
+ record('M05 actual Leaf/Spine path and bottleneck clear');
  await click(p,'start','[data-mission="06"]');
  await click(p,'port','[data-end="A"]');
  await click(p,'module','[data-end="A"][data-rate="800"]');
@@ -70,27 +70,27 @@ const click=(p,type,extra='')=>p.locator('[data-c2="'+type+'"]'+extra).first().c
  assert.equal(s.cleared['06'],true);assert.equal(s.receipts.length,3);
  assert.equal((await p.locator('#c2-powerwall').textContent()).includes('CPO Research Preview'),true);
  await p.screenshot({path:screenshotFolder+'/03-optical-upgrade-cpo.png',fullPage:true,animations:'disabled'});
- console.log('PASS M06 800G two-end module compatibility, Fiber, CPO power wall');
+ record('M06 800G two-end module compatibility, Fiber, CPO power wall');
  await p.evaluate(()=>window.AIDCT_V04.whenSaved());
  await p.reload();await p.waitForFunction(()=>window.AIDCT_V04&&window.AIDCT_V04.chapter().cleared['06']);
  const saved=await p.evaluate(()=>window.AIDCT_V04.chapter());
  assert.equal(saved.receipts.length,3);
- console.log('PASS IndexedDB auto resume and first-clear receipt deduplication');
+ record('IndexedDB auto resume and first-clear receipt deduplication');
  await p.click('#chapter2-enter');
  await click(p,'start','[data-mission="06"]');await click(p,'run');
  s=await p.evaluate(()=>window.AIDCT_V04.chapter());assert.equal(s.receipts.length,3);
- console.log('PASS Mission replay no duplicate reward');
+ record('Mission replay no duplicate reward');
  const backup=await p.evaluate(()=>window.AIDCT_V04.backup());
  assert.equal(JSON.parse(backup).payload.cleared['06'],true);
- console.log('PASS Chapter 2 backup envelope');
+ record('Chapter 2 backup envelope');
  for(const width of [390,320]){
   await p.setViewportSize({width,height:850});
   await p.screenshot({path:screenshotFolder+'/04-mobile-'+width+'.png',fullPage:true,animations:'disabled'});
   const sizes=await p.evaluate(()=>({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth}));
   assert.ok(sizes.scroll<=sizes.client+2,JSON.stringify(sizes)+' width '+width);
  }
- console.log('PASS 390px / 320px responsive horizontal overflow');
+ record('390px / 320px responsive horizontal overflow');
  assert.deepEqual(pageErrors,[]);assert.deepEqual(requests,[]);
- console.log('PASS no page errors or runtime network requests');
- console.log('CHAPTER2 BROWSER SMOKE: 12 groups PASS');
-})().catch(e=>{console.error('CHAPTER2 BROWSER FAIL',e);process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();});
+ record('no page errors or runtime network requests');
+ console.log('CHAPTER2 BROWSER SMOKE: '+cases.length+' groups PASS');
+})().catch(e=>{cases.push({name:'Aborted smoke',status:'FAIL',error:String(e)});console.error('CHAPTER2 BROWSER FAIL',e);process.exitCode=1;}).finally(async()=>{fs.mkdirSync('evidence/v04',{recursive:true});fs.writeFileSync('evidence/v04/chapter2-browser-results.json',JSON.stringify({version:'0.4.0',cases},null,2));if(browser)await browser.close();});

@@ -31,4 +31,5 @@ test('Reward Receipt stores clear graph and recomputed result provenance',()=>{c
 test('Forged result hash cannot reward',()=>{const s=run(prepared04());s.receipts[0].resultHash='forged';assert.throws(()=>validateChapter2(s));});
 test('Mission Replay does not duplicate rewards or physical performance',()=>{const a=run(prepared06()),b=run(act(a,{type:'start',mission:'06'}));assert.equal(b.receipts.length,3);assert.deepEqual(simulateChapter2(a),simulateChapter2(b));});
 test('Legacy Chapter2 profile without graph is still readable',()=>{const s=prepared05();delete s.network;validateChapter2(s);const next=act(s,{type:'uplink',end:'A',rate:100});assert.ok(next.network);});
+test('Forged cached result cannot misrepresent clear or numerical output',()=>{const s=run(prepared06());s.last.watts=1;assert.throws(()=>validateChapter2(s));});
 fs.mkdirSync('evidence/v04',{recursive:true});fs.writeFileSync('evidence/v04/chapter2-graph-golden-results.json',JSON.stringify({model:'chapter2-typed-path-2.0.0',cases},null,2));console.log(cases.map(c=>c.status+' '+c.name+(c.error?' '+c.error:'')).join('\n'));if(cases.some(c=>c.status==='FAIL'))process.exitCode=1;
