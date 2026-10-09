@@ -9,7 +9,7 @@ const round=(n:number|null)=>n===null?'—':Number.isInteger(n)?String(n):n.toFi
 const old=()=>((window as any).AIDCT.getGame() as {id:string;credits:number;xp:number;missions:Record<string,{cleared:boolean}>});
 const store=new Chapter2Store();
 let chapter:C2State=newChapter2('pending'),mounted=false,ready=false,view=false,saveQueue=Promise.resolve(),storeAvailable=false;
-let baseline:C2Outcome|null=null,lastError='',saveMessage='저장 상태 확인 중';
+let baseline:C2Outcome|null=null,lastError='',saveMessage='저장 상태 확인 중',switchingProfile=false;
 const content={
  '04':{title:'Switch Port Crisis',event:'추가 Compute Rack 두 대가 도착했습니다. 그러나 Switch에 더 이상 사용할 Port가 없어 Network 작업에 참여할 수 없습니다.',objective:'Rack 4대 연결 · 50초 이내 완료 · 200 Credits 이내 투자',lesson:'Port Count와 Switch Fabric Capacity는 다른 제한입니다. 연결되지 않은 Rack은 분산 작업에 참여하지 못합니다.'},
  '05':{title:'Build the Scale-out Fabric',event:'두 개의 Compute Group이 동작하지만 Group 간 경로가 없습니다. Spine Switch와 양쪽 Uplink를 만들어 병목을 해결하세요.',objective:'Leaf–Spine Path 확보 · Bottleneck 200 Gb/s · 45초 내',lesson:'두 Link를 더해 유효 대역폭을 계산하지 않습니다. 트래픽이 지나는 경로의 가장 느린 Link가 병목이 됩니다.'},
@@ -135,6 +135,17 @@ function render(){
  el('c2-powerwall').innerHTML=s.cleared['06']&&m==='06'?'<div class="c2-powerwall"><strong>Your Network Is Growing — But Power Is Becoming the Limit.</strong><p>800G Pluggables resolved this Link bottleneck. Scaling Switch capacity next raises aggregate module power, front-panel density and maintenance trade-offs. What if Optical Engines move closer to the ASIC?</p><p><b>COMING NEXT · CPO Research Preview</b> — CPO may shorten high-speed electrical paths and change optical packaging. CPO performance and system energy savings are NOT calculated in v0.4.</p></div>':'';
  el('c2-status').textContent=saveMessage;
 }
+async function syncLegacyProfile(){
+ if(!ready||switchingProfile||chapter.profileId===old().id)return;
+ switchingProfile=true;
+ try{
+  await saveQueue;
+  const legacy=old();
+  chapter=storeAvailable?(await store.load(legacy.id)).state:newChapter2(legacy.id);
+  baseline=null;showStatus('Player Profile 전환 · Chapter 2 상태 복원');
+ }catch(e){lastError=(e as Error).message;chapter=newChapter2(old().id);showStatus('Profile 저장 복구 필요 · Text Backup');}
+ finally{switchingProfile=false;render();}
+}
 function save(){
  if(!storeAvailable){showStatus('자동 저장 불가 · Text Backup 필요');return;}
  const snapshot=structuredClone(chapter);
@@ -211,5 +222,5 @@ document.addEventListener('click',async ev=>{
  }catch(e){showStatus('저장소 제한 · Text Backup 필요');lastError=(e as Error).message;}
  ready=true;render();
  const strip=el('mission-strip');
- new MutationObserver(()=>{updateGate();if(view)render();}).observe(strip,{childList:true,subtree:true});
+ new MutationObserver(()=>{void syncLegacyProfile();updateGate();if(view&&!switchingProfile)render();}).observe(strip,{childList:true,subtree:true});
 })();
