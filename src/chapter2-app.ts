@@ -3,7 +3,6 @@ import './game-app';
 import {newChapter2,simulateChapter2,transitionChapter2,c2Wallet,c2XP,c2Cost,C2_IDS,C2_REWARDS,C2_ASSUMPTIONS} from './chapter2';
 import {Chapter2Store,chapter2Backup,parseChapter2Backup} from './chapter2-storage';
 import type {C2State,C2Id,C2Action,C2Outcome,End} from './chapter2';
-import './chapter2-style.css';
 const el=(id:string)=>document.getElementById(id) as HTMLElement;
 const ehtml=(v:unknown)=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const round=(n:number|null)=>n===null?'—':Number.isInteger(n)?String(n):n.toFixed(1);
