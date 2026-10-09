@@ -29,7 +29,7 @@ The original Chapter 1 executable is built independently and retains its source.
 | WebGL GPU / Safari / Firefox | NOT TESTED |
 
 ## Known issues
-- The Chapter 02 runtime currently uses the fixed-path game-first `chapter2.ts`. An independent `network-model.ts` prototype was added to the branch and is not connected to this runtime; it needs a reconciled fidelity plan.
+- The Chapter 02 runtime currently uses the fixed-path game-first `chapter2.ts`. The playable runtime now uses `chapter2-graph.ts` + `traffic-solver.ts`, with deterministic `tests/chapter2-graph-golden.cjs` graph parity and receipt provenance; the distinct `network-model.ts` prototype remains non-runtime and requires a reconciled assumption plan.
 - Chapter 02 synthetic Watts are not real module measurements.
 - Browser tests are required to accept completion, UI interaction and screenshots.
 - v0.3 Backup and Chapter 02 Backup are separate texts; users must preserve both when moving profiles.
