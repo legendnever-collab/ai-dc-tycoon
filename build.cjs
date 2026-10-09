@@ -18,3 +18,8 @@ console.log('Built v0.4.0 Chapter 2 offline: '+Buffer.byteLength(html04)+' bytes
 const js05=esbuild.buildSync({entryPoints:['src/campaign-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
 const html05=fs.readFileSync('src/game-shell-v05.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js05.replace(/<\/script/gi,'<\\/script'));
 fs.mkdirSync('../output-v05',{recursive:true});for(const path of ['../output-v05/ai-dc-tycoon-v0.5.html','ai-dc-tycoon-v0.5.html'])fs.writeFileSync(path,html05);console.log('Built v0.5.0 CPO offline: '+Buffer.byteLength(html05)+' bytes; legacy executable bytes retained');
+
+/* Additive v0.6 Workshop; original v0.3–v0.5 bundles remain byte exact. */
+const js06=esbuild.buildSync({entryPoints:['src/chapter4-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
+const html06=fs.readFileSync('src/game-shell-v06.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js06.replace(/<\/script/gi,'<\\/script'));
+fs.mkdirSync('../output-v06',{recursive:true});for(const p of ['../output-v06/ai-dc-tycoon-v0.6.html','ai-dc-tycoon-v0.6.html'])fs.writeFileSync(p,html06);console.log('Built v0.6 Optical Engine Workshop: '+Buffer.byteLength(html06)+' bytes');
