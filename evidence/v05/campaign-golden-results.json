@@ -1,0 +1,101 @@
+{
+  "model": "campaign-schema-1",
+  "cases": [
+    {
+      "name": "Integrated Campaign backup preserves all nine receipts, world, graph, module assignments",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.3 backup migration leaves original Game bytes and creates empty additional chapters",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.3 same-profile import retains v0.4/v0.5 progress",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.4 Chapter2 import preserves existing Chapter3 and Engineering references",
+      "status": "PASS"
+    },
+    {
+      "name": "v0.4 backup from another profile is refused",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign checksum tampering rejected before any writes",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Campaign schema/version rejected with original text untouched",
+      "status": "PASS"
+    },
+    {
+      "name": "Nested profile mismatch rejected even with recalculated checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "Forged reward rejected after all outer checksums are regenerated",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter3 save is profile-linked and legacy databases remain untouched",
+      "status": "PASS"
+    },
+    {
+      "name": "Stale Chapter3 tab cannot overwrite a newer head",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Chapter3 model blocks automatic writes and remains byte-exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt head recovers LKG and archives original on next save",
+      "status": "PASS"
+    },
+    {
+      "name": "Both invalid Head/LKG fail closed without silent reset/save",
+      "status": "PASS"
+    },
+    {
+      "name": "Integrated restore validates and writes three stores through durable journal",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted restore after first-store write rolls forward from journal on next boot",
+      "status": "PASS"
+    },
+    {
+      "name": "Journal recovery is idempotent; committed restore does not repeat rewards/writes",
+      "status": "PASS"
+    },
+    {
+      "name": "Crash before final journal commit still recovers without rewriting target heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Concurrent modification during recovery is preserved and blocks automatic overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit valid restore archives unsupported prior bytes instead of destroying them",
+      "status": "PASS"
+    },
+    {
+      "name": "Future restore journal refuses automatic migration or clobber",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown optical status and Lab reference-only metadata survive campaign roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign validation rejects later progress if M06 prerequisite missing",
+      "status": "PASS"
+    },
+    {
+      "name": "No money debt can permanently block Navigation/Reset recovery",
+      "status": "PASS"
+    }
+  ]
+}

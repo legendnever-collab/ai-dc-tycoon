@@ -87,6 +87,6 @@ export function transitionChapter3(s:C3State,a:C3Action,previousChaptersCredits:
    g.last=evaluateChapter3(g);g.phase=g.last.pass?'CLEARED':'RESULT';if(g.last.pass){g.bestStars[g.current]=Math.max(g.bestStars[g.current],g.last.stars);if(!g.cleared[g.current]){g.cleared[g.current]=true;const reward=C3_REWARDS[g.current];g.receipts.push({mission:g.current,xp:reward.xp,credits:reward.credits,revision:g.revision+1,stars:g.last.stars,clearConfig:structuredClone(g.config),orderReceipts:structuredClone(g.orderReceipts),architecture:g.architecture,order:g.order,resultHash:sha256(JSON.stringify(g.last))});g.unlocked.push(...reward.unlocks);}}break;
   default:throw Error('지원하지 않는 Chapter3 Command입니다.');
  }
- check(c3Wallet(g,previousChaptersCredits)>=0,'Credits 부족입니다. Refund / Reset으로 Prototype 장비를 환불하고 다시 설계하세요.');
+ if(packageCost(g.config)>packageCost(s.config)||a.type==='run')check(c3Wallet(g,previousChaptersCredits)>=0,'Credits 부족입니다. Refund / Reset으로 Prototype 장비를 환불하고 다시 설계하세요.');
  g.revision++;g.history.push({revision:g.revision,action:a.type});g.history=g.history.slice(-100);validateChapter3(g);return g;
 }
