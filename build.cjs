@@ -23,3 +23,8 @@ fs.mkdirSync('../output-v05',{recursive:true});for(const path of ['../output-v05
 const js06=esbuild.buildSync({entryPoints:['src/chapter4-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
 const html06=fs.readFileSync('src/game-shell-v06.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js06.replace(/<\/script/gi,'<\\/script'));
 fs.mkdirSync('../output-v06',{recursive:true});for(const p of ['../output-v06/ai-dc-tycoon-v0.6.html','ai-dc-tycoon-v0.6.html'])fs.writeFileSync(p,html06);console.log('Built v0.6 Optical Engine Workshop: '+Buffer.byteLength(html06)+' bytes');
+
+/* v0.7: separate entry leaves every earlier executable and engineering source intact. */
+const js07=esbuild.buildSync({entryPoints:['src/chapter5-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
+const html07=fs.readFileSync('src/game-shell-v07.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js07.replace(/<\/script/gi,'<\\/script'));
+fs.mkdirSync('../output-v07',{recursive:true});for(const p of ['../output-v07/ai-dc-tycoon-v0.7.html','ai-dc-tycoon-v0.7.html'])fs.writeFileSync(p,html07);console.log('Built v0.7 Photonic Substrate Challenge: '+Buffer.byteLength(html07)+' bytes');
