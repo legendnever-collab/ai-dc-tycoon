@@ -1,4 +1,4 @@
-name: Baseline Build and Golden Regression
+name: Offline Release and Regression
 
 on:
   push:
@@ -44,18 +44,94 @@ jobs:
       - name: AI DC Game Golden
         run: npm run test:game
 
+      - name: Chapter 2 Network Golden
+        run: node tests/chapter2-golden.cjs
+
+      - name: Experimental Typed Network Graph Golden
+        run: node tests/network-golden.cjs
+
+      - name: Chapter 2 Game-to-Graph Parity Golden
+        run: node tests/chapter2-graph-golden.cjs
+
       - name: Release integrity
         run: node tests/release-integrity.cjs
+
+      - name: v0.4 release integrity
+        run: node tests/v04-integrity.cjs
+
+      - name: Package source and handoff
+        run: node scripts/package-v04.cjs
+
+      - name: Upload Release archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v04-source-and-handoff
+          path: |
+            ai-dc-tycoon-v0.4-source.zip
+            ai-dc-tycoon-v0.4-HANDOFF.zip
+            START-HERE-v0.4.md
+          retention-days: 14
+          if-no-files-found: error
 
       - name: Keep built HTML for review
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: ai-dc-tycoon-v0.3-verified-html
-          path: ai-dc-tycoon-v0.3.html
+          name: ai-dc-tycoon-v0.4-candidate-html
+          path: |
+            ai-dc-tycoon-v0.3.html
+            ai-dc-tycoon-v0.4.html
           retention-days: 14
           if-no-files-found: error
 
-# This workflow intentionally covers build + golden tests only.
-# Browser/Playwright and physical Android/corporate-PC tests remain NOT TESTED in CI.
-# Do not treat this CI result as full 240-case regression without separate evidence.
+# Browser assertions run in the separate bounded job below.
+# Physical Android and human usability are not inferred from Chromium emulation.
+
+  browser-v04:
+    name: Offline Chapter 2 Browser Smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Install isolated browser test tools
+        run: npm install --no-save --no-package-lock playwright@1.56.1
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+        timeout-minutes: 5
+      - name: Build both offline releases
+        run: npm run build
+      - name: Execute gameplay on offline HTML
+        run: node tests/chapter2-browser.cjs
+        timeout-minutes: 4
+      - name: Desktop, touch and bounded Backup recovery regressions
+        run: node tests/v04-browser.cjs
+        timeout-minutes: 4
+      - name: Original Engineering Browser regression
+        run: node tests/browser.cjs
+        timeout-minutes: 3
+      - name: Original P2 Engineering Browser regression
+        run: node tests/p2-browser.cjs
+        timeout-minutes: 4
+      - name: v0.3 Game Browser baseline assertions (stable locator)
+        run: node tests/game-browser-stable-v04.cjs
+        timeout-minutes: 5
+      - name: Package browser screenshots
+        if: always()
+        run: if test -d screenshots-v04; then zip -q -r ai-dc-tycoon-v0.4-screenshots.zip screenshots-v04; fi
+      - name: Archive browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-dc-tycoon-v04-browser-screenshots
+          path: |
+            screenshots-v04/
+            ai-dc-tycoon-v0.4-screenshots.zip
+            evidence/v04/
+          retention-days: 14
+          if-no-files-found: ignore

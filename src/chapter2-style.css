@@ -1,0 +1,67 @@
+/* Chapter 2 game surface - v0.4, mobile-first, no external assets */
+#chapter2-nav{margin:12px 0 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 18px;border-radius:12px;border:1px solid #406b79;background:linear-gradient(100deg,#142b3c,#1f2847)}
+#chapter2-nav button{min-height:47px;background:#72dbcb;color:#092235;font-weight:800;border:0;border-radius:9px;padding:10px 20px}
+#chapter2-nav button:disabled{background:#354a5d;color:#a1b0bd;cursor:not-allowed}
+#chapter2-nav .c2-tag{color:#b5cce3;font-size:12px;flex:1;line-height:1.5}
+#chapter2-screen{font-family:system-ui,'Noto Sans KR',sans-serif}
+#chapter2-screen button{cursor:pointer}
+#chapter2-screen button:disabled{cursor:not-allowed;opacity:.45}
+.c2-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0}
+.c2-header h2{font-size:27px;margin:0}.c2-muted{color:#99b6c8;font-size:12px;line-height:1.65}
+.c2-chip{padding:6px 11px;border:1px solid #526e88;border-radius:100px;color:#cde4f3;font-size:12px}
+.c2-missions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 17px}
+.c2-missions button{background:#142437;border:1px solid #3a556d;text-align:left;padding:15px;border-radius:12px;min-height:78px;color:#ddebf6;font-weight:650}
+.c2-missions button.current{border-color:#66d6cb;background:#183b47}
+.c2-missions button strong{display:block;font-size:14px}.c2-missions button small{display:block;font-size:11px;color:#9bb6c9;margin-top:6px}
+.c2-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:14px}
+.c2-map-panel,.c2-control-panel,.c2-kpi-panel,.c2-backup{background:#122234;border:1px solid #2f506a;border-radius:14px;padding:18px}
+.c2-panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.c2-map{min-height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at center,#15374a,#0e1a2b 75%);border:1px solid #27475f;border-radius:12px;padding:12px}
+.c2-map svg{width:100%;max-width:760px;max-height:350px;display:block;overflow:visible}
+.c2-map button{border:1px solid #587b95;background:#183a50;color:#d7eef5;border-radius:9px;padding:12px}
+.c2-map button.selected{border-color:#81e5d5}
+.c2-path{stroke:#406785;stroke-width:7;fill:none;stroke-linecap:round}
+.c2-path.active{stroke:#55d5bd;stroke-dasharray:10 13;animation:c2flow 1.4s linear infinite}
+.c2-path.slow{stroke:#e8b96e}
+@keyframes c2flow{to{stroke-dashoffset:-46}}
+.c2-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}
+.c2-metrics div{border:1px solid #35516c;background:#172c40;border-radius:9px;padding:11px}
+.c2-metrics small{font-size:10px;color:#91abc2;display:block}
+.c2-metrics b{font-size:19px;color:#d2f7ed}
+.c2-story h3{font-size:23px;margin:6px 0 10px}
+.c2-story p{font-size:13px;line-height:1.7;color:#bdd0e1;margin:0 0 13px}
+.c2-objective{padding:12px;border-left:3px solid #67cecf;background:#1b394c;border-radius:5px;font-size:12px;line-height:1.65}
+.c2-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+.c2-actions button,.c2-footer button{font-size:12px;min-height:48px;line-height:1.5;border:1px solid #53728a;border-radius:8px;padding:9px 10px;background:#203b51;color:#e4f0fc}
+.c2-actions button.primary,.c2-footer button.primary{background:#66d6ca;color:#0d2530;border-color:#70f4d3;font-weight:800}
+.c2-actions button.selected{border-color:#8df4db;background:#1d5758}
+.c2-result{border:1px solid #3f886e;border-radius:12px;padding:14px;background:#12392f;margin-top:10px}
+.c2-result.failed{border-color:#ad814a;background:#41301f}
+.c2-result h3{font-size:17px;margin:0 0 6px}
+.c2-checks{padding:0;list-style:none;margin:9px 0}.c2-checks li{padding:6px 0;border-bottom:1px solid #ffffff18;font-size:12px;display:flex;gap:5px;justify-content:space-between}
+.c2-checks .ok{color:#70e2bd}.c2-checks .bad{color:#f0c18d}
+.c2-footer{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.c2-kpi-panel{margin-top:14px}.c2-kpi-panel p{font-size:12px;color:#a3bac9}
+.c2-backup{margin-top:13px}
+.c2-backup summary{cursor:pointer;font-weight:700}
+.c2-backup textarea{width:100%;margin-top:12px;min-height:100px;max-height:240px}
+.c2-backup .c2-footer{margin-bottom:8px}
+.c2-powerwall{border:1px solid #e1a65b;background:linear-gradient(100deg,#543722,#202c43);padding:19px;border-radius:13px;margin:14px 0}
+.c2-powerwall strong{color:#ffe0a4}.c2-powerwall p{font-size:13px;color:#e5d8cb}
+#c2-status{font-size:11px;color:#9decd5}
+@media(max-width:900px){.c2-layout{grid-template-columns:1fr}.c2-map{min-height:240px}}
+@media(max-width:520px){.c2-header h2{font-size:21px}.c2-missions{grid-template-columns:1fr}.c2-missions button{min-height:51px;padding:10px}.c2-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.c2-metrics b{font-size:16px}.c2-map-panel,.c2-control-panel,.c2-kpi-panel{padding:12px}.c2-actions{grid-template-columns:1fr 1fr}.c2-map{padding:3px}.c2-story h3{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.c2-path.active{animation:none}}
+
+.c2-map [role=button]{cursor:pointer;outline:none}.c2-map [role=button]:focus rect{stroke:#fff;stroke-width:4}
+.c2-simulating .c2-path.active{stroke:#fff;animation:c2flow .35s linear infinite;filter:drop-shadow(0 0 5px #78e8d5)}
+.c2-result:not(.failed){animation:c2clear .5s ease-out}.c2-reward-reveal{animation:c2clear .7s ease-out}
+@keyframes c2clear{from{transform:translateY(8px);opacity:.2}to{transform:translateY(0);opacity:1}}
+.c2-compare{display:flex;flex-wrap:wrap;gap:12px;padding:12px;background:#1b3948;border-radius:8px;font-size:12px}
+.c2-kpi-panel details{margin-top:12px;font-size:12px}.c2-kpi-panel summary{cursor:pointer;min-height:40px;padding:10px 0}
+.c2-port-grid{overflow-wrap:anywhere;line-height:2}.c2-error{color:#ffc788!important}
+.c2-optical-comparison{margin-top:14px}.c2-kpi-panel table,.c2-powerwall table{border-collapse:collapse;width:100%;font-size:12px;margin-top:10px;table-layout:fixed}
+.c2-kpi-panel th,.c2-kpi-panel td,.c2-powerwall th,.c2-powerwall td{border-bottom:1px solid #456274;padding:10px 5px;text-align:left;overflow-wrap:anywhere}
+.c2-kpi-panel details button{min-height:44px;margin:5px;padding:8px;border-radius:7px;background:#213f51;border:1px solid #557389;color:#d9eaf5}
+@media(prefers-reduced-motion:reduce){.c2-result:not(.failed),.c2-reward-reveal,.c2-simulating .c2-path.active{animation:none}}
+
