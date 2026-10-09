@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'ai-dc-tycoon-v0.3-github-ready.zip'
+      - '.github/workflows/import-v03.yml'
   workflow_dispatch:
 
 permissions:
