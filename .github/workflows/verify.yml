@@ -151,7 +151,7 @@ jobs:
         run: node tests/chapter2-browser.cjs
         timeout-minutes: 4
       - name: Desktop, touch and bounded Backup recovery regressions
-        run: node tests/v04-browser.cjs
+        run: node tests/v04-browser-ci.cjs
         timeout-minutes: 4
       - name: Original Engineering Browser regression
         run: node tests/browser.cjs
