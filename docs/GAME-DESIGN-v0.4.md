@@ -38,4 +38,7 @@ Chapter 01 is retained unmodified; Chapter 02 has three guided scenarios. Missio
 - Beginner screen uses Korean explanations and standard English technology nouns, no component Graph Inspector.
 
 ## Scope exclusions
-Game calculation is deterministic, analytical and synthetic: no ECMP/queueing/contention/routing algorithm choice, Protocol transaction latency, PCIe/NVLink real link characteristics, BER/FEC losses, actual optical reach, electrical SI, vendor module power or pricing.
+Game calculation is deterministic, analytical and synthetic. Shared directional links and switch fabric allocate fixed demands along stable shortest-hop paths. No ECMP, packet queueing, configurable routing policy, Protocol transaction latency, real PCIe/NVLink behavior, BER/FEC losses, actual optical reach, electrical SI or vendor pricing is simulated.
+
+## Implemented UX
+World rack/port click, keyboard focus, mobile guided buttons, active/missing Link styles and traffic pulse, Before/After KPI, Korean failure diagnosis, port occupancy and actual traffic path/bottleneck inspectors, stars, clear animation, component reveal and receipt-derived Technology Tree are implemented. Reduced-motion preference suppresses animation. CPO compares electrical reach, serviceability and density qualitatively with no performance bonus.

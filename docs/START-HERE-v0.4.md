@@ -27,7 +27,13 @@
 - Company policies may block `file://` IndexedDB: keep both Game Backup texts independently.
 
 ## Truthful fidelity
-All 400G/800G, power, Credits, topology, routing, traffic and workload numbers in Chapter 02 are **educational assumptions**, not specifications of any commercial vendor. Chapter 02 uses a fixed-path game model; the Chapter 02 Mission evaluation now uses a typed graph adapter via `chapter2-graph.ts` and `traffic-solver.ts`. The independent `network-model.ts` is an additional experimental graph engine with different educational assumptions, not the Mission evaluation source.
+All 400G/800G, power, Credits, topology, routing, traffic and workload numbers in Chapter 02 are **educational assumptions**, not specifications of any commercial vendor. Mission evaluation uses the small typed graph in `chapter2-graph.ts` and shared path/fabric traffic allocation in `traffic-solver.ts`. The independent `network-model.ts` is an experimental engine with different assumptions, not the Mission evaluation source.
+
+## Release provenance
+`RELEASE-MANIFEST-v0.4.json` pins GitHub source commit, executable SHA256, graph version and source hashes. Executable release is 0.4.0; package/game-schema 0.3.0 identify the preserved Chapter 1 core. Source ZIP includes scripts/tests. A clean build needs Node 24 and locked npm dependencies; single HTML needs no installation or runtime downloads.
+
+## 모바일 / 실패 복구
+World의 Rack/Optical Port를 직접 누르거나 Guided Connection 버튼을 사용하세요. Switch/Port inspector에서 Occupied/Available과 Rate를 확인합니다. Retry는 현재 설치를 유지하고 Reset Scenario는 해당 장비를 환불합니다. 완료 기록과 receipt는 보존되며 1 Star도 다음 Mission을 엽니다.
 
 ## Known limitations
 Real Android, corporate browser, human novice usability, vendor optics behavior, BER, optical loss, thermal, real-world Network TCO and CPO physics require independent validation. Browser/CI test status and exact counts belong in `REGRESSION-v0.4.md`; do not infer the old 240-case release was executed anew unless listed explicitly.

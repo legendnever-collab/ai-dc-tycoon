@@ -1,0 +1,25 @@
+{
+  "version": "0.3.0",
+  "cases": [
+    {
+      "name": "16 original Engineering source / test files retain exact baseline bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded and native Lab executable retain authoritative SHA-256",
+      "status": "PASS"
+    },
+    {
+      "name": "Release / package / game / DC Model versions agree with separate Engineering version",
+      "status": "PASS"
+    },
+    {
+      "name": "Single HTML includes all code / CSS and blocks remote runtime resources",
+      "status": "PASS"
+    },
+    {
+      "name": "Game module import direction does not couple Solver to rendering or Lab graph",
+      "status": "PASS"
+    }
+  ]
+}

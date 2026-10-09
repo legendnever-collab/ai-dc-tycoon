@@ -1,4 +1,4 @@
-name: Baseline Build and Golden Regression
+name: Offline Release and Regression
 
 on:
   push:
@@ -56,6 +56,9 @@ jobs:
       - name: Release integrity
         run: node tests/release-integrity.cjs
 
+      - name: v0.4 release integrity
+        run: node tests/v04-integrity.cjs
+
       - name: Package source and handoff
         run: node scripts/package-v04.cjs
 
@@ -81,9 +84,8 @@ jobs:
           retention-days: 14
           if-no-files-found: error
 
-# This workflow intentionally covers build + golden tests only.
-# Browser/Playwright and physical Android/corporate-PC tests remain NOT TESTED in CI.
-# Do not treat this CI result as full 240-case regression without separate evidence.
+# Browser assertions run in the separate bounded job below.
+# Physical Android and human usability are not inferred from Chromium emulation.
 
   browser-v04:
     name: Offline Chapter 2 Browser Smoke
@@ -107,6 +109,9 @@ jobs:
       - name: Execute gameplay on offline HTML
         run: node tests/chapter2-browser.cjs
         timeout-minutes: 4
+      - name: Desktop, touch and bounded Backup recovery regressions
+        run: node tests/v04-browser.cjs
+        timeout-minutes: 4
       - name: Original Engineering Browser regression
         run: node tests/browser.cjs
         timeout-minutes: 3
@@ -127,5 +132,6 @@ jobs:
           path: |
             screenshots-v04/
             ai-dc-tycoon-v0.4-screenshots.zip
+            evidence/v04/
           retention-days: 14
           if-no-files-found: ignore
