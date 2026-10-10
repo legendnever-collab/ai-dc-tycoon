@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Reuse successful v0.8 583-check release artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: ai-dc-tycoon-v08-ci-143fb56779b7d09d8a4f5cc05234a39665018b46
           run-id: 38013755072
