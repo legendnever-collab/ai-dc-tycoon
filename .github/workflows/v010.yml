@@ -49,7 +49,7 @@ jobs:
             git diff --cached --quiet || git commit -m 'G6: publish verified v0.10 archives and actual browser evidence'
             git push origin HEAD:feature/v0.10-engineering-decision-lab
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: v010-${{ github.sha }}

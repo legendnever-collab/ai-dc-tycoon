@@ -75,7 +75,7 @@ jobs:
       - name: Package v0.6 executable and rebuildable source
         run: node scripts/package-v06.cjs
       - name: Upload v0.6 executable source and handoff
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-dc-tycoon-v06-executable-source-handoff
           path: |
@@ -89,7 +89,7 @@ jobs:
       - name: Package v0.5 source and handoff
         run: node scripts/package-v05.cjs
       - name: Upload v0.5 executable and source archives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-dc-tycoon-v05-executable-source-handoff
           path: |
@@ -104,7 +104,7 @@ jobs:
         run: node scripts/package-v04.cjs
 
       - name: Upload Release archives
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-dc-tycoon-v04-source-and-handoff
           path: |
@@ -116,7 +116,7 @@ jobs:
 
       - name: Keep built HTML for review
         if: success()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-dc-tycoon-v0.4-candidate-html
           path: |
@@ -167,7 +167,7 @@ jobs:
         run: if test -d screenshots-v04; then zip -q -r ai-dc-tycoon-v0.4-screenshots.zip screenshots-v04; fi
       - name: Archive browser screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-dc-tycoon-v04-browser-screenshots
           path: |
@@ -209,7 +209,7 @@ jobs:
       - name: Archive genuine CPO scenes
         if: always()
         run: if test -d screenshots-v05; then zip -q -r ai-dc-tycoon-v0.5-screenshots.zip screenshots-v05; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-dc-tycoon-v05-browser-scenes-evidence
@@ -252,7 +252,7 @@ jobs:
       - name: Package genuine Workshop scenes
         if: always()
         run: if test -d screenshots-v06; then zip -q -r ai-dc-tycoon-v0.6-screenshots.zip screenshots-v06; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-dc-tycoon-v06-browser-scenes-evidence

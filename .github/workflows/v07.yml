@@ -47,7 +47,7 @@ jobs:
         timeout-minutes: 18
       - name: Package executable, source, handoff and screenshots
         run: npm run package:v07
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-dc-tycoon-v07-ci-${{ github.sha }}

@@ -40,7 +40,7 @@ jobs:
           git add ai-dc-tycoon-v0.11.html ai-dc-tycoon-v0.11-*.zip RELEASE-MANIFEST-v0.11.json REGRESSION-v0.11.md docs/REGRESSION-v0.11.md evidence/v011 screenshots-v011
           git diff --cached --quiet || git commit -m 'G6: publish verified v0.11 offline artifacts and real browser evidence'
           git push origin HEAD:feature/v0.11-optical-architecture
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: v011-${{ github.sha }}
