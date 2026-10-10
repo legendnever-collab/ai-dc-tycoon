@@ -40,3 +40,10 @@ const html09=fs.readFileSync('src/game-shell-v08.html','utf8').replace('AI Data 
  .replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style','assembly-style','korean-font-v08','exploration-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n'))
  .replace('/* SCRIPT */',()=>js09.replace(/<\/script/gi,'<\\/script'));
 fs.writeFileSync('ai-dc-tycoon-v0.9.html',html09);console.log('Built v0.9 Free Exploration: '+Buffer.byteLength(html09)+' bytes');
+
+// v0.10 additive Decision Lab: never replace any earlier distribution.
+const js10=esbuild.buildSync({entryPoints:['src/decision-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
+const html10=fs.readFileSync('src/game-shell-v08.html','utf8').replace('AI Data Center Tycoon v0.8.0','AI Data Center Tycoon v0.10.0').replace('v0.8.0 · From Prototype to Production','v0.10.0 · Engineering Decision Lab')
+ .replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style','assembly-style','korean-font-v08','exploration-style','decision-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n'))
+ .replace('/* SCRIPT */',()=>js10.replace(/<\/script/gi,'<\\/script'));
+fs.writeFileSync('ai-dc-tycoon-v0.10.html',html10);console.log('Built v0.10 Engineering Decision Lab: '+Buffer.byteLength(html10)+' bytes');

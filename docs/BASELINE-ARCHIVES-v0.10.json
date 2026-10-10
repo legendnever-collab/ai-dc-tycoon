@@ -1,0 +1,50 @@
+{
+  "baselineCommit": "3d182597e8f542c091f8d014bb8f31a0468d5aa2",
+  "archives": [
+    {
+      "path": "ai-dc-tycoon-v0.7-HANDOFF.zip",
+      "gitBlobSHA": "b8584e122025420c0cb44814657210f2ad8592ab",
+      "bytes": 6361638
+    },
+    {
+      "path": "ai-dc-tycoon-v0.7-screenshots.zip",
+      "gitBlobSHA": "5b21d57c8f1e7e615c92ef2483d294a7319c703b",
+      "bytes": 6014253
+    },
+    {
+      "path": "ai-dc-tycoon-v0.7-source.zip",
+      "gitBlobSHA": "45a143280020010a35de506be432c5dc2ab5b6ef",
+      "bytes": 2065921
+    },
+    {
+      "path": "ai-dc-tycoon-v0.8-HANDOFF.zip",
+      "gitBlobSHA": "c48a72ab613a951f190e6cd31c28202251c92748",
+      "bytes": 5146319
+    },
+    {
+      "path": "ai-dc-tycoon-v0.8-screenshots.zip",
+      "gitBlobSHA": "a8a9bd94c03e4b0c592755c7ff471fddb4c5c661",
+      "bytes": 4717591
+    },
+    {
+      "path": "ai-dc-tycoon-v0.8-source.zip",
+      "gitBlobSHA": "c5d1b182543c1289fc0555f3c25a5ccf37681ba6",
+      "bytes": 2563564
+    },
+    {
+      "path": "ai-dc-tycoon-v0.9-HANDOFF.zip",
+      "gitBlobSHA": "52ee2a1998a1be65e29006a774f7f307c5082818",
+      "bytes": 3103937
+    },
+    {
+      "path": "ai-dc-tycoon-v0.9-screenshots.zip",
+      "gitBlobSHA": "ef2a19276eb7c4be70670454c3901aa31d829846",
+      "bytes": 2703416
+    },
+    {
+      "path": "ai-dc-tycoon-v0.9-source.zip",
+      "gitBlobSHA": "eea8d17e416d2b5e72b0285eb46ff8c12d2d0952",
+      "bytes": 2919882
+    }
+  ]
+}
