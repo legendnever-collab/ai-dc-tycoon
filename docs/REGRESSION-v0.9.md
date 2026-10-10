@@ -1,13 +1,13 @@
 # Regression v0.9.0
 
-Published source: f69f59b4b31333a02c93a8b2cbff2fbcd598d1fb
+Published source: af4d0df825c413709b4c5ff2cf28ff6bc7525c62
 Baseline main: 2c11d75d71f7d328b2934a84eb0a2d222cf16451
 
 Existing deterministic baseline: 431 PASS / 0 FAIL.
 
 | Actual suite | PASS | FAIL |
 |---|---:|---:|
-| evidence/v09/golden.json | 47 | 0 |
+| evidence/v09/golden.json | 48 | 0 |
 | evidence/v09/browser.json | 34 | 0 |
 | evidence/v08/assembly-golden.json | 40 | 0 |
 | evidence/v08/assembly-storage-golden.json | 18 | 0 |

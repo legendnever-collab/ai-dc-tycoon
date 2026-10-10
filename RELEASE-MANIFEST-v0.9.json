@@ -1,31 +1,31 @@
 {
   "release": "0.9.0",
   "branch": "feature/v0.9-free-exploration",
-  "sourceGitCommit": "f69f59b4b31333a02c93a8b2cbff2fbcd598d1fb",
+  "sourceGitCommit": "af4d0df825c413709b4c5ff2cf28ff6bc7525c62",
   "baselineGitCommit": "2c11d75d71f7d328b2934a84eb0a2d222cf16451",
   "artifacts": {
     "ai-dc-tycoon-v0.9.html": {
-      "sha256": "8705eb5bd5ee4672ea91105024aedd5c289c2dbdf7d7e931e74169b824079e1a",
-      "bytes": 1189128
+      "sha256": "5ba0b848ce170e05153bd4116c5cf5233efc082a3165d67ae53f1677eadaa7a7",
+      "bytes": 1189299
     },
     "ai-dc-tycoon-v0.9-source.zip": {
-      "sha256": "7d7241212f7fd8bf3c22ce6dc17a4a3cfab9b6a212723dfa33655e2c1cc96e6f",
-      "bytes": 2918498
+      "sha256": "653362fe371269cb642c7dbd5dbd0232a67295166298bbdc931f38cee1e4d6b9",
+      "bytes": 2919882
     },
     "ai-dc-tycoon-v0.9-HANDOFF.zip": {
-      "sha256": "03373d70df5a400bdcaa71afb84e035246834b7e2c91c1fb43f8a9a35bc203bd",
-      "bytes": 3106591
+      "sha256": "3128fcbfc964caf6f19daf056ccf064849a841e746ce220dd4572174e11e8679",
+      "bytes": 3103937
     },
     "ai-dc-tycoon-v0.9-screenshots.zip": {
-      "sha256": "17f18a8577976823acc27380e9ad16fb2bbe07de39931b911881263b0440e3d6",
-      "bytes": 2706196
+      "sha256": "1f9180a2f1fff7441a2bd3a7ce613382f97d6e21520879ed9ff8ad0a3116b158",
+      "bytes": 2703416
     },
     "START-HERE-v0.9.md": {
       "sha256": "0f9cdfd820e74cc3e101a935f6d5415dcb5dcb0597b968efb18da5d10a5e6e1a",
       "bytes": 2105
     },
     "docs/REGRESSION-v0.9.md": {
-      "sha256": "689abcb0a08abb4f7ea33ee5f1d2789b0ce42f79d5e494bdec803421c37a66db",
+      "sha256": "8ad3ee2c183d4a078c5e46178122b9aeb8d9394740a56500053e230a904bd0fc",
       "bytes": 1711
     }
   },
@@ -68,11 +68,11 @@
     "src/cpo-model.ts": "fe9736ebcd60f94dcb56a7cd9850b208bb460fba813e7522861d3ac9d3b10ee9",
     "src/cpo-schema.ts": "7b7669e2d1daf2ef9216944380fa52b067587223ef942cd8e12d396db6b7706a",
     "src/dc-simulator.ts": "2ec47582506c9efd25e96ca398148c506cab7b1ab669e57b45fd20c3f09c58d5",
-    "src/exploration-app.ts": "381ca296336402707a6e9bb864fe07715244cab752a10ad84b486ae3a30a4477",
+    "src/exploration-app.ts": "3714a509dc3899911271adc12f2f74a5799452db2229afa6696ed6167aebeca6",
     "src/exploration-catalog.ts": "ea3bfeab998cabd1f4eee83201908b837f03e73cd291201fa4f28b771fc05809",
     "src/exploration-controls.ts": "74ca63395b0ef13d2b13d71bce0db77bac5c153a2d1fdee7faf0431341e8e28b",
     "src/exploration-entry.ts": "678f765438cc7549da746bc698cde5c3b4317ebff2214ffa7a13ff447665d29f",
-    "src/exploration-model.ts": "e59fb309bdb63fda0f2cbf83f9654c3cd90af7eb313dc4489a0b45f9062c4a0d",
+    "src/exploration-model.ts": "bcde031d8e2738f61407801536933cde5d7034c5ac72e9e92744573d83e901b1",
     "src/exploration-storage.ts": "20b1ca3bed43b478655d575ad7b45093c9b7875f428dd6acf96dd88bdb12157a",
     "src/exploration-style.css": "4d0ca8ebadf273c97c1f57b1765cecf114047885e774579c8c59cc20f3d20898",
     "src/game-app.ts": "e7af679d994ed47822dbcb36ee5bd2da1e52b98d50b6c0719d7506e8a1402d09",
@@ -181,7 +181,7 @@
     "tests/v08-storage-browser.cjs": "9e77042268dd9b575d37ef13b421cd7c64d49d13a24e81e385975c919244937b",
     "tests/v08-substrate-browser.cjs": "c1d1b6df9b6c07788591e08a8cbf2e11aeef57ba74b026fe91bd9d97021c1d68",
     "tests/v09-browser.cjs": "d2f7d42f7de4228c36730b1e16435121cbb8291ed2f8f5f004689cfef7f36924",
-    "tests/v09-golden.cjs": "9caa6c4a00d51bb07093c5af6c5952467e3b742b5b1e20a202ebc4d5900962ca",
+    "tests/v09-golden.cjs": "62de55c47cc3446c5388b713835f31164dc767330e71fdc25769bea411b4eb9b",
     "tests/workshop-adapter-golden.cjs": "e7838777d08138657680ca3f0a5d12c97f1b4dd167345eac702bcfff7083f5de",
     "tests/workshop-storage-golden.cjs": "b763017d9eaf9db70f685105d53d1fbfe3c421c6af13d5fa656c4d22a5030642",
     "scripts/check-package-v08.cjs": "4d6dde38664ca76fb0877d64d894c7d1b82f5e96daa95ef0361eb1197ca0f40e",
@@ -205,7 +205,7 @@
     "docs/BASELINE-AUDIT-v0.6.md": "0f779f7d78cd1df7c94fe17c661aa3d657ee9f01e8995a458bb03fcafb650d44",
     "docs/BASELINE-AUDIT-v0.7.md": "3eda09d7f511f3e5b631021164c3e02fe1fb66afd9d22ae8bff6ed931f54b360",
     "docs/BASELINE-AUDIT-v0.8.md": "b519f0b360134283fa925a33a34bcf918bf722fe9fafef2a77af449a6f83bb0b",
-    "docs/CI-CANCEL-v0.9.md": "b4dfd0a6db10a13c9905fa107284ddc885009018ec5c4ebee742162c1e20e9db",
+    "docs/CI-CANCEL-v0.9.md": "00be62a18cdb77866c7df8c8ec6239f0bcba42c96ba5c261df5ed375318ba745",
     "docs/CI-STABILIZATION-v0.7.md": "65db530b46cde82544811b720b315ce5e794567b4cace3e28e795c112d32a0c9",
     "docs/CPO-ARCHITECTURE-MODEL-v0.5.md": "c6428a4eac6caaecb2830e97e9254af44b9069c6e9e1036ce27c579c2c022642",
     "docs/CPO-GAMEPLAY-ROADMAP-v0.5-to-v0.8.md": "5faa3aa9b7628c79d1e1452576575aace80b610f7185a48ba484f8119ed7878a",
@@ -246,7 +246,7 @@
     "docs/REGRESSION-v0.6.md": "abc771c2efc56fa2e6900e5411a0ef672bdf0a701288732a8bf3a5cb62d17687",
     "docs/REGRESSION-v0.7.md": "7acaad815467cc059b27f157dd5bc3d4e1a3d62426337a1af361941588f87516",
     "docs/REGRESSION-v0.8.md": "f2a2f25542975a2690eec01ee690227c950da83430c5d97d781139db2ea2e24e",
-    "docs/REGRESSION-v0.9.md": "689abcb0a08abb4f7ea33ee5f1d2789b0ce42f79d5e494bdec803421c37a66db",
+    "docs/REGRESSION-v0.9.md": "8ad3ee2c183d4a078c5e46178122b9aeb8d9394740a56500053e230a904bd0fc",
     "docs/SOURCE-REGISTER-v0.3.md": "0a53ecd9f7c6334b912722cda49e2949ed737992f1c8a7d654c5152ba9bcb91f",
     "docs/STAGE-COMMITS-v0.8.md": "36d61160e0bf4c159f1f1d472a3a2345b2c4b9891683f35874068c8c76185a58",
     "docs/START-HERE-v0.3.md": "da70cbbfc12376d6e860288ed183319115cffce064c68419eb3cc22769cc83fc",
@@ -288,6 +288,7 @@
     ".github/workflows/v08-recovery-packages.yml": "d82219d29fca68d859bad10abf010cb1d7732ccf91265a2e7a4ab107a6d0bab5",
     ".github/workflows/v08-recovery-publish.yml": "6aa717a6dd4f10589805a19ab619db66ee7368952e9112dcdcec36167d1c5f6f",
     ".github/workflows/v08.yml": "95db2dde14fc7cde3ec598e43758c1214d14fbfffbbd418c2a1c2b88da01e5df",
+    ".github/workflows/v09-browser-focus.yml": "6062dbf47087c96c4e9f1ed032431f3c60df98d8295fa4211e49cffeaf553bd6",
     ".github/workflows/v09.yml": "eef9f5f636d8b2b4866e91a5933db92477d933db36fe74f4faeb049f9517a7e1",
     ".github/workflows/verify.yml": "e3db61156674f5ce7ec957302f096f8778923ed98eb76fde23903d86c702dc15",
     "build.cjs": "0c22bbbd9a09725ffc953296c8e38db1318f8b9ef8719ae742a6edec2b11e301",
@@ -304,11 +305,11 @@
     "ai-dc-tycoon-v0.6.html": "69cd47b8df6e7ff848c58636dd86e3f4e0a2dcaaed18e439319e8408c100fda5",
     "ai-dc-tycoon-v0.7.html": "2b648ab3b32ef05ab0beed7b5e9c2dcdb518c4321ad65fdf7b389f24fdd5d7a8",
     "ai-dc-tycoon-v0.8.html": "46290b308030bb9bfae9a6ef70f7830cb88942b5978683e3b4417e46d4afd818",
-    "ai-dc-tycoon-v0.9.html": "8705eb5bd5ee4672ea91105024aedd5c289c2dbdf7d7e931e74169b824079e1a"
+    "ai-dc-tycoon-v0.9.html": "5ba0b848ce170e05153bd4116c5cf5233efc082a3165d67ae53f1677eadaa7a7"
   },
   "evidence": {
     "evidence/v09/golden.json": {
-      "pass": 47,
+      "pass": 48,
       "fail": 0
     },
     "evidence/v09/browser.json": {
@@ -367,8 +368,8 @@
   "baselineDeterministic": 431,
   "screenshotSHA256": {
     "screenshots-v09/01-home.png": "c4f1c17ec4cf6eb9b021b3fd09aa6250d17850f8505ae4aef231e8c97c46f2ee",
-    "screenshots-v09/02-navigator.png": "3106cb7c350d299ae8b4a0ad66d0cfdf507908ab906f4e35e1fc6043ae6457a6",
-    "screenshots-v09/03-mission17.png": "b3030d5ae8003212506029a4d320bdc3becdf5950fe9aed414805f881efd4985",
+    "screenshots-v09/02-navigator.png": "c6fac5cf91263000317f55995a493c2d016858058edf91a4fb94b2749a8f0a81",
+    "screenshots-v09/03-mission17.png": "f625a0c93523531832211819e2524fe08225603bdcd94bc20e13404d54b0b3f2",
     "screenshots-v09/04-mission18.png": "9b250e0284e3e9f110363760667534184f02ae6fcb9d73189cff623262bd55c8",
     "screenshots-v09/mobile-320.png": "ef52e9f772f6652b37c59e7b754f10d568ecf0649445a1f66a18d098b0e654c0",
     "screenshots-v09/mobile-390.png": "e06ed2a07dcd4a302de070c51df4bf44f90e698bac713cdc89b164002b8695d3"

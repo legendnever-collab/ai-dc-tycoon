@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-10T08:14:54.947Z",
+  "executedAt": "2026-10-10T08:40:54.437Z",
   "cases": [
     {
       "name": "Mission 01 starter validates, simulates and has no Campaign progress",
@@ -187,6 +187,10 @@
     },
     {
       "name": "All v08 runtime source and v08 executable remain byte exact",
+      "status": "PASS"
+    },
+    {
+      "name": "Yielding practice runs preserve same-seed results and cancelled state",
       "status": "PASS"
     }
   ]
