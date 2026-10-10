@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "name": "Real IndexedDB stores sixth head and a committed six-head restore journal",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt Assembly primary recovers real same-profile LKG",
+      "status": "PASS"
+    },
+    {
+      "name": "Future schema blocks autosave and exports immutable raw original",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit supported restore preserves future bytes in original archive",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted sixth-head restore rolls forward before gameplay boot",
+      "status": "PASS"
+    },
+    {
+      "name": "Two real browser tabs reject stale Assembly writer and retain latest state",
+      "status": "PASS"
+    },
+    {
+      "name": "Storage paths remain offline with zero runtime exceptions",
+      "status": "PASS"
+    }
+  ]
+}

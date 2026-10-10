@@ -1,0 +1,63 @@
+PASS 800G arithmetic slow
+PASS 800G arithmetic fast
+PASS 800G arithmetic wdm
+PASS 1.6T arithmetic wide
+PASS 1.6T arithmetic fast
+PASS 1.6T arithmetic hybrid
+PASS 1.6T arithmetic dense
+PASS WDM physical paths vs per-wavelength channels
+PASS Efficiency applied once / disconnected throughput explicit
+PASS Loss ledger reference planes / coupling once
+PASS No mux losses in single wavelength mode
+PASS Cost budget is an explicit independently evaluated constraint
+PASS Power component sum / cost separate
+PASS Thermal drift slope / filter monotonic sensitivity
+PASS Active tuning trades power for lower penalty
+PASS Customer temperature excursion changes result at same operating point
+PASS Reject invalid spatial 0
+PASS Reject invalid spatial 17
+PASS Reject invalid spatial 1.5
+PASS Reject invalid connected 17
+PASS Reject invalid connected -1
+PASS Reject invalid ioChannels 0
+PASS Reject invalid efficiency 1.01
+PASS Reject invalid efficiency NaN
+PASS Reject invalid pitchUm 0
+PASS Reject invalid temperatureC 100
+PASS Reject invalid laneRate 400
+PASS Reject invalid wavelengths 8
+PASS Reject invalid mux AWG
+PASS Reject invalid signaling measured
+PASS Reject invalid lengthCm 0
+PASS Reject invalid rows 3
+PASS Reject invalid bends 21
+PASS Unsupported physics input rejected
+PASS Unknown metrics / unsupported physics declared
+PASS 200G cannot silently pass basic signaling capability
+PASS Mission19 two different architectures can pass
+PASS Mission20 compact single wavelength fails / WDM passes
+PASS Mission20 hot WDM fails without tuning
+PASS Customer A / wide actual constraint parity
+PASS Customer A / fast actual constraint parity
+PASS Customer A / hybrid actual constraint parity
+PASS Customer A / dense actual constraint parity
+PASS Customer B / wide actual constraint parity
+PASS Customer B / fast actual constraint parity
+PASS Customer B / hybrid actual constraint parity
+PASS Customer B / dense actual constraint parity
+PASS Customer C / wide actual constraint parity
+PASS Customer C / fast actual constraint parity
+PASS Customer C / hybrid actual constraint parity
+PASS Customer C / dense actual constraint parity
+PASS No hardcoded winner / Customer reorders decisions
+PASS FAU rows / route length produce independent geometry changes
+PASS Snapshot / A-B restore numerical provenance
+PASS Changed input invalidates current PASS
+PASS Cross Mission comparison and restore rejected
+PASS Model version / corrupted result rejected
+PASS Customer context restricts comparison deltas
+PASS Report exact numerical parity / Unknown handling
+PASS Report rejects stale current result
+PASS Chapter7 backup round trip preserves modes / AB / notes
+PASS Future schema / corrupt backup rejected, no reset
+PASS Campaign gates / unique reward / practice isolation

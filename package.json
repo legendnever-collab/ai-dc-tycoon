@@ -32,7 +32,12 @@
     "test:v010": "node tests/v010-golden.cjs && node tests/v010-explain-scenes.cjs",
     "test:v010-browser": "node tests/v010-browser.cjs",
     "package:v010": "node scripts/package-v010.cjs",
-    "test:v010-package": "node scripts/check-package-v010.cjs"
+    "test:v010-package": "node scripts/check-package-v010.cjs",
+    "build:v011": "node scripts/build-v011.cjs",
+    "test:v011": "node tests/v011-golden.cjs",
+    "test:v011-browser": "node tests/v011-browser.cjs",
+    "package:v011": "node scripts/package-v011.cjs",
+    "test:v011-package": "node scripts/check-package-v011.cjs"
   },
-  "offlineReleaseVersion": "0.10.0"
+  "offlineReleaseVersion": "0.11.0"
 }

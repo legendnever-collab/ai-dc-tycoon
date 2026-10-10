@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "name": "Every preserved v07 runtime source/test/executable hash remains exact",
+      "status": "PASS"
+    },
+    {
+      "name": "v08 executable contains all models, chapter6 and offline CSP",
+      "status": "PASS"
+    },
+    {
+      "name": "New state backup excludes unbounded samples and measured claims",
+      "status": "PASS"
+    }
+  ]
+}

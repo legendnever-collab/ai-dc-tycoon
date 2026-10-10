@@ -1,0 +1,53 @@
+name: v0.11 Optical Architecture Challenge
+on:
+  push:
+    branches: [feature/v0.11-optical-architecture]
+    paths-ignore: ['*.zip', 'ai-dc-tycoon-v0.11.html', 'RELEASE-MANIFEST-v0.11.json', 'evidence/**', 'screenshots-v011/**', 'REGRESSION-v0.11.md', 'docs/REGRESSION-v0.11.md']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v011-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build:v011
+      - run: node scripts/regression-v011.cjs
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Preserve historical browser behavior and current offline Mission01–21
+        run: npm run test:v07-browser && npm run test:v08-browser && npm run test:v09-browser && npm run test:v010-browser && npm run test:v011-browser
+      - name: Package actual evidence and verify SHA256
+        run: VALIDATED_SOURCE_SHA=${{ github.sha }} npm run package:v011 && npm run test:v011-package
+      - name: Publish RC executable and artifacts to feature branch
+        if: github.event_name == 'push'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ai-dc-tycoon-v0.11.html ai-dc-tycoon-v0.11-*.zip RELEASE-MANIFEST-v0.11.json REGRESSION-v0.11.md docs/REGRESSION-v0.11.md evidence/v011 screenshots-v011
+          git diff --cached --quiet || git commit -m 'G6: publish verified v0.11 offline artifacts and real browser evidence'
+          git push origin HEAD:feature/v0.11-optical-architecture
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v011-${{ github.sha }}
+          path: |
+            ai-dc-tycoon-v0.11.html
+            ai-dc-tycoon-v0.11-*.zip
+            RELEASE-MANIFEST-v0.11.json
+            evidence/v011/
+            screenshots-v011/
+          retention-days: 14

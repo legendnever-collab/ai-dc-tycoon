@@ -1,0 +1,40 @@
+PASS Educational interface presets define source, units and no vendor ranking
+PASS M16 customer alignment window and budget require a real trade-off
+PASS Coupling selection changes nominal loss exactly once
+PASS Same seed and input reproduce full samples and provenance hashes
+PASS Different seeds change sample set and results
+PASS Common random numbers permit architecture comparison with identical draws
+PASS Zero variance matches unchanged v07 core at every channel
+PASS Nonzero inherited alignment is replaced rather than added again
+PASS Optimized delta evaluation matches reference Gaussian graph for seeded offsets
+PASS Common-mode displaces every channel together
+PASS Independent channel error differs while common draw stays zero
+PASS Pitch mismatch is symmetric and accumulates at edge channels
+PASS Rotation mrad is converted to radians at 127 µm pitch
+PASS Worst channel enforces assembly hard gate
+PASS Channel pass frequency and assembly rate derive from actual samples
+PASS Unknown source propagates through samples and cannot qualify
+PASS Invalid samples, seed and Gaussian parameters reject before execution
+PASS 5000 samples respect boundary and deterministic completion
+PASS Gaussian standard normals have expected rough moments
+PASS Initial M17 fails; precision alone cannot cure pitch mismatch
+PASS Diagnosed pitch matching and precision clear within equipment budget
+PASS Most expensive active equipment is not an unconditional solution
+PASS Quick preview cannot clear standard-run mission
+PASS Known-Good does not guarantee final optical assembly
+PASS Basic aggregate test may miss localized hard-channel failures
+PASS Pre-test rejects bad material before expensive assembly
+PASS Cost/time ledger counts only real process events and no duplicated scrap cost
+PASS Zero accepted units produces Undefined cost, never zero
+PASS Rework is bounded and cannot repair material defects
+PASS Batch seed reproduces unit truth, costs, time and result hash
+PASS Good delivered / escapes / scrap partition batch
+PASS Prototype order rewards inexpensive fast equipment rather than maximum precision
+PASS Quality order requires channel coverage and can complete Known-Good delivery
+PASS Volume order completes with explicit cost and time constraints
+PASS Known-Good saves late expensive Quality assembly credits with identical latent units
+PASS Mission gates cannot skip15 or16
+PASS Sequential clears produce unique first-clear receipts and tamper rejects
+PASS Existing Package and v07 design are immutable during new calculations
+PASS Cancellation returns no partial qualification
+PASS Chunked result equals synchronous reference

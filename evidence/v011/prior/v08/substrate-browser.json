@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "name": "M13 actual new-executable path fails then clears with unchanged4dB input loss",
+      "status": "PASS"
+    },
+    {
+      "name": "M14 actual FAU failure and guided alignment preserve6.44dB worst margin",
+      "status": "PASS"
+    },
+    {
+      "name": "M15 actual16-channel prototype clear unlocks Chapter6 without rewriting old rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Advanced Coupling Workshop remains playable after new Chapter6 unlock",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission13–15 in v08 have zero HTTP requests and zero JS exceptions",
+      "status": "PASS"
+    }
+  ]
+}

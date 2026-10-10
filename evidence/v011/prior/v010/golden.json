@@ -1,0 +1,153 @@
+{
+  "executedAt": "2026-10-10T16:07:46.776Z",
+  "cases": [
+    {
+      "name": "Mission 01 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 02 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 03 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 04 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 05 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 06 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 07 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 08 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 09 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 10 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 11 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 12 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 13 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 14 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 15 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 16 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 17 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 18 Snapshot, original solver, metrics, deltas and independent restore",
+      "status": "PASS"
+    },
+    {
+      "name": "Input and Result hash forgery reject even after recomputed checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "Current input edit makes result stale and cannot save old PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "Different Mission and Model Definition comparisons reject",
+      "status": "PASS"
+    },
+    {
+      "name": "Numerical delta matches raw Solver and dB percentage is undefined",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero numeric baseline omits relative delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown optical package result does not fabricate KPI or delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Same Seed and Samples reuse original Common Random Draw Set",
+      "status": "PASS"
+    },
+    {
+      "name": "Changed Seed or Sample Count suppresses Yield delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Different Customer Order and cumulative objectives prevent global dominance",
+      "status": "PASS"
+    },
+    {
+      "name": "One-factor and multi-factor changes have distinct causal interpretation",
+      "status": "PASS"
+    },
+    {
+      "name": "First run is persistable before any A/B or Previous design exists",
+      "status": "PASS"
+    },
+    {
+      "name": "Latest and Previous retain full independent inputs for experimentation",
+      "status": "PASS"
+    },
+    {
+      "name": "v09 Backup import preserves Practice and does not reset Decision data",
+      "status": "PASS"
+    },
+    {
+      "name": "Combined Backup parses both domains before any caller mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Schema and corruption never silently reset snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "A/B operations never touch Campaign reducers or mutable reward states",
+      "status": "PASS"
+    },
+    {
+      "name": "Incomplete / complete substrate snapshots keep stable metric definitions",
+      "status": "PASS"
+    },
+    {
+      "name": "Hidden input changes cannot be labelled as a controlled single decision",
+      "status": "PASS"
+    },
+    {
+      "name": "Same Seed / Samples with different channel draws cannot claim Common Random Numbers",
+      "status": "PASS"
+    }
+  ]
+}

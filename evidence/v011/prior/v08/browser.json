@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "name": "Fresh v08 has six gated chapters and no runtime error",
+      "status": "PASS"
+    },
+    {
+      "name": "Real v07 backup migration preserves01–15 and starts Chapter6 unplayed",
+      "status": "PASS"
+    },
+    {
+      "name": "Learn Chapter6 has five accurate sections and reliability boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "M16 comparison uses common sample set and genuine coupling choices",
+      "status": "PASS"
+    },
+    {
+      "name": "M16 edge-like interface clears actual customer window and budget",
+      "status": "PASS"
+    },
+    {
+      "name": "M17 initial yield crisis fails from actual sample data",
+      "status": "PASS"
+    },
+    {
+      "name": "Precision alone leaves pitch problem; matching clears mission within budget",
+      "status": "PASS"
+    },
+    {
+      "name": "5000-sample cancel preserves last valid saved state and restart uses seed",
+      "status": "PASS"
+    },
+    {
+      "name": "M18 interactive process line distinguishes pre-test and final test",
+      "status": "PASS"
+    },
+    {
+      "name": "M18 batch clears real good-unit, budget, escape and cost gates",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay does not duplicate XP or credits",
+      "status": "PASS"
+    },
+    {
+      "name": "Six-chapter autosave/reload regenerates deterministic plots without stored samples",
+      "status": "PASS"
+    },
+    {
+      "name": "Six-step navigation retains Chapter5 advanced workshop and old completed tech",
+      "status": "PASS"
+    },
+    {
+      "name": "All v08 offline gameplay makes zero HTTP requests and zero JS exceptions",
+      "status": "PASS"
+    }
+  ]
+}

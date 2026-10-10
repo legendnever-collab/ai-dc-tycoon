@@ -1,0 +1,34 @@
+{
+  "cases": [
+    {
+      "name": "390px navigator preserves five steps on all gameplay screens",
+      "status": "PASS"
+    },
+    {
+      "name": "390px Learn study room is readable, dismissible and has no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch prototype controls change fixture and replay preserves unique rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "320px navigator preserves five steps on all gameplay screens",
+      "status": "PASS"
+    },
+    {
+      "name": "320px Learn study room is readable, dismissible and has no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch prototype controls change fixture and replay preserves unique rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Touch390/320 gameplay makes no HTTP request and no JS error",
+      "status": "PASS"
+    }
+  ],
+  "physicalAndroid": "NOT TESTED",
+  "humanUsability": "NOT TESTED"
+}

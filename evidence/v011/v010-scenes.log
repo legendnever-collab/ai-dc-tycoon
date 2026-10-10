@@ -1,0 +1,26 @@
+PASS Mission 01 observed objectives, rule coverage and original scene family
+PASS Mission 02 observed objectives, rule coverage and original scene family
+PASS Mission 03 observed objectives, rule coverage and original scene family
+PASS Mission 04 observed objectives, rule coverage and original scene family
+PASS Mission 05 observed objectives, rule coverage and original scene family
+PASS Mission 06 observed objectives, rule coverage and original scene family
+PASS Mission 07 observed objectives, rule coverage and original scene family
+PASS Mission 08 observed objectives, rule coverage and original scene family
+PASS Mission 09 observed objectives, rule coverage and original scene family
+PASS Mission 10 observed objectives, rule coverage and original scene family
+PASS Mission 11 observed objectives, rule coverage and original scene family
+PASS Mission 12 observed objectives, rule coverage and original scene family
+PASS Mission 13 observed objectives, rule coverage and original scene family
+PASS Mission 14 observed objectives, rule coverage and original scene family
+PASS Mission 15 observed objectives, rule coverage and original scene family
+PASS Mission 16 observed objectives, rule coverage and original scene family
+PASS Mission 17 observed objectives, rule coverage and original scene family
+PASS Mission 18 observed objectives, rule coverage and original scene family
+PASS PASS explanation preserves actual gates and does not promise an optimum
+PASS FAIL priority selects an actual failed objective and stale result cannot explain
+PASS Network scene uses only active Graph links; incompatible optical fiber remains inactive
+PASS ELS presence does not invent a connected CW path
+PASS Workshop waveguide selection cannot imply a missing output connection
+PASS FAU scene exposes exact Gaussian input geometry and highlights real worst channel
+PASS Loss explanation selects largest recorded contribution from original ledger
+PASS Manufacturing debrief aggregates actual station events without duplicate cost
