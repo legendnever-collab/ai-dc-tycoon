@@ -1,0 +1,9 @@
+# Architecture v0.11
+
+Additive entry `chapter7-entry.ts` imports preserved Chapter6 entry / v0.10 Decision Lab and mounts Chapter7. Old practice Scenario is not extended. Separate versioned Design7/Result7/Snapshot7 adapter and Chapter7Store hold practice and profile-keyed Campaign sessions. Existing Chapter1–6 stores and reward ledgers are never rewritten by Chapter7.
+
+Common `decision-comparison.ts` computes unit-aware deltas for both adapters. Common `comparisonPanel` in decision-ui renders both. The v0.10 LabStore is generalized with an optional typed codec, preserving default v0.10 database/envelopes; Chapter7 uses the same CAS, immutable originals, LKG and future-schema protection implementation with its own format. Numerical provenance and freshness are verified by deterministic recalculation and SHA256. No second compare system or duplicate legacy solver.
+
+Chapter7 Campaign gate reads actual Mission18 clear and tracks unique additive receipts (150 XP/250 Credits once per Mission). Mission20/21 gated by prior Chapter7 receipt. AIDCT_V11.wallet adds Chapter7 totals to the unchanged V08 wallet; both ledgers are separately backupable. Practice does not claim rewards. Chapter7 backup includes both modes, all profiles, predictions, notes, reviews and A/B. Older Campaign/Practice/Decision backups remain in their unchanged screens/stores. No silent migration/reset.
+
+Chapter7 navigator and Learn bridge are additive runtime decorations. Frozen v0.8 learning/shell sources remain unchanged to satisfy byte-preservation regression; stale Chapter7 previews are replaced in the v0.11 rendered UI. Build-v011 creates only v0.11 HTML; build.cjs and historical executables remain untouched. Future protection or CAS failure disables saves and reward claims; backup exposes the exact preserved head. File-origin persistence remains browser-specific.
