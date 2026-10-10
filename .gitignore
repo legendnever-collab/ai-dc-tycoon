@@ -6,3 +6,16 @@ output-v04/
 .cache/
 .DS_Store
 *.tmp
+
+# Local credentials — keep outside the public repository
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
