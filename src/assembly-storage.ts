@@ -1,0 +1,52 @@
+import {sha256} from './hash';
+import {CAMPAIGN_DB} from './campaign-storage';
+import type {SnapshotIO} from './campaign-storage';
+import {GAME_DB,backupText,parseBackup} from './game-storage';
+import {C2_DB,chapter2Backup,parseChapter2Backup} from './chapter2-storage';
+import {chapter3Backup,parseChapter3Backup} from './campaign-storage';
+import {WORKSHOP_HEAD,workshopBackup,parseWorkshopBackup} from './workshop-storage';
+import {SubstrateSnapshotIO,SUBSTRATE_HEAD,substrateBackup,parseSubstrateBackup,campaignBackup07,parseCampaignBackup07,validateCampaign07} from './substrate-storage';
+import type {Campaign07} from './substrate-storage';
+import {newChapter6,validateChapter6} from './chapter6';
+import {ASSEMBLY_MODEL} from './assembly-schema';
+import type {AssemblyState} from './assembly-schema';
+export type Campaign08=Campaign07 & {chapter6:AssemblyState};
+export const ASSEMBLY_HEAD=(id:string)=>'assembly-head::'+id;
+export const ASSEMBLY_LKG=(id:string)=>'assembly-lkg::'+id;
+export const CAMPAIGN08_HEAD=(id:string)=>'v08-campaign-head::'+id;
+export const JOURNAL08='campaign08-restore-journal';
+export function assemblyBackup(s:AssemblyState){validateChapter6(s);return JSON.stringify({format:'AIDataCenterTycoon-Assembly',schema:1,model:ASSEMBLY_MODEL,payload:s,sha256:sha256(JSON.stringify(s))},null,2);}
+export function parseAssemblyBackup(raw:string,id:string):AssemblyState{if(typeof raw!=='string'||raw.length>1000000)throw Error('Assembly Backup 크기 오류');const e=JSON.parse(raw);if(e.format!=='AIDataCenterTycoon-Assembly'||e.schema!==1||e.model!==ASSEMBLY_MODEL)throw Error('Future Assembly Schema / Model · 원본 보존');if(e.sha256!==sha256(JSON.stringify(e.payload)))throw Error('Assembly SHA256 불일치');validateChapter6(e.payload);if(e.payload.profileId!==id)throw Error('Assembly Profile 오류');return structuredClone(e.payload);}
+export function validateCampaign08(c:Campaign08){validateCampaign07(c);parseAssemblyBackup(assemblyBackup(c.chapter6),c.game.id);if(c.chapter6.revision>0&&!c.chapter5.cleared['15'])throw Error('Mission15 Clear 없이 Assembly Progress');}
+export function campaignBackup08(c:Campaign08){validateCampaign08(c);const chapters={legacy:campaignBackup07(c),assembly:assemblyBackup(c.chapter6)};return JSON.stringify({format:'AIDataCenterTycoon-Campaign',schema:4,release:'0.8.0',profileId:c.game.id,chapters,sha256:sha256(JSON.stringify(chapters)),labBoundary:'Independent original Engineering Lab backup; not included in Campaign'},null,2);}
+export function parseCampaignBackup08(raw:string,current?:Campaign08):Campaign08{if(typeof raw!=='string'||raw.length>50000000)throw Error('Campaign Backup 크기 오류');const e=JSON.parse(raw);if(e.format==='AIDataCenterTycoon-Campaign'&&e.schema===4&&e.release==='0.8.0'){if(!e.chapters||e.sha256!==sha256(JSON.stringify(e.chapters)))throw Error('Campaign SHA256 불일치');const legacy=parseCampaignBackup07(e.chapters.legacy),chapter6=parseAssemblyBackup(e.chapters.assembly,legacy.game.id);if(e.profileId!==legacy.game.id)throw Error('Campaign Profile 오류');const c={...legacy,chapter6};validateCampaign08(c);return c;}const legacy=parseCampaignBackup07(raw,current),keep=current&&current.game.id===legacy.game.id&&e.format!=='AIDataCenterTycoon-Campaign';const c={...legacy,chapter6:keep?structuredClone(current.chapter6):newChapter6(legacy.game.id)};validateCampaign08(c);return c;}
+function supported(key:string,raw:string){try{if(key.startsWith('assembly-head::'))parseAssemblyBackup(raw,key.slice(15));else if(key.startsWith('v08-campaign-head::')){if(parseCampaignBackup08(raw).game.id!==key.slice(19))return false;}else return false;return true;}catch{return false;}}
+export class AssemblySnapshotIO extends SubstrateSnapshotIO{
+ async cas(name:string,key:string,expected:string|null,value:string|null){if(name!==CAMPAIGN_DB||!['assembly-head::','v08-campaign-head::'].some(p=>key.startsWith(p)))return super.cas(name,key,expected,value);
+  const db=await new Promise<IDBDatabase>((resolve,reject)=>{const r=indexedDB.open(name,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('snapshots'))r.result.createObjectStore('snapshots');};r.onsuccess=()=>{r.result.onversionchange=()=>r.result.close();resolve(r.result);};r.onerror=()=>reject(r.error);r.onblocked=()=>reject(Error('다른 창의 저장소를 닫아주세요.'));});
+  try{await new Promise<void>((resolve,reject)=>{const tx=db.transaction('snapshots','readwrite'),s=tx.objectStore('snapshots');let error:Error|null=null;s.get(key).onsuccess=e=>{const old=(e.target as IDBRequest).result??null;if(old!==expected){error=Error('다른 창에서 Assembly 저장 변경 · 현재 Text Backup을 보존하고 새로고침하세요.');tx.abort();return;}const lkg=key.startsWith('assembly-head::')?ASSEMBLY_LKG(key.slice(15)):'v08-campaign-lkg::'+key.slice(19);if(old!==null&&old!==value){s.put(old,'immutable-original::'+key+'::'+sha256(old));if(supported(key,old))s.put(old,lkg);else{s.put(old,'recovery-original::'+key);if(value&&supported(key,value))s.put(value,lkg);}}if(old===null&&value)s.put(value,lkg);if(value===null)s.delete(key);else s.put(value,key);};tx.oncomplete=()=>resolve();tx.onabort=()=>reject(error||tx.error||Error('Assembly 저장 중단'));tx.onerror=()=>reject(error||tx.error);});}finally{db.close();}
+ }
+}
+export class AssemblyStore{
+ private expected:string|null=null;private id='';private blocked=false;
+ constructor(private io:SnapshotIO=new AssemblySnapshotIO()){}
+ async load(id:string){this.id=id;this.blocked=false;this.expected=await this.io.get(CAMPAIGN_DB,ASSEMBLY_HEAD(id));if(this.expected===null)return {state:newChapter6(id),warning:''};try{return {state:parseAssemblyBackup(this.expected,id),warning:''};}catch{let e:any;try{e=JSON.parse(this.expected);}catch{}if(e&&(e.schema!==1||e.model!==ASSEMBLY_MODEL||e.format!=='AIDataCenterTycoon-Assembly'||e.payload?.profileId!==id)){this.blocked=true;throw Error('Assembly Schema / Profile 오류 · 자동 저장 중단 · 원본 보존');}try{return {state:parseAssemblyBackup((await this.io.get(CAMPAIGN_DB,ASSEMBLY_LKG(id)))!,id),warning:'Substrate 손상 Head를 LKG에서 복구했습니다. 원본은 다음 저장 시 보존됩니다.'};}catch{this.blocked=true;throw Error('Assembly Head / LKG 손상 · Text Backup을 복원하세요.');}}
+ }
+ async save(s:AssemblyState){if(this.blocked||s.profileId!==this.id)throw Error('Assembly 저장 중단 / Profile 불일치');const raw=assemblyBackup(s);if(raw!==this.expected){await this.io.cas(CAMPAIGN_DB,ASSEMBLY_HEAD(this.id),this.expected,raw);this.expected=raw;}}
+}
+export class Campaign08Checkpoint{
+ private expected:string|null=null;private id='';private blocked=false;
+ constructor(private io:SnapshotIO=new AssemblySnapshotIO()){}
+ async load(id:string){this.id=id;this.blocked=false;this.expected=await this.io.get(CAMPAIGN_DB,CAMPAIGN08_HEAD(id));if(this.expected!==null)try{if(parseCampaignBackup08(this.expected).game.id!==id)throw Error('Profile');}catch{this.blocked=true;throw Error('Campaign08 Snapshot 손상 / Future Schema · 자동 Snapshot 중단');}}
+ async save(c:Campaign08){if(this.blocked||c.game.id!==this.id)throw Error('Campaign08 Snapshot 저장 중단');const raw=campaignBackup08(c);if(raw!==this.expected){await this.io.cas(CAMPAIGN_DB,CAMPAIGN08_HEAD(this.id),this.expected,raw);this.expected=raw;}}
+ async lkg(id:string){const raw=await this.io.get(CAMPAIGN_DB,'v08-campaign-lkg::'+id);if(!raw)throw Error('Campaign08 LKG 없음');const c=parseCampaignBackup08(raw);if(c.game.id!==id)throw Error('Campaign08 LKG Profile 오류');return c;}
+}
+type Journal08={schema:1;release:'0.8.0';id:string;profileId:string;status:'prepared'|'committed'|'cancelled';entries:{db:string;key:string;before:string|null;after:string}[]};
+const targets=(id:string)=>[{db:GAME_DB,key:'head'},{db:C2_DB,key:'head::'+id},{db:CAMPAIGN_DB,key:'head::'+id},{db:CAMPAIGN_DB,key:WORKSHOP_HEAD(id)},{db:CAMPAIGN_DB,key:SUBSTRATE_HEAD(id)},{db:CAMPAIGN_DB,key:ASSEMBLY_HEAD(id)}];
+function parseJournal(raw:string){const j=JSON.parse(raw)as Journal08;if(j.schema!==1||j.release!=='0.8.0'||!['prepared','committed','cancelled'].includes(j.status)||typeof j.id!=='string'||typeof j.profileId!=='string'||!Array.isArray(j.entries)||j.entries.length!==6)throw Error('지원하지 않는 v08 Restore Journal · 원본 보존');const t=targets(j.profileId);for(let i=0;i<6;i++){const e=j.entries[i];if(e.db!==t[i].db||e.key!==t[i].key||(e.before!==null&&typeof e.before!=='string')||typeof e.after!=='string')throw Error('v08 Restore Journal Boundary 오류');}if(j.status==='committed'||j.status==='cancelled')return j;validateCampaign08({game:parseBackup(j.entries[0].after),chapter2:parseChapter2Backup(j.entries[1].after,j.profileId),chapter3:parseChapter3Backup(j.entries[2].after,j.profileId),chapter4:parseWorkshopBackup(j.entries[3].after,j.profileId),chapter5:parseSubstrateBackup(j.entries[4].after,j.profileId),chapter6:parseAssemblyBackup(j.entries[5].after,j.profileId)});return j;}
+async function complete(io:SnapshotIO,j:Journal08,raw:string){const heads=await Promise.all(j.entries.map(e=>io.get(e.db,e.key)));if(heads.some((h,i)=>h!==j.entries[i].before&&h!==j.entries[i].after))throw Error('Campaign08 복원 중 Concurrent Write · Boot / Autosave 중단 · 원본 보존');for(const e of j.entries)if(await io.get(e.db,e.key)!==e.after)await io.cas(e.db,e.key,e.before,e.after);await io.cas(CAMPAIGN_DB,JOURNAL08,raw,JSON.stringify({...j,status:'committed'}));}
+export async function recoverCampaign08(io:SnapshotIO=new AssemblySnapshotIO()){const raw=await io.get(CAMPAIGN_DB,JOURNAL08);if(raw===null)return;const j=parseJournal(raw);if(j.status==='prepared')await complete(io,j,raw);}
+export async function cancelCampaign08(io:SnapshotIO=new AssemblySnapshotIO()){const raw=await io.get(CAMPAIGN_DB,JOURNAL08);if(!raw)return;const j=parseJournal(raw);if(j.status==='prepared')await io.cas(CAMPAIGN_DB,JOURNAL08,raw,JSON.stringify({...j,status:'cancelled'}));}
+export async function restoreCampaign08(c:Campaign08,io:SnapshotIO=new AssemblySnapshotIO()){
+ validateCampaign08(c);const old=await io.get(CAMPAIGN_DB,JOURNAL08);if(old&&parseJournal(old).status==='prepared')throw Error('진행 중인 v08 복원부터 복구하세요.');const after=[backupText(c.game),chapter2Backup(c.chapter2),chapter3Backup(c.chapter3),workshopBackup(c.chapter4),substrateBackup(c.chapter5),assemblyBackup(c.chapter6)],entries=await Promise.all(targets(c.game.id).map(async(e,i)=>({...e,before:await io.get(e.db,e.key),after:after[i]})));const j:Journal08={schema:1,release:'0.8.0',id:sha256(JSON.stringify(entries)),profileId:c.game.id,status:'prepared',entries},raw=JSON.stringify(j);await io.cas(CAMPAIGN_DB,JOURNAL08,old,raw);await complete(io,j,raw);
+}
