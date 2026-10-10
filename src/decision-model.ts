@@ -1,3 +1,4 @@
+import {compareMetrics} from './decision-comparison';
 import {sha256} from './hash';
 import {evaluatePractice,validateScenario} from './exploration-model';
 import type {Scenario,PracticeResult} from './exploration-model';
@@ -41,6 +42,6 @@ export function compare(a:Snapshot,b:Snapshot){if(a.mission!==b.mission)throw Er
  const requirementsSame=n===7?a.scenario.order===b.scenario.order&&JSON.stringify(a.scenario.orders)===JSON.stringify(b.scenario.orders):n===18?a.scenario.recipe.order===b.scenario.recipe.order&&a.scenario.recipe.batch===b.scenario.recipe.batch:true;
  if(!requirementsSame)warnings.push('Customer Requirement / Objective context가 다릅니다. 전체 우열과 PASS 개선을 직접 판단하지 마세요.');
  let mcComparable=true;if(n>=16){const ar=a.scenario.recipe,br=b.scenario.recipe;if(ar.seed!==br.seed||ar.samples!==br.samples||(a.result.details as any).assembly.sampleSetHash!==(b.result.details as any).assembly.sampleSetHash){mcComparable=false;warnings.push('Seed / Sample Count / Channel Draw Set이 다릅니다. Yield 직접 비교 제한: 동일 Seed / Samples로 재실험하세요.');}else warnings.push('동일 Seed / Sample Count: 기존 Common Random Numbers의 동일 표준 Draw Set을 사용합니다. Equipment별 σ 변환은 의도된 설계 차이입니다.');}
- const am=metrics(a),bm=metrics(b),rows=am.map(m=>{const v=bm.find(t=>t.id===m.id);if(!v||v.unit!==m.unit||v.direction!==m.direction)throw Error('Metric unit / definition 불일치');const comparable=requirementsSame&&(!(n>=16&&['acceptance','worst','mean'].includes(m.id))||mcComparable),delta=comparable&&typeof m.value==='number'&&typeof v.value==='number'?v.value-m.value:null;return {metric:m,a:m.value,b:v.value,delta,relative:delta!==null&&typeof m.value==='number'&&m.value!==0&&!['dB','dBm'].includes(m.unit)?100*delta/Math.abs(m.value):null,comparable};});
+ const am=metrics(a),bm=metrics(b),rows=compareMetrics(am,bm,id=>requirementsSame&&(!(n>=16&&['acceptance','worst','mean'].includes(id))||mcComparable));
  const changes=changedInputs(a,b);return {mission:a.mission,rows,warnings,requirementsSame,mcComparable,changes,controlled:changes.length===1&&requirementsSame&&mcComparable,interpretation:changes.length>1?'여러 Parameter가 함께 변경되었습니다. 개선의 단일 원인은 확정할 수 없습니다. 가능한 영향 요인을 하나씩 같은 조건에서 시험하세요.':changes.length===1?'한 Decision만 바뀐 통제 비교입니다. 관찰된 차이는 이 교육용 모델과 현재 조건의 범위에서 해석하세요.':'입력이 동일합니다. 재현성을 확인하거나 Decision 하나를 변경해 보세요.'};
 }

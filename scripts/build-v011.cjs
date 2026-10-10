@@ -1,0 +1,5 @@
+const fs=require('fs'),cp=require('child_process'),esbuild=require('esbuild');
+cp.execFileSync(process.execPath,['node_modules/typescript/bin/tsc','-p','tsconfig.json'],{stdio:'inherit'});
+const js=esbuild.buildSync({entryPoints:['src/chapter7-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
+const html=fs.readFileSync('src/game-shell-v08.html','utf8').replace('AI Data Center Tycoon v0.8.0','AI Data Center Tycoon v0.11.0').replace('v0.8.0 · From Prototype to Production','v0.11.0 · Optical Architecture Challenge').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style','assembly-style','korean-font-v08','exploration-style','decision-style','chapter7-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js.replace(/<\/script/gi,'<\\/script'));
+fs.writeFileSync('ai-dc-tycoon-v0.11.html',html);console.log('Built v0.11 offline: '+Buffer.byteLength(html)+' bytes');
