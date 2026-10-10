@@ -37,7 +37,7 @@ Routing L=0.1…10 cm; bends/crossings integer 0…20; I/O channels integer1…6
 
 ## Budgets and comparison
 
-Mission19: 800G gross / 752G payload, ≤16 paths, ≤2.2 mm span, ≤30 mm² footprint, ≤12 W, ≥2 dB reserve. Mission20: same throughput, ≤6 paths, ≤0.8 mm span, ≤18 mm² footprint, ≤12 W, ≥2 dB reserve. Mission21: 1600G / 1504G with Customer A ≤8 paths/1.1 mm/14 mm²/22W/2dB/±10°C; B ≤16/2.2mm/30mm²/8.3W/2dB/±10°C; C ≤16/2.2mm/30mm²/22W/2.8dB/±40°C. All require connected=N and per-λ I/O count≥Nλ, lane feasibility≥1. No architecture name appears in the PASS logic.
+Mission19: 800G gross / 752G payload, ≤16 paths, ≤2.2 mm span, ≤30 mm² footprint, ≤12 W, ≥2 dB reserve. Mission20: same throughput, ≤6 paths, ≤0.8 mm span, ≤18 mm² footprint, ≤12 W, ≥2 dB reserve. Mission21: 1600G / 1504G with Customer A ≤8 paths/1.1 mm/14 mm²/22W/2dB/±10°C; B ≤16/2.2mm/30mm²/8.3W/2dB/±10°C; C ≤16/2.2mm/30mm²/22W/2.8dB/±40°C. Educational Cost caps: Mission19=700 Credits, Mission20=1000, Mission21 A/B/C=1200/800/1000. All require connected=N and per-λ I/O count≥Nλ, lane feasibility≥1. No architecture name appears in the PASS logic.
 
 A/B use the shared v0.10 metric comparison and presentation functions with a Chapter7 versioned adapter. Cross-mission or incompatible model snapshots rejected. Different customer contexts suppress deltas/ranking and display Not Comparable. Unknown BER stays null. No overall engineering score. Direction is informational, not a hardcoded winning architecture.
 
