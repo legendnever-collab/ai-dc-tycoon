@@ -1,0 +1,48 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ai-data-center-tycoon@0.3.0 test:v07-browser
+> node tests/v07-browser.cjs && node tests/v07-mobile-browser.cjs && node tests/v07-storage-browser.cjs && node tests/v07-legacy-browser.cjs
+
+PASS Fresh v07 offline has five visible campaign steps, locked later chapters and lazy Lab
+PASS Locked chapter opens real Learn overview without bypassing mission gate
+PASS v06 full Campaign paste migration preserves exact Chapter1–4 and initializes Chapter5
+PASS Shared navigator jumps through Chapters1–5 and shows same current step
+PASS Every chapter Learn button shows structured concepts, map, glossary and bridge
+PASS Technology Tree shows Pluggable/CPO/OE Completed and active Substrate Current
+PASS ELS remains Installed/CW Connected after next mission starts and after Save/Load
+PASS CPO Package explains four independent OEs and baseline capacity
+PASS M13 missing path fails, then selected coupling and substrate connection clear
+PASS M14 unaligned FAU fails with per-channel feedback, then guided x/y and pitch clear
+PASS M15 wrong channel count and pitch fail before16-channel prototype clear
+PASS Prototype clears reflect in global progress/Tech and replay rewards remain unique
+PASS Whole campaign autosave reload and Text Backup restore preserve exact prototype state
+PASS OE source edit marks prior substrate result stale without rewriting rewards
+PASS Preserved Lab remains independently executable with original numerical solver
+PASS Offline gameplay and Learn windows make zero HTTP requests or JS errors
+PASS 390px navigator preserves five steps on all gameplay screens
+PASS 390px Learn study room is readable, dismissible and has no horizontal overflow
+PASS 390px touch prototype controls change fixture and replay preserves unique rewards
+PASS 320px navigator preserves five steps on all gameplay screens
+PASS 320px Learn study room is readable, dismissible and has no horizontal overflow
+PASS 320px touch prototype controls change fixture and replay preserves unique rewards
+PASS Touch390/320 gameplay makes no HTTP request and no JS error
+PASS Real IndexedDB keeps Substrate primary, five-head committed Journal and whole Campaign snapshot
+PASS Corrupt same-profile head recovers from real LKG and retains original recovery bytes
+PASS Future primary blocks automatic overwrite and remains exportable as original text
+PASS Valid paste restore recovers protected future head and preserves archived original
+PASS Two real browser tabs detect stale Substrate write instead of clobbering newer progress
+PASS Protected storage flow has zero external requests and no JavaScript exception
+PASS Existing M01 UI in v07 retains original 30s and 100XP/120Credit reward
+PASS Existing M02 rack purchase/place and original 60s numerical fixture preserved
+PASS Existing M03 network failure, retry and original 120s clear still work
+PASS Existing M04 actual rack connections clear with preserved reward receipt
+PASS Existing M05 leaf-spine path bottleneck and clear remain playable in v07
+PASS Existing M06 optical modules/fiber clear unlocks actual Mission07
+PASS Existing M07 service vs density orders preserve40s,2560G and96W CPO boundary
+PASS Existing M08 real ASIC,OE,ELS,FAU and fiber assembly clears in shared Package
+PASS Existing M09 four independent OEs install and clear; Why4OEs available in Package
+PASS Existing M10 guided ELS/CW and Laser balanced clear retains one reward
+PASS Existing M11 Driver/MZM connection clears with original3dB,800G graph
+PASS Existing M12 guided Tx path clears with7.4dB margin and opens Chapter5
+PASS Preserved Engineering Lab executes same optical solver default numerical result
+PASS Legacy-to-CPO browser has no external runtime requests or JS errors

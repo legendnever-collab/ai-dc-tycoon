@@ -1,0 +1,61 @@
+name: v0.8 Recovery — Publish Verified Release Archives
+on:
+  push:
+    branches:
+      - feature/v0.8-assembly-yield
+    paths:
+      - .github/workflows/v08-recovery-packages.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-verified-archives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reuse successful v0.8 583-check release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ai-dc-tycoon-v08-ci-143fb56779b7d09d8a4f5cc05234a39665018b46
+          run-id: 38013755072
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/verified-v08
+      - name: Check build identity, source provenance, and all archive hashes
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto'),path=require('path');
+          const dir='/tmp/verified-v08',hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+          const manifest=JSON.parse(fs.readFileSync(path.join(dir,'RELEASE-MANIFEST-v0.8.json')));
+          const archives=JSON.parse(fs.readFileSync(path.join(dir,'RELEASE-ARCHIVES-v0.8.json')));
+          if(manifest.sourceGitCommit!=='143fb56779b7d09d8a4f5cc05234a39665018b46')throw Error('Unexpected source commit');
+          const exe=hash('ai-dc-tycoon-v0.8.html');
+          if(exe!==manifest.executableSHA256||exe!==hash(path.join(dir,'ai-dc-tycoon-v0.8.html')))throw Error('Different v0.8 executables');
+          if(manifest.baselineDeterministic!==431)throw Error('Incomplete baseline evidence');
+          const total=manifest.baselineDeterministic+Object.values(manifest.testEvidence).reduce((n,r)=>n+r.pass,0);
+          if(total!==583||Object.values(manifest.testEvidence).some(r=>r.fail!==0))throw Error('Actual validated count mismatch: '+total);
+          for(const [name,digest] of Object.entries(archives.sha256)){
+            if(hash(path.join(dir,name))!==digest)throw Error('Archive SHA-256 mismatch: '+name);
+          }
+          console.log('PASS: byte-identical published HTML, 583 PASS / 0 FAIL manifest, and all ZIP SHA-256');
+          NODE
+          unzip -tq /tmp/verified-v08/ai-dc-tycoon-v0.8-source.zip
+          unzip -tq /tmp/verified-v08/ai-dc-tycoon-v0.8-HANDOFF.zip
+          unzip -tq /tmp/verified-v08/ai-dc-tycoon-v0.8-screenshots.zip
+      - name: Publish archives and manifests without touching game code
+        run: |
+          cp /tmp/verified-v08/ai-dc-tycoon-v0.8-source.zip .
+          cp /tmp/verified-v08/ai-dc-tycoon-v0.8-HANDOFF.zip .
+          cp /tmp/verified-v08/ai-dc-tycoon-v0.8-screenshots.zip .
+          cp /tmp/verified-v08/RELEASE-MANIFEST-v0.8.json .
+          cp /tmp/verified-v08/RELEASE-ARCHIVES-v0.8.json .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f ai-dc-tycoon-v0.8-source.zip ai-dc-tycoon-v0.8-HANDOFF.zip ai-dc-tycoon-v0.8-screenshots.zip RELEASE-MANIFEST-v0.8.json RELEASE-ARCHIVES-v0.8.json
+          if git diff --cached --quiet; then
+            echo "Archives already published."
+          else
+            git commit -m "release(v0.8): publish verified source handoff screenshots and manifest"
+            git push origin HEAD:feature/v0.8-assembly-yield
+          fi
