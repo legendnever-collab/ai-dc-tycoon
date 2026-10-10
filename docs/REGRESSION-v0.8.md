@@ -26,3 +26,9 @@ npm run test:v08-package
 Release packaging refuses missing/failed evidence, requires431 old checks plus all new suites and genuine captures, then verifies ZIP CRC, every extracted source hash and byte-identical clean rebuild of v03–v08. Actual final counts and workflow commit/results are reported with the release manifest and final handoff; a historical CI run is not final verification.
 
 Physical Android, human usability, measured manufacturing calibration and reliability lifetime: NOT TESTED / NOT MODELED, never inferred from touch emulation or simulated acceptance.
+
+## Actual local final execution
+
+Existing deterministic431 + new assembly40 / storage18 / integrity3 = **492 PASS /0 FAIL**. Existing v07 browser43 + v08 desktop14 / touch8 / real storage7 / original01–12 controls14 / original13–15 controls5 = **91 PASS /0 FAIL**. Total **583 PASS /0 FAIL**. These are actual local executions, not copied historical counts. Every group has structured evidence under evidence/v08; all browser groups assert HTTP0 / JS0.
+
+New source archive passed CRC and every source hash, and a fresh npm ci / build recreated byte-identical v03–v08. v07 executable remains2b648ab3b32ef05ab0beed7b5e9c2dcdb518c4321ad65fdf7b389f24fdd5d7a8. Current v08 executable46290b308030bb9bfae9a6ef70f7830cb88942b5978683e3b4417e46d4afd818. GitHub Actions runs current feature HEAD independently; final remote results are linked in PR and handoff, not assumed from local success.
