@@ -2,7 +2,7 @@ name: v0.10 Engineering Decision Lab
 on:
   push:
     branches: [feature/v0.10-engineering-decision-lab]
-    paths-ignore: ['*.zip', 'ai-dc-tycoon-v0.10.html', 'RELEASE-MANIFEST-v0.10.json', 'evidence/**', 'screenshots-v010/**']
+    paths-ignore: ['*.zip', 'ai-dc-tycoon-v0.10.html', 'RELEASE-MANIFEST-v0.10.json', 'evidence/**', 'screenshots-v010/**', 'REGRESSION-v0.10.md', 'docs/REGRESSION-v0.10.md']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           if test -f RELEASE-MANIFEST-v0.10.json; then
-            git add ai-dc-tycoon-v0.10*.zip RELEASE-MANIFEST-v0.10.json evidence/v010 screenshots-v010
+            git add ai-dc-tycoon-v0.10*.zip RELEASE-MANIFEST-v0.10.json evidence/v010 screenshots-v010 REGRESSION-v0.10.md docs/REGRESSION-v0.10.md
             git diff --cached --quiet || git commit -m 'G6: publish verified v0.10 archives and actual browser evidence'
             git push origin HEAD:feature/v0.10-engineering-decision-lab
           fi
