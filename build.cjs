@@ -31,5 +31,5 @@ fs.mkdirSync('../output-v07',{recursive:true});for(const p of ['../output-v07/ai
 
 /* v0.8 is additive; all earlier distributions retain their original build paths. */
 const js08=esbuild.buildSync({entryPoints:['src/chapter6-entry.ts'],bundle:true,write:false,format:'iife',target:'es2020',minify:true,legalComments:'inline',loader:{'.html':'text'}}).outputFiles[0].text;
-const html08=fs.readFileSync('src/game-shell-v08.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style','assembly-style'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js08.replace(/<\/script/gi,'<\\/script'));
+const html08=fs.readFileSync('src/game-shell-v08.html','utf8').replace('/* STYLES */',['game-style','chapter2-style','chapter3-style','workshop-style','campaign-style','assembly-style','korean-font-v08'].map(n=>fs.readFileSync('src/'+n+'.css','utf8')).join('\n')).replace('/* SCRIPT */',()=>js08.replace(/<\/script/gi,'<\\/script'));
 fs.writeFileSync('ai-dc-tycoon-v0.8.html',html08);console.log('Built v0.8 Assembly Yield: '+Buffer.byteLength(html08)+' bytes');
