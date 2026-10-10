@@ -1,7 +1,7 @@
 name: v0.7 Photonic Substrate Release
 on:
   push:
-    branches: [feature/v0.7-photonic-substrate]
+    branches: [feature/v0.7-photonic-substrate, feature/v0.8-assembly-yield]
     paths-ignore: ['*.zip']
   pull_request:
     branches: [main]

@@ -1,0 +1,62 @@
+name: v0.8 Assembly Yield Release
+on:
+  push:
+    branches: [feature/v0.8-assembly-yield]
+    paths-ignore: ['*.zip']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v08-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  v08:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Fresh existing431 and new assembly/manufacturing/storage checks
+        run: |
+          npm run test:v08-baseline
+          npm run test:v08
+        timeout-minutes: 12
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - name: Install pinned Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+        timeout-minutes: 15
+      - name: Clear historical browser snapshots
+        run: node -e "const fs=require('fs');for(const d of ['evidence/v07','evidence/v08'])for(const n of fs.readdirSync(d))if(n.includes('browser')&&n.endsWith('.json'))fs.unlinkSync(d+'/'+n)"
+      - name: Execute actual preserved43 offline browser scenarios
+        run: npm run test:v07-browser
+        timeout-minutes: 18
+      - name: Execute Chapter6 desktop touch storage and actual legacy controls
+        run: npm run test:v08-browser
+        timeout-minutes: 18
+      - name: Package new release with actual evidence
+        run: npm run package:v08
+      - name: Clean extracted-source rebuild and archive integrity
+        run: npm run test:v08-package
+        timeout-minutes: 5
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-dc-tycoon-v08-ci-${{ github.sha }}
+          path: |
+            ai-dc-tycoon-v0.8.html
+            ai-dc-tycoon-v0.8-source.zip
+            ai-dc-tycoon-v0.8-HANDOFF.zip
+            ai-dc-tycoon-v0.8-screenshots.zip
+            RELEASE-MANIFEST-v0.8.json
+            RELEASE-ARCHIVES-v0.8.json
+            evidence/v08/
+            screenshots-v08/
+          retention-days: 14
+          if-no-files-found: error
