@@ -1,0 +1,77 @@
+{
+  "validatedSource": "7f929f3956705d27659ef4aac85bc215855a5a0d",
+  "existing": 665,
+  "newPass": 96,
+  "total": 761,
+  "fail": 0,
+  "evidence": {
+    "evidence/v09/golden.json": {
+      "pass": 48,
+      "fail": 0
+    },
+    "evidence/v09/browser.json": {
+      "pass": 34,
+      "fail": 0
+    },
+    "evidence/v08/assembly-golden.json": {
+      "pass": 40,
+      "fail": 0
+    },
+    "evidence/v08/assembly-storage-golden.json": {
+      "pass": 18,
+      "fail": 0
+    },
+    "evidence/v08/integrity.json": {
+      "pass": 3,
+      "fail": 0
+    },
+    "evidence/v08/browser.json": {
+      "pass": 14,
+      "fail": 0
+    },
+    "evidence/v08/mobile-browser.json": {
+      "pass": 8,
+      "fail": 0
+    },
+    "evidence/v08/storage-browser.json": {
+      "pass": 7,
+      "fail": 0
+    },
+    "evidence/v08/legacy-browser.json": {
+      "pass": 14,
+      "fail": 0
+    },
+    "evidence/v08/substrate-browser.json": {
+      "pass": 5,
+      "fail": 0
+    },
+    "evidence/v07/browser-results.json": {
+      "pass": 16,
+      "fail": 0
+    },
+    "evidence/v07/mobile-browser-results.json": {
+      "pass": 7,
+      "fail": 0
+    },
+    "evidence/v07/storage-browser-results.json": {
+      "pass": 6,
+      "fail": 0
+    },
+    "evidence/v07/legacy-browser-results.json": {
+      "pass": 14,
+      "fail": 0
+    },
+    "evidence/v010/golden.json": {
+      "pass": 37,
+      "fail": 0
+    },
+    "evidence/v010/explain-scenes.json": {
+      "pass": 26,
+      "fail": 0
+    },
+    "evidence/v010/browser.json": {
+      "pass": 33,
+      "fail": 0
+    }
+  }
+}
