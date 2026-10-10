@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-10T07:48:15.213Z",
+  "executedAt": "2026-10-10T08:32:35.600Z",
   "browser": "Chromium via Playwright",
   "cases": [
     {
@@ -103,7 +103,7 @@
       "status": "PASS"
     },
     {
-      "name": "Interrupted5000-sample practice simulation preserves last normal state",
+      "name": "Stable Cancel at1440/390/320px preserves5000-sample last normal state",
       "status": "PASS"
     },
     {
