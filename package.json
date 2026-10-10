@@ -2,7 +2,7 @@
   "devDependencies": {
     "@types/three": "0.180.0",
     "esbuild": "0.25.10",
-    "three": "0.180.0",
+    "three": "0.186.1",
     "typescript": "5.9.3"
   },
   "name": "ai-data-center-tycoon",
