@@ -1,0 +1,57 @@
+name: v0.9 Free Exploration Release
+on:
+  push:
+    branches: [feature/v0.9-free-exploration]
+    paths-ignore: ['*.zip', 'RELEASE-MANIFEST-v0.9.json', 'docs/REGRESSION-v0.9.md', 'evidence/**', 'screenshots-v09/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v09-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Existing431 baseline and v08 / v09 deterministic checks
+        run: npm run test:v08-baseline && npm run test:v08 && npm run test:v09
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Actual existing Campaign browser regressions
+        run: npm run test:v07-browser && npm run test:v08-browser
+      - name: Actual direct-access, isolation, persistence and touch regressions
+        run: npm run test:v09-browser
+      - run: npm run package:v09 && npm run test:v09-package
+      - name: Publish reviewed archives and evidence to Feature Branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feature/v0.9-free-exploration'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ai-dc-tycoon-v0.9-source.zip ai-dc-tycoon-v0.9-HANDOFF.zip ai-dc-tycoon-v0.9-screenshots.zip RELEASE-MANIFEST-v0.9.json docs/REGRESSION-v0.9.md evidence/v09 screenshots-v09
+          git commit -m 'release: publish v0.9 archives, hashes and actual CI evidence'
+          git push origin HEAD:feature/v0.9-free-exploration
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-dc-tycoon-v09-${{ github.sha }}
+          path: |
+            ai-dc-tycoon-v0.9.html
+            ai-dc-tycoon-v0.9-*.zip
+            RELEASE-MANIFEST-v0.9.json
+            docs/REGRESSION-v0.9.md
+            evidence/v09/
+            screenshots-v09/
+          if-no-files-found: error
+          retention-days: 14
