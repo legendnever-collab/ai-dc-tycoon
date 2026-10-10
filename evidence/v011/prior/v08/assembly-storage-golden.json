@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "name": "v08 six-chapter backup preserves all designs, rewards and simulation provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "v07 migration keeps01–15, XP/Credits, selected OE and Substrate unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "v03–v06 backup support is retained through authoritative parsers",
+      "status": "PASS"
+    },
+    {
+      "name": "v07 parser rejects v08 future backup and never interprets it automatically",
+      "status": "PASS"
+    },
+    {
+      "name": "Checksum, profile, unsupported future schema reject before writes",
+      "status": "PASS"
+    },
+    {
+      "name": "Recomputed checksum cannot conceal altered simulated yield or receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter6 cannot contain progress before Mission15",
+      "status": "PASS"
+    },
+    {
+      "name": "Primary save / load is profile linked",
+      "status": "PASS"
+    },
+    {
+      "name": "Future primary blocks autosave and preserves exact original",
+      "status": "PASS"
+    },
+    {
+      "name": "Corruption recovers same-profile LKG; corrupt LKG blocks",
+      "status": "PASS"
+    },
+    {
+      "name": "CAS conflicts retain newer writer",
+      "status": "PASS"
+    },
+    {
+      "name": "Recoverable journal writes six heads and preserves independent Lab",
+      "status": "PASS"
+    },
+    {
+      "name": "Every interrupted head position rolls forward to consistent six-head result",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted journal with concurrent foreign write blocks boot and preserves bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "Cancellation closes prepared journal without rolling further heads",
+      "status": "PASS"
+    },
+    {
+      "name": "Future journal rejects before mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Saved state is bounded and excludes random sample arrays",
+      "status": "PASS"
+    },
+    {
+      "name": "Navigator unlock15→16 and technology preserves completed old chapters",
+      "status": "PASS"
+    }
+  ]
+}

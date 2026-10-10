@@ -1,0 +1,107 @@
+{
+  "executedAt": "2026-10-10T16:07:10.643Z",
+  "results": [
+    {
+      "suite": "golden",
+      "pass": 30,
+      "exit": 0
+    },
+    {
+      "suite": "p2-golden",
+      "pass": 42,
+      "exit": 0
+    },
+    {
+      "suite": "game-golden",
+      "pass": 65,
+      "exit": 0
+    },
+    {
+      "suite": "chapter2-golden",
+      "pass": 34,
+      "exit": 0
+    },
+    {
+      "suite": "network-golden",
+      "pass": 32,
+      "exit": 0
+    },
+    {
+      "suite": "chapter2-graph-golden",
+      "pass": 23,
+      "exit": 0
+    },
+    {
+      "suite": "cpo-model-golden",
+      "pass": 27,
+      "exit": 0
+    },
+    {
+      "suite": "chapter3-golden",
+      "pass": 33,
+      "exit": 0
+    },
+    {
+      "suite": "campaign-golden",
+      "pass": 26,
+      "exit": 0
+    },
+    {
+      "suite": "workshop-adapter-golden",
+      "pass": 16,
+      "exit": 0
+    },
+    {
+      "suite": "chapter4-golden",
+      "pass": 20,
+      "exit": 0
+    },
+    {
+      "suite": "workshop-storage-golden",
+      "pass": 16,
+      "exit": 0
+    },
+    {
+      "suite": "v06-integrity",
+      "pass": 7,
+      "exit": 0
+    },
+    {
+      "suite": "release-integrity",
+      "pass": 5,
+      "exit": 0
+    },
+    {
+      "suite": "v04-integrity",
+      "pass": 4,
+      "exit": 0
+    },
+    {
+      "suite": "v05-integrity",
+      "pass": 5,
+      "exit": 0
+    },
+    {
+      "suite": "chapter5-golden",
+      "pass": 22,
+      "exit": 0
+    },
+    {
+      "suite": "substrate-storage-golden",
+      "pass": 16,
+      "exit": 0
+    },
+    {
+      "suite": "campaign-progress-golden",
+      "pass": 5,
+      "exit": 0
+    },
+    {
+      "suite": "v07-integrity",
+      "pass": 3,
+      "exit": 0
+    }
+  ],
+  "pass": 431,
+  "fail": 0
+}

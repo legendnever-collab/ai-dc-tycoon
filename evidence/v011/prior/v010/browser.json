@@ -1,0 +1,140 @@
+{
+  "executedAt": "2026-10-10T16:19:32.393Z",
+  "cases": [
+    {
+      "name": "Offline v010 Home and Free Navigator preserve 18 direct Missions",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 01 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 02 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 03 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 04 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 05 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 06 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 07 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 08 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 09 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 10 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 11 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 12 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 13 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 14 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 15 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 16 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 17 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission 18 genuine controls save A/B compare and restore without Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Compute one-factor experiment, numerical KPI changes and previous comparison",
+      "status": "PASS"
+    },
+    {
+      "name": "State-bound scenes and Mission-specific Debriefs match actual result / geometry",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent A/B snapshot autosave restores after reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Monte Carlo same-seed precision / pitch comparison reports observed trade-off",
+      "status": "PASS"
+    },
+    {
+      "name": "Reset comparison and reset current experiment preserve saved designs and other missions",
+      "status": "PASS"
+    },
+    {
+      "name": "Text combined Backup / Paste Restore recovers both stores",
+      "status": "PASS"
+    },
+    {
+      "name": "Cancel does not commit partial results or mutate snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupted Decision head restores LKG and preserves corrupt original",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Decision schema blocks writes and preserves exact head",
+      "status": "PASS"
+    },
+    {
+      "name": "Decision CAS rejects a stale tab while preserving newer head",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch Comparison stacks cards without overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch Comparison stacks cards without overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign resumes through preserved runtime and rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop / touch runtime has zero JavaScript errors and zero HTTP",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "browser": "Chromium via Playwright; offline file HTML"
+}

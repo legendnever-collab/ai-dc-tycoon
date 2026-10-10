@@ -1,0 +1,48 @@
+PASS Mission 01 starter validates, simulates and has no Campaign progress
+PASS Mission 02 starter validates, simulates and has no Campaign progress
+PASS Mission 03 starter validates, simulates and has no Campaign progress
+PASS Mission 04 starter validates, simulates and has no Campaign progress
+PASS Mission 05 starter validates, simulates and has no Campaign progress
+PASS Mission 06 starter validates, simulates and has no Campaign progress
+PASS Mission 07 starter validates, simulates and has no Campaign progress
+PASS Mission 08 starter validates, simulates and has no Campaign progress
+PASS Mission 09 starter validates, simulates and has no Campaign progress
+PASS Mission 10 starter validates, simulates and has no Campaign progress
+PASS Mission 11 starter validates, simulates and has no Campaign progress
+PASS Mission 12 starter validates, simulates and has no Campaign progress
+PASS Mission 13 starter validates, simulates and has no Campaign progress
+PASS Mission 14 starter validates, simulates and has no Campaign progress
+PASS Mission 15 starter validates, simulates and has no Campaign progress
+PASS Mission 16 starter validates, simulates and has no Campaign progress
+PASS Mission 17 starter validates, simulates and has no Campaign progress
+PASS Mission 18 starter validates, simulates and has no Campaign progress
+PASS Mission 01 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 02 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 03 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 04 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 05 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 06 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 07 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 08 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 09 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 10 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 11 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 12 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 13 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 14 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 15 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 16 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 17 unchanged hard objectives can be solved through engineering decisions
+PASS Mission 18 unchanged hard objectives can be solved through engineering decisions
+PASS Mission17 has valid16-channel path but fails the real yield gate initially
+PASS Mission18 has an executable batch with no prior Mission results
+PASS Mission16–18 reuse Campaign numerical evaluation on identical design and seed
+PASS Precision and matching permit Mission17 without an unlock or reward
+PASS Same seed yields identical output; changing seed changes the sample set
+PASS Recipe validation rejects fractional seed and unsupported sample count
+PASS Physical rack port limit remains enforced
+PASS Package direct-access template requires real decisions and typed connections
+PASS Practice schema accepts independent18-result and rejects forged checksum/future schema
+PASS Changing one session and restarting it leaves other mission designs intact
+PASS All v08 runtime source and v08 executable remain byte exact
+PASS Yielding practice runs preserve same-seed results and cancelled state

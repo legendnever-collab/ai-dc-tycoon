@@ -1,0 +1,3 @@
+PASS Every preserved v07 runtime source/test/executable hash remains exact
+PASS v08 executable contains all models, chapter6 and offline CSP
+PASS New state backup excludes unbounded samples and measured claims

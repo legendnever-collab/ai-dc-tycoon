@@ -1,0 +1,260 @@
+{
+  "executedAt": "2026-10-10T16:07:47.310Z",
+  "model": "optical-architecture-educational-1.0.0",
+  "cases": [
+    {
+      "name": "800G arithmetic slow",
+      "status": "PASS"
+    },
+    {
+      "name": "800G arithmetic fast",
+      "status": "PASS"
+    },
+    {
+      "name": "800G arithmetic wdm",
+      "status": "PASS"
+    },
+    {
+      "name": "1.6T arithmetic wide",
+      "status": "PASS"
+    },
+    {
+      "name": "1.6T arithmetic fast",
+      "status": "PASS"
+    },
+    {
+      "name": "1.6T arithmetic hybrid",
+      "status": "PASS"
+    },
+    {
+      "name": "1.6T arithmetic dense",
+      "status": "PASS"
+    },
+    {
+      "name": "WDM physical paths vs per-wavelength channels",
+      "status": "PASS"
+    },
+    {
+      "name": "Efficiency applied once / disconnected throughput explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "Loss ledger reference planes / coupling once",
+      "status": "PASS"
+    },
+    {
+      "name": "No mux losses in single wavelength mode",
+      "status": "PASS"
+    },
+    {
+      "name": "Cost budget is an explicit independently evaluated constraint",
+      "status": "PASS"
+    },
+    {
+      "name": "Power component sum / cost separate",
+      "status": "PASS"
+    },
+    {
+      "name": "Thermal drift slope / filter monotonic sensitivity",
+      "status": "PASS"
+    },
+    {
+      "name": "Active tuning trades power for lower penalty",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer temperature excursion changes result at same operating point",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid spatial 0",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid spatial 17",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid spatial 1.5",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid connected 17",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid connected -1",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid ioChannels 0",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid efficiency 1.01",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid efficiency NaN",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid pitchUm 0",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid temperatureC 100",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid laneRate 400",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid wavelengths 8",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid mux AWG",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid signaling measured",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid lengthCm 0",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid rows 3",
+      "status": "PASS"
+    },
+    {
+      "name": "Reject invalid bends 21",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported physics input rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknown metrics / unsupported physics declared",
+      "status": "PASS"
+    },
+    {
+      "name": "200G cannot silently pass basic signaling capability",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission19 two different architectures can pass",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission20 compact single wavelength fails / WDM passes",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission20 hot WDM fails without tuning",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer A / wide actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer A / fast actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer A / hybrid actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer A / dense actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer B / wide actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer B / fast actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer B / hybrid actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer B / dense actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer C / wide actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer C / fast actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer C / hybrid actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer C / dense actual constraint parity",
+      "status": "PASS"
+    },
+    {
+      "name": "No hardcoded winner / Customer reorders decisions",
+      "status": "PASS"
+    },
+    {
+      "name": "FAU rows / route length produce independent geometry changes",
+      "status": "PASS"
+    },
+    {
+      "name": "Snapshot / A-B restore numerical provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "Changed input invalidates current PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "Cross Mission comparison and restore rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Model version / corrupted result rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Customer context restricts comparison deltas",
+      "status": "PASS"
+    },
+    {
+      "name": "Report exact numerical parity / Unknown handling",
+      "status": "PASS"
+    },
+    {
+      "name": "Report rejects stale current result",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter7 backup round trip preserves modes / AB / notes",
+      "status": "PASS"
+    },
+    {
+      "name": "Future schema / corrupt backup rejected, no reset",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign gates / unique reward / practice isolation",
+      "status": "PASS"
+    }
+  ],
+  "pass": 63,
+  "fail": 0
+}

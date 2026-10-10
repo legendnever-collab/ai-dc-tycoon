@@ -1,0 +1,32 @@
+{
+  "validatedSource": "003adc632cd20506ac746869562cdb697f43a3fe",
+  "baseline": 431,
+  "counts": {
+    "evidence/v011/prior/v08/assembly-golden.json": 40,
+    "evidence/v011/prior/v08/assembly-storage-golden.json": 18,
+    "evidence/v011/prior/v08/integrity.json": 3,
+    "evidence/v011/prior/v09/golden.json": 48,
+    "evidence/v011/prior/v010/golden.json": 37,
+    "evidence/v011/prior/v010/explain-scenes.json": 26,
+    "evidence/v011/golden.json": 63,
+    "evidence/v011/browser.json": 34,
+    "evidence/v011/prior/v07/browser-results.json": 16,
+    "evidence/v011/prior/v07/mobile-browser-results.json": 7,
+    "evidence/v011/prior/v07/storage-browser-results.json": 6,
+    "evidence/v011/prior/v07/legacy-browser-results.json": 14,
+    "evidence/v011/prior/v08/browser.json": 14,
+    "evidence/v011/prior/v08/mobile-browser.json": 8,
+    "evidence/v011/prior/v08/storage-browser.json": 7,
+    "evidence/v011/prior/v08/legacy-browser.json": 14,
+    "evidence/v011/prior/v08/substrate-browser.json": 5,
+    "evidence/v011/prior/v09/browser.json": 34,
+    "evidence/v011/prior/v010/browser.json": 33
+  },
+  "total": 858,
+  "fail": 0,
+  "notTested": [
+    "Physical Android",
+    "Firefox/Safari",
+    "Human learning effectiveness"
+  ]
+}

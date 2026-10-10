@@ -1,0 +1,37 @@
+PASS Mission 01 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 02 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 03 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 04 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 05 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 06 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 07 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 08 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 09 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 10 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 11 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 12 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 13 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 14 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 15 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 16 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 17 Snapshot, original solver, metrics, deltas and independent restore
+PASS Mission 18 Snapshot, original solver, metrics, deltas and independent restore
+PASS Input and Result hash forgery reject even after recomputed checksum
+PASS Current input edit makes result stale and cannot save old PASS
+PASS Different Mission and Model Definition comparisons reject
+PASS Numerical delta matches raw Solver and dB percentage is undefined
+PASS Zero numeric baseline omits relative delta
+PASS Unknown optical package result does not fabricate KPI or delta
+PASS Same Seed and Samples reuse original Common Random Draw Set
+PASS Changed Seed or Sample Count suppresses Yield delta
+PASS Different Customer Order and cumulative objectives prevent global dominance
+PASS One-factor and multi-factor changes have distinct causal interpretation
+PASS First run is persistable before any A/B or Previous design exists
+PASS Latest and Previous retain full independent inputs for experimentation
+PASS v09 Backup import preserves Practice and does not reset Decision data
+PASS Combined Backup parses both domains before any caller mutation
+PASS Future Schema and corruption never silently reset snapshots
+PASS A/B operations never touch Campaign reducers or mutable reward states
+PASS Incomplete / complete substrate snapshots keep stable metric definitions
+PASS Hidden input changes cannot be labelled as a controlled single decision
+PASS Same Seed / Samples with different channel draws cannot claim Common Random Numbers

@@ -1,0 +1,18 @@
+PASS v08 six-chapter backup preserves all designs, rewards and simulation provenance
+PASS v07 migration keeps01–15, XP/Credits, selected OE and Substrate unchanged
+PASS v03–v06 backup support is retained through authoritative parsers
+PASS v07 parser rejects v08 future backup and never interprets it automatically
+PASS Checksum, profile, unsupported future schema reject before writes
+PASS Recomputed checksum cannot conceal altered simulated yield or receipt
+PASS Chapter6 cannot contain progress before Mission15
+PASS Primary save / load is profile linked
+PASS Future primary blocks autosave and preserves exact original
+PASS Corruption recovers same-profile LKG; corrupt LKG blocks
+PASS CAS conflicts retain newer writer
+PASS Recoverable journal writes six heads and preserves independent Lab
+PASS Every interrupted head position rolls forward to consistent six-head result
+PASS Interrupted journal with concurrent foreign write blocks boot and preserves bytes
+PASS Cancellation closes prepared journal without rolling further heads
+PASS Future journal rejects before mutation
+PASS Saved state is bounded and excludes random sample arrays
+PASS Navigator unlock15→16 and technology preserves completed old chapters

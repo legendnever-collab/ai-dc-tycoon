@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "name": "390px six-step navigator and production have no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch M18 replay uses actual process controls and unique rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "390px Chapter6 Learn is readable and dismissible",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch Monte Carlo data and station feedback are real",
+      "status": "PASS"
+    },
+    {
+      "name": "320px six-step navigator and production have no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch M18 replay uses actual process controls and unique rewards",
+      "status": "PASS"
+    },
+    {
+      "name": "320px Chapter6 Learn is readable and dismissible",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch Monte Carlo data and station feedback are real",
+      "status": "PASS"
+    }
+  ]
+}
