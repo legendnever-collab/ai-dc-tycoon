@@ -1,0 +1,62 @@
+name: v0.10 Engineering Decision Lab
+on:
+  push:
+    branches: [feature/v0.10-engineering-decision-lab]
+    paths-ignore: ['*.zip', 'ai-dc-tycoon-v0.10.html', 'RELEASE-MANIFEST-v0.10.json', 'evidence/**', 'screenshots-v010/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v010-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:v08-baseline && npm run test:v08 && npm run test:v09 && node tests/v010-golden.cjs
+      - name: Publish intermediate executable
+        if: github.event_name == 'push'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ai-dc-tycoon-v0.10.html
+          git diff --cached --quiet || git commit -m 'G2: publish playable v0.10 offline executable'
+          git push origin HEAD:feature/v0.10-engineering-decision-lab
+      - run: npm install --no-save --no-package-lock playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:v07-browser && npm run test:v08-browser && npm run test:v09-browser
+      - name: Decision Lab Browser and release packaging when implemented
+        run: |
+          if test -f tests/v010-browser.cjs; then node tests/v010-browser.cjs; fi
+          if test -f scripts/package-v010.cjs; then VALIDATED_SOURCE_SHA=${{ github.sha }} node scripts/package-v010.cjs && node scripts/check-package-v010.cjs; fi
+      - name: Publish release artifacts and evidence
+        if: github.event_name == 'push'
+        run: |
+          if test -f RELEASE-MANIFEST-v0.10.json; then
+            git add ai-dc-tycoon-v0.10*.zip RELEASE-MANIFEST-v0.10.json evidence/v010 screenshots-v010
+            git diff --cached --quiet || git commit -m 'G6: publish verified v0.10 archives and actual browser evidence'
+            git push origin HEAD:feature/v0.10-engineering-decision-lab
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v010-${{ github.sha }}
+          path: |
+            ai-dc-tycoon-v0.10.html
+            ai-dc-tycoon-v0.10-*.zip
+            RELEASE-MANIFEST-v0.10.json
+            evidence/v010/
+            screenshots-v010/
+          retention-days: 14
