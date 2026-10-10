@@ -25,7 +25,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npm run test:v08-baseline && npm run test:v08 && npm run test:v09 && node tests/v010-golden.cjs
+      - run: npm run test:v08-baseline && npm run test:v08 && npm run test:v09 && node tests/v010-golden.cjs && node tests/v010-explain-scenes.cjs
       - name: Publish intermediate executable
         if: github.event_name == 'push'
         run: |
