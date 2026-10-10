@@ -1,0 +1,24 @@
+import type {SubstrateDesign,SubstrateContext,Coupling5} from './substrate-schema';
+export const ASSEMBLY_MODEL='assembly-yield-educational-1.0.0';
+export type EvidenceClass='Educational Assumption'|'Engineering Estimate'|'Publicly Documented Reference'|'Measured Evidence';
+export type Mission6='16'|'17'|'18';
+export type Equipment6='basic'|'precision'|'active';
+export type Order6='prototype'|'quality'|'volume';
+export type Test6='basic'|'channel';
+export type Recipe6={coupling:Coupling5;equipment:Equipment6;pitchMatched:boolean;fineTune:boolean;order:Order6;strategy:'direct'|'known-good';test:Test6;rework:boolean;batch:10|50|100;seed:number;samples:200|1000|5000};
+export type AssemblyBinding={design:SubstrateDesign;context:SubstrateContext};
+export type Variation6={xUm:number;yUm:number;pitchUm:number;commonSigmaUm:number;channelSigmaUm:number;pitchSigmaUm:number;rotationMrad:number;rotationSigmaMrad:number;xyCorrelation:number};
+export type SimulationInput6={binding:AssemblyBinding;coupling:Coupling5;variation:Variation6;seed:number;samples:number;minMarginDb:number;maxLossDb:number};
+export type VariationDraw6={globalX:number;globalY:number;pitch:number;rotation:number;channelX:number[];channelY:number[]};
+export type Channel6={id:string;xUm:number;yUm:number;alignmentDb:number;lossDb:number|null;marginDb:number|null;pass:boolean};
+export type Sample6={index:number;xUm:number;yUm:number;pitchUm:number;rotationMrad:number;channels:Channel6[];worstMarginDb:number|null;worstChannel:string|null;pass:boolean};
+export type AssemblySummary6={model:string;inputHash:string;seed:number;sampleCount:number;acceptanceDefinition:string;passCount:number;acceptanceRate:number;channelPassCounts:number[];worstMarginDb:number|null;meanMarginDb:number|null;sampleSetHash:string;resultHash:string;evidence:EvidenceClass;diagnosis:string[]};
+export type AssemblyRun6={summary:AssemblySummary6;samples:Sample6[]};
+export type CostEvent6={unit:number;station:'setup'|'material'|'assembly'|'alignment'|'pre-test'|'final-test'|'rework'|'disposal';credits:number;seconds:number};
+export type Unit6={id:number;pretested:boolean;pretestRejected:boolean;materialDefect:boolean;assembled:boolean;tested:boolean;detected:boolean;reworked:boolean;actualGood:boolean;shipped:boolean;scrapped:boolean;worstMarginDb:number|null};
+export type Batch6={model:string;inputHash:string;seed:number;units:Unit6[];ledger:CostEvent6[];spentCredits:number;serialSeconds:number;deliveredUnits:number;acceptedUnits:number;defectEscapes:number;scrappedUnits:number;reworkedUnits:number;costPerAcceptedUnit:number|null;throughputPerHour:number;resultHash:string;scope:string};
+export type MissionResult6={mission:Mission6;recipe:Recipe6;bindingHash:string;pass:boolean;stars:number;objectives:{label:string;pass:boolean;actual:string}[];assembly:AssemblySummary6;batch:Batch6|null};
+export type Receipt6={mission:Mission6;xp:number;credits:number;revision:number;result:MissionResult6;binding:AssemblyBinding};
+export type AssemblyState={schema:1;model:string;profileId:string;revision:number;current:Mission6;phase:'EVENT'|'BUILD'|'RESULT'|'CLEARED';recipe:Recipe6;cleared:Record<Mission6,boolean>;attempts:Record<Mission6,number>;bestStars:Record<Mission6,number>;receipts:Receipt6[];last:MissionResult6|null;lastBinding:AssemblyBinding|null};
+// Future measured inputs require an explicit calibration procedure; reliability is not modeled.
+export type ReliabilityEvidence6={scope:'Not Modeled';temperatureDataRef?:string;warpageDataRef?:string;calibrationId?:string};
