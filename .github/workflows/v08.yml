@@ -45,7 +45,7 @@ jobs:
       - name: Clean extracted-source rebuild and archive integrity
         run: npm run test:v08-package
         timeout-minutes: 5
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-dc-tycoon-v08-ci-${{ github.sha }}

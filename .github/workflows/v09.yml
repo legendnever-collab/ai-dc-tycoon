@@ -42,7 +42,7 @@ jobs:
           git add ai-dc-tycoon-v0.9-source.zip ai-dc-tycoon-v0.9-HANDOFF.zip ai-dc-tycoon-v0.9-screenshots.zip RELEASE-MANIFEST-v0.9.json docs/REGRESSION-v0.9.md evidence/v09 screenshots-v09
           git commit -m 'release: publish v0.9 archives, hashes and actual CI evidence'
           git push origin HEAD:feature/v0.9-free-exploration
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-dc-tycoon-v09-${{ github.sha }}

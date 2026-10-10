@@ -41,7 +41,7 @@ jobs:
             git commit -m "release(v0.8): publish verified offline executable"
             git push origin HEAD:feature/v0.8-assembly-yield
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: v08-recovery-built-html
           path: ai-dc-tycoon-v0.8.html
