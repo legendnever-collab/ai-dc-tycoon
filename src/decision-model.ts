@@ -11,10 +11,13 @@ export type LabState={schema:1;missions:Record<string,Experiment>};
 export const newLab=():LabState=>({schema:1,missions:{}});
 export function fresh(s:Scenario,r:PracticeResult|null){return !!r&&r.mission===s.mission&&r.revision===s.revision&&r.inputHash===sha256(JSON.stringify(s));}
 export function snapshot(s:Scenario,r:PracticeResult,at=new Date().toISOString()):Snapshot{if(!fresh(s,r))throw Error('Stale Result: 현재 입력으로 Run Simulation을 먼저 실행하세요.');return {mission:s.mission,scenario:structuredClone(s),revision:s.revision,sourceModelVersion:DECISION_MODEL,inputHash:r.inputHash,result:structuredClone(r),resultHash:sha256(JSON.stringify(r)),savedAt:at,evidence:'Educational Assumption'};}
+const validatedSnapshots=new Set<string>();
 export function validateSnapshot(x:Snapshot){
+ const cacheKey=sha256(JSON.stringify(x));if(validatedSnapshots.has(cacheKey))return;
  if(!x||x.sourceModelVersion!==DECISION_MODEL||x.evidence!=='Educational Assumption'||x.mission!==x.scenario?.mission||x.revision!==x.scenario.revision||!Number.isFinite(Date.parse(x.savedAt)))throw Error('Design Snapshot contract 오류');
  validateScenario(x.scenario);if(!fresh(x.scenario,x.result)||x.inputHash!==x.result.inputHash||x.resultHash!==sha256(JSON.stringify(x.result)))throw Error('Design Snapshot Input / Result Hash 오류');
  if(JSON.stringify(evaluatePractice(x.scenario))!==JSON.stringify(x.result))throw Error('Design Snapshot numerical provenance 오류');
+ if(validatedSnapshots.size>=256)validatedSnapshots.clear();validatedSnapshots.add(cacheKey);
 }
 export function validateLab(l:LabState){if(!l||l.schema!==1||!l.missions||Array.isArray(l.missions)||typeof l.missions!=='object'||Object.keys(l.missions).length>18)throw Error('Decision Lab Schema 오류');for(const [m,e]of Object.entries(l.missions)){missionEntry(m);if(!e||typeof e!=='object'||Array.isArray(e)||Object.keys(e).some(k=>!['A','B','latest','previous'].includes(k)))throw Error('Experiment contract 오류');for(const x of Object.values(e)){validateSnapshot(x);if(x.mission!==m)throw Error('Different Mission Snapshot 오류');}}}
 export function saveDesign(l:LabState,slot:'A'|'B',s:Scenario,r:PracticeResult){const x=snapshot(s,r),next=structuredClone(l);(next.missions[s.mission]??={})[slot]=x;return next;}
