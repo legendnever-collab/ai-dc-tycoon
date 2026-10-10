@@ -1,0 +1,144 @@
+{
+  "executedAt": "2026-10-10T07:48:15.213Z",
+  "browser": "Chromium via Playwright",
+  "cases": [
+    {
+      "name": "Offline v09 Home explicitly offers both gameplay modes",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh Navigator exposes all6 chapters and18 mission cards",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 01 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 02 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 03 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 04 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 05 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 06 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 07 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 08 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 09 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 10 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 11 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 12 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 13 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 14 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 15 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 16 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 17 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Fresh direct Mission 18 starts, simulates and remains isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission17 equipment/pitch decisions clear unchanged hard gates and repeat seed exactly",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission18 direct access supports Known-Good manufacturing and real batch success",
+      "status": "PASS"
+    },
+    {
+      "name": "Learn includes nonmandatory16–18 context, and Navigator retains mission designs",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent autosave resumes selected Mission and engineering inputs after reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Restart resets only selected Mission and clears its Practice Result",
+      "status": "PASS"
+    },
+    {
+      "name": "Interrupted5000-sample practice simulation preserves last normal state",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign remains gated and Technology Tree offers independent Try buttons",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual v08 Campaign Backup restore preserves all original progress and rewards in v09",
+      "status": "PASS"
+    },
+    {
+      "name": "Future practice schema blocks autosave and preserves original head plus Campaign",
+      "status": "PASS"
+    },
+    {
+      "name": "Corrupt practice head recovers LKG and archives original without changing Campaign",
+      "status": "PASS"
+    },
+    {
+      "name": "Practice CAS rejects stale tab write and keeps newer head intact",
+      "status": "PASS"
+    },
+    {
+      "name": "390px touch Navigator and Mission18 controls are reachable without overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "320px touch Navigator and Mission18 controls are reachable without overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop and touch offline sessions have zero JS errors and zero HTTP requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": []
+}
