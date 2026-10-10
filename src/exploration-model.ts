@@ -58,7 +58,7 @@ export function evaluatePractice(s:Scenario,mc?:AssemblyRun6):PracticeResult{
  // Canonical JSON removes optional undefined diagnostics so reload is byte stable.
  return JSON.parse(JSON.stringify({mission:s.mission,revision:s.revision,inputHash:sha256(JSON.stringify(s)),pass:result.pass,stars:result.stars,objectives:result.objectives,details:result}));
 }
-export async function runPractice(session:PracticeSession,control:{cancelled:()=>boolean;progress:(n:number)=>void}):Promise<{session:PracticeSession;mc:AssemblyRun6|null}|null>{
+export async function runPractice(session:PracticeSession,control:{cancelled:()=>boolean;progress:(n:number)=>void;yield?:()=>Promise<void>}):Promise<{session:PracticeSession;mc:AssemblyRun6|null}|null>{
  const next=structuredClone(session),s=next.scenario;let mc:AssemblyRun6|null=null;
  if(Number(s.mission)>=16){mc=await simulateAssemblyChunked6(input6(binding(s),s.recipe),control);if(!mc)return null;}
  if(s.mission==='07'){const r=evaluateOrder(s.architecture,s.order);if(r.pass){s.orders=s.orders.filter(o=>o.order!==s.order);s.orders.push({order:s.order,architecture:s.architecture,resultHash:sha256(JSON.stringify(r))});}}
