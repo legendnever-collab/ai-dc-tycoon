@@ -6,7 +6,7 @@ New suites cover coupling/reference-plane/no-double-loss/Unknown, seed/CRN/distr
 
 The Node-produced qualified Chapter6 backup is restored by Chromium to check cross-runtime provenance. New fixed9-decimal result serialization belongs to the assembly model only; unchanged v07 core comparisons permit2×10⁻⁹dB round-off. Original numerical fixtures and expected values stay unchanged.
 
-Browser gate executes real Mission16–18 controls, true failure→optimization→clear,9+ genuine captures,390/320px touch, two real tabs, future raw-byte archival and interrupted six-head journal recovery. The new executable also executes the unchanged Mission01–12 assertions via a launcher/envelope adapter. Existing43 v07 scenarios remain a separate required run. Every browser group asserts zero HTTP runtime requests and zero JavaScript exceptions.
+Browser gate executes real Mission16–18 controls, true failure→optimization→clear,9+ genuine captures,390/320px touch, two real tabs, future raw-byte archival and interrupted six-head journal recovery. The new executable also executes the unchanged Mission01–12 assertions via a launcher/envelope adapter, plus actual Mission13–15 failure/clear controls in v08. Existing43 v07 scenarios remain a separate required run. Every browser group asserts zero HTTP runtime requests and zero JavaScript exceptions.
 
 Reproduce:
 

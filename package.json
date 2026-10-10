@@ -22,7 +22,7 @@
     "package:v07": "node scripts/package-v07.cjs",
     "test:v08": "node tests/assembly-golden.cjs && node tests/assembly-storage-golden.cjs && node tests/v08-integrity.cjs",
     "test:v08-baseline": "node scripts/regression-v08.cjs",
-    "test:v08-browser": "node tests/v08-browser.cjs && node tests/v08-mobile-browser.cjs && node tests/v08-storage-browser.cjs && node tests/v08-legacy-browser.cjs",
+    "test:v08-browser": "node tests/v08-browser.cjs && node tests/v08-mobile-browser.cjs && node tests/v08-storage-browser.cjs && node tests/v08-legacy-browser.cjs && node tests/v08-substrate-browser.cjs",
     "package:v08": "node scripts/package-v08.cjs",
     "test:v08-package": "node scripts/check-package-v08.cjs"
   },
