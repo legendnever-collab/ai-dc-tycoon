@@ -15,4 +15,4 @@ Autosave uses the same v0.9 Practice store plus a separate protected Decision La
 
 For Mission17/18, keep Seed and Samples equal when comparing. Different Customer Order/Batch contexts restrict direct ranking. Educational numerical presets are uncalibrated; they are not Vendor yield or measured hardware qualification. Full-wave EM, CMT, BER, thermal warpage and reliability lifetime are Not Modeled.
 
-Rebuild: `npm ci && npm run build`. New checks: `node tests/v010-golden.cjs`, `node tests/v010-explain-scenes.cjs`, `node tests/v010-browser.cjs` (Playwright Chromium installed). Release archives include source, handoff, real screenshots and a separate SHA256 manifest. The Feature Branch/PR are reviewable; main has not been merged.
+Rebuild: `npm ci && npm run build`. New checks: `node tests/v010-golden.cjs`, `node tests/v010-explain-scenes.cjs`, `node tests/v010-browser.cjs` (Playwright Chromium installed). Release archives include source, handoff, real screenshots and a separate SHA256 manifest. Historical stable release: PR #8 merged into main at b2aeb24c25060a9c5803899d109a6b0bc62ff2d1. See START-HERE-v0.11.md for the current Release Candidate.
