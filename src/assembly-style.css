@@ -5,3 +5,5 @@
 @media(prefers-reduced-motion:reduce){.a-signal{animation:none}}
 
 .a-production-progress{margin:12px 28px;color:#a7d8ca;font-size:11px;display:flex;gap:12px;align-items:center}.a-production-progress progress{flex:1;width:100px;accent-color:#95ddba}@media(max-width:600px){.a-production-progress{margin:12px;font-size:9px}}
+/* Legacy nav shorthand declares system-ui explicitly; include offline Korean fallback. */
+.nav{font-family:system-ui,'Tycoon Korean',sans-serif}
