@@ -1,0 +1,147 @@
+{
+  "executedAt": "2026-10-11T16:21:55.144Z",
+  "file": "ai-dc-tycoon-v0.11.1.html",
+  "browser": "Chromium / Playwright",
+  "cases": [
+    {
+      "name": "v011 offline Home / 7 Chapters / 21 direct Mission cards",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 1 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 2 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 3 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 4 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 5 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 6 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 7 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 8 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 9 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 10 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 11 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 12 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 13 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 14 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 15 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 16 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 17 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy Mission 18 runs and A/B works on v011 HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission19 prediction / hints / throughput / connected SVG / stale handling",
+      "status": "PASS"
+    },
+    {
+      "name": "Restore A/B retains exact original input and numerics",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission20 WDM thermal / tuning alters model and SVG wavelength state",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission21 customer changes decisions / review / exact Markdown report",
+      "status": "PASS"
+    },
+    {
+      "name": "Practice Chapter7 causes zero legacy Campaign mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter7 Autosave reload / original v010 experiments restored",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter7 Backup Paste Restore preserves snapshots and all profiles",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter7 corruption recovers LKG / original preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Future Chapter7 schema prevents autosave / retains exact raw",
+      "status": "PASS"
+    },
+    {
+      "name": "Chapter7 CAS stale tab keeps newer head",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign Chapter7 locked until actual Mission18 clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign Chapter7 unlock and first-clear receipt integrity / wallet additive",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile 390 responsive controls / comparison / report / modal",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile 320 responsive controls / comparison / report / modal",
+      "status": "PASS"
+    },
+    {
+      "name": "No JS exceptions / No HTTP requests during offline file play",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "pass": 34,
+  "fail": 0
+}

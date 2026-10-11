@@ -1,0 +1,81 @@
+{
+  "executedAt": "2026-10-11T16:20:44.151Z",
+  "model": "optical-architecture-educational-1.0.0",
+  "release": "0.11.1",
+  "cases": [
+    {
+      "name": "Model ID unchanged so v0.11.0 saves / snapshots remain valid",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset wide keeps Mission19 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset fast keeps Mission19 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset wide keeps Mission20 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset fast keeps Mission20 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset hybrid keeps Mission20 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset dense keeps Mission20 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset wide keeps Mission21 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset fast keeps Mission21 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset hybrid keeps Mission21 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset dense keeps Mission21 target Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission20 Fast preset is 8 × 100G = 800G (was 8 × 50G = 400G)",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission21 presets are unchanged from v0.11.0",
+      "status": "PASS"
+    },
+    {
+      "name": "Fully connected paths follow Spatial Paths up and down",
+      "status": "PASS"
+    },
+    {
+      "name": "Fully provisioned per-λ I/O follows wavelength change",
+      "status": "PASS"
+    },
+    {
+      "name": "Deliberate under-provisioning is preserved (clamped, not silently repaired)",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit connected / ioChannels in the patch always win",
+      "status": "PASS"
+    },
+    {
+      "name": "Unrelated edits do not touch provisioning",
+      "status": "PASS"
+    }
+  ],
+  "pass": 18,
+  "fail": 0
+}
