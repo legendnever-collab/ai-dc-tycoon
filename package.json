@@ -3,7 +3,7 @@
     "@types/three": "0.180.0",
     "esbuild": "0.25.10",
     "three": "0.180.0",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "name": "ai-data-center-tycoon",
   "version": "0.3.0",
