@@ -37,7 +37,10 @@
     "test:v011": "node tests/v011-golden.cjs",
     "test:v011-browser": "node tests/v011-browser.cjs",
     "package:v011": "node scripts/package-v011.cjs",
-    "test:v011-package": "node scripts/check-package-v011.cjs"
+    "test:v011-package": "node scripts/check-package-v011.cjs",
+    "build:v0111": "node scripts/build-v0111.cjs",
+    "test:v0111": "node tests/v0111-golden.cjs",
+    "test:v0111-browser": "node tests/v0111-browser.cjs && AIDCT_HTML=ai-dc-tycoon-v0.11.1.html AIDCT_RELEASE=0.11.1 AIDCT_EVIDENCE=evidence/v0111 AIDCT_SCREENSHOTS=screenshots-v0111 node tests/v011-browser.cjs"
   },
-  "offlineReleaseVersion": "0.11.0"
+  "offlineReleaseVersion": "0.11.1"
 }

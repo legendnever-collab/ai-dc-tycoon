@@ -1,4 +1,6 @@
 export const MODEL7='optical-architecture-educational-1.0.0';
+// Product patch version. MODEL7 is unchanged: v0.11.0 saves, snapshots and backups stay valid.
+export const RELEASE7='0.11.1';
 export type Mission7='19'|'20'|'21';
 export type Design7={mission:Mission7;customer:'A'|'B'|'C';spatial:number;wavelengths:1|2|4;laneRate:50|100|200;efficiency:number;connected:number;pitchUm:number;rows:1|2;lengthCm:number;bends:number;crossings:number;mux:'none'|'broad'|'narrow';temperatureC:number;tuning:'off'|'active';ioChannels:number;signaling:'basic'|'advanced'};
 export type Constraint7={id:string;label:string;actual:number;limit:number;unit:string;direction:'min'|'max';pass:boolean};

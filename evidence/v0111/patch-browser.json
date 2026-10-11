@@ -1,0 +1,35 @@
+{
+  "executedAt": "2026-10-11T16:20:45.908Z",
+  "file": "ai-dc-tycoon-v0.11.1.html",
+  "browser": "Chromium / Playwright",
+  "cases": [
+    {
+      "name": "Title / home badge / API report v0.11.1",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission20 preset buttons always produce 800G Gross",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission19 Fast preset uses Basic signaling at 100G",
+      "status": "PASS"
+    },
+    {
+      "name": "Spatial 16 → 8 → 16 through the input keeps all paths connected",
+      "status": "PASS"
+    },
+    {
+      "name": "Mission21 λ 1 → 4 through the select provisions 64 per-λ I/O channels",
+      "status": "PASS"
+    },
+    {
+      "name": "No JS exceptions / No HTTP requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "pass": 6,
+  "fail": 0
+}
